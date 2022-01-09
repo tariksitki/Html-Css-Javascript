@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="htmlgeneltekrar.css">
+</head>
+
+<body>
+
+
+    <h1>HTML tüm konular Genel Tekrar</h1>
+
+    <hr>
+
+    <p> Su an <b> b tagini calistiriyorum </b> </p>
+
+    <p> Su an <b> <big>b tagini ve big tagini beraber calistiriyorum </big> </b> </p>
+
+    <p> su an <strong> strong tagini kullaniyorum </strong> </p>
+
+    <!-- strong tagi da bolt yapiyor ama arama motorunda öncelikli 
+semantic olarak önemli yazilar
+-->
+
+    <br>
+
+    <p>simdi ise <em> em tagini kullaniyorum</em> </p>
+
+    <!-- em de italic yapar ama aramalarda önde-->
+
+    <p> simdi <i> i tagini kullaniyorum</i> </p>
+
+    <p> <u> u tagi underline demek </u> </p>
+
+    <br>
+
+    <p> simdi <sup> sup elementi </sup> </p>
+
+    <p> 2 <sup> 5 </sup> = 32 </p>
+
+    <!-- bu element is used to define 
+superscript characters such as the suffixes of dates.-->
+
+    <p> simdi <sub>sub elementi</sub> </p>
+
+    <!-- is used to define <sub>subscripted</sub> text. -->
+
+    <br>
+
+    <p style="color: brown;"> bu bir inline css dir</p>
+
+    <p>simdi <small>small tagini kullaniyorum</small> </p>
+
+    <br>
+
+    <p> simdi <mark> highlight icin mark tagini kullaniyorum</mark> </p>
+
+    <p>tabi ki <mark style="background-color: red;"> mark da da renk degisebilir</mark></p>
+
+    <!-- ÖNEMLI: Eger Highlightin rengini degistirmek istersek o zaman backround color 
+    kullanmamiz gerekir. sadece color kullanirsak o zaman sadece highlightin
+    bulundugu textin rengini degistirir. Highlight yine sari kalir
+    -->
+    <br>
+
+    <p> simdi <ins> ins elementi kullaniyorum</ins> </p>
+
+    <!-- ins de u elemeti gibi alti cizili yapiyor-->
+
+    <!-- 
+        strong = b
+        em = i
+        ins = u
+        del = s
+     -->
+
+    <p> simdi <del>del elementi kullanimi</del> </p>
+
+    <!-- bu text i silmez üstünü cizer-->
+
+    <p> <s>s tagi da del ile ayni islemi yapar ama semantic fark var </s> </p>
+
+    <hr>
+    <br>
+
+
+    <h1>Ordered List</h1>
+
+    <ol>
+        <li>Mercedes</li>
+        <li>Audi</li>
+        <li>Bmw</li>
+        <li>Volkswagen</li>
+    </ol>
+
+
+    <h1>Unordered List</h1>
+
+    <ul>
+        <li>Mercedes</li>
+        <li>Audi</li>
+        <li>bmw</li>
+    </ul>
+
+    <hr>
+
+
+    <h1>Table</h1>
+
+    <p>th table header</p>
+    <p>tr table row</p>
+    <p>td table data</p>
+
+
+    <table border="2">   <!-- nested table-->
+        <tr>
+            <th>Name</th>
+            <th>Job Title</th>
+            <th>E-Mail Address</th>
+            <th>Nested Table</th>
+        </tr>
+
+        <tr>
+            <td>Anna</td>
+            <td>Staff Writer</td>
+            <td>example@gmail.com</td>
+            <td>                            <!-- alt tablo td icinde olmali-->
+            <table border="1">
+                <tr>
+                    <th>Home Phone</th>
+                    <th>Cell Phone</th>
+                </tr>
+
+                <tr>
+                    <td>888-888-888</td>
+                    <td>0531-888-888</td>
+                </tr>
+            </table>
+            </td>
+
+        </tr>
+    </table>
+
+    <hr>
+
+
+
+
+    <table border="1">
+        <tr>
+            <th>Isim</th>
+            <th>soyisim</th>
+            <th>meslek</th>
+            <th>nested</th>
+        </tr>
+
+        <tr>
+            <td>ali</td>
+            <td>kaya</td>
+            <td>isci</td>
+            <td>
+                <table border="1
+                ">
+                    <tr> 
+                        <th>sehir</th> 
+                        <th>ülke</th>
+                        <th>okul</th>
+                        <th>araba</th>
+                    </tr>
+
+                    <tr>
+                        <td>ankara</td>
+                        <td>türkiye</td>
+                        <td>fatih</td>
+                        <td>bmw</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+    </table>
+
+
+
+
+
+    <h1>colspan attribute</h1>
+
+    <!--column span den gelir ve dikeyde bulunan birden cok 
+    sütunu birlestirir
+    Ama birlestirilen elemanlardan sadece bir tanesi yazilir
+    -->
+
+    <h1>rowspan</h1>
+
+    <!-- row ve span den gelir ve yatayda bulunan birden cok row u
+    birlestirir
+    -->
+
+
+
+    <table border="5">
+        <tr>
+            <th rowspan="2"></th>
+            <th colspan="2">Average</th>
+            <th rowspan="2">Red <br> Eyes</th>
+        </tr>
+
+        <tr>
+            <th>height</th>
+            <th>weight</th>
+        </tr>
+
+        <tr>
+            <th>Males</th>
+            <td>1.9</td>
+            <td>0.003</td>
+            <td>40%</td>
+        </tr>
+
+        <tr>
+            <th>Females</th>
+            <td>1.7</td>
+            <td>0.002</td>
+            <td>43%</td>
+        </tr>
+    </table>
+
+
+    <hr>
+
+    <!-- ordered list te sayilarin kactan baslamasi gerektigi secilebilir-->
+
+    <ol start="10">
+        <li>ankara</li>
+        <li>istanbul</li>
+        <li>izmir</li>
+    </ol>
+
+
+
+
+
+</body>
+
+</html>

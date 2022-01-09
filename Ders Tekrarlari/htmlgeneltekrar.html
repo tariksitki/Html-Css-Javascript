@@ -42,12 +42,14 @@ semantic olarak önemli yazilar
 
     <p> 2 <sup> 5 </sup> = 32 </p>
 
+    <p> Bugün ayin 15<sup>th</sup> </p>
+
     <!-- bu element is used to define 
 superscript characters such as the suffixes of dates.-->
 
     <p> simdi <sub>sub elementi</sub> </p>
 
-    <!-- is used to define <sub>subscripted</sub> text. -->
+    <!--  <sub></sub> alt(subscript) ,  <sup></sup> ise üst(superscript)  -->
 
     <br>
 
@@ -69,7 +71,7 @@ superscript characters such as the suffixes of dates.-->
 
     <p> simdi <ins> ins elementi kullaniyorum</ins> </p>
 
-    <!-- ins de u elemeti gibi alti cizili yapiyor-->
+    <!-- ins de u elemeti gibi alti cizili yapiyor   ins = inserted -->
 
     <!-- 
         strong = b
@@ -279,6 +281,191 @@ superscript characters such as the suffixes of dates.-->
      Buna block element denir--> 
 
 
+    <!-- alt attribute alternatif foto degil alternatif metin 
+    görme engellilr icin-->
+
+
+    <!-- <small></small>  elementi kücük yazar-->
+    
+    
+
+            <!--
+For <button>, <input> and <option> elements, the value attribute specifies the initial value of the element.
+
+For <li> elements, the value attribute sets the value of the list item (for ordered lists). The next list items will increment from that value.
+
+For <meter> elements, the value attribute specifies the current value of the gauge.
+
+For <progress> elements, the value attribute specifies how much of the task has been completed.
+
+For <param> elements, the value attribute specifies the value of the parameter.
+    -->
+
+
+
+    <p> Bu bir <i>italik</i>    Metindir   
+        Hem italic hem bolt yapmak icin b icine italic</p>
+    
+        <p> <i><b>bolt italic</b></i> </p>
+    
+        <!-- i ile b nin yerleri degisebilir  -->
+
+
+        <p> Patron cildirdi Elbiseler <del>200</del>  199 </p>
+
+
+
+
+
+
+
+        <ol reversed>
+            <li>Elma</li>
+            <li>Portakal</li>
+            <li>Domates</li>
+        </ol> 
+
+        <!-- Bu kullanimda, meyve isimleri ayni kalir ama numaralar 3 2 1 olur-->
+
+
+
+
+        <!-- baslangic numarasi-->
+
+        <ol start="5">   <p>kactan baslamasi gerektigini yaziyoruz</p>  
+            <li>elma</li>
+            <li>armut</li>
+            <li>kiraz</li>
+        </ol>
+
+
+
+
+
+
+        <ol type="A">  <!-- type yazinca karsimiza type secenekleri cikarir -->  
+            <li>elma</li>    
+            <li>visne</li>
+            <li>kiraz</li>
+        </ol>
+
+        <ol type="a">  <!-- type yazinca karsimiza type secenekleri cikarir -->  
+            <li>elma</li>
+            <li>visne</li>
+            <li>kiraz</li>
+        </ol>
+
+        <ol type="i">  <!-- type yazinca karsimiza type secenekleri cikarir -->  
+            <li>elma</li>
+            <li>visne</li>
+            <li>kiraz</li>
+        </ol>
+
+        <ol type="I">  <!-- type yazinca karsimiza type secenekleri cikarir -->  
+            <li>elma</li>
+            <li>visne</li>
+            <li>kiraz</li>
+        </ol>
+
+
+
+
+
+      <!-- ul de de type vardir ancak, type yazinca cikmiyor -->
+
+      <ul type="circle">
+        <li>Elektrik</li>
+        <li>Su</li>
+        <li>Gaz</li>
+        <li>Pazar</li>
+      </ul>
+
+
+
+
+
+
+
+    <!-- <dl>description list</dl>
+         <dt>d title</dt>
+         <dd>detail</dd> -->
+
+         <dl> 
+            <dt>Araba</dt>
+                <dd>Bir arac</dd>
+            <dt>Otobüs</dt>
+                <dd>Cok oturgacli</dd>    
+        </dl>
+
+
+        <!-- sayfayi düzene sokma
+        alt shift f -->
+
+
+
+        <center>
+            <table>
+                <tr>
+                    <td>ali</td>
+                    <td>veli</td>
+                </tr>
+            </table>
+        </center>
+
+
+        
+        <center>
+            <ol>
+                <li>ali</li>
+                <li>veli</li>
+            </ol>
+        </center>
+        
+        <!-- Buradaki center bir tag dir ve sayfa kücüldükce yazi hep ortada kalir-->
+        
+        <!-- border bir attribute dur ve opening tagin de kullanilir -->
+
+
+        <!-- Birden cok satiri comment yapma 
+            seciyoruz ve ctrl k c   -->
+
+        
+
+        <!-- hr acilimi horizontal row  -->
+        <!-- Bu tarz taglara empty tag denir kapanis tagi yok-->
+
+
+        
+
+        <!-- text align center sayfanin ortasinda yazar
+            caption ise tablonun ortasinda -->
+
+
+        <p style="text-align: center;"> Sayfanin ortasinda metin</p>
+
+        <table border="2">
+            <caption>Bir deneme yazisi</caption>
+            <tr>
+                <th>Column1</th>
+                <th>Column2</th>
+                <th>Column3</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Row 1 Cell 1</td>
+                <td>Row1 Cell 2</td>
+                <td>Row 1 Cell 3</td>
+            </tr>
+            <tr>
+                <td>Row2 Cell2</td>
+                <td>Row 2 Cell 3</td>
+            </tr>
+            <tr>
+                <td colspan="3" , align="center">Row 3 Cell 1</td>
+    
+            </tr>
+    
+
+        
     
 
 

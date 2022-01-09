@@ -1,0 +1,90 @@
+body {
+    background-color: #67C6C5;
+}
+
+.main {
+    width: 80%;
+    margin: auto;
+
+}
+
+#title {
+    font-size: 70px;
+    text-align: center;
+
+}
+
+span {
+    color: red;
+}
+
+#image1 {
+    width: 50%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    border: red 5px solid;
+    border-radius: 20px;
+    margin-bottom: 100px;
+
+}
+
+#paragraph {
+    text-align: center;
+    font-size: 24;
+    border: gray 3px solid;
+    border-radius: 10px;
+
+}
+
+h2 {
+    text-align: center;
+    font-family: lobster;
+    font-size: 40px;
+}
+
+table {
+    background-color: #FF6346;
+    font-size: larger;
+    border-radius: 10px;
+}
+
+td {
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+td:hover {
+    background-color: #08a0f8;
+}
+
+ol, ul {
+    font-size: x-large;
+}
+
+a:hover {
+    background-color: greenyellow;
+    color: red;
+
+}
+
+a {
+    text-decoration: none;    /* Bu yazinin alti cizili olmasini engelliyor  */
+}
+
+#footer {
+    text-align: center;
+    font-size: 25px;
+}
+
+#footer-link {
+    color: red;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+

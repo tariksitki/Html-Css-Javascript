@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is a online IT Bootcamp">
+    <meta name="keywords" content="IT, Bootcamp">
+    <meta name="author" content="Tarik">
+    <link rel="shortcut icon" href="./images/cw-favicon.jpg" type="image/jpg">
+    <link rel="stylesheet" href="">
+    <style>
+        div{
+            color: red;
+        }
+    </style>
+    
+    <title>Clarusway</title>
+</head>
+<body>
+    
+
+
+    <!-- Extensionlar :
+
+    Lorem ipsum
+
+    Html Snippets (mesela h1 yazdigimizda otomatik cikar)
+
+    Prettier Code Formatter (Sayfamizi otomatik olarak düzene sokar, indentation)
+        -- sayfayi kücülttügümüzde, sag tarafta bazi bilgiler kaybolur.
+        -- sag tusa tiklayip Format Document dedigimizde yada alt z yaptigimizda
+        -- verileri sayfaya sigdirir
+
+    emmet.io internet sitesinde emmet ler görülür 
+
+    bu sitede cheet sheet e geldigimizde detayli anlatim 
+
+    bos html sayfasinda olusturmak icin;
+
+    1: ! 
+    2: html:5 
+    3: doc (Burada sadece, doctype yazmaz en yukarida)
+
+
+    -- HTML bir markalama, bicimlendirme ve web sitesinde verilerimizi
+    -- anlamlandirma dilidir 
+
+    -- element = tag = eticket
+
+
+    -- Yukarida Head kisminda UTF-8 bizim s ve c gibi özel karakterler icin kullanilir 
+
+    -- 2. siradaki meta; 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    burada Compatible,  kodumuz her browser da calissin diye bir uyumlastirma
+    IE ise Internet Explorer acilimi, yani kodumuz burada da calissin diye 
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    Bu meta ise; browser ilk acildiginda tam ekran olsun diye yani 1.0 = 100%
+    width = device width yani hangi cihazda actik ise onda tam ekran 
+
+
+    <meta name="description" content="This is a online IT Bootcamp">
+
+    
+    <meta name="keywords" content="IT, Bootcamp">
+
+    (Bu meta bizim sayfamiz arandiginda öne cikartir)
+
+    <meta name="author" content="Tarik">
+    
+    
+
+    <link rel="shortcut icon" href="./images/cw-favicon.jpg" type="image/jpg">
+
+    -- Bu link, web sayfasi basligi yaninda cikan favicon icin  -->
+
+        
+    <h1></h1>  <!-- h$*6-->
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <h5></h5>
+    <h6></h6>
+
+    <!-- Not: shift alt ve asagi tusuna basarsak ayni satirin kopyasini alta da yazar 
+    
+        ctrl alt asagi tusu yaparsak ise birden cok satirda kurzer secer-->
+
+        <!-- lorem5 
+        lorem10 -->
+
+        <!-- p ve h elementi block element  -->
+        <!-- ve bu elementler alt ve üst marjin alabilirler-->
+
+
+
+
+        <!-- Formatting -->
+
+        <p> <b>Lorem ipsum</b>  dolor sit amet consectetur, <strong>adipisicing elit</strong> . Recusandae, repudiandae.</p>
+
+        <p> <i>Lorem ipsum</i>  dolor sit <em> amet.</em></p>
+
+        <p> <u>Lorem ipsum</u>  dolor sit amet.</p>
+
+        <p> <s>Lorem ipsum</s> Lorem   dolor sit <del>amet.</del> amed </p>
+
+        <!-- Text decoration -->
+
+        <p>Lorem ipsum dolor <span style="text-decoration: underline;">sit amet.</span> </p>
+
+        <!-- Yazi üzerine cizgi -->
+
+        <p>Lorem ipsum dolor <span style="text-decoration: overline">sit amet.</span> </p>
+
+        <!-- del ve s ile ayni vazife -->
+
+        <p>Lorem ipsum dolor <span style="text-decoration: line-through">sit amet.</span> </p>
+
+
+        <p>Lorem ipsum dolor <mark style="background-color: red; color: yellowgreen;">sit amet.</mark> </p>
+
+        <p> 5<sup>2</sup>  H <sub>2</sub> </p>
+
+
+
+
+        <!-- Lists -->
+
+        <!-- ul>li*3  kisa yol-->
+
+        <ul style="list-style-type: square;">
+            <li>ferrari</li>
+                <ul style="list-style-type: armenian;">
+                    <li>before 2000</li>
+                    <li>after 2000</li>
+                </ul>
+            <li>porsche</li>
+            <li>tesla</li>
+        </ul>
+
+        <!-- Ikinci bir alternatif -->
+
+        <ul type = "square" >
+            <li>ferrari</li>
+                <ul type = "circle">
+                    <li>before 2000</li>
+                    <li>after 2000</li>
+                </ul>
+            <li>porsche</li>
+            <li>tesla</li>
+        </ul>
+
+        <!-- br*20 -->
+
+        <hr>
+
+        <!-- ol>li*4  -->
+
+        <ol start="5" type="i" reversed>
+            <li>Ankara</li>
+            <li>Istanbul</li>
+            <li>Izmir</li>
+            <li>Stockholm</li>
+        </ol>
+
+
+
+
+        <dl>
+            <dt>Tarik</dt>
+            <dd>Web Developer</dd>
+
+            <dt>John</dt>
+            <dd style="font-size: small;">DevOps Engineer</dd>
+        </dl>
+
+        <hr>
+
+
+
+        <!-- Images -->
+
+        <img src="./images/newyork.jpg" alt="newyork" width="300px">
+
+        <!-- img bir element tir yani tag. src ve alt ise birer attribute dur -->
+
+        <img src="./images/sea1.jpg" alt="sea1" width="300px">
+
+        <!-- Fotolar inline element  -->
+
+        <!-- with internet adresse -->
+
+        <img src="https://clarusway.com/wp-content/uploads/2021/11/Best-data-science-bootcamp.png" alt="clarusway">
+
+
+
+        <!-- table -->
+
+        <table border="1" style="width: 50%; border-collapse: collapse;">
+            <caption style="text-align: right; caption-side: bottom;">Instructor Info</caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Path</th>
+                    <th>Lesson</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Ethan</td>           <!-- tbody>tr>td*3-->
+                    <td colspan="2" style="text-align: center;">Fs Lessons</td>
+                    <!-- <td>HTML-Css</td> -->
+                </tr>
+            </tbody>
+
+            <tbody>
+                <tr>
+                    <td>John</td>           <!-- tbody>tr>td*3-->
+                    <td>Fs</td>
+                    <td rowspan="2" style="text-align: center;">HTML-Css-React</td>
+                </tr>
+            </tbody>
+
+            <tbody>
+                <tr>
+                    <td>Mark</td>           <!-- tbody>tr>td*3-->
+                    <td>Fs</td>
+                    <!-- <td>HTML-Css</td> -->
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+
+
+        <!-- Link -->
+
+        <a href="https://www.google.com/" target="_blank">Goodle Page</a>
+
+
+        <a href="https://www.mercedes-benz.de/?group=all&subgroup=see-all&view=BODYTYPE" target="_blank">Mercedes</a>
+        <!-- a = anchor da bir inline elementtir yani kendisi kadar yer kaplar -->
+
+        <!-- Normalde inline element ama p elementi burada block yapar  -->
+
+        <p> <a href="https://www.google.com/" target="_blank">Goodle Page</a></p>
+
+        <a href="https://www.google.com/" target="_blank">Goodle Page</a>
+
+
+
+        <!-- Foto link yapma -->
+
+        <a href="https://clarusway.com/" target="_blank">  
+            <img src="./images/cw-favicon.jpg" alt="Clarusway">
+        </a>
+
+
+
+        <!-- Zip dosyasi download
+            Burada p tagi icerisinde yazmak zorunda degiliz
+            Ayrica klasörümüz zip yada rar seklinde olmak zorundadir -->
+        
+            <p>
+               <a href="./images.zip">Download</a> 
+            </p>
+        
+
+
+
+            <!-- iframe -->
+
+
+            <iframe src="https://clarusway.com/" frameborder="1" style="width: 50%; height: 500px;"></iframe>
+
+            <!-- Not: Youtube video larinda biz hicbir sey yapmiyoruz sadece copy embed code diyoruz -->
+
+            <iframe width="50%" height="530" src="https://www.youtube.com/embed/fJi5dHkeOs8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+
+            <!-- element adimiz bir selector dur mesela div h2 gibi  
+                style verirken tüm div lere ayni anda verebilirz, 2 tane div e ayni
+                class verip style verebilirz-->
+
+            <!-- Ikinci bir selector ümüz de class ve id lerdir
+            Yani bir element e style vermek icin ya element name yada bunlari kullaniriz -->
+
+            <div class="first" style="color: red;">
+                <h2 id="first-heading">First Paragraph</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A tenetur praesentium, repellat voluptates quos explicabo cupiditate mollitia quas porro! Officiis?</p>
+            </div>
+
+            <div class="first" style="color: blue;">
+                <h2 id="second-heading">Second Paragraph</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A tenetur praesentium, repellat voluptates quos explicabo cupiditate mollitia quas porro! Officiis?</p>
+            </div>
+
+            <div class="second" style="color: violet;">
+                <h2 id="third-heading">Third Paragraph</h2>
+                <p> <span id="span-word" style="color: tomato;">Lorem</span>  ipsum dolor sit amet, consectetur adipisicing elit. A tenetur praesentium, repellat voluptates quos explicabo cupiditate mollitia quas porro! Officiis?</p>
+            </div>
+
+            <!-- Tüm div violet olmasina ragmen unique olan tomato agir basiyor-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+        <!-- Input Types -->
+
+        <!-- <input type="text"> is used to create a single-line text input. -->
+
+
+
+
+
+        <!-- Input Type Password -->
+
+        <!-- <input type="password"> is used to create a password field.
+
+        The characters in a password field are blocked out. 
+        They are shown as asterisks or circles. -->
+
+        <!-- Not: inputlar inline elementtir -->
+
+
+        <form action="http://www.clarusway.com/action_page.php">
+            <h2>Welcome to Clarusway</h2>
+            Username: <br>
+            <input type="text" name="Username"> <br>
+            Password: <br>
+            <input type="password" name="password">
+        </form>
+
+
+        <!-- Name kisminda yazdigimiz isimler sayfada görünmez.
+        Sadece submit in value sunda yazilan buton da görülür 
+        Bu nedenle burada input lar üzerine Username: 
+        seklinde isimleri yazdik  -->
+
+
+
+
+
+
+
+
+
+        <!-- Input Type Radio -->
+
+        <!-- 
+        <input type="radio"> is used to define a radio button.
+        Radio buttons allow users to select only one of a number of options.
+        Value attribute indicates the value which is sent to the server for the 
+        selected option.
+        Checked attribute indicates which value is checked when the page load. -->
+
+        <!-- Buradaki value ise server a gönderilecek veridir-->
+
+        <form action="http://www.clarusway.com/action_page.php">
+            <h2>Gender:</h2>
+
+            <input type="radio" name="Gender" value="Female"> Female <br>
+
+            <input type="radio" name="Gender" value="Male"> Male <br>
+        </form>
+
+
+
+
+
+
+        <!-- Input Type Checkbox -->
+
+        <!-- Checkboxes allow users to select zero or more options in answer to a question. -->
+
+        <form action="http://www.clarusway.com/action_page.php">
+            <h2>Which days are you busy</h2>
+
+            <input type="checkbox" name="days" value="monday"> Monday <br>
+            <input type="checkbox" name="days" value="Tuesday"> Tuesday <br>
+            <input type="checkbox" name="days" value="Wednesday"> Wednesday <br>
+            <input type="checkbox" name="days" value="Thursday"> Thursday <br>
+            <input type="checkbox" name="days" value="Friday"> Friday <br>
+        </form>
+
+
+
+
+
+        <!-- Input Type Number -->
+
+        <!-- <input type="number"> is used to create a single row field for number input. -->
+
+        <form action="http://www.clarusway.com/action_page.php">
+            <h2>How old are You?</h2>
+            Age: <input type="number" name="age" >
+        </form>
+
+
+
+
+
+
+
+
+        <!-- Input Type Reset -->
+
+
+        <!-- <input type="reset"> is used to reset all form values to their default values. -->
+
+
+
+        <form action="http://www.clarusway.com/action_page.php">
+            <h2>Welcome Clarusway</h2>
+
+            Username: <br>
+            <input type="text" name="Username"> <br>
+
+            Password:  <br>
+            <input type="password" name="password"> <br>
+
+            <p>What is Gender ?</p> <br>
+
+            <input type="radio" name="gender" value="female"> Female <br>
+            <input type="radio" name="gender" value="male"> Male <br>
+
+
+            <p>Which days are you busy?</p>
+
+            <input type="checkbox" name="days" value="mondey"> Monday <br>
+            <input type="checkbox" name="days" value="Thursday"> Thursday <br>
+            <input type="checkbox" name="days" value="Wednesday"> Wednesday <br>
+            <input type="checkbox" name="days" value="Thursday"> Thursday <br>
+            <input type="checkbox" name="days" value="Friday"> Friday <br>
+
+
+            <input type="reset" name="reset" value="Reset">
+
+        </form>
+
+
+
+
+
+
+        <!-- Input Type Submit -->
+
+
+        <Form>
+            <h2>Welcome Clarusway</h2>
+
+            Username: <br>
+
+            <input type="text" name="Username"> <br>
+
+            <input type="submit" value="Submit">  <!-- Submit de name yok-->
+        </Form>
+
+
+
+
+        <!-- The submit button is used to define a button for sending 
+        the form data to the server. -->
+
+
+        <!-- text; single line text field olusturur
+        number ise, single line number field olusturur   -->
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

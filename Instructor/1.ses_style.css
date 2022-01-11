@@ -1,0 +1,22 @@
+/* div {
+    color: blue;
+}
+
+h2 {
+    color: blue;
+} */
+
+
+/* Internal da div leri kirmizi yaptik ama
+buna ragmen burada h2 ler yazdigi icin 
+h2 ler mavi olarak kaldi  */
+
+
+.first {
+    color: red;
+}
+
+#third-heading {
+    color: green;
+}
+

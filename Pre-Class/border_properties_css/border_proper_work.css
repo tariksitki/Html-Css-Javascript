@@ -1,0 +1,72 @@
+
+
+h1 {
+    border: dotted 2px red;
+}
+
+h2 {
+    border: double 15px blue;
+}
+
+h3 {
+    border: dashed 4px green;
+}
+
+h4 {
+    border: groove 25px grey;
+}
+
+h5 {
+    border: ridge 25px red;
+}
+
+h6 {
+    border: inset 50px blue;
+}
+
+#p1 {
+    border: outset 50px red;
+}
+
+#p2 {
+    border-style: dotted ridge groove dashed;
+    border-width: 20px 30px 40px 50px;
+    border-image: url(../../Pre-Class/colors_css/newyork.jpg) 30% round;
+}
+
+
+#p3 {
+    border: 50px solid transparent;
+    padding: 15px;
+    border-image: url(../../Pre-Class/colors_css/newyork.jpg) 50% round ;
+}
+
+
+#p4 {
+    border-style: solid;
+    border-right: 10px dotted red;
+}
+
+/* #h1 {
+    border-top-style: 20px dotted red;   style da px islemiyor bu nedenle asagidaki kullanilir    
+} */
+
+
+#h1 {
+    border: none;
+    border-top: 20px dotted red;
+}
+
+
+#h11 {
+    border-style: dotted groove;
+    border-width: 20px 30px;
+    border-color: royalblue red;
+}
+
+
+
+#h111 {
+    border-style: dashed solid ridge;
+    border-width: 10px 13px 16px;
+}

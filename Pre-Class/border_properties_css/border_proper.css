@@ -32,6 +32,11 @@ p {
 } */
 
 
+/* Tablolarda bulunan border collapse, border cizgilerinin 
+tek bir cizgi halinde görünmesini saglar.
+border collapse dedigimizde baska secenekleri de vardir  */
+
+
 
 
 
@@ -61,7 +66,7 @@ you can use shorthand properties.
 
 Example
 p {
-  border: 1px solid blue;    aralarda bosluk olmaz
+  border: 1px solid blue;    aralarda virgül olmaz
 
 
   What can you use to define all the properties of a border? (shorthand)
@@ -75,7 +80,7 @@ Bu kullanimda siralama su sekildedir
 
 
 
-Shorthand kullanimini tek bir taraf icin de kullnabilirz
+Shorthand kullanimini tek bir taraf icin de kullanabilirz
 
 border-style: solid  Bununla tüm kenarlari yaptik
 border-right: thin solid red    Bununla da bir kenari özellestirdik

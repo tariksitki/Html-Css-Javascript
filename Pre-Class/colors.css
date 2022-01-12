@@ -1,0 +1,144 @@
+
+/* Colors are defined by;
+
+names
+RGB
+HEX
+HSL
+RGBA
+HSLA values */
+
+
+/* Color Names
+A color can be defined by using a default color name:
+CSS/HTML supports 140 standard color names. 
+CSS 140 tane ismi destekler */
+
+
+
+
+/* RGB values
+
+Each red, green, and blue parameter defines 
+the intensity of the color between 0 and 255.
+
+For example, rgb(0, 0, 255) is displayed as blue, 
+because blue is set to 255 and the others are set to 0.
+
+To display the color black, all color parameters 
+must be set to 0, like this: rgb(0, 0, 0).
+
+To display the color white, all color parameters
+must be set to 255, like this: rgb(255, 255, 255).
+
+Example
+rgb(255, 0, 0) 
+rgb(0, 255, 0)
+rgb(0, 0, 255)  Blue
+rgb(105, 100, 155) 
+rgb(255, 0, 0)*/
+
+
+
+/* RRGGBB
+RR: red,
+GG: green,
+BB: blue.
+
+The hexadecimal values must be between 00 and FF.
+
+For example, #0000FF is displayed as blue, because blue 
+is set to FF and the others are set to 00.
+
+Example
+#FF0000
+#00FF00
+#0000FF
+#000000
+#FFFFFF
+#FFA2FF */
+
+
+
+
+
+/* HSL Values
+
+A color can be defined using Hue, Saturation, and Lightness (HSL):
+
+hsl(hue, saturation, lightness)
+
+Hue is a degree on the color wheel from 0 to 360. 
+0 is red, 120 is green, and 240 is blue.
+
+Saturation can be described as the intensity of a color. 
+It is a percentage value, 0% means a shade of gray, and 100% is the full color.
+
+Lightness is also a percentage, 0% is black, 
+50% is neither light or dark, 100% is white
+
+Example
+hsl(0, 100%, 50%)
+hsl(120, 100%, 50%)
+hsl(240, 100%, 50%)
+hsl(128, 80%, 25%) */
+
+
+
+
+
+
+
+/* RGBA Value
+
+
+RGBA Value
+RGBA Value
+
+RGBA color values are the RGB color values 
+with an alpha channel that defines the opacity of a color.
+
+A RGBA color value is specified with:
+
+rgba(red, green, blue, alpha)
+
+Alpha parameter is a number between 0 (fully transparent) and 1 (not transparent):
+
+Example:
+rgba(255, 0, 90, 0)
+rgba(255, 0, 90, 0.5)
+rgba(255, 0, 90, 1) */
+
+
+
+
+
+
+
+
+/* HSLA Value
+HSLA color values are the HSL color values 
+with an alpha channel which specifies the opacity for a color.
+
+An HSLA color value is specified with:
+
+hsla(hue, saturation, lightness, alpha)
+
+Alpha parameter is a number between 
+0 (fully transparent) and 1 (not transparent):
+
+Example
+hsla(0, 100%, 50%, 0)
+hsla(0, 100%, 50%, 0.5)
+hsla(0, 100%, 50%, 1) 
+
+Aciklayici video:
+
+https://www.youtube.com/watch?v=JBRZ3KBfOk8   */
+
+
+
+
+
+
+

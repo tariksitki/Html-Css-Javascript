@@ -1,0 +1,141 @@
+
+
+/* Border Properties
+
+The CSS border properties define 
+the style, width, and color of an element's border.
+
+The border styles are as follows:
+
+dotted (noktali)
+dashed (tire tire)
+solid 
+double
+groove ()
+ridge
+inset (iceri dogru 3 boyut)
+outset (disari dogru 3 boyut)
+none
+hidden
+
+
+The border-style property can have from one to four values 
+(top border, right border, bottom border, and left border).
+(Saat yönünde hareket eder)
+
+Example
+p {
+  border-style: dotted;
+  border-style: ridge dotted solid dashed;
+
+  Bunlari border width leri ve color lari degistirerek deneyelim 
+} */
+
+
+
+
+
+
+/* Border width 
+
+1: px olarak 
+2: medium thin  */
+
+
+
+
+
+/* Border color  */
+
+
+
+
+
+
+
+
+/* The Shorthand Property
+
+To define all the properties of a border, 
+you can use shorthand properties.
+
+Example
+p {
+  border: 1px solid blue;    aralarda bosluk olmaz
+
+
+  What can you use to define all the properties of a border? (shorthand)
+} 
+
+Bu kullanimda siralama su sekildedir
+
+1: border-width
+2: border-style
+3: border-color
+
+
+
+Shorthand kullanimini tek bir taraf icin de kullnabilirz
+
+border-style: solid  Bununla tüm kenarlari yaptik
+border-right: thin solid red    Bununla da bir kenari özellestirdik
+
+*/
+
+
+
+
+
+
+    /* border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dotted;
+    border-left-style: solid; 
+    
+    Burada yazdiklarimiz sununla ayni anlama gelir
+    
+    border-style: dotted solid
+
+    yani karsilikli degerler ayni olur
+
+    
+    
+    yada 4 tane yapabilirz ayri ayri
+    
+    border-style: dotted solid double dashed  
+    
+    eger 3 tane kullanirsak right ve left i ayni yapar
+    
+    border-style: dotted solid double
+    
+    Burada sag ve sol solid olur*/
+
+
+
+
+    /* div {
+        border-style: dotted;
+        border-width: 1px 5px 10px 20px;
+        border-color: red blue green yellow;
+    } */
+
+
+
+
+    /* Which of the following does not have effect on the box model?
+margin
+outline  (dogru sik)
+border
+content */
+
+
+
+
+
+
+
+
+
+
+
+

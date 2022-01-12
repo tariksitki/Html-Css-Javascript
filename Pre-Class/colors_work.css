@@ -1,0 +1,51 @@
+h1 {
+    color: red;
+}
+
+h2 {
+    color: rgb(0,0,150);
+}
+
+/* Hepsi 0 oldugunda siyah oldugu icin 0 dan ne kadar 
+uzaklasirsa o kadar renk acilir.
+yani mavi olan  255 e yaklastikca, renk maviye yaklasir */
+
+
+h3 {
+    color: rgb(100, 100, 100);
+}
+
+h4 {
+    color: rgb(130, 130, 130);
+}
+
+
+h5 {
+    color: rgb(#0000FF);      /*  Büyük f de olur kücük f de  */
+}
+
+h6 {
+    color: rgb(#DD0000);
+}
+
+
+
+#first {
+    color: hsl(360, 70%, 40%);
+}
+
+
+div {
+    width: 200px;
+    height: 200px;
+    background-image: url(newyork.jpg);
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+

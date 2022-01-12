@@ -40,7 +40,11 @@ rgb(255, 0, 0)*/
 
 
 
-/* RRGGBB
+
+
+
+
+/* RRGGBB       Buradaki harfler renklerin bas harfinden gelir
 RR: red,
 GG: green,
 BB: blue.
@@ -62,14 +66,28 @@ Example
 
 
 
+
+
+
+
+
 /* HSL Values
 
 A color can be defined using Hue, Saturation, and Lightness (HSL):
+
+Hue = Ton
+Saturation = Doygunluk, yogunluk
 
 hsl(hue, saturation, lightness)
 
 Hue is a degree on the color wheel from 0 to 360. 
 0 is red, 120 is green, and 240 is blue.
+360 da red oluyor
+
+#### Burada, Hue ile öncelikle rengi belirliyoruz
+    Sonra saturation ile bu rengin yogunlugunu belirliyoruz
+    ve en son lightness ile de acikligini belirliyoruz
+    Lighness 100 oldugunda renk beyaz, 0 oldugunda siyah olur
 
 Saturation can be described as the intensity of a color. 
 It is a percentage value, 0% means a shade of gray, and 100% is the full color.
@@ -97,6 +115,8 @@ RGBA Value
 
 RGBA color values are the RGB color values 
 with an alpha channel that defines the opacity of a color.
+
+alpha ile seffafligi belirleriz.
 
 A RGBA color value is specified with:
 

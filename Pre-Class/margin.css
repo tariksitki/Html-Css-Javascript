@@ -1,0 +1,106 @@
+
+/* The Margin Property
+
+The margin property is used to create space outside of the borders of the element. 
+There are 4 different properties for setting the margin for each side of an element:
+
+margin-top
+margin-right
+margin-bottom
+margin-left
+
+Margin properties can have the following values:
+auto: The length of the margin is calculated automatically.
+
+-/+ numbers: Length of the margin is defined in px, rem, em, cm, etc.
+
+%: Length of the margin is in % of the width of the containing element.
+
+inherit: Length of the margin is inherited from the parent.
+
+
+
+
+
+
+
+The Shorthand Property
+
+The order of the margin values are: top margin - right margin - bottom margin - left margin.
+
+Example
+p {
+  margin: 1px 2px 3px 4px;
+}
+
+
+
+In this example, 3 margin values are used. The order of the margin values are: 
+top margin - right/left margins - bottom margin.
+
+Example
+p {
+  margin: 1px 2px 3px;
+}
+
+
+
+In this example, 2 margin values are used. 
+The order of the margin values are top/bottom margins - right/left margins.
+
+Example
+p {
+  margin: 1px 2px;
+}
+
+
+In this example, 1 margin value is used for all margin values.
+Example
+p {
+  margin: 1px;
+}
+
+
+
+
+The Auto Value
+
+
+The margin property can be set to auto. 
+The browser will calculate the margin and horizontally center the element.
+
+Example
+div {
+  width: 100px;
+  margin: auto;
+}
+
+
+
+
+The Inherit Value
+
+Ebeveyn konteyner dan miras almak demektir.
+
+div {
+    margin: 10px;
+  }
+  
+  div p {
+    margin: inherit;
+  } */
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+
+
+/* The Padding Property
+
+
+The padding is used to define space between the element's content and the borders. 
+There are 4 different properties for setting the padding for each side of an element:
+
+padding-top
+padding-right
+padding-bottom
+padding-left
+
+
+
+
+
+
+The Shorthand Property
+
+p {
+    padding: 1px 2px 3px 4px;
+  }
+
+
+
+
+
+
+
+
+
+  Padding and Element Width
+
+  The CSS width property specifies the width of the element's content area. 
+  The content area is the portion inside the padding, border, and padding of an element (the box model).
+
+If an element has a specified width, 
+the padding added to that element will be added to the total width of the element. 
+This is often an undesirable result.
+
+
+
+Example
+Here, the <div> element is given a width of 300px. 
+However, the actual width of the <div> element will be 350px 
+(300px + 25px of left padding + 25px of right padding):
+
+div {
+  width: 300px;
+  padding: 25px;
+}
+
+
+
+
+
+To keep the width at 300px, no matter the amount of padding, 
+you can use the box-sizing property. 
+This causes the element to maintain its width; if you increase the padding, 
+the available content space will decrease.
+
+Example
+Use the box-sizing property to keep the width at 300px, no matter the amount of padding:
+
+div {
+  width: 300px;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+
+To define the space between the element's border and content, 
+you use the padding property, you are allowed to use negative values? (False) */

@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- Textarea Element -->
+
+<!-- Normally, text input type is used to create a bigger text. In case users need to
+write more information, textarea element is used to create a bigger text field
+for users. Rows and cols attributes are used to determine the amount of rows and
+columns for the
+<textarea>
+.
+Unlike other input elements this is not an empty element. 
+It means that textarea element has an opening and a closing tag.
+Any text is written between the opening < textarea > and closing </textarea>
+tags will appear in the text box. -->
+
+
+
+    <form action="">
+        <p>Lütfen Isim ve soyisim giriniz</p>
+        <textarea name="comments" id="" cols="30" rows="10">Enter Your comments</textarea>
+    </form>
+
+
+
+
+
+    <!-- The < select > Element -->
+
+
+
+
+    <!-- Normally, we use the radio buttons to see all options at a glance. 
+    If we have a very long list of options, it is better to use a dropdown-list.
+    Tüm secenekleri gördügümüz form radio. Eger cok uzun bir liste varsa 
+    dropdown yani acilir liste kullaniriz
+
+    The <select> element is used to define a drop-down list.
+    Users can select one option from a drop-down list.
+    The drop-down list composes of two or more <option> elements. 
+    The <option> elements specify the options that the user can select from.
+    When the page load, the first item in the drop-down list is selected. 
+    If we want to change this, we can use the select attribute 
+    inside the option tag to define a pre-selected option. -->
+
+
+    <form action="">
+        <p>Please Choose a Lesson</p>
+        <select name="lessons" id="">
+            <option value="python">Python</option>
+            <option value="git">Git</option>
+            <option value="github" selected>Github</option>
+            <option value="html">html</option>
+            <option value="css">css</option>
+        </select>
+    </form>
+
+
+
+
+
+
+
+
+    <!-- The < datalist > Element -->
+
+    <!-- Cok uzun listelerde scrool yapma kullanici icin zor olacaktir.
+    Bu nedenle hem bir select liste hem de filtreleme yapiyoruz
+    
+    In some cases the dropdown list can have a lot of options. 
+    It can be difficult for users to scroll through the entire list. 
+    To use a datalist element is an alternative solution for this.
+    The <datalist> element is used with an <input type="text"> element.
+    Users will see a drop-down list of filter options as they input data.
+    We use a list attribute inside the input element and 
+    an id attribute inside the datalist element. 
+    It is mandatory to associate the <input> element to the <datalist> element 
+    via the list attribute of the <input> and the id attribute of the <datalist>. -->
+
+
+
+
+    <form action="">
+        <p>Please choose a Lesson</p>
+        <input type="text" list="lessons" name="lesson" id="">
+        <datalist id="lessons">
+            <option value="git">git</option>
+            <option value="html">html</option>
+            <option value="css">css</option>
+            <option value="github">github</option>
+        </datalist>
+    </form>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

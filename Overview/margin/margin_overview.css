@@ -23,7 +23,9 @@ body {
     margin: auto;
     border: 3px dashed black;
     padding: 30px;
+    font-variant: small-caps;
 }
+/* Büyük harf ama kücük harf boyutunda */
 
 /* Padding verdigimizde, One yazisi ile border arasi mesafe acilir
 content boyutu sabit oldugundan dolayi verdigimiz 

@@ -1,0 +1,112 @@
+
+
+/* Font Families
+There are two types of font family names:
+
+Generic Family: Group of font families with a similar look.
+
+Font Family: A specific font family (e.g. "Times New Roman" or "Arial")
+
+Font Family
+The font family of a text is set with the font-family property. More than one font family is specified in a comma-separated list. If the browser does not support the first font, it tries the next font.
+
+Example
+p { font-family: "Arial", Times, serif; } */
+
+
+
+
+
+
+/* Font Style
+The font-style is used to set the font style italic or oblique.
+
+This property has three values:
+
+normal: The text is shown normally
+italic: The text is shown in italics
+oblique - The text is "leaning" (similar to italic, but less supported)
+Example
+h1 {
+  font-style: normal;
+}
+
+h2 {
+  font-style: italic;
+}
+
+h3 {
+  font-style: oblique;
+} */
+
+
+
+
+
+
+
+Font Size
+The font-size sets the size of the text. You can set the font size with px, em, rem, vw or %.
+
+1em/1rem is equal to the current font size. The default text size in browsers is 16px. So, the default size of 1em/1rem is 16px. With vw unit which means "viewport width", the text size will change according to the size of the window. 1vw is equal to 1% of viewport width.
+
+
+body {
+    font-size: 100%;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 1em; /* 1em = 16px */
+  }
+  
+  h2 {
+    font-size: 1rem; /* 1rem = 16px */
+  }
+  
+  h2 {
+    font-size: 2vw;
+  }
+
+
+
+
+
+
+
+  Font Weight
+The font-weight defines the weight of a font:
+
+Example
+p {
+  font-weight: bold;
+}
+
+
+
+
+
+
+Font Variant
+The font-variant defines a text to be displayed in a small-caps font. All lowercase letters are converted to uppercase letters but in smaller font size.
+
+Example
+p {
+  font-variant: small-caps;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

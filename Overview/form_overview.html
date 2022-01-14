@@ -1,373 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Document</title>
     <style>
+      * {
+        margin: 0px;
+      }
 
-        * {
-            margin: 0px;
-        }  
+      /* kenar bosluklarini aldik */
 
-        /* kenar bosluklarini aldik */
+      #userinfo {
+        background-color: #035898;
+      }
 
-        #userinfo {
-            background-color: #035898;
-        }
+      #gender {
+        background-color: khaki;
+        border-top: 5px solid #04a004;
+        border-bottom: 3px dashed black;
+      }
 
+      #favourite {
+        background-color: rgb(100, 100, 100);
+        border: 10px ridge rgb(247, 90, 116);
+        border-bottom-left-radius: 25px;
+        border-top-right-radius: 25px;
+      }
 
-        #gender {
-            background-color: khaki;
-            border-top: 5px solid #04a004;
-            border-bottom: 3px dashed black;
-        }
-
-        #favourite {
-            background-color: rgb(100, 100, 100);
-            border: 10px ridge rgb(247, 90, 116);
-            border-bottom-left-radius: 25px;
-            border-top-right-radius: 25px;
-        }
-
-        input {
-            background-color: rgb(252, 252, 142);
-        }
-
-
-
-
-        
-
-
-
-
-
-
-
+      input {
+        background-color: rgb(252, 252, 142);
+      }
     </style>
-</head>
-<body>
-    
-
+  </head>
+  <body>
     <form action="result.html">
-        <h1>Sizi Taniyalim</h1>
+      <h1>Sizi Taniyalim</h1>
 
-            <!-- input type text  -->
+      <!-- input type text  -->
 
-        <div id="userinfo">
-            <label for="name">Name:</label>
-            <input type="text" 
-            name="name" 
-            id="name" 
-            placeholder="Enter Your name"
-            maxlength="6">   <!-- en fazla 6 karakter-->
-            <br><br><br>
+      <div id="userinfo">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter Your name"
+          maxlength="6"
+        />
+        <!-- en fazla 6 karakter-->
+        <br /><br /><br />
 
-            <label for="lastname">Lastname</label>
-            <input type="text" 
-            name="lastname" 
-            id="lastname" 
-            placeholder="Enter Your Lastname">
-            <br><br><br>
+        <label for="lastname">Lastname</label>
+        <input
+          type="text"
+          name="lastname"
+          id="lastname"
+          placeholder="Enter Your Lastname"
+        />
+        <br /><br /><br />
 
-            <label for="password">Password</label>
-            <input type="password"
-            name="Password"
-            id="password"
-            value="Enter your Password">    
-            <!-- Burada Value olarak girdik. yazarken silmek zorundayiz-->
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="Password"
+          id="password"
+          value="Enter your Password"
+        />
+        <!-- Burada Value olarak girdik. yazarken silmek zorundayiz-->
 
-            <br><br><br>
-        </div>
+        <br /><br /><br />
+      </div>
 
+      <!-- Type Radio  -->
 
-
-
-
-            <!-- Type Radio  -->
-
-            <!-- Cok Önemli Not: 
+      <!-- Cok Önemli Not: 
             Bu type da tek secenek sunmak istiyoruz ve
             Bizim burada sectigimiz secenek database e gidecegi icin
             eger iki input da da farkli name girersek bu durumda ikisini de 
             sececektir. Bu nedenle name leri ayni giriyoruz ki secilen veri
             tek bir yere gitsin -->
 
+      <div id="gender">
+        <label for="">Gender</label> <br />
 
+        <input type="radio" name="cinsiyet" id="gender1" value="erkek" />
+        <label for="gender1">Erkek</label>
 
-            <div id="gender">   
-                <label for="">Gender</label>  <br>
+        <input type="radio" name="cinsiyet" id="gender2" value="kadin" />
+        <label for="gender2">Bayan</label>
 
-                <input type="radio" name="cinsiyet" id="gender1" value="erkek">
-                <label for="gender1">Erkek</label>
+        <input
+          type="radio"
+          name="cinsiyet"
+          id="gender3"
+          value="belirtilmemis"
+        />
+        <label for="gender3">Belirtilmemis</label>
+      </div>
 
-                <input type="radio" name="cinsiyet" id="gender2" value="kadin">
-                <label for="gender2">Bayan</label>
+      <!-- Checkbox -->
 
-                <input type="radio" name="cinsiyet" id="gender3" value="belirtilmemis">
-                <label for="gender3">Belirtilmemis</label>
-
-            </div>
-
-
-
-
-
-
-            <!-- Checkbox -->
-
-            <!-- select type da selected
+      <!-- select type da selected
             checkbox da checked 
             name isimleri burada da ayni olmali 
             database de her girilen secenek ayni yere gitmesi icin -->
 
+      <div id="favourite">
+        <label for="">En Sevdiginiz Hayvanlar</label> <br /><br />
 
-            <div id="favourite">
-                <label for="">En Sevdiginiz Hayvanlar</label> <br><br>
+        <label for="cat">Cat</label>
+        <input type="checkbox" name="animal" id="cat" value="cat" /> <br />
 
-                <label for="cat">Cat</label>
-                <input type="checkbox" name="animal" id="cat" value="cat"> <br>
+        <label for="dog">Dog</label>
+        <input type="checkbox" name="animal" id="dog" value="dog" checked />
+        <br />
 
-                <label for="dog">Dog</label>
-                <input type="checkbox" name="animal" id="dog" value="dog" checked> <br>
+        <label for="bear">Bear</label>
+        <input type="checkbox" name="animal" id="bear" value="bear" />
+      </div>
 
-                <label for="bear">Bear</label>
-                <input type="checkbox" name="animal" id="bear" value="bear">
-            </div>
+      <br /><br /><br />
 
+      <!-- type password -->
 
+      <div>
+        <label for="pass">Password</label>
+        <input
+          type="password"
+          name="pass"
+          id="pass"
+          placeholder="Enter your Password"
+        />
+      </div>
 
-            <br><br><br>
+      <br /><br /><br />
 
+      <!-- type number  -->
 
-            <!-- type password -->
+      <div>
+        <label for="age">Age:</label>
 
-            <div>
-                <label for="pass">Password</label>
-                <input type="password" 
-                name="pass" 
-                id="pass"
-                placeholder="Enter your Password">
-            </div>
+        <input
+          type="number"
+          name="age"
+          id="age"
+          placeholder="Enter Your Age"
+          min="10"
+          max="30"
+          style="width: 150px"
+          required
+        />
+      </div>
 
-            <br><br><br>
+      <br /><br /><br />
 
+      <!-- type search  -->
 
+      <!-- web sitelerinin en üstünde bulunan search butonu  -->
 
+      <div>
+        <label for="search">Search</label>
+        <input
+          type="search"
+          name="search"
+          id="search"
+          placeholder="Enter a word"
+          style="border: 2px dotted red; border-radius: 0px 5px"
+        />
+      </div>
 
-            <!-- type number  -->
+      <br /><br /><br />
 
-            <div>
+      <!-- type color  -->
 
-                <label for="age">Age:</label>
-
-                <input type="number" 
-                name="age" 
-                id="age"
-                placeholder="Enter Your Age"
-                min="10"
-                max="30"
-                style="width: 150px;"
-                required>
-            </div>
-
-
-                <br><br><br>
-
-
-
-
-            <!-- type search  -->
-
-            <!-- web sitelerinin en üstünde bulunan search butonu  -->
-
-            <div>
-                <label for="search">Search</label>
-                <input type="search" 
-                name="search" 
-                id="search" 
-                placeholder="Enter a word"
-                style="border: 2px dotted red;
-                border-radius: 0px 5px;">
-            </div>
-
-                <br><br><br>
-
-
-            <!-- type color  -->
-
-            <!-- eger bir baslangic degeri olsun istersek bu durumda 
+      <!-- eger bir baslangic degeri olsun istersek bu durumda 
             value girmemiz lazim placeholder olmaz -->
 
-            <div>
-                <label for="color" >Color</label> <br>
+      <div>
+        <label for="color">Color</label> <br />
 
+        <input
+          type="color"
+          name="color"
+          id="color"
+          style="width: 150px"
+          placeholder="#ff22ff"
+          value="#ff22ff"
+        />
+      </div>
 
-                <input type="color" 
-                name="color" 
-                id="color"
-                style="width: 150px;"
-                placeholder="#ff22ff"
-                value="#ff22ff">
-            </div>
+      <br /><br /><br />
 
+      <!-- type email -->
+      <!-- yanina * koyarak required yaptik-->
+      <div>
+        <label for="eposta">E-Mail*</label> <br />
+        <input
+          type="email"
+          name="eposta"
+          id="eposta"
+          placeholder="Please enter your email address"
+          style="width: 250px"
+          required
+        />
+      </div>
 
-                <br><br><br>
+      <br /><br /><br />
 
+      <!-- type file -->
 
-            <!-- type eposta -->
-            <!-- yanina * koyarak required yaptik-->
-            <div>
-                <label for="eposta">E-Mail*</label> <br>
-                <input type="email" 
-                name="eposta" 
-                id="eposta"
-                placeholder="Please enter your email address"
-                style="width: 250px;"
-                required>
-            </div>
+      <div>
+        <label for="foto">Profil Foto</label> <br /><br />
+        <input
+          type="file"
+          name="foto"
+          id="foto"
+          multiple
+          style="border: 3px solid red; border-radius: 0px 5px; width: 300px"
+        />
+      </div>
 
-            <br><br><br>
+      <br /><br /><br />
 
-            
+      <!-- type tel -->
 
-
-                <!-- type file -->
-
-
-
-            <div>
-                <label for="foto">Profil Foto</label>  <br><br>
-                <input type="file" 
-                name="foto" 
-                id="foto" 
-                multiple
-                style="border: 3px solid red;
-                border-radius: 0px 5px;
-                width: 300px;">
-
-            </div>
-
-                <br><br><br>
-
-
-
-            <!-- type tel -->
-
-
-            <!-- value ve placeholder kullanilirsa value agir basar
+      <!-- value ve placeholder kullanilirsa value agir basar
             veri girilirken value degeri silinirse o zaman 
             placeholder görünür 
 
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2} -->
 
+      <div>
+        <label for="tel">Telefonnumber</label>
+        <input
+          type="tel"
+          name="tel"
+          id="tel"
+          value="+90"
+          placeholder="555-555-55-55"
+        />
+      </div>
 
-            <div>
-                <label for="tel">Telefonnumber</label>
-                <input type="tel" 
-                name="tel" 
-                id="tel"
-                value="+90"
-                placeholder="555-555-55-55">
-            </div>
+      <br /><br /><br />
 
+      <!-- select  -->
 
-                <br><br><br>
+      <div>
+        <label for="auto">Choose an Auto</label> <br />
+        <select name="" id="" size="4" multiple required>
+          <option value="Mercedes">Mercedes</option>
+          <option value="Bmw" selected>Bmw</option>
+          <option value="Audi">Audi</option>
+          <option value="Tesla">Tesla</option>
+          <option value="Kia">Kia</option>
+        </select>
+      </div>
 
+      <br /><br /><br />
 
+      <!-- optgrup Kullanimi-->
 
-            <!-- select  -->
+      <!-- select  -->
 
-            <div>
-                <label for="auto">Choose an Auto</label>  <br>
-                <select name="" id="" size="4" multiple required>
-                    <option value="Mercedes">Mercedes</option>
-                    <option value="Bmw" selected>Bmw</option>
-                    <option value="Audi">Audi</option>
-                    <option value="Tesla">Tesla</option>
-                    <option value="Kia">Kia</option>
-                </select>
-            </div>
-
-                <br><br><br>
-
-
-            <!-- optgrup Kullanimi-->
-
-               <!-- select  -->
-
-               <!-- Burada size kullanmadigimiz icin secenekler arasindan
+      <!-- Burada size kullanmadigimiz icin secenekler arasindan
             sadece tek satir gösterir-->
 
-               <div>
-                <label for="auto">Choose an Auto</label>  <br>
-                <select name="" id="">
-                    <optgroup label="Alman Arabalari"> 
-                        <option value="Mercedes">Mercedes</option>
-                        <option value="Bmw" selected>Bmw</option>
-                        <option value="Audi">Audi</option>
-                    </optgroup>
-                    
-                    <optgroup label="Others">
-                        <option value="Tesla">Tesla</option>
-                        <option value="Kia">Kia</option>
-                    </optgroup>
-                    
-                </select>
-            </div>
+      <div>
+        <label for="auto">Choose an Auto</label> <br />
+        <select name="" id="">
+          <optgroup label="Alman Arabalari">
+            <option value="Mercedes">Mercedes</option>
+            <option value="Bmw" selected>Bmw</option>
+            <option value="Audi">Audi</option>
+          </optgroup>
+
+          <optgroup label="Others">
+            <option value="Tesla">Tesla</option>
+            <option value="Kia">Kia</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <br /><br /><br />
+
+      <!-- type date -->
+
+      <!-- min max girerken aralarda - kullanilir -->
+
+      <!-- burada placeholder ve value calismiyor -->
+
+      <div>
+        <label for="Enter your Birthday">Birthday</label> <br />
+        <input
+          type="date"
+          name=""
+          id=""
+          min="2020-10-10"
+          max="2022-10-10"
+          value="2022/10/10"
+        />
+      </div>
+
+      <br /><br /><br />
+
+      <!-- textarea  -->
+
+      <div>
+        <label for="textarea">Comment</label> <br />
+        <textarea
+          name=""
+          id="textarea"
+          cols="30"
+          rows="10"
+          placeholder="Enter Your comment"
+          maxlength="20"
+          style="resize: both"
+        >
+        </textarea>
+        <!-- resize da yatay dikey ikisi ve none secenekleri var-->
+      </div>
+
+      <!-- cols ve rows seceneklerine ilave olarak 
+    style ile width ve height ile de sekillendirilebilir-->
+
+      <br /><br /><br />
+
+      <!-- type datalist  -->
+      <!-- otomatik yazma datal tab ile oluyor -->
+
+      <div>
+        <label for="datalist">Choose your Browser</label> <br />
+
+        <input type="text" id="datalist" list="data" name="Browser" />
+
+        <datalist id="data">
+          <option value="chrome">chrome</option>
+          <option value="opera">opera</option>
+          <option value="firefox">firefox</option>
+          <option value="yandex">yandex</option>
+          <option value="yahoo">yahoo</option>
+        </datalist>
+      </div>
+
+      <br><br><br>
+
+      <!-- fieldset-->
+
+      <div>
+        <fieldset>
+            <legend>Personal Info</legend> <!-- legen efsane, yazit kitabe demek-->
+
+            <label for="name">Name</label> <br>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name"> 
+            <br><br>
+
+            <label for="lastname">Lastname</label> <br>
+            <input type="text" id="lastname" name="lastname" placeholder="Enter Your Lastname">
+            <br><br>
+
+            <label for="password">Password</label> <br>
+            <input type="password" name="password" id="password" placeholder="Enter Your Password">
+            <br><br>
+
+            <label for="email">E-Mail</label> <br>
+            <input type="email" name="email" id="email" placeholder="Enter Your Email">
+
+        </fieldset>
+      </div>
 
 
 
-                <br><br><br>
-
-
-            <!-- type date -->
-
-            <!-- min max girerken aralarda - kullanilir -->
-
-            <!-- burada placeholder ve value calismiyor -->
-
-            <div>
-                <label for="Enter your Birthday">Birthday</label>  <br>
-                <input type="date" 
-                name="" 
-                id="" 
-                min="2020-10-10"
-                max="2022-10-10"
-                value="2022/10/10">
-            </div>
-            
-
-
-            <br><br><br>
-            <!-- type reset -->
-
-            <div>
-                <input type="reset" value="Clear">
-            </div>
-            
 
 
 
 
-            <br><br><br>
+      <br /><br /><br />
+      <!-- type reset -->
 
+      <div>
+        <input type="reset" value="Clear" />
+      </div>
 
-            <input type="submit" value="submit">
+      <br /><br /><br />
 
-
-
-        
-
-
+      <input type="submit" value="submit" />
     </form>
 
-
-
-    <br><br><br><br><br><br><br><br><br><br>
-
-</body>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </body>
 </html>

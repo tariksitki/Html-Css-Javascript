@@ -8,6 +8,8 @@
   </head>
   <body>
     <form action="result.html" method="get" name="myform">
+      <!-- optgroup -->
+
       <div>
         <label for="cars">Choose a car:</label> <br />
         <select name="cars-select" id="cars" size="8" multiple required>
@@ -28,6 +30,8 @@
 
       <br /><br /><br />
 
+      <!-- textarea  -->
+
       <div>
         <label for="message">Enter your comment</label>
         <br />
@@ -37,63 +41,77 @@
           cols="30"
           rows="10"
           placeholder="Enter your comment here... "
-          maxlength="10" 
-          style="resize: none;"
-        ></textarea>  <!-- en fazla 10 karakter rows cols yerine style ile width height verebilirz-->
+          maxlength="10"
+          style="resize: none"
+        ></textarea>
+        <!-- en fazla 10 karakter max, 
+          rows cols yerine style ile width height verebilirz-->
         <!-- resize-->
 
-        <br><br><br>
+        <br /><br /><br />
       </div>
 
+      <br /><br /><br />
+
+      <!-- datalist  -->
 
       <div>
-          <label for="mybrowser">Browser</label>
-          <br>
-          <input type="text" name="browser-option" id="mybrowser" list="browsers">
+        <label for="mybrowser">Browser</label>
+        <br />
+        <input
+          type="text"
+          name="browser-option"
+          id="mybrowser"
+          list="browsers"
+        />
 
-          <datalist id="browsers">  <!-- datal ile aliyor oto--> 
-            <option value="Chrome" selected>chrome</option> <!-- selected almadi-->
-            <option value="Safari"></option>
-            <option value="Brave"></option>
-            <option value="Mozilla"></option>
-            <option value="Opera"></option>
-          </datalist>
+        <datalist id="browsers">
+          <!-- datal ile aliyor oto-->
+          <option value="Chrome" selected>chrome</option>
+          <!-- selected almadi-->
+          <option value="Safari"></option>
+          <option value="Brave"></option>
+          <option value="Mozilla"></option>
+          <option value="Opera"></option>
+        </datalist>
       </div>
 
+      <br /><br /><br />
+
+      <!-- <fieldset> </fieldset> -->
+
+      <fieldset style="width: 50%; border: 10px groove green">
+        <legend>Personal Info</legend>
+        <label for="firstname">First Name</label>
+        <input
+          type="text"
+          name="name"
+          id="firstname"
+          placeholder="Enter Your Name"
+        />
+        <!-- value yazarsak yazi yazarsak silmek gerekir-->
+        <br />
+        <br />
 
 
-
-      <fieldset style="width: 50%; border: 10px groove green;">
-          <legend>Personal Info</legend>
-          <label for="firstname">First Name</label>
-          <input type="text" name="name" id="firstname" placeholder="Enter Your Name"> <!-- value yazarsak yazi yazarsak silmek gerekir-->
-            <br> <br>
-          <label for="lastname">Last Name</label>
-          <input type="text" name="lastname" id="lastname" placeholder="Enter Your last name">
+        <label for="lastname">Last Name</label>
+        <input
+          type="text"
+          name="lastname"
+          id="lastname"
+          placeholder="Enter Your last name"
+        />
       </fieldset>
-
-
 
       <!-- https://app.peardeck.com/review/student/txeticvxz -->
 
-      
       <!-- https://app.peardeck.com/takeaways/101651142867518915087/txeticvxz -->
-
 
       <!-- https://app.peardeck.com/student/tyvlzbuvi   margin peardeck -->
 
       <!-- https://app.peardeck.com/takeaways/101651142867518915087/tyvlzbuvi -->
 
-
-      
-
-
-
-
-
-
-
-      <input type="submit" value="send">
+      <input type="submit" value="send" />
     </form>
   </body>
 </html>

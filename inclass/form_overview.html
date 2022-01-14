@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <form action="result.html">
+        <h1>Sizi Taniyalim</h1>
+
+            <!-- input type text  -->
+
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" 
+            name="name" 
+            id="name" 
+            placeholder="Enter Your name"
+            maxlength="6">   <!-- en fazla 6 karakter-->
+            <br><br><br>
+
+            <label for="lastname">Lastname</label>
+            <input type="text" 
+            name="lastname" 
+            id="lastname" 
+            placeholder="Enter Your Lastname">
+            <br><br><br>
+
+            <label for="password">Password</label>
+            <input type="password"
+            name="Password"
+            id="password"
+            value="Enter your Password">    
+            <!-- Burada Value olarak girdik. yazarken silmek zorundayiz-->
+
+            <br><br><br>
+        </div>
+
+
+
+
+
+            <!-- Type Radio  -->
+
+            <!-- Cok Önemli Not: 
+            Bu type da tek secenek sunmak istiyoruz ve
+            Bizim burada sectigimiz secenek database e gidecegi icin
+            eger iki input da da farkli name girersek bu durumda ikisini de 
+            sececektir. Bu nedenle name leri ayni giriyoruz ki secilen veri
+            tek bir yere gitsin -->
+
+
+
+            <div>   
+                <label for="">Gender</label>  <br>
+
+                <input type="radio" name="cinsiyet" id="gender1" value="erkek">
+                <label for="gender1">Erkek</label>
+
+                <input type="radio" name="cinsiyet" id="gender2" value="kadin">
+                <label for="gender2">Bayan</label>
+
+                <input type="radio" name="cinsiyet" id="gender3" value="belirtilmemis">
+                <label for="gender3">Belirtilmemis</label>
+
+            </div>
+
+
+
+
+
+
+            <!-- Checkbox -->
+
+            <!-- select type da selected
+            checkbox da checked 
+            name isimleri burada da ayni olmali 
+            database de her girilen secenek ayni yere gitmesi icin -->
+
+
+            <div id="favourite">
+                <label for="">En Sevdiginiz Hayvanlar</label> <br><br>
+
+                <label for="cat">Cat</label>
+                <input type="checkbox" name="animal" id="cat" value="cat"> <br>
+
+                <label for="dog">Dog</label>
+                <input type="checkbox" name="animal" id="dog" value="dog" checked> <br>
+
+                <label for="bear">Bear</label>
+                <input type="checkbox" name="animal" id="bear" value="bear">
+            </div>
+
+
+
+            <br><br><br>
+
+
+            <!-- type password -->
+
+            <div>
+                <label for="pass">Password</label>
+                <input type="password" 
+                name="pass" 
+                id="pass"
+                placeholder="Enter your Password">
+            </div>
+
+            <br><br><br>
+
+
+
+
+            <!-- type number  -->
+
+            <div>
+
+                <label for="age">Age:</label>
+
+                <input type="number" 
+                name="age" 
+                id="age"
+                placeholder="Enter Your Age"
+                min="10"
+                max="30"
+                style="width: 150px;"
+                required>
+            </div>
+
+
+                <br><br><br>
+
+
+
+
+            <!-- type search  -->
+
+            <!-- web sitelerinin en üstünde bulunan search butonu  -->
+
+            <div>
+                <label for="search">Search</label>
+                <input type="search" 
+                name="search" 
+                id="search" 
+                placeholder="Enter a word"
+                style="border: 2px dotted red;
+                border-radius: 0px 5px;">
+            </div>
+
+                <br><br><br>
+
+
+            <!-- type color  -->
+
+            <!-- eger bir baslangic degeri olsun istersek bu durumda 
+            value girmemiz lazim placeholder olmaz -->
+
+            <div>
+                <label for="color" >Color</label> <br>
+
+
+                <input type="color" 
+                name="color" 
+                id="color"
+                style="width: 150px;"
+                placeholder="#ff22ff"
+                value="#ff22ff">
+            </div>
+
+
+                <br><br><br>
+
+
+            <!-- type eposta -->
+            <!-- yanina * koyarak required yaptik-->
+            <div>
+                <label for="eposta">E-Mail*</label> <br>
+                <input type="email" 
+                name="eposta" 
+                id="eposta"
+                placeholder="Please enter your email address"
+                style="width: 250px;"
+                required>
+            </div>
+
+            <br><br><br>
+
+            
+
+
+                <!-- type file -->
+
+
+
+            <div>
+                <label for="foto">Profil Foto</label>  <br><br>
+                <input type="file" 
+                name="foto" 
+                id="foto" 
+                multiple
+                style="border: 3px solid red;
+                border-radius: 0px 5px;
+                width: 300px;">
+
+            </div>
+
+                <br><br><br>
+
+
+
+            <!-- type tel -->
+
+
+            <!-- value ve placeholder kullanilirsa value agir basar
+            veri girilirken value degeri silinirse o zaman 
+            placeholder görünür 
+
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2} -->
+
+
+            <div>
+                <label for="tel">Telefonnumber</label>
+                <input type="tel" 
+                name="tel" 
+                id="tel"
+                value="+90"
+                placeholder="555-555-55-55">
+            </div>
+
+
+                <br><br><br>
+
+
+
+            <!-- select  -->
+
+            <div>
+                <label for="auto">Choose an Auto</label>  <br>
+                <select name="" id="" size="4" multiple required>
+                    <option value="Mercedes">Mercedes</option>
+                    <option value="Bmw" selected>Bmw</option>
+                    <option value="Audi">Audi</option>
+                    <option value="Tesla">Tesla</option>
+                    <option value="Kia">Kia</option>
+                </select>
+            </div>
+
+                <br><br><br>
+
+
+            <!-- optgrup Kullanimi-->
+
+               <!-- select  -->
+
+               <div>
+                <label for="auto">Choose an Auto</label>  <br>
+                <select name="" id="" >
+                    <optgroup label="Alman Arabalari"> 
+                        <option value="Mercedes">Mercedes</option>
+                        <option value="Bmw" selected>Bmw</option>
+                        <option value="Audi">Audi</option>
+                    </optgroup>
+                    
+                    <optgroup label="Others">
+                        <option value="Tesla">Tesla</option>
+                        <option value="Kia">Kia</option>
+                    </optgroup>
+                    
+                </select>
+            </div>
+
+
+
+                <br><br><br>
+
+
+            <!-- type date -->
+
+            <!-- min max girerken aralarda - kullanilir -->
+
+            <!-- burada placeholder ve value calismiyor -->
+
+            <div>
+                <label for="Enter your Birthday">Birthday</label>  <br>
+                <input type="date" 
+                name="" 
+                id="" 
+                min="2020-10-10"
+                max="2022-10-10"
+                value="2022/10/10">
+            </div>
+            
+
+
+            <br><br><br>
+            <!-- type reset -->
+
+            <div>
+                <input type="reset" value="Clear">
+            </div>
+            
+
+
+
+
+            <br><br><br>
+
+
+            <input type="submit" value="submit">
+
+
+
+        
+
+
+    </form>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

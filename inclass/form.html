@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Elements</title>
+  </head>
+  <body>
+    <form action="result.html" method="get" name="myform">
+      <div>
+        <label for="cars">Choose a car:</label> <br />
+        <select name="cars-select" id="cars" size="8" multiple required>
+          <!-- Birden cok secme islemi ctrl ye basarak yada maose u kaydirarak yapilabilir-->
+          <optgroup label="Expensive Cars">
+            <option value="Porsche" selected>Porsche</option>
+            <!-- required hata vermesin diye -->
+            <option value="Mercedes">Mercedes</option>
+          </optgroup>
+
+          <optgroup label="ucuz arabalar">
+            <option value="Kartal">Kartal</option>
+            <option value="Murat">Murat</option>
+            <option value="Masserati">Masserati</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <br /><br /><br />
+
+      <div>
+        <label for="message">Enter your comment</label>
+        <br />
+        <textarea
+          name="comment"
+          id="message"
+          cols="30"
+          rows="10"
+          placeholder="Enter your comment here... "
+          maxlength="10" 
+          style="resize: none;"
+        ></textarea>  <!-- en fazla 10 karakter rows cols yerine style ile width height verebilirz-->
+        <!-- resize-->
+
+        <br><br><br>
+      </div>
+
+
+      <div>
+          <label for="mybrowser">Browser</label>
+          <br>
+          <input type="text" name="browser-option" id="mybrowser" list="browsers">
+
+          <datalist id="browsers">  <!-- datal ile aliyor oto--> 
+            <option value="Chrome" selected>chrome</option> <!-- selected almadi-->
+            <option value="Safari"></option>
+            <option value="Brave"></option>
+            <option value="Mozilla"></option>
+            <option value="Opera"></option>
+          </datalist>
+      </div>
+
+
+
+
+      <fieldset style="width: 50%; border: 10px groove green;">
+          <legend>Personal Info</legend>
+          <label for="firstname">First Name</label>
+          <input type="text" name="name" id="firstname" placeholder="Enter Your Name"> <!-- value yazarsak yazi yazarsak silmek gerekir-->
+            <br> <br>
+          <label for="lastname">Last Name</label>
+          <input type="text" name="lastname" id="lastname" placeholder="Enter Your last name">
+      </fieldset>
+
+
+
+      <!-- https://app.peardeck.com/review/student/txeticvxz -->
+
+      
+      <!-- https://app.peardeck.com/takeaways/101651142867518915087/txeticvxz -->
+
+
+      <!-- https://app.peardeck.com/student/tyvlzbuvi   margin peardeck -->
+
+      <!-- https://app.peardeck.com/takeaways/101651142867518915087/tyvlzbuvi -->
+
+
+      
+
+
+
+
+
+
+
+      <input type="submit" value="send">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+
+
+* {
+
+}
+
+body {
+    background-color: rgb(250, 222, 185);
+    margin-left: 0px;
+}
+
+#main {
+    width: 80%;
+    margin: 100px auto;
+    background-color: cyan;
+    border: 3px dotted black;
+}
+
+#bir {
+    width: 80%;
+    background-color: rgb(240, 96, 125);
+    height: 200px;
+    margin: auto;
+    border: 3px dashed black;
+    padding: 30px;
+}
+
+/* Padding verdigimizde, One yazisi ile border arasi mesafe acilir
+content boyutu sabit oldugundan dolayi verdigimiz 
+padding boyutunca kutumuz büyür */
+
+#iki {
+    width: 90%;
+    background-color: darkkhaki;
+    margin: auto;
+    height: 150px;
+}
+
+#üc {
+    width: 80%;
+    background-color: darkorange;
+    height: 100px;
+    margin: 30px 50px 100px 50px;
+}
+
+/* Margin bottom 500px verdigimizde, ana kutu büyüyor 
+ve asagi dogru uzuyor. Ama left yada right i bu 
+kadar verdigimizde kutudan disari cikiyor */

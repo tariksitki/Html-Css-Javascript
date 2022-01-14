@@ -8,10 +8,14 @@ Generic Family: Group of font families with a similar look.
 Font Family: A specific font family (e.g. "Times New Roman" or "Arial")
 
 Font Family
-The font family of a text is set with the font-family property. More than one font family is specified in a comma-separated list. If the browser does not support the first font, it tries the next font.
+The font family of a text is set with the font-family property. 
+More than one font family is specified in a comma-separated list. 
+If the browser does not support the first font, it tries the next font.
 
 Example
-p { font-family: "Arial", Times, serif; } */
+p { font-family: "Arial", Times, serif; } 
+
+Times New Roman gibi birden cok kelimeli ise "" icerisine alinir*/
 
 
 
@@ -45,10 +49,16 @@ h3 {
 
 
 
-Font Size
-The font-size sets the size of the text. You can set the font size with px, em, rem, vw or %.
+/* Font Size
+The font-size sets the size of the text. 
+You can set the font size with px, em, rem, vw or %.
 
-1em/1rem is equal to the current font size. The default text size in browsers is 16px. So, the default size of 1em/1rem is 16px. With vw unit which means "viewport width", the text size will change according to the size of the window. 1vw is equal to 1% of viewport width.
+1em/1rem is equal to the current font size. 
+The default text size in browsers is 16px. 
+So, the default size of 1em/1rem is 16px. 
+With vw unit which means "viewport width", 
+the text size will change according to the size of the window. 
+1vw is equal to 1% of viewport width.
 
 
 body {
@@ -60,43 +70,66 @@ body {
   }
   
   h1 {
-    font-size: 1em; /* 1em = 16px */
+    font-size: 1em; /* 1em = 16px
   }
   
   h2 {
-    font-size: 1rem; /* 1rem = 16px */
+    font-size: 1rem; 1rem = 16px
   }
   
   h2 {
     font-size: 2vw;
-  }
+  } */
+
+  /* Font size berlirlerken iki yöntem vardir
+ 
+    1: Absolute size: 
+
+    net bir rakam kullanmak istedigimizde kullaniriz,
+    browser degisince boyut degismez
+    Kullaniciya degistirme imkani vermez
+    px kullanimi mesela
 
 
 
+    2: Relative Size: 
+
+    Kullaniciya text in size ini degistirme sansi verir 
+    Ve text in boyutu, text i cevreleyen elementlere göre belirlenir  */
+
+    /* em de px gibi specific bir rakam belirler ama 
+    tüm browser larda em i ayarlama imkani vardir  */
+
+  /* css de body nin icerisine font size 100% yazarsak
+  yazimiz browser boyutu ile ayni olur */
 
 
-
-
+/* 
   Font Weight
 The font-weight defines the weight of a font:
 
 Example
 p {
   font-weight: bold;
-}
+} */
 
 
 
 
 
 
-Font Variant
-The font-variant defines a text to be displayed in a small-caps font. All lowercase letters are converted to uppercase letters but in smaller font size.
+/* Font Variant
+The font-variant defines a text to be displayed in a small-caps font. 
+All lowercase letters are converted to uppercase letters but in smaller font size.
 
 Example
 p {
   font-variant: small-caps;
-}
+} */
+
+
+
+
 
 
 

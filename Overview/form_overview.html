@@ -6,6 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Document</title>
+    <style>
+
+        * {
+            margin: 0px;
+        }  
+
+        /* kenar bosluklarini aldik */
+
+        #userinfo {
+            background-color: #035898;
+        }
+
+
+        #gender {
+            background-color: khaki;
+            border-top: 5px solid #04a004;
+            border-bottom: 3px dashed black;
+        }
+
+        #favourite {
+            background-color: rgb(100, 100, 100);
+            border: 10px ridge rgb(247, 90, 116);
+            border-bottom-left-radius: 25px;
+            border-top-right-radius: 25px;
+        }
+
+        input {
+            background-color: rgb(252, 252, 142);
+        }
+
+
+
+
+        
+
+
+
+
+
+
+
+    </style>
 </head>
 <body>
     
@@ -15,7 +57,7 @@
 
             <!-- input type text  -->
 
-        <div>
+        <div id="userinfo">
             <label for="name">Name:</label>
             <input type="text" 
             name="name" 
@@ -56,7 +98,7 @@
 
 
 
-            <div>   
+            <div id="gender">   
                 <label for="">Gender</label>  <br>
 
                 <input type="radio" name="cinsiyet" id="gender1" value="erkek">
@@ -257,9 +299,12 @@
 
                <!-- select  -->
 
+               <!-- Burada size kullanmadigimiz icin secenekler arasindan
+            sadece tek satir gösterir-->
+
                <div>
                 <label for="auto">Choose an Auto</label>  <br>
-                <select name="" id="" >
+                <select name="" id="">
                     <optgroup label="Alman Arabalari"> 
                         <option value="Mercedes">Mercedes</option>
                         <option value="Bmw" selected>Bmw</option>

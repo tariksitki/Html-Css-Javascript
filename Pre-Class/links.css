@@ -1,0 +1,64 @@
+
+
+/* Links
+Any CSS property (color, font-size, etc.) can be used to style Links.
+
+Example
+a {
+  color: red;
+}
+
+
+
+The links have four states:
+
+a:link: Normal state, unvisited link
+a:visited: Link which is visited before
+a:hover: Mouse over state
+a:active: Link which is clicked
+Example
+When declaring the link states, this order is recommended.
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: purple;
+}
+
+a:hover {
+  color: red;
+}
+
+a:active {   yani üzerine tiklanmis ve bu sekilde bekleniyor ise
+  color: blue;
+}
+
+
+
+
+
+
+
+
+
+Text Decoration
+The text-decoration is generally used to remove underlines from links:
+
+Example
+a:link {
+  text-decoration: none;
+} */
+
+
+
+
+
+
+
+
+
+
+
+

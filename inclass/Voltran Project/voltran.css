@@ -1,0 +1,185 @@
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+header {
+    background-color: rgb(235, 3, 3);
+    margin: 0px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    padding: 20px 0px;
+    text-align: center;
+    position: fixed;
+    z-index: 1;
+}
+
+/* position fixed de scrool yapilinca hareket etmez  */
+
+
+header h1 {
+    border: 8px solid white;
+    padding: 6px 12px;
+    display: inline-block;
+    border-radius: 36px;
+    font-family: Tahoma;
+    color: white;
+}
+
+
+.banner {
+    position: relative;
+}
+
+
+.images {
+    text-align: center;
+    margin: 80px 0px;
+    white-space: nowrap;
+}
+
+
+.images li {
+    display: inline-block;
+    list-style-type: none;
+    width: 40%;
+    margin: 20px 5px;
+    position: relative;
+}
+
+
+.images li img {
+    width: 90%;
+}
+
+.images li:hover {
+    top: -10px;
+}
+
+nav{
+    background: #F4F4F4;
+    padding: 20px;
+    position: sticky;
+    top: 106px;
+    z-index: 1;
+  }
+
+
+
+  nav ul{
+    white-space: nowrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
+nav li {
+    width: 25%;
+    display: inline-block;
+    font-size: 24px;
+}
+
+
+nav li a {
+    text-decoration: none;
+}
+
+
+nav li a:hover {
+    text-decoration: underline;
+}
+
+
+nav li a.join {
+    color: red;
+}
+
+
+main {
+    max-width: 100%;
+    width: 1200px;
+    margin: 80px auto;
+    padding: 0px 40px;
+    box-sizing: border-box;
+}
+
+
+article h2 {
+    color: red;
+    font-size: 48px;
+}
+
+article p {
+    line-height: 2em;
+}
+
+/* line height iki satir arasindaki bosluk  */
+
+
+article p::first-line {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+p {
+    font-size: 18px;
+    font-family: tahoma;
+}
+
+
+
+section.join {
+    color: #4B4B4B;
+    background-color: wheat;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+
+section.join h2 {
+    font-size: 36px;
+}
+
+
+form input {
+    border: 4px solid white;
+    border-radius: 28px;
+    font-size: 24px;
+    padding: 10px 20px;
+    margin: 20px 0px;
+}
+
+
+form input:focus {
+    border: 4px dashed gray;
+    outline: none;
+}
+
+
+form input:valid {
+    border: 4px solid rgb(14, 230, 14);
+}
+
+
+#submit {
+    cursor: pointer;
+}
+
+
+footer {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+
+

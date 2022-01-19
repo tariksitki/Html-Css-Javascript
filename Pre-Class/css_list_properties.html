@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #th:hover,
+      #td:hover {
+        background-color: red;
+        width: 170px;
+        height: 170px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- The CSS list properties allow you to:
+
+Set different list item markers for ordered lists
+Set different list item markers for unordered lists
+Set an image as the list item marker
+Add background colors to lists and list items
+
+ul.first {
+    list-style-type: circle;
+  }
+  
+  ul.second {
+    list-style-type: none;
+  } -->
+
+    <ul style="list-style-type: circle">
+      <li>Ankara</li>
+    </ul>
+
+    <ul style="list-style-type: decimal">
+      <li>Ankara</li>
+    </ul>
+
+    <ul style="list-style-type: disc">
+      <li>Ankara</li>
+    </ul>
+
+    <ul style="list-style-type: georgian">
+      <li>Ankara</li>
+    </ul>
+
+    <!-- 
+        With list-style-image an image can be used for a marker.
+
+Example
+ul {
+  list-style-image: url('bullet.jpg');
+} 
+
+        Dikkat url kullaniyoruz
+-->
+
+    <ul style="list-style-image: url('https://picsum.photos/id/50/50/50')">
+      <li>ankara</li>
+    </ul>
+
+    <!-- The list-style-position sets the position of the list-item markers.
+
+Example
+ul.first {
+  list-style-position: outside;
+}
+
+ul.second {
+  list-style-position: inside;
+}
+
+Girinti ve cikinti ayarlanir. Mesela bir li de birden cok satir oldugunda far anlasilir 
+deneyelim
+             -->
+
+    <ul style="list-style-position: outside">
+      <li>ankara</li>
+    </ul>
+
+    <!-- asagidaki örnekte inline yaptigimiz icin noktalarin ve yazilarin durumu
+        girintili cikintilidir-->
+
+    <!-- listelere background color da eklenebilir-->
+
+    <ul
+      style="list-style-position: inside; background-color: rgb(247, 105, 105)"
+    >
+      <li>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut suscipit
+        unde magnam tenetur iusto ipsa consectetur incidunt ratione fuga ut
+        eveniet, nesciunt cupiditate voluptate et sint fugit aspernatur harum
+        quia consequuntur. Mollitia, aliquam similique? Maiores porro
+        perferendis delectus cumque, autem sapiente velit nisi accusamus enim
+        eveniet vero officia eos animi saepe. Officiis doloribus laboriosam
+        provident maiores soluta voluptate suscipit assumenda a possimus neque
+        minus quo nostrum eius, mollitia, voluptatum explicabo! Minima, quasi
+        natus quidem similique fugiat totam delectus? Labore vel, e os impedit
+        possimus, deserunt consequatur illo facere optio unde temporibus
+        repellat rerum reiciendis in! Expedita fuga maxime optio! Ullam,
+        molestiae.
+      </li>
+
+      <li>ankara</li>
+      <li>ankara</li>
+    </ul>
+
+    <!-- List Style Shorthand property
+The list-style is used to set all the list properties in one declaration in this order: 
+
+        Dikkat url
+    
+        Foto kullandidigimizda type i ne yaptigimizin önemi yok
+    
+        li ler arasindaki bosluk line height ile acilir-->
+
+    <ul
+      style="
+        list-style: decimal inside url(https://picsum.photos/id/50/50/50);
+        line-height: 9rem;
+      "
+    >
+      <li>Istanbul</li>
+      <li>Ankara</li>
+      <li>Ankara</li>
+      <li>Ankara</li>
+    </ul>
+
+    <!-- CSS Table Properties -->
+
+    <!-- The style of a HTML table can be set with CSS:
+
+        Example
+    table, th, td {
+    border: 1px solid blue;
+    } -->
+
+    <table style="border: 1px solid blue; border-collapse: collapse">
+      <tr>
+        <th style="border: 1px solid blue">a</th>
+        <th style="border: 1px solid blue">b</th>
+        <th style="border: 1px solid blue">c</th>
+      </tr>
+
+      <tr>
+        <td style="border: 1px solid blue">1</td>
+        <td style="border: 1px solid blue">2</td>
+        <td style="border: 1px solid blue">3</td>
+      </tr>
+    </table>
+
+    <!-- 
+        The border-collapse property sets the table borders collapsed into a single border:
+
+Example
+table {
+  border-collapse: collapse;
+} -->
+
+    <!-- Table Width and Height -->
+
+    <!-- width ve height th ve td lerde de kullanilabilir-->
+
+    <table
+      style="
+        border: 5px solid blue;
+        border-collapse: collapse;
+        width: 60%;
+        height: 300px;
+      "
+    >
+      <tr>
+        <th style="border: 2px solid blue">a</th>
+        <th style="border: 2px solid blue">b</th>
+        <th style="border: 2px solid blue">c</th>
+      </tr>
+
+      <tr>
+        <td style="border: 2px solid blue">1</td>
+        <td style="border: 2px solid blue">2</td>
+        <td style="border: 2px solid blue">3</td>
+      </tr>
+    </table>
+
+    <!-- Horizontal Alignment -->
+
+    <!-- By default, the content of <th> elements are center-aligned and the content of <td>elements are left-aligned. -->
+
+    <!-- Ayarlama ise su sekildedir:
+
+            td {
+                text-align: center;
+              } -->
+
+    <!-- Vertical Alignment
+
+              By default, the vertical alignment of the content in a table is middle (for both <th> and <td>elements).
+
+                Example
+                td {
+                  vertical-align: bottom;
+                } -->
+
+    <table
+      style="
+        border: 5px solid blue;
+        border-collapse: collapse;
+        width: 60%;
+        height: 300px;
+      "
+    >
+      <tr>
+        <th style="border: 2px solid blue; vertical-align: top">a</th>
+        <th style="border: 2px solid blue; vertical-align: top">b</th>
+        <th style="border: 2px solid blue; vertical-align: top">c</th>
+      </tr>
+
+      <tr>
+        <td
+          style="
+            border: 2px solid blue;
+            vertical-align: bottom;
+            text-align: center;
+          "
+        >
+          1
+        </td>
+        <td style="border: 2px solid blue; vertical-align: bottom">2</td>
+        <td style="border: 2px solid blue; vertical-align: bottom">3</td>
+      </tr>
+    </table>
+
+    <!-- Table Padding -->
+
+    <!-- To control the space between the border and the content in a table, use the padding property on<td> and <th> elements:
+
+            Example
+            th, td {
+              padding: 15px;
+              text-align: left;
+            } -->
+
+    <!-- Hoverable Table
+Use the :hover selector on <tr> to highlight table rows on mouse over:
+
+Example
+
+tr:hover {background-color: #f5f5f5;} 
+
+
+asagidaki tablo icin internal style verecegiz yukarida-->
+
+    <!-- Not: Table a color ile renk verdigimizde eger border lara farkli renk 
+vermezsek bu durumda hem yazilar hem de border lar verdigimiz renk olur -->
+
+    <table
+      style="
+        border: 5px solid blue;
+        border-collapse: collapse;
+        width: 60%;
+        height: 300px;
+      "
+    >
+      <tr>
+        <th id="th" style="border: 2px solid blue; vertical-align: top">a</th>
+        <th id="th" style="border: 2px solid blue; vertical-align: top">b</th>
+        <th id="th" style="border: 2px solid blue; vertical-align: top">c</th>
+      </tr>
+
+      <tr>
+        <td
+          id="td"
+          style="
+            border: 2px solid blue;
+            vertical-align: bottom;
+            text-align: center;
+          "
+        >
+          1
+        </td>
+        <td id="td" style="border: 2px solid blue; vertical-align: bottom">
+          2
+        </td>
+        <td id="td" style="border: 2px solid blue; vertical-align: bottom">
+          3
+        </td>
+      </tr>
+    </table>
+
+    <!-- Table Color   -->
+
+    <!-- The example below specifies the background color and text color of <th> and <tr> elements:
+
+            Excel deki gibi sadece th ve td lerin rengini degistirerek hücrelerin rengi de degistirilebilir
+
+            Example
+            th {
+              background-color: #4CAF50;
+              color: white;
+
+
+
+            tr:nth-child(even) {background-color: #f2f2f2;}
+            } -->
+
+    <!-- The display Property -->
+    <!-- 
+
+            The display property sets how an element is displayed.
+
+The default display value for most elements is block or inline.
+
+The <div> element is a block-level element. The <span> element is inline by default. The <script> element uses display: none; as default.
+
+Example
+div {
+  display: none;
+
+
+  Example
+a {
+  display: block;
+}
+
+    4 farkli display sekli vardir:
+    1: block
+    2: inline
+    3: inline-block
+    4: none
+} -->
+
+    <!-- Hide an Element
+
+    Hiding an element can be done by setting the display property to none. The element will be hidden, and the page will be displayed as if the element is not there:
+
+Example
+h1 {
+  display: none;
+}
+
+visibility:hidden; also hides an element.
+
+However, the element will still take up the same space as before. The element will be hidden, but still affect the layout:
+
+Example
+h1 {
+  visibility: hidden;
+} -->
+
+
+
+
+
+<!-- Not: Birde overflow: visible
+           overflow: hidden diye bir sey var  -->
+
+
+
+
+
+
+
+<!-- The position Property -->
+
+
+
+<!-- The position property sets the type of positioning method used for an element.
+
+There are five different position values:
+
+static
+relative
+fixed
+absolute
+sticky -->
+
+
+
+
+<!-- position: static;
+HTML elements are positioned static by default. An element with position: static; 
+is not positioned in any special way; 
+it is always positioned according to the normal flow of the page: -->
+
+<!-- Example
+div {
+  position: static;
+}
+
+
+position: relative;
+An element with position: relative; is positioned relative to its normal position. Other content will not be adjusted to fit into any gap left by the element.
+
+This <div> element has position: relative;
+
+Example
+div {
+  position: relative;
+  top: 10px;                    Buradaki degerleri - verdigimizde yazinin bir kismi görünmez
+  left: 70px;
+} -->
+
+
+
+
+
+
+
+<!-- position: fixed;
+An element with position: fixed; is positioned relative to the viewport,
+ which means it always stays in the same place even if the page is scrolled. 
+ The top, right, bottom and left properties are used to position the element.
+
+A fixed element does not leave a gap on the page where it would normally have been located.
+
+Example
+div.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+} -->
+
+
+
+
+
+
+        <!-- Position: Absolute:
+
+        Konumu olan bir öğe: mutlak; en yakın konumlandırılmış ebeveyne göre konumlandırılır. 
+        Ebeveyn, statik dışında herhangi bir konuma sahip olmalıdır. -->
+
+
+
+
+
+
+
+        <!-- position: sticky;
+An element with position: sticky; is positioned based on the user's scroll position.
+
+Example
+div.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+} -->
+
+
+
+
+
+
+
+<!-- 
+Z-endeksi
+z-index özelliği, bir öğenin yığın sırasını belirtir (hangi öğe diğerlerinin önüne veya arkasına yerleştirilmelidir).
+
+Daha yüksek bir yığın sırasına sahip bir eleman, her zaman daha düşük bir yığın sırasının önündedir.
+
+Bir öğenin pozitif veya negatif yığın sırası olabilir.
+
+Örnek
+img {
+  z-index: 2;
+} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

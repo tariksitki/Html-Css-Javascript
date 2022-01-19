@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+
+    <style>
+        .item {
+            /* list-style-type: none; */
+            /* list-style-type: "\263B"; */
+            /* list-style-position: outside;    */
+            /* list-style-image: url("https://picsum.photos/id/50/50/50"); */
+
+            list-style: square inside url("https://picsum.photos/id/200/200/200");
+        }
+
+        /* resim bulamazsa square  */
+
+        /* inside ile content icine alir  */
+
+            /* Yukarida müdahale edemezdik simdi edebiliriz  */
+        /* li::before {
+            content: "\263B";
+            color: brown;
+            padding-right: 8px;
+        } */
+
+
+        caption {
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 2px solid black;
+            text-align: center;
+
+        }
+
+        table, th, td {
+            border: 2px solid tomato;
+            /* border-collapse: collapse;  buraya da verilebilir*/
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 70%;
+
+        }
+
+        th {
+            height: 30px;
+            vertical-align: super;
+            padding: 10px;
+            background-color: aqua;
+        }
+
+
+        td {
+            padding: 5px;
+            height: 25px;
+            text-align: center;
+            /* background-color: bisque; */
+            color: blueviolet;
+
+        }
+
+        tr:hover {
+            background-color: cornflowerblue;
+        }
+
+        /* super ve top arasinda var yok gibi */
+
+        td:hover {
+            background-color: blanchedalmond;
+        }
+
+
+        tr:nth-child(even) {
+            background-color: blue;
+        }
+
+        /* bu özelligi td ye verirsek sütunlari yapar */
+
+        /* nth birinci ikinci  */
+        /* even yerine 3n + 3 */
+        /* 2n + 2 */
+
+        tr:nth-child(odd) {
+            background-color: chartreuse;
+        }
+
+
+
+        a {
+            /* display: none; */
+            display: block;
+            visibility: hidden;
+            padding: 10px;
+
+        }
+
+        .box {
+            background-color: crimson;
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+            display: inline;
+        }
+
+        /* inline kendi cürmü kadar yer kaplar  */
+
+        /* incele den bakalim  */
+
+        /* hem yanyana olsun hem de büyüsün inline block  */
+
+        /* inline da content kadar  yer kaplar content de div icerisinde yazan yazi  */
+        /* bu nedenle kutular kücük olur  */
+
+
+        /* initial baslangic degeri inherit üstteki öge degerleri  */
+    </style>
+</head>
+<body>
+    
+    <!-- https://www.piliapp.com/facebook-symbols/ -->
+
+    <!-- https://www.w3schools.com/cssref/css_entities.asp -->
+
+    <!-- bunun adi unicode -->
+
+    <!-- ul>li.item${item$}*5 -->
+
+    <!-- ul>li.item.item${item$}*5 -->
+
+    <ul>
+        <li class="item item1">item1</li>
+        <li class="item item2">item2</li>
+        <li class="item item3">item3</li>
+        <li class="item item4">item4</li>
+        <li class="item item5">item5</li>
+    </ul>
+
+
+
+
+        <h1>Table</h1>
+
+
+        <table id="">
+            <caption>Clarusway Staff List</caption>
+
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Age</th>
+                <th>Number</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Martin</td>
+                <td>Smith</td>
+                <td>32</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Eden</td>
+                <td>Smith</td>
+                <td>32</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Harrison</td>
+                <td>Smith</td>
+                <td>32</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Martin</td>
+                <td>Smith</td>
+                <td>32</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Martin</td>
+                <td>Smith</td>
+                <td>32</td>
+            </tr>
+        </table>
+
+
+
+
+
+
+
+
+
+        <!-- Display -->
+
+        <!-- https://www.w3schools.com/html/html_blocks.asp -->
+
+
+
+        <a href=""> Clarusway </a>
+        <button>Clarusway</button>
+
+
+
+        <!-- block -->
+        <!-- div.box{box$}*3 -->
+
+
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+
+
+
+
+
+        <!-- relativ bulundugu yere göre degisim  -->
+
+        
+
+
+
+
+
+
+
+
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

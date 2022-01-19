@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .box1 {
+            background-color: brown;
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            /* position: static;  default*/
+
+
+        }
+
+        .box2 {
+            background-color: cyan;
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            position: relative;
+            top: 20px;
+            left: 50px;
+        }
+
+        /* .box2 {
+            position: relative;
+            top: 20px;
+            left: 50px;
+        } */
+
+        /* marginde kenarlara bosluk birakilir konum degismez  */
+        /* margin verirsek 2. kutuya bu durumda 3. kutuyu da asagi iter  */
+        /* ama relativ de 3 ün üzerine cikar  */
+
+
+        .box3 {
+            background-color: chocolate;
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            position: absolute;
+            top: 20px;
+            left: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="box1">box</div>
+    <div class="box2">box</div>
+    <div class="box3">box</div>
+
+    <!-- parent child iliskisi denir  -->
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

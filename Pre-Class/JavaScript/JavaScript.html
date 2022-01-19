@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+
+JavaScript is a high-level, cross-platform, 
+object-oriented computer programming language.
+
+Today, JavaScript can execute not only in the browser, 
+but also on the server, or actually on any device 
+that has a special program called the JavaScript engine.
+
+JavaScript oluşturulduğunda, başlangıçta başka bir adı vardı: 
+“LiveScript” . Ancak o zamanlar Java çok popülerdi, 
+bu nedenle yeni bir dili Java'nın “küçük kardeşi” olarak 
+konumlandırmanın yardımcı olacağına karar verildi.
+Ancak geliştikçe JavaScript, ECMAScript adı verilen kendi belirtimi 
+ile tamamen bağımsız bir dil haline geldi ve artık Java ile hiçbir ilgisi yok.
+
+
+A script is a serious of instructions that a computer can follow one by one.
+
+Each individual instruction or step is known as a statement. 
+Statements should end with a semicolon.
+
+In HTML, JavaScript code must be inserted between <script> and </script> tags.
+
+You can place any number of scripts in an HTML document.
+
+Script tags can be inserted in the HTML page's <body>, 
+or <head> sections, or in both.
+
+An external script reference can be located 
+in the <head> or <body> section of an HTML page.
+
+Html de  yazmak icin "script src"
+        There are different ways to "display" data in JavaScript.
+
+➤ document.write().
+➤ window.alert().
+➤ console.log().
+    
+Comments are used to add an explanation, 
+warnings and other notes to the code.
+
+Comments are also imported for debugging. 
+We can use comments for searching errors.
+
+ a single line comments after a double slash //
+● and multi-line comments between /* and */
+
+
+ECMAScript 2015 (ES6)
+
+JavaScript'i standartlaştırmayı amaçlayan bir betik dili özelliğidir.
+
+ECMAScript 2015, which is also known as ECMAScript 6 and ES6, 
+is the sixth edition of the ECMAScript Language Specification standard
+
+Herhangi bir sitenin console unu actigimizda da orada Js kodlarimizi yazabiliriz
+
+ES6 is a scripting language standard and specification
+
+Javascript
+Jscript
+ActionScript   
+Bunlarin ücü de ECMA Script standardina dayanir
+
+
+Variables are used to store for data values.
+
+Js Case sensitiv dir
+
+
+
+######### The Assignment Operators
+
+Assignment always goes from right to left.
+
+Operators:
+
+=
++=
+-=
+*=
+/=
+%=
+<<=
+>>=
+>>>=
+&=
+^=
+|=
+**=
+
+
+
+################ Naming Rules
+
+İsimler harflerden, rakamlardan, alt çizgilerden ve dolar işaretlerinden oluşabilir.
+
+Numbers are not allowed as the first character
+
+The first character must be;
+   ●a letter
+   ●an underscore ( _ )
+   ●a dollar sign ($)
+
+JavaScript names must not contain spaces, mathematical or logical operators.
+
+Reserved words cannot be used as names
+
+Dolar isareti haricindeki özel karakterler kullanilamaz
+
+
+let and const keyboards are added to JavaScript with ES6
+
+The let statement enables you to declare a variable with block scope.
+
+Scope is the fundamental concept that defines a variable's visibility in all programming languages
+
+var  a = 10;
+{  
+  let b = 3;
+}
+console.log ("a = " + a);
+console.log ("b = " + b);   //generates an error
+
+
+const
+Const varianle lari let e benzer ancak, const da variable lara
+reassing yapilamaz. yani yeni deger atanamaz
+
+Example
+
+const x = 5;
+x = 7;  //generates an error
+
+
+environment: müsteriye ulasana kadar gecen sürec
+bu yazilim anlaminda
+
+kod editörü de bir environment dir
+
+development (Kurs boyunca yaptigimiz is) (Bunun öncesinde sdlc planlama backlog lar felan)
+testing
+staging (testing ile combine edilmeli)
+production (son kullanici olarak gördügümüz ekran)
+
+vs bir ide ama vscode bir editördür
+word de bir editör
+
+denemelerin yapildigi dosyalara playground yazabiliriz
+Bunu dikkate almayin anlaminda
+Yada try_folder olabilir
+
+gitignore: api key, database sifreleri gibi önemli bilgiler
+cok yer kapladigi icin
+önemsiz bilgiler oldugu icin
+bu sebeplerle olabilir
+
+gitignore icin node kullaniyoruz github da react ve js icin 
+
+
+
+-->
+
+    <script>
+        document.write("Hello World")
+        document.write(" ")
+        document.write("Second Line")
+
+        // window.alert("Hello World")
+
+        console.log("World Hello")
+
+        // single line comment
+
+        /* Multiline comment*/
+
+        document.write(" ");
+        
+        var myNumber = 3;
+        document.write(myNumber);
+
+
+        document.write(" ")
+        var a = 3;
+
+        document.write("a = " + a)
+
+
+        var x = 3;
+        var y = 10;
+        
+        document.write("<br>")
+        document.write(x * y + "<br>");
+        
+
+
+        let str = "Hello <br> World"
+        document.write(str)
+
+
+        // Tek satirda birden cok degisken tanimlama 
+
+        var firstName = "John"; var lastName = "Clarusway"; var age = 40;
+
+        document.write("<br>" + age)
+
+
+
+        // ayni degiskene yeni deger assign etme 
+
+        var a = 3;
+        document.write(" " + a + " ")
+
+        var a = "Hello Again";
+        document.write(a);
+
+    </script>
+</body>
+</html>

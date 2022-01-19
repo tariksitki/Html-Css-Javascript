@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* default content box */
+
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      #content {
+        box-sizing: content-box;
+        background-color: red;
+        padding: 20px;
+        border: 5px solid;
+        height: 50px;
+      }
+
+      #borderbox {
+        box-sizing: border-box;
+        background-color: blue;
+        padding: 20px;
+        border: 5px solid;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+
+        <!-- Not: Border-Box da border in boyutlari sabittir. Yani bir elemente 50 px 
+        height verdigimizde, daha sonra padding 20px ve border 5 px verdigimizde 
+        20x2 ve 5x2 den border ve padding lerin toplami 50px eder.
+        Bizim dis cervevemiz sabit kalacagindan, content 0 olur.
+
+        Content box da ise content sabittir. Yani icerige 50px verdiysek ve 
+        daha sonra yukaridaki ile ayni paddingleri verdiysek bu durumda 
+        verdigimiz border ve padding ler content degerine eklenerek
+        toplam box degeri 100px olur  -->
+
+
+
+    <h1>Content Box</h1>
+    <img src="planets-solar-system-infographic_1308-51879.jpg" alt="" />
+
+    <p id="content">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil quis,
+      error eum at beatae itaque labore ipsa placeat vel fuga qui soluta
+      repellendus, voluptates similique repudiandae unde suscipit ad
+      dignissimos!
+    </p>
+
+    <img
+      src="Put-the-Planets-in-Order-Classroom-Activity-Featured-Image-768x274.jpg"
+      alt=""
+    />
+
+    <p id="borderbox">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id, voluptas
+      corrupti accusamus, placeat assumenda animi ratione accusantium incidunt
+      minima dicta distinctio quasi maiores maxime veritatis, perspiciatis
+      deleniti. Distinctio, eius possimus.
+    </p> <br><br><br>
+
+    <img src="https://picsum.photos/id/1076/600/400" alt="" />
+  </body>
+</html>

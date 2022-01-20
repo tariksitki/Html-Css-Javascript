@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        Data Types
+➤ JavaScript variables can hold numerous data types, such as numbers, strings, booleans, and more.
+
+➤ It is required to declare a variable for creating.
+
+➤ In JavaScript, we can declare a variable with the var keyword.
+
+var myNumber;
+➤ The latest ECMAScript standard defines nine types:
+
+➤ Six Data Types that are primitives, checked by typeof operator:
+
+● undefined : typeof instance === "undefined"
+
+● Boolean : typeof instance === "boolean"
+
+● Number : typeof instance === "number"
+
+● String : typeof instance === "string"
+
+● BigInt : typeof instance === "bigint"
+
+● Symbol : typeof instance === "symbol"
+
+➤ null : typeof instance === "object". 
+Special primitive type having additional usage for its value: 
+if object is not inherited, then null is shown;
+
+➤ Object : typeof instance === "object". 
+Special non-data but structural type for any constructed 
+object instance also used as data structures: 
+new Object, new Array, new Map, new Set, new WeakMap, 
+new WeakSet, new Date and almost everything made with new keyword;
+
+➤ Function non data structure, though it also answers for typeof operator: 
+typeof instance === "function". 
+This answer is done as a special shorthand for Functions, 
+though every Function constructor is derived from Object constructor.
+
+➤ To find the type of a JavaScript variable, 
+we can use the JavaScript typeof operator.
+
+Example
+
+console.log ("1. " + typeof 0);
+console.log ("2. " + typeof (3,14));
+console.log ("3. " + typeof "hello");
+console.log ("4. " + typeof (7+8));
+console.log ("5. " + typeof "Oliver");
+console.log ("6. " + typeof "");
+console.log ("7. " + typeof true);
+console.log ("8. " + typeof (3>=2));
+var a;    // Value is undefined.
+console.log ("9. " + typeof a);
+Output:
+
+number
+number
+string
+number
+string
+string
+boolean
+boolean
+undefined
+    -->
+
+    <script>
+      console.log("1. " + typeof "tarik");
+      console.log("2. " + typeof 1234);
+      console.log("3. " + typeof true);
+      console.log("4. " + typeof 3.14);
+      console.log("5. " + typeof (3 < 2));
+      console.log("6. " + typeof "");
+    </script>
+
+
+
+
+
+
+
+            <!-- Numbers -->
+
+
+            <!-- ➤ Unlike many other programming languages, JavaScript does not define different types of numbers, like integers, short, long, floating-point etc. JavaScript has only one type of number.
+
+            ➤ Numbers can be written with decimals.
+            
+            var x = 7;
+            var y = 33.33;
+
+
+            Precision
+➤ Integers (numbers without a period or exponent notation) are accurate up to 15 digits.
+
+var x = 999999999999999;     
+var y = 9999999999999999;
+console.log(x);   // output = 999999999999999
+console.log(y);   // output = 10000000000000000
+➤ The maximum number of decimals is 17, but floating point arithmetic is not always 100% accurate:
+
+var x = 0.2 + 0.1;
+console.log(x);   // output =  0.30000000000000004
+➤ To solve the problem above, it helps to multiply and divide:
+
+var x = 0.2 + 0.1;
+console.log(x);   // output =  0.30000000000000004
+var y = (0.2*10 + 0.1*10) / 10;
+console.log(y);   // output =  0.3 -->
+
+
+
+<!-- var a = 111e3;
+
+bu degiskenin degeri 111000 dir  -->
+
+
+
+
+
+<!-- BigInt
+
+➤ The BigInt type is a numeric primitive in JavaScript 
+that can represent integers with arbitrary precision. 
+With BigInts, you can safely store and operate on large integers 
+even beyond the safe integer limit for Numbers.
+
+➤ A BigInt is created by appending n to the end of an integer or by calling the constructor.
+
+➤ You can obtain the safest value that can be incremented 
+with Numbers by using the constant Number.MAX_SAFE_INTEGER. 
+With the introduction of BigInts, you can operate with numbers beyond the Number.MAX_SAFE_INTEGER.
+
+> const x = 2n ** 53n;
+// 9007199254740992n
+> const y = x + 1n; 
+// 9007199254740993n
+➤ You can use the operators +, *, -, **, and % with BigInts—just like with Numbers. 
+A BigInt is not strictly equal to a Number, but it is loosely so.
+
+➤ A BigInt behaves like a Number in cases 
+where it is converted to Boolean: if, ||, &&, Boolean, !.
+
+➤ BigInts cannot be operated on interchangeably 
+with Numbers. Instead, a TypeError will be thrown. -->
+
+
+
+
+
+
+
+
+<!-- Symbol
+
+
+➤ Symbol is a primitive value.
+
+➤ A value having the data type Symbol can be referred to as a "Symbol value". 
+In a JavaScript runtime environment, a symbol value is created 
+by invoking the function Symbol, which dynamically produces 
+an anonymous, unique value. A symbol may be used as an object property.
+
+➤ Symbol can have an optional description, but for debugging purposes only.
+
+➤ A Symbol value represents a unique identifier. For example:
+
+// Here are two symbols with the same description:
+let Sym1 = Symbol("Sym")
+let Sym2 = Symbol("Sym")
+console.log(Sym1 === Sym2) // returns "false"
+➤ Symbol type is a new feature in ECMAScript 2015. There is no ECMAScript 5 equivalent for Symbol.
+
+➤ In some programming languages, the symbol data type is referred to as an "atom." -->
+
+
+
+
+
+
+
+
+<!-- 
+Strings
+➤ Scripts are defined as the sequence of characters.
+➤ In JavaScript, strings are used for storing and manipulating text.
+➤ A string can be any content that shows up inside quotes. 
+We can use single or double-quotes.
+
+var myName = "John";
+var myAge = '36';
+➤ We can use quotes inside a string unless 
+they don't match the quotes encompassing the string.
+
+var text1 = "I'm John";
+var text2 = 'She said, "Go ahead"';
+➤ If we need to use quotes inside the string, we can use backslash ( \ ) escape character.
+
+var text = "He said, \"I am a new programmer.\"";
+                 // output : He said, "I am a new programmer."
+Breaking Long Code Lines
+➤ For best readability, programmers often like 
+to avoid code lines longer than 80 characters.
+➤ If a JavaScript statement does not fit on one line, 
+the best place to break it is after an operator:
+
+document.getElementById("demo").innerHTML =  // Break a code line after 
+"Hello Dolly!";                              // an operator or comma -->
+
+
+
+
+
+
+
+
+<!-- Null
+➤ The special null value does not belong to any of the types described above.
+
+➤ It forms a separate type of its own which contains only the null value:
+
+let age = null;
+
+➤ In JavaScript, null is not a “reference to a non-existing object” 
+or a “null pointer” like in some other languages.
+
+➤ It’s just a special value that represents “nothing”, “empty” or “value unknown”.
+
+➤ The code above states that age is unknown. -->
+
+
+
+
+
+
+<!-- 
+Undefined
+➤ The special value undefined also stands apart. 
+It makes a type of its own, just like null.
+
+➤ The meaning of undefined is “value is not assigned”.
+
+➤ If a variable is declared, but not assigned, then its value is undefined:
+
+let age;
+console.log(age); // output: "undefined" -->
+
+
+
+
+
+
+
+<!-- Booleans
+➤ A JavaScript Boolean can have one of two values, either true or false.
+
+➤ Boolean data type is useful when we need to have one of two values, 
+such as true/false, yes/no, etc.
+
+The Boolean() Function
+➤ You can use the Boolean() function to find out if an expression (or a variable) is true:
+
+Boolean (3 > 2);     //return true
+Boolean (2 < 3);     //return true
+Boolean (2 > 3);     //return false 
+Boolean (2 == 3);    //return false 
+➤ The Boolean value of everything with a "value" is true.
+
+Boolean("Hello World");
+Boolean(5);
+Boolean(-5);
+Boolean("false");
+Boolean(3.14 + 8);   //All of these values return true
+➤ The Boolean value of everything without a "value" is false.
+
+➤ The Boolean value of 0, null, empty string, undefined, is false.
+
+Boolean("");
+Boolean(0);
+Boolean(-0);
+Boolean(null);
+var x;
+Boolean(x);   //All of these values return false -->
+
+
+
+
+
+
+
+<!-- Objects
+
+➤ JavaScript'teki nesneler , diğer birçok programlama dilinde olduğu gibi, 
+gerçek hayattaki nesnelerle karşılaştırılabilir. 
+JavaScript'teki nesne kavramı, gerçek hayattaki somut nesnelerle anlaşılabilir.
+
+➤ JavaScript'te bir nesne , özellikleri ve türü olan bağımsız bir varlıktır. 
+Örneğin bir bardakla karşılaştırın. Bir fincan, özellikleri olan bir nesnedir. 
+Bir bardağın rengi, tasarımı, ağırlığı, yapıldığı malzeme vb. vardır. 
+Aynı şekilde, JavaScript nesneleri de özelliklerini tanımlayan özelliklere sahip olabilir.
+
+
+Object properties  (nesne özellikleri)
+
+
+A JavaScript object has properties associated with it. 
+A property of an object can be explained as a variable that is attached to the object.
+
+var myCar = new Object();
+myCar.make = 'Ford';
+myCar.model = 'Mustang';
+myCar.year = 1969;
+➤ The above example could also be written using an object initializer, 
+which is a comma-delimited list of zero or more pairs of property names 
+and associated values of an object, enclosed in curly braces ({}):
+
+var myCar = {
+    make: 'Ford',
+    model: 'Mustang',
+    year: 1969
+};
+➤ Properties of JavaScript objects can also be accessed or set using a bracket notation
+
+myCar['make'] = 'Ford';
+myCar.model = "Mustang"; -->
+
+
+
+
+<script>
+
+
+    var mycar = new Object();
+
+    mycar.make = "Ford";
+    mycar.model = ("mustang");
+    mycar.year = ("1968");
+
+    mycar["price"] = 50000;
+    mycar["firma"] = "Ford";
+
+    console.log(mycar);
+
+</script>
+
+
+
+
+Bu kullanimda ise dikkat edilecek hususlar:
+var isminden sonra = 
+sonra {}
+color gibi herbir özellikten sonra ; degil ,
+bu kullanimda new Object yok 
+
+<script>
+
+    var myhouse = { 
+   
+    color : "Red",
+    price : 100000,
+    adresse : "Newyork"
+    
+}
+
+    myhouse["owner"] = "ben"; /* Özellik ekleme*/
+    myhouse["year"] = 2022;
+
+    console.log(myhouse);
+</script>
+
+
+
+<!-- string icerisinde yine ayni tip stringden kullaniyorsak ve bunlarin 
+görünmesini istiyorsak  backslash kullaniriz \ -->
+
+
+
+<!-- var product = 2.0 *3.0;
+Which value should we use for that product will equal 7.0 with changing 3.0 ?
+Select one:
+
+var product = 2.0 *3.5;  (dogru sik bu)
+
+var product = 2.0 *3.0+1.0 ; -->
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+  </body>
+</html>

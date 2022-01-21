@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #button {
+            background-color: rgb(6, 175, 175);
+        }
+    </style>
+</head>
+<body>
+    
+
+    <!--  Input Types-->
+
+    <!-- button  -->
+
+    <input type="button" id="button" onclick="alert('Hello World')" value="Click me">
+
+    <br><br><br>
+
+
+    <!-- date  -->
+
+    <form action="">
+
+        <label for="birthday">Birthday</label> <br>
+
+        <input type="date" name="birthday" id="birthday" 
+        min="2021-12-12" max="2022-12-31">
+    </form>
+
+    <br><br><br>
+
+
+
+
+
+    <!-- datetime -->
+
+    <form action="">
+
+        <label for="birthdaytime">Birthdaytime</label> <br>
+
+        <input type="datetime-local" name="birthdaytime" id="birthdaytime">
+    </form>
+
+    <!-- input type ini sadece datetime secersek bu durumda 
+    sadece bos bir input cikiyor karsimiza.
+    ama datetime-lokal dersek tarih ve saat cikiyor -->
+
+    <br><br><br>
+
+
+
+    <!-- file -->
+
+    <form action="">
+
+        <label for="file">File</label> <br>
+
+        <input type="file" name="file" id="file">
+    </form>
+
+    <br><br><br>
+
+
+    <!-- multiple özelligi sadece email ve file input tipinde 
+    kullanilir. File da birden fazla file secebilmek icin secme 
+    esnasinda ctrl yada shift e basilir.
+    email yazarken ise email adresleri arasinda virgül konulur
+
+    eger email de multiple kullanmazsak @ karakterini esas alarak
+    bu karakterden sonra bir daha @ kullanimina izin vermiyor 
+    dolayisi ile ikinci bir email girilemiyor-->
+
+
+    <form action="result.html">
+
+        <label for="email">E-Mail</label> <br>
+
+        <input type="email" name="email" id="email" multiple> <br><br><br>
+
+        <input type="submit" value="Submit">
+
+
+    </form>
+
+    <br><br><br>
+
+
+
+    <!-- Input Type Hidden
+
+    The <input type="hidden"> defines a hidden input field (not visible to a user). -->
+
+    <!-- Developerlara,   Kullanici tarafindan görülemeyen ve modifiye edilemeyen
+    bir input imkani sunar
+
+    Gizli bir alan genellikle form gönderildiğinde güncellenmesi gereken 
+    herhangi veritabanı kaydını depolar.-->
+
+    <!-- Değer, sayfanın içeriğinde kullanıcıya gösterilmese de, 
+        herhangi bir tarayıcının geliştirici araçları veya 
+        "Kaynağı Görüntüle" işlevi kullanılarak görülebilir (ve düzenlenebilir). 
+        Gizli girdileri bir güvenlik biçimi olarak kullanmayın!
+    
+    
+    hidden type input icin label a gerek yok-->
+
+
+
+    <form action="result.html">
+
+        <label for="first">Firstname</label> <br>
+        <input type="text" id="first" name="firstname">  <br>
+
+        <input type="hidden" name="customerid" value="12345"> <br>
+
+        <input type="submit" value="Submit">
+
+      </form>
+ 
+      <br><br><br>
+
+
+
+
+      <!-- Input Type Month-->
+
+      <!-- sadece ay ve yil secimi yaptirir
+      secim esnasinda Nov 2022 seklinde yapilir ama database e 
+      2022-11 seklinde gider -->
+
+
+      <form action="result.html">
+            <label for="monthyear">Choose please your Birthmonth and Year</label> <br><br>
+
+            <input type="month" name="monthyear" id="monthyear"> <br>
+
+            <input type="submit" value="Submit">
+
+      </form>  
+      <br><br><br>
+
+
+
+
+
+      <!-- step kullanimi  -->
+
+      <!-- step i kac verirsek sayi artisi o sekilde olur  -->
+
+
+      <form>
+        <label for="quantity">Quantity:</label> <br>
+
+        <input type="number" id="quantity" name="quantity" 
+        min="0" max="100" step="10" value="30"> <br>
+
+        <!-- Burada value olan 30, sayfa yenilendiginde baslangic sayisi
+        olacak degerdir -->
+      
+        <input type="submit" value="submit">
+    </form>
+
+    <br><br><br>
+
+
+
+
+
+
+        <!-- Input Type Range -->
+
+        <!-- value ile baslangic degerini belirleyebiliriz -->
+
+        <form action="result.html"> 
+            <label for="volume">Volume (Between 0 to 100)</label> <br>
+            <input type="range" name="volume" id="volume"
+            max="100" min="0" value="50"> <br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <br><br><br>
+
+
+        <!-- input type search  -->
+
+
+        <form action="result.html">
+            <label for="search">Search</label> <br>
+            <input type="search" name="search" id="search"> <br>
+
+            <input type="submit" value="Submit">
+        </form>
+  
+
+        <br><br><br>
+
+
+        <!-- input type Tel and Pattern   -->
+
+        <!-- pattern kullandigimizda kullanici ayni sekilde girmek
+        zorundadir aksi takdirde hata verir. Bunu da 
+        place holder ile gösterebiliriz -->
+
+
+        <form action="result.html">
+            <label for="tel">Telefonnumber</label> <br>
+            <input type="tel" name="tel" id="tel" 
+            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+            placeholder="555-55-555">  <br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+
+        <br><br><br>
+
+
+
+
+
+
+        <!-- input type Time 
+
+        Sadece saat secer tarih bulunmaz 
+    
+        value ile yine baslangic degeri seceriz-->
+
+
+        <form action="result.html">
+            <label for="time">Enter your Lokal Time</label> <br>
+
+            <input type="time" name="time" id="time" value="12:00"> <br>
+
+            <input type="submit" value="Submit" >        
+        </form>
+
+        <br><br><br>
+
+
+
+
+
+
+        <!-- input type URL
+
+        https://  ile baslamayan girdileri kabul etmez ve hata verir  -->
+
+
+        <form action="result.html">
+            <label for="url">Enter a URL Adresse</label> <br>
+
+            <input type="url" name="url" id="url" 
+            placeholder="https://www.google.com"> <br>
+
+        </form>
+
+        <br><br><br>
+
+
+
+
+        <!-- input type week  
+            sadece hafta ve yil secimi yapilabilir-->
+            
+
+        <form action="result.html">
+            <label for="week">Enter a week</label>  <br>
+
+            <input type="week" name="week" id="week"> <br><br><br>
+
+        </form>
+
+
+        <br><br><br>
+
+        <input type="submit" value="Submit" >
+
+
+</body>
+</html>

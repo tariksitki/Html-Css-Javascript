@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- Conditional Statements -->
+
+    <!-- The following conditional statements are available in JavaScript:
+
+If Statement: If a specified condition is true, Use if to specify a code block to be executed
+else: If the same condition is false, Use else to specify a code block to be executed
+else if: If the first condition is false, Use else if to specify a new condition to test
+switch: compare a value with multiple variants. -->
+
+
+        <script>
+            var i = 5;
+            if (i >= 4) {
+                console.log(i);
+            }
+
+        </script>
+
+
+        <script>
+            time = 12;
+            if (time < 9) {
+                console.log("Good morning");}
+            else {
+                console.log("Good Day");
+            }
+            
+        </script>
+
+
+
+        <script>
+            var time = 7;
+
+            if (time < 9) {
+                console.log("good morning");
+            } else if (time < 18) {
+                console.log("Good Day");
+            } else {
+                console.log("Good Evening");
+            }
+
+        </script>
+
+
+
+
+
+
+
+
+
+        <!-- Switch Statements   -->
+
+        <!-- Switch case statement is used to compare the value of a variable with multiple values and execute some statements based on the match. -->
+
+
+
+
+        <script>
+            var level = "three";
+
+            switch (level) {
+                case "one":
+                    title = "Level 1";
+                    break;
+                case "two":
+                    title = "Level 2";
+                    break;
+                case "three":
+                    title = "Level 3";
+                    break;
+                default:
+                    title = "Out of range";
+                    break;
+
+            }
+
+                console.log(title);
+        </script>
+
+
+
+
+
+        <script>
+            var name = 'Edward';
+switch (name) {
+  case 'John':
+    console.log(name + ' is a instructor.');
+    break;
+  case 'Walter':
+  case 'James':
+    console.log(name + ' is a mentor.');
+    break;
+  default:
+    console.log('Sorry, i dont know ' + name+ '.');
+}
+        </script>
+
+
+
+
+
+<!-- If you omit the break statement, the next case will be executed 
+even if the evaluation does not match the case. 
+But the last default break is not necessary to break the last case 
+in a switch block. The block breaks (ends) there anyway.
+
+Switch cases use strict comparison (===). Because of that, 
+the values must be of the same type to match. -->
+
+
+
+
+
+<!-- What is the output of the following code?
+
+var a = 7;
+
+switch (a) {
+
+ case 1:
+ document.write(a);
+ break;
+ case 2:
+ document.write(a+2);
+ break;
+ default:
+ document.write(a+3);
+
+} -->
+
+
+
+<!-- Youtube video 
+
+https://lms.clarusway.com/mod/hvp/view.php?id=5669&forceview=1 -->
+
+
+
+
+<!-- What is the output of the following code?
+var num = 3;
+ if (num < 7) {
+ console.log("Less than 7");
+ } else if (num < 5) {
+ console.log("Less than 5");
+ } else {
+ console.log("Greater than or equal to 7");
+ }
+
+cevap  "Less than 7" -->
+
+
+
+
+
+<!-- What is the output of the following code?
+var num = 7;
+switch(num) {
+ case 1:
+ case 2:
+ console.log("Less than 3");
+ break;
+ case 3:
+ console.log("Equal to 3");
+ break;
+ default:
+ console.log("Greater than 3");
+ break;
+}
+
+cevap Greater than 3 -->
+
+
+
+
+<!-- Which statement is used when no match is found in the switch stataments?
+(default) -->
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

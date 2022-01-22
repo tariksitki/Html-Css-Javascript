@@ -1,0 +1,64 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+    background-color: bisque;
+}
+
+
+.box {
+    max-width: 30%;
+    border: 2px solid red;
+    margin-bottom: 80px;
+    height: 80px;
+}
+
+/* Div lere yükseklik vermedigimiz sürece 
+yazi boyutu arttikca otomatik olarak uzar  */
+
+#item1 {
+    overflow: visible;
+}
+
+#item2 {
+    overflow: hidden;
+}
+
+#item3 {
+    overflow: auto;
+
+}
+
+/* scroll dedigimizde, asagida da otomatik olarak
+scroll cikar ama saga sola hareket etmez.
+Ancak, div in boyutunu cok kücültürsek, 
+Bu durumda alttaki scroll da calisacaktir */
+
+#item4 {
+    overflow: scroll;
+    
+}
+
+/* tek tarafa scroll verme islemi de asagida 
+iki yöntemde oldugu gibidir  */
+
+#item5 {
+    overflow-x: hidden;
+
+}
+
+
+#item6 {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    
+}
+
+/* eger paragrafimiza 1000 px gibi bir deger verirsek 
+bu durumda asagida bulunan scroll da etkin hale
+gelecektir */
+
+
+#parag6 {
+    width: 1000px;
+}

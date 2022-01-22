@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <!-- Operators
+➤ Let's take a simple 3 + 2 phrase equals 5. Number 3 and 2 are operands and ‘+’ is the operator.
+
+➤ Expressions rely on operators to create a single value from one or more values.
+
+➤ JavaScript supports the operators of the following types.
+
+● Arithmetic Operators
+● Assignment Operators
+● Comparison Operators (karsilastirma)
+● Logical Operators -->
+
+
+        <!-- 1: Arithmetic Operators -->
+
+
+
+<!-- Arithmetic operators execute arithmetic functions on numbers 
+    (literals or variables yani degismeyenler ve degisenler). -->
+<!-- 
+    1: addition
+    2: substraction -
+    3: division  /
+    4: multiplication *
+    5: increment ++
+    6: decrement --
+    7: %  -->
+
+
+    <script>
+        var a = 10;
+        console.log(a--);
+
+    </script>
+
+
+
+
+        <!-- 2: Assignment Operators -->
+
+
+        <!-- Assignment operators assign values to JavaScript variables. -->
+
+
+        <!-- x = y
+        x -= y >  x = x -y
+        x += y 
+        x *= y >  x = x * y
+        x /= y >  x = x / y
+        x %= y >  x = x % y -->
+
+
+        <script>
+            var a = 20;
+            a *= 5;
+            console.log(a);
+        </script>
+
+
+
+
+
+
+
+
+
+        <!-- Comparison Operators -->
+
+
+        <!-- Comparison operators are used to determine equality or difference between variables or values in logical statements.
+
+➤ All comparison operators return Boolean (true or false). -->
+
+        
+
+
+       <!-- ==
+            !=  Inequality
+            === Identity/Strict equality 
+            !== Non identity / Strict Inequality
+            >
+            >=
+            < 
+            <= -->
+
+
+
+            <script>
+                var c = 10;
+                var d = 11;
+                var e = 10;
+
+                console.log(c == d);
+                console.log(c !== d);
+                console.log(c != d);
+                console.log(c === e);
+                console.log(c == d);
+                console.log(c == d);
+
+                console.log(a == "10");
+            </script>
+
+
+
+
+
+
+
+
+
+
+        <!-- Logical Operators -->
+
+
+        <!-- and  &&
+        or   ||
+        not   ! -->
+
+        <script>
+            var a = 10;
+            var b = 5;
+            console.log(a>=b && b <= 20);
+
+
+            console.log(a == b || b < 20);
+
+            console.log(!(a>=b));
+        </script>
+
+
+
+
+
+
+
+
+
+        <!-- Nullish coalescing operator (Bos birlestirme operatörü)  -->
+
+        <!-- The nullish coalescing operator (??) is a logical operator 
+        that returns its right-hand side operand when its left-hand 
+        side operand is null or undefined, and otherwise returns its 
+        left-hand side operand. -->
+
+
+
+
+        <script>
+            // soldaki deger null veya undefined ise sagdaki deger döndürülür 
+
+            var f = null;
+            console.log(f ?? 10);
+
+
+            var g = undefined;
+            console.log(g ?? 5);
+
+
+            var h = 0;
+            console.log(h ?? 7);
+        </script>
+
+
+        <script>
+            const foo = null ?? 'default string';
+            console.log(foo);
+
+
+            const baz = 0 ?? 42;
+            console.log(baz);
+
+        </script>
+
+
+
+        <script>
+            const nullValue = null;
+            const emptyText = ""; // falsy
+            const someNumber = 42;
+
+
+            const valA = nullValue ?? "default for A";
+            const valB = emptyText ?? "default for B";
+            const valC = someNumber ?? 0;
+
+            console.log(valA); // "default for A"
+            console.log(valB); // "" (as the empty string is not null or undefined)
+            console.log(valC); // 42
+
+        </script>
+
+
+
+        
+
+
+
+
+
+
+
+</body>
+</html>

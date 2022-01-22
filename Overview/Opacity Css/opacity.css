@@ -1,0 +1,60 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+.div1 {
+    height: 200px;
+    border: 3px solid black;
+    background-color: rgba(202, 5, 236, 0.4);
+    width: 100%;
+    
+}
+
+/* eger div e opacity verdiysek altinda bulunan h1 e ayri veremiyoruz
+bunun icin div in opacity sini renk rgba dan veriyoruz 
+backround color da*/
+
+/* h1 de div deki ayni rengi kulandik ancak opacity yi farkli verdik  */
+
+h1 {
+
+    border: 2px solid;
+    vertical-align: middle;
+    text-align: center;
+    height: 40px;
+    background-color: rgba(202, 5, 236, 0.7);
+    
+}
+
+h1:hover {
+    background-color: bisque;
+    color: blueviolet;
+    opacity: 1;
+}
+
+/* 0.7 opacity %30 anlamina gelir  */
+
+
+.div2 {
+    background-color: brown;
+    height: 150px;
+    opacity: 0.7;
+}
+
+
+img {
+    opacity: 0.6;
+    margin-right: 20px;
+    border: 3px solid black;
+}
+
+img:hover {
+    opacity: 1;
+    width: 360px;
+    height: 300px;
+    
+}
+

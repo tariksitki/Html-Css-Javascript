@@ -1,0 +1,164 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* rem degerini degistirmek icin html de bulunan 
+root daki font size degeri degistirilir. 
+default u 16 px dir  
+
+em in rem den farki ise; em de icinde bulunulan
+parent elementin verileri esas alinir*/
+
+html {
+    font-size: 1.5vw;
+}
+
+h1 {
+    width: 50%;
+    height: 5%;
+    background-color: aquamarine;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    border: 3px solid;
+
+}
+
+p {
+    font-size: 1vw;
+    text-align: center;
+}
+
+.p1 {
+    background-color: rgb(5, 137, 214);
+    border: 2px solid;
+    margin-top: 30px;
+    height: 30vh;
+    width: 50vw;
+}
+
+/* Cok Önemli:
+rem degeri karsiligini root dan yani html ile 
+baslyan style dan aldigi icin, eger html de 
+font size px yada rem ile verilirse, rem degeri
+responsive olmuyor. eger böyle bir problem
+ile karsilasilirsa, html deki fontsize i 
+vw yada vh olarak ayarladigimizda problem 
+ortadan kalkmis oluyor.  */
+
+.p2 {
+    background-color: rgb(12, 214, 5);
+    border: 2px solid;
+    margin-top: 30px;
+    width: 50rem;
+    height: 10rem;
+}
+
+
+/* Normal de yukarida tüm p lere font size 
+olarak 2 vw vermistik. Bu nedenle p3 de 
+em degeri 2 vw olmustu. Ancak biz burada 
+font size a 16 px vererek em degerini
+16 px e sabitledik. 
+genisligi 50 em verdigimizde yukaridaki 
+50 rem ile ayni boyutta olacaktir*/
+
+.p3 {
+    background-color: rgb(194, 3, 162);
+    border: 2px solid;
+    margin-top: 30px;
+    height: 10em;
+    width: 50em;
+}   
+
+.p4 {
+    background-color: rgb(191, 194, 3);
+    border: 2px solid;
+    margin-top: 30px;
+    font-size: 16px;
+    width: 800px;
+    height: 200px;
+} 
+
+
+/* Span a genislik ve yükseklik vermemize ragmen
+bir degisiklik olmadi. sadece kendi kadar yer kaplar */
+
+span {
+    background-color: rgb(194, 3, 162);
+    border: 2px solid;
+    margin-top: 30px;
+    width: 600px;
+    height: 250px;
+}
+
+.divrem {
+    background-color: rgb(194, 3, 162);
+    border: 2px solid;
+    margin-top: 30px;
+    height: 10rem;
+    width: 50rem;
+}
+
+.prem {
+    background-color: rgb(233, 146, 218);
+    border: 2px solid;
+    margin: 60px auto;
+    height: 3rem;
+    width: 43rem;
+}
+
+
+
+
+
+
+/* 1 vw :  genisligin yüzde biri 
+
+1 vh : uzunlugun yüzde biri
+
+1 vmin :  kisa kenarin yüzde biri 
+(mesela telefon ise yatay uzunluk pc ise yükseklik)
+
+1 vmax : uzun kenarin yüzde biri */
+
+
+
+
+
+/* Viewport Width (vw)
+vw birimi, yataydaki ekran boyutunun 100/1'ine denk gelen bir ölçü birimi.
+div { width: 2vw; }
+Ekran çözünürlüğümüzün 1280x800 olduğunu düşünürsek;
+2x1280/100 = 25,6px boyutunda katman elde ediyoruz.
+div { width: 100vw; height: 100vw; }
+Yine aynı ekranda 1280x1280px’lik kare bir boyut elde ediyoruz. */
+
+
+
+/* Cok önemli:
+
+Div ve diger elementlere rem em veya vw gibi 
+responsive degerler ile büyüklük verdigimizde
+Bu bunun kax pixel e esit geldigini görmek 
+istersek, sayfaya sag tiklayip incele den 
+acariz ve oku secerek o elementin üzerine
+gideriz. Burada kücük bir pencere acilir ve 
+bu elementin tüm degerleri gösterilir.
+Bu pencere de o anda o elementte güncel 
+fontsize i da görebiliriz. 
+yani root da o an da default font size ne 
+ise o  ve icinde bulundugumuz elementin 
+o degere göre aldigi toplam degerleri 
+görebiliirz. 
+Ancak dikat etmmeiz gerek husus, border
+vermis isek toplam degere border degerleri de 
+eklenmis olarak gösterilir.  */
+
+
+/* vw daha cok dis cevre icin kullanilir
+    iceride % rem em  
+
+    tüm sayfaya bakinca vw vh  */

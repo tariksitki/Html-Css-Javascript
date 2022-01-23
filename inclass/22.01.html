@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //         camelCase
+      // CamelCase upper camel case  diger adi pascal case
+      // bunu sadece class contructor larda kullanilir
+
+      // snack case "the_quick_brown"
+
+      // kebap case ali-veli-deli  (Js de bu kullanilmaz css de kullanilir)
+
+      // yazismalarda hepsi büyükse bagirma
+      // SCREAMING_SNAKE_CASE  (otoyollarda hiz limiti gibi)
+
+      // Js 15 den sonrasi digit icin her zaman dogruluk vermez
+
+      var a = 999999999999999;
+      var b = 99999999999999999999;
+      var c = 9999999999999999;
+
+      console.log(a);
+      console.log(b);
+      console.log(c);
+
+      ////////////////////////////////////////////
+
+      // noktali sayilarda ise 17 basamaga kadar dogruluk sonrasinda olmaz
+
+      // alttaki örnekte ise en son 15. degerde dogru verdi
+
+      var d = 1.555555555555555;
+
+      var e = 1.5555555555555555;
+
+      console.log(d);
+      console.log(e);
+
+      ////////////////////////////////////////////
+
+      // Max ve Min Safe Integer
+
+      console.log(Number.MIN_SAFE_INTEGER);
+
+      console.log(Number.MAX_SAFE_INTEGER);
+
+      ////////////////////////////////////////////
+
+      /// Burada deger 0.3 cikmaz
+      // tofixed ile kac basamak oldugu ayarlanir.
+      //  ancak veri tipi stringe döner renk degisir
+      // Js de sayilar ile ugrasirken sürekli kontrol etmemiz gerekir
+
+      var x = 0.1 + 0.2;
+
+      console.log(x);
+
+      console.log(x.toFixed());
+      console.log(x.toFixed(1));
+      console.log(x.toFixed(2));
+      console.log(x.toFixed(3));
+      console.log(x.toFixed(4));
+
+      // stringden tekrar number yapmak +
+
+      console.log(+x.toFixed(4));
+
+      ////////////////////////////////////////////
+
+      var f = 15 + 25;
+
+      var g = 015 + 025;
+
+      // burada sonuc 40 degil 34 cikar.
+      // cünkü 8 lik tabanda calisir. octal
+      // 015 =     5*1  +  1*8 = 13
+      // 025 =     5*1  +  2*8 = 21
+      //  toplam 34
+
+      console.log(f);
+      console.log(g);
+
+      ////////////////////////////////////////////
+
+      // 8 lik sistemde sayilar 01234567 dir
+      // burada 8 kullandigimiz icin 8 lik sistemden
+      // yani octal den cikmistir decimal olmustur
+      // decimal dedigimiz ise 10 luk standart sistemdir
+
+      var h = 011 + 028;
+
+      console.log(h);
+
+      ////////////////////////////////////////////
+
+      // Asagidaki örneklerde Number func ile tüm degerleri
+      // 10 luk sisteme  yada 8 lik sisteme dönüstürecegiz.
+      // Icerisindeki degerler 01234567 olanlar 8 lik sisteme
+      // göre olacak 8 ve 9 da dahilse 10 luk sisteme göre olacak
+
+      console.log(Number(018)); // 8*1  1*10
+      console.log(Number(045)); // 5*1  4*8
+      console.log(Number(099)); // 9*1  9*10
+      console.log(Number(055)); // 5*1  5*8
+      console.log(Number(066)); // 6*1  6*8
+      console.log(Number(077)); // 7*1  7*8
+
+      // Number ile string olan degerleri de Number a ceviririz
+      // ancak burada durum farklidir. Burada string icerisinde
+      // yazan sayi ne ise ayni sekilde cikarir sadece basindaki
+      // sifirlari atar
+
+      console.log(Number("018"));
+      console.log(Number("045"));
+      console.log(Number("099"));
+      console.log(Number("055"));
+      console.log(Number("066"));
+      console.log(Number("077"));
+
+      ////////////////////////////////////////////
+
+      //         <!-- primitive immutable
+
+      // string
+      // boolean
+      // undefined
+      // null gibi degerler  -->
+
+      ///////////////////////  Steak and Heap
+
+      // Kodumuz işletim sisteminde bir yer kaplar. Bu yerin boyutu kimi zaman belirli yani değişmez iken kimi zaman ise kullanıcının program esnasında gireceği verilere göre değişebilecek durumdadır. Temel olarak bu farklılıktan dolayı iki farklı yöntem mevcut. Bir diğer deyişle değerlerin RAM de saklandığı 2 kısım vardır: Stack ve Heap. İki kelime de Türkçeye ‘yığın’ olarak çevrilse de aralarında çok önemli farklar bulunuyor. Kısaca Stack için, boyutları belli sabit değerlerin saklandığı kısım ve Heap için de, değişken değerlerin saklandığı kısım demek mümkün.
+
+      // Stack ve Heap bellekte (RAM’de) bulunan mantıksal yapılardır demiştik. Değer tip (value type) dediğimiz int, short, byte, long, decimal, double, float gibi tipler stackte tutulur. Stackte veriler üst üste (LIFO– Last in First out) mantığında dizilir ve sırası gelmeden aradaki bir değer ile işlem yapılamaz. Class type (Sınıf tipi) değişkenler referans tiplerdir referans ettikleri model (referans) stackte değerleri ise heapde saklanır.
+
+      // NOT: Değer tipler veriyi tutan değişken türleridir. Referans tipler ise veri yerine                     verinin bellekteki adresini tutan değişken türleridir. (Referans tiplere string, array,                     interface, class, pointer’ı örnek olarak vermek mümkün.)
+
+      // <!-- heap deki veriler daginik sekilde
+      // steak dekiler ise hizli gelir hemen
+      // buradaki yapi düzgündür
+      // dezavantaji ise hafiza boyutu kücük
+
+      // heap deki bölge büyük
+      // steak deki kisim tamamen bize ayrilmis
+
+      // primitivlerin degeri degismez bunlar steak de
+
+      // digerleri ise heap e yönlendirilir
+
+      // isletim sistemi icerisinde bize tahsis edilen
+      // hafizada bulunur bunlar
+
+      // steak 1 mb civarinda
+      // heap icin bir sinirlama yok isi biten burada silinip
+      // pc nin ana kaynaklarina gönderilir
+
+      // sekme kapatilinca steak deki heap deki tüm bilgiler gider
+
+      // object ve array tanimlayinca stack de durmaz
+      // heap e gider
+
+      // stackteki veri hemen silinirken heapdeki veri Garbage Collector algoritmasına bağlıdır.
+
+      // lokal variable lar stack e gider
+
+      // class instance lar ise heap e gider
+
+      // Heap ve Stack arasında ki en önemli farklardan birisi heapde veriler karışık bir şekilde saklanırken stackte artan ya da azalan adres mantığında (big and little endian) çalışır. Buna bağlı olarak heapde yer alan bir veriye erişmek stackte yer alan bir veriye erişmeye göre daha maliyetli bir işlemdir. Başka bir fark ise stackteki veri hemen silinirken heapdeki veri Garbage Collector algoritmasına bağlıdır.
+
+      //   Stack bellekten statik olarak yer tahsisi için kullanılırken, Heap dinamik olarak yer tahsisi etmeyi sağlar. Her ikisi de Ram bölgesinde bulunur. Stack’te yer alan veriler direk bellek içine yerleştirilir dolayısıyla erişimi çok hızlıdır. Heap ise runtime (çalışma zamanı) anında kullanılırlar ve dağınık bir bellek göz yapısı olduğu için erişimi stack kadar kolay olmaz dolayısıyla yavaş çalışır. Stack bellekteki veri hemen silinirken Heap bellekteki verinin silinmesi Garbage Collector’a (Çöp toplama mekanizmasına) bağlıdır. Stack alanı sınırlı olduğundan çok büyük sayıda ve büyük tiplerde veri atanması belleğin dolmasına sebep olabilir.
+
+      //   Stack veri yapısına üst üste dizili tabaklar örnek verilebilir. Alttaki bir tabağı almak istediğinizde nasıl ki üstündeki tabakları da indirmeniz gerekiyorsa, stack veri yapısında da aradaki bir veriyi alabilmek için öncelikle üsttekileri çekmek gerekiyor.
+
+      //   Kullanacağınız yerin boyutunu tam olarak biliyorsanız Stack, ihtiyacınız olan boyutu tam olarak bilmiyorsanız Heap kullanımı daha mantıklı bir tercih olacaktır.
+      -->
+
+      //               Yığın bellek alanı, program çalışmaya başladığı anda belirlenir ve daha sonra bu alanın boyutu değiştirilemez. Bu alan, işletim sistemi tarafından genellikle kısıtlı şekilde belirlendiği için yığın üzerindeki yoğun ekleme işlemlerinde hafıza birimi taşması sorunu yaşanabilmektedir.
+
+      //               Stack’ın Heap’den bir farkı da önceden belirlenmiş bir boyutu olmasıdır, yani belirli miktarda veriyi tutabilir. Bu boyut windows’ta default olarak 1mb’dır, fakat bazı Unix sistemlerinde bu boyut 8 mb’a kadar çıkabilir. Eğer program Stack’e bu boyutun kaldırabileceğinden fazla veri koymaya çalışırsa Stackoverflow durumuyla karşılaşılır.
+
+      //   Verimli kodlama yapabilmek için yazdığımız kodlar çalıştığı esnada arka planda neler olduğunu bilmemiz gerekiyor. Yazdığımız kodların hepsi RAM da yer kaplamakta. Performansın önemi ufak programlarda çok hissedilmese de profesyonel çalışmalarda hayati bir etkiye sahip.
+
+      //     <!-- function stackoverflow () {
+      //     stackoverflow ()
+      // }
+
+      // stackoverflow()
+
+      // bunu console da calistiirnda 13000 kez
+      // calisir daha fazla yer kalmaz-->
+
+      // <!-- window.location = `https://${0.1+0.2}.com`; -->
+
+      //           mesela let veya const yerine var yazarsak
+      //   bu durumda daha fazla hafizada yer kaplanir -->
+
+      //   <!-- window yazdigimizda cikan degerler stack dedir -->
+
+      //   <!-- const  ve let bu nedenle cikmistir  -->
+
+      ///////////////////////////////////
+
+      // Object
+
+      var i = 5;
+
+      var j = 6;
+
+      console.log({ i });
+      console.log({ j });
+      console.log({ j }, { i });
+
+      // simdi altta yazacagimiz kod ile i  icin
+      // hafizada bir tabak daha konulacak
+      // ancak j degismeyecek
+
+      var i = 7;
+
+      console.log({ i }, { j });
+
+      // primitiv tipte veriler kopyalanir
+      // primitiv ler degismez ikincisi icin yeni bir tabak olusturulur
+      // // birinci tabak cöpe gitti cöp toplayicisi aldi götürdü
+
+      
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

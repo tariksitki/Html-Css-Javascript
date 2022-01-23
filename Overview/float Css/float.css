@@ -1,0 +1,77 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body {
+    background-color: aquamarine;
+}
+
+h1 {
+    border: 3px solid;
+    background-color: bisque;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image1 {
+    width: 30%;
+    height: 300px;
+    float: left;
+    margin: 20px ;
+}
+
+.p1{
+    text-align: justify;
+    font-size: 21px;
+    margin: 20px;
+    text-indent: 30px;
+
+}
+
+
+/* Önemli: Eger paragraf ve fotoya width vermezsek
+ikisini yanyana getiremeyiz */
+
+.p2 {
+    text-align: justify;
+    font-size: 20px;
+    float: left;
+    text-indent: 30px;
+    width: 67%;
+    margin: 20px 0px 20px 15px;
+
+}
+
+.image2 {
+    width: 30%;
+    height: 300px;
+    float: right;
+    margin: 20px 5px 20px 5px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    border: 3px solid;
+    background-color: bisque;
+    
+}
+
+
+/* eger burada clear demezsek 
+üstteki float lardan etkilenir */
+
+.divlink {
+    clear: both;
+}
+
+
+li {
+    float: left;
+    list-style: none;
+    margin-left: 20px;
+    
+}
+

@@ -1,0 +1,101 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+
+header {
+    border: 3px solid;
+    background-color: coral;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+
+/* Kutulari yerlestirmeeki sikintiyi ortadan kaldirmanin yollari
+1: Ilkel usül : main e uzun bir height vermek 
+
+2: Main e overflow auto vermek
+
+3: Main icerisinde aide ve articel dan sonra en alta
+bos bir div olusturulur. Ve bu div e clear both verildiginde 
+problem ortadan kalkar.
+
+4: main:after a,  clear both vermek
+    sonra buraya bir content: ""  vermek content bos olabilir
+    display block vermek
+
+*/
+
+main {
+    background-color: rgb(231, 2, 231);
+    border: 2px solid;
+    margin-top: 10px;
+    /* height: 300px; */
+    /* overflow: auto; */
+
+}
+
+/* .clear {
+    clear: both;
+    
+} */
+
+main::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+/* istersek content e icerik de yazilabilir  */
+
+footer {
+    border: 3px solid;
+    margin-top: 10px;
+    background-color: blueviolet;
+}
+
+aside {
+    float: left;
+    margin: 20px;
+    border: 2px solid;
+    background-color: antiquewhite;
+    height: 220px;
+    width: 22%;
+
+    
+}
+
+article {
+    text-align: justify;
+    border: 3px solid;
+    background-color: deepskyblue;
+    margin: 20px;
+    width: 70%;
+    float: right;
+    text-indent: 30px;
+    padding: 0px 5px;
+}
+
+ul {
+    list-style: inside;
+    padding: 70px;
+    list-style-type: square;
+}
+
+/* aside bir div gibi islem yapar
+daha cok kenarlarda liste table vb koymak icin 
+semantik bir elemandir */
+
+/* before ve after bir selector 
+
+    before after gibi iki noktali cok sey var 
+    isimize yarar arastir  -->
+
+    <!-- w3 da before selector */
+
+
+

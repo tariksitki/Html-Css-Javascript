@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      var x = 2;
+              var y = 5;
+              var z = 7;
+              var t = "2";
+
+              var a = t - y;
+              // cikarma isleminde string number yapilip normal cikarilir
+
+              console.log(a);
+              console.log(typeof(a));
+
+              // stringler ile mat islemi yapinca veri tipi number olur
+
+              // ama simdi tekrar t nin veri tipine baksak yine string dir
+              console.log(typeof(t));
+
+
+
+
+
+              // toplama#
+              // toplama isleminde hem string ile number toplanmaz
+              // sadece concatanate yapilir
+              // hem de veri tipi string kalir
+
+              console.log(t + z);
+              console.log(typeof(t + z));
+
+
+
+              // carpma:
+
+              console.log("2" * 5);
+              console.log(typeof("2" * 5));
+
+
+
+
+              // bölme:
+
+              console.log("10" / 2);
+
+              console.log(20 / "3");
+
+              var b = 20 / "3";
+
+              console.log(b.toFixed(3));
+
+              console.log(typeof(b.toFixed(3)));
+
+              // tofixed bir methoddur bu sekilde kullanilir
+
+              // Önemli: tofixed ile basamak sayisini ayarladigimiz
+              // sayilar string veri tipine döner renk siyah olur
+
+
+
+
+              // tostring de bir methoddur ve sayiyi stringe cevirir
+
+              var c = 20 *3;
+              console.log(c);
+
+              console.log(c.toString());
+
+
+
+
+
+
+
+              //  modulus:
+
+              console.log(11 % 2);
+
+              console.log(typeof(11 % 2));  // number type
+
+              console.log((11 % 2).toFixed(2));
+
+              // tofixed ile normal bir sayiyi da sonunda .00 olacak
+              // sekilde yazabiliriz
+
+
+
+
+
+
+
+              // Js de float deger yoktur. Tüm degerler number olarak gecer.
+              // Bu nedenle floor division yoktur. Ancak söyle yapilabilir:
+
+
+              console.log(Math.floor(15 / 2));
+
+              console.log(Math.floor(104 / 7));
+
+
+
+
+
+
+
+              // Infinity:
+
+
+              console.log(10 / 0);
+
+              console.log(typeof(Infinity));
+
+
+
+
+
+
+              // Islem önceligi:
+              // 1: **
+              // 2: *
+              // 3: /
+              // 4: %
+              // 5: +
+              // 6: -
+
+              console.log(100 + 200 * 4);
+
+
+
+
+
+
+              // **
+
+              var  f = 10;
+
+              var g = 11;
+
+              console.log(10 ** 2 + 11 ** 2);
+
+
+
+
+
+
+              // Karekök alma
+
+
+              var h = 100;
+
+              var i = 121;
+
+              console.log(h ** 0.5 + i ** 0.5);
+
+
+
+
+
+
+
+
+
+              // ++
+
+
+              var j = 50;
+
+              var k = j++;
+
+              console.log(k);
+              console.log(j);
+
+              // Burada k print edilince 50 cikar
+              //  j print edilince 51 cikar
+
+
+
+
+
+              // Burada ise ikisi de 51 olur
+
+              var m = 50;
+
+              var n = ++m;
+
+              console.log(m);
+              console.log(n);
+
+
+
+
+
+
+              var o = 60;
+
+              console.log(--o);
+
+              console.log(o--);
+
+              console.log(o);
+
+
+
+
+
+
+
+
+
+              var ö = 40;
+
+              var p = ö++;
+
+              console.log({ö}, {p});
+
+
+
+
+
+
+
+              var r = 30;
+
+              console.log(r++ + ++r);
+
+              // Burada islem söyle:  30 + 32
+              // ilk sayi alindiktan sonra 30  31 oluyor
+              // ikinci sayi alinmadan önce 31 32 oluyor
+
+
+
+
+
+
+
+
+
+              //  input alma:
+
+              // kullanici sayi da girse veri tip string olur
+
+              // bu nedenle sayi istiyorsak prompt un basina + konulur
+
+            //    var input = +prompt("Please enter a Number");
+
+            //    console.log(input);
+
+            //    console.log(typeof(input));
+
+
+
+
+
+
+
+              // Js de + operatörü ile sayiya dönüstürülebilen degerler
+
+            //   string (sayı olarak)
+            //     null
+            //     boolean
+            //     integer (pozitif veya negatif)
+            //     float (pozitif veya negatif)
+            //     0x formatındaki onaltılık sayılar.
+            //     scientific (exponent)  bilimsel üslü sayılar.
+
+
+            // undefined
+            // ve  string (yazılar) ise cevrilemez
+
+
+
+
+            console.log(+"09");
+            console.log(+null);     // 0 olur
+            console.log(+"7");
+            console.log(+"-7");
+            console.log(+false);  // 0 sayi verir
+            console.log(+true);   // 1 verir
+            console.log(+"abc");        // son iki satirda NaN verir
+            console.log(+"undefined");
+
+
+            //  +  - islemine unary operator denir
+            // unary minus unary plus
+
+
+
+            // Github daki kodlar 
+            // x += y olursa daha güzel
+            // x = x + y daha basit 
+
+
+
+
+
+            // = atama operatörü 
+            // == ise karsilastirma 
+
+
+            // ==  in olumsuzu != 
+
+            // ===  in olumsuzu !== 
+
+            // birer tane = azaltilir
+
+
+            // var kullandigimiz icin ikinci kez 
+            // a diyebiliyoruz. let de izin vermez
+
+
+
+
+
+
+
+              ////  iki farkli kullanim
+
+              // var d = 5;
+
+              // var e = 10;
+
+              // d = e = 10;
+
+              // d = (e = 10);
+
+
+
+
+
+
+
+
+                ///////////////////
+
+                var aa = 4;
+
+                var bb = "4";
+
+                var cc = aa === bb;  
+
+                console.log(cc);  // false
+
+                console.log(aa == bb); 
+
+
+
+                console.log(aa != bb);
+
+                console.log(aa !== bb);
+
+
+
+
+
+                /////////////////////
+
+
+
+                var dd = "20";
+
+                var ee = "10";
+
+                console.log(dd > ee);
+
+
+                /////////
+
+
+
+                var ff = "a";
+
+                console.log(ff > dd);  
+
+
+
+                ///////////////
+
+
+
+
+
+
+
+                console.log("a".charCodeAt());
+
+                console.log("A".charCodeAt());
+
+
+                console.log("FullStack" < "Fullstack");
+
+                // burada tüm harfleri tarar 
+                // fark bulana kadar gider
+
+
+
+
+
+
+                /////////////////////
+
+
+
+                console.log(String.fromCharCode(101));
+
+                console.log(String.fromCharCode(66));
+
+                console.log(String.fromCharCode(73));
+
+
+                //////////////////////////
+
+
+
+
+
+
+
+
+                // islem sirasi 
+                // not 
+                // and 
+                // or 
+
+
+
+                ///// Js de not kullanimi !  seklindedir
+
+                var gg = !true || false;
+
+                console.log(gg);
+
+                console.log(!"" && !"");
+
+                // console.log("{}" || !"{}"); 
+
+
+
+
+                console.log(null && NaN);
+
+                console.log(0 && null);
+
+                /////////////////
+
+
+                // console.log(3 && alert("Hello"));
+
+
+
+
+
+
+
+            // Kullanicidan aldigimiz password u
+            // simule ediyoruz
+            // eger 3 sart da tutuyorsa sifre dogru olsun
+            
+            
+            var capitalLetter = true;
+
+            var symbol = true;
+
+            var passLength = false;
+
+
+            var result = capitalLetter && symbol && passLength
+
+
+            console.log(result || console.log("Try again"));  // gecersiz sifre
+
+
+
+
+
+
+
+
+
+
+
+
+            var capitalLetter = true;
+
+            var symbol = true;
+
+            var passLength = false;
+
+
+            var result = capitalLetter && (symbol || passLength)
+
+
+            console.log(result || console.log("Try again"));
+
+
+
+
+                ///////////////////////////////////
+
+
+
+
+
+            
+            // Nullish Coalescing Operator :
+
+
+            // ??  ile sorgulanir 
+            // undefined ve null larin tespitinde islem yapmak icin
+            // ilk deger null yada undefined ise ikinci degeri verir
+            // ilk deger null yada undefined degilse ilk degeri verir
+            // yani null yada undefined olmayan degeri verme meyilindedir
+
+            // ikisi de undefined ise undefined verir
+            // // ikisi de null ise null verir
+            // ikisi de dolu ise ilk deger döner
+
+            var hh;
+
+            var ii;
+
+            console.log(hh ?? "Dolu");
+
+            console.log("Dolu" ?? hh);
+
+            console.log(hh ?? ii);
+
+            console.log(null ?? null);
+
+            console.log(2 ?? "dolu");
+
+
+
+            var jj;
+
+            console.log(jj ?? null);
+
+            // iki deger de bos ise ikinci deger döner
+
+            // https://app.peardeck.com/takeaways/101651142867518915087/terhambsb
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              ////////////////////////
+    </script>
+  </body>
+</html>

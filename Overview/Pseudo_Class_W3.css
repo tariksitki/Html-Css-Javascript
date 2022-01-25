@@ -1,0 +1,87 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+
+
+a:link {
+    color: blue;
+    text-decoration: underline double;
+    
+}
+
+a:hover {
+    background-color: bisque;
+    font-size: 20px;
+    text-decoration: overline;
+}
+
+a:visited {
+    color: red;
+    text-decoration-color: blue;
+}
+
+a:active {
+    color: green;
+    
+}
+
+
+
+
+
+.hoverdiv {
+    border: 2px solid;
+}
+
+
+.hoverh2 {
+    color: red;
+}
+
+.hoverp {
+    display: none;
+    background-color: yellow;
+    padding: 20px;
+}
+
+.hoverdiv:hover p {
+    display: block;
+    
+}
+
+
+
+
+
+    /* First child kullanirken 
+    div:first-child degil
+
+    p.first-child seklinde 
+    yani child element ne ise onu yazariz
+    
+    i:first-child ise herhangi bir 
+    eleman icindeki ilk i elementini alir*/
+
+.aa {
+    background-color: bisque;
+}
+
+p:first-child,
+i:first-child {
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .a {
+        margin: 20vh auto;
+        height: 30vh;
+        width: 60vw;
+        outline: 5px solid aquamarine;
+        outline-offset: 10px;
+        background-color: aquamarine;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      /* negatif offset  */
+
+      .b {
+        margin: 20vh auto;
+        height: 30vh;
+        width: 60vw;
+        border: 2px solid red;
+        outline: 5px dashed black;
+        outline-offset: -30px;
+        background-color: aquamarine;
+        vertical-align: middle;
+        text-align: center;
+      }
+
+      .button {
+        text-decoration: none;
+        display: inline-block;
+        background: steelblue;
+        padding: 1em 3em;
+        color: white;
+        width: 10vw;
+        margin: 10vh auto;
+        text-align: center;
+        transition: all ease-in-out 400ms;
+        outline: 3px solid steelblue;
+      }
+
+      /* transition i hover kisminda verirsek, büyüme yavas oluyor ancak
+        mausu cekince hemen kücülüyor. Ancak normal button a verirsek 
+        hem büyüme hem de kücülme yavas oluyor */
+
+      /* outline in hover da düzgün calismsi icin hem hover kisminda boyut style ve renk tanimlamasi yapiyoruz hem de normal button kisminda */
+
+      /* outline 3px oldugundan offset i 5 px 
+        verdigimizde geriye 2 px kalir.
+
+        eger 5 olsun istersek 8 px vermemiz gerekir */
+
+      .button:hover {
+        outline: 3px solid steelblue;
+
+        outline-offset: 8px;
+      }
+
+      /* ikinci bir ihtimal olarak hover da -5px outline vererek outline cizgisini
+        beyaz yapabiliriz */
+
+      /* border bottom diyebiliriz ama outline bottom deme sansimiz yoktur */
+    </style>
+  </head>
+  <body>
+    <div class="a">outline</div>
+
+    <div class="b">outline</div>
+
+    <a href="" class="button">Hello</a>
+
+    <!-- CSS Outline
+
+        Outline-offset property specifies the space between an outline and the edge or border of an element.
+An outline is a line that is outside the borders of the element. Outlines are different from borders.
+
+CSS has 5 outline properties:
+
+outline-style
+outline-color
+outline-width
+outline-offset
+outline
+
+
+
+
+
+
+CSS Outline Styles
+dotted
+dashed
+solid
+double
+groove
+ridge
+inset
+outset
+none
+hidden
+Example
+p {outline-style: dotted;} -->
+  </body>
+</html>

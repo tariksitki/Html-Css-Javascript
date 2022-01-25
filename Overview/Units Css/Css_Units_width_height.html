@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+         /* :root {
+            font-size: 100%;
+        }
+
+         bu sekilde yazdigimizda hem 1 rem 16px olacak
+        hem de 
+        html {
+            font-size: 16px;    olmus olacaktir
+        }  */
+
+        /* Yukarida yazili olan bu iki yöntem temeldeki font size i 
+        degistirmenin iki farkli yöntemidir 
+        Bunlarin haricinde body ye bile font size vermis olsak 
+        temel degeri degistirmeyecektir*/
+
+
+
+        body {
+            background-color: bisque;
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        /* auto width default tur tüm ekrani kaplar
+        cünkü div bir block elementtir  */
+
+        /* yükseklikte de auto default dur
+        icerik kadar ayarlar */
+
+
+        .main-content {
+            background-color: aqua;
+
+            /* width: 500px; */
+            margin: 0 auto;
+            
+            /* height: 300px; */
+            
+            height: auto;
+            /* overflow: auto; */
+
+        }
+
+        .auto-width {
+            width: auto;
+            background-color: blueviolet;
+        
+        }
+
+
+        .length-width {
+            background-color: crimson;
+            width: 40rem;
+            /* width: 50vw; */
+            /* ana kutuya 500px verirsek tasar  */
+        }
+
+        .percent-width {
+            background-color: yellow;
+            width: 50%;
+        }
+
+        /* elemente göre hareket eder  */
+
+
+        /* max width i pixel ile verdigimizde dahi 
+        sayfayi kücülttügümüzde responsive olarak 
+        hareket ediyor */
+
+        .max-width {
+            max-width: 700px;
+            background-color: darkmagenta;
+            
+        }
+
+        .min-width {
+            background-color: rgb(172, 143, 143);
+            min-width: 700px;
+            display: inline-block;
+        }
+
+        /* ekrani büyüttükce 700 den öteye gecmez */
+
+        /* min width ile de su degerden asagi inmesin
+        cirkinlesmesin diyebiliriz  */
+
+        /* Genelde viewwidth : vw: container en dış sarmalda tercih ederiz */
+
+
+
+        .responsive {
+            background-color: yellow;
+            font-size: 2rem;
+
+        }
+
+        /* responsive design */
+
+
+        /* @media only screen and (max-width:768px) {
+            :root{
+                font-size: 12px;
+            }
+        } */
+
+
+
+        /* fontsize yazarken calc function da kullanilabilir
+        bunu kullanarak @media kullanamya gerek kalmiyor
+
+        mesela 
+
+        h2 {
+            font-size: calc(3vw + 10px); degerler ve + arasinda bosluk
+        }                                   Burada - ve / gibi islemde yapilabilir */
+        
+        
+
+        /* Birde rrot icerisine degisken olarak 
+        font size degeri atama vardir;
+
+        :root{
+            --main-font-size:12px;          /*  Bu satirda degisken atadik */
+
+            /* font-size: var(--main-font-size);        Bu satirda cagirdik  cagirmazsak gelmez} */
+
+
+        /* Eger degisken tanimli degil ise su sekilde de yapilabilir */
+
+        /* :root{
+            font-size: var(--main-font-size, 16px);  
+        }   Bu durumda degiskenimizin degeri 16px olarak ayarlanir*/
+
+
+        /* Birde su ihtimal var 
+        eger degisken 1 tanimli degil ise degisken 2 yi getir  */
+
+        /* :root{
+            font-size: var(--main-font-size1, --main-font-size2); 
+        } */
+
+        
+
+    </style>
+</head>
+<body>
+    
+    <h1>Width and Height</h1>
+
+    <div class="main-content">
+
+        <div class="auto-width">Auto width</div>
+
+        <div class="length-width">length width Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, error! Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, ullam.</div>
+
+        <div class="percent-width">percent width</div>
+
+        <div class="max-width"> Max width Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur nam nostrum non iure sapiente, recusandae id corporis nesciunt dolor inventore, laborum laudantium, provident eveniet quod deserunt libero minus ex iusto magni. Quod sint reiciendis, recusandae necessitatibus dolores quisquam omnis dolore cumque neque ab voluptates ea quam quaerat obcaecati soluta deleniti sunt assumenda. Magni sed minima ab ut mollitia asperiores? Quia nesciunt fuga, corporis animi laboriosam perferendis. Praesentium deleniti fugiat ut dolore iure quos recusandae, dolor, temporibus repudiandae modi nisi expedita sed quod libero at impedit quam ipsum laudantium numquam? Soluta quidem culpa aliquam autem earum ea reprehenderit. Id incidunt a quasi et esse ducimus ut fuga mollitia. Amet ad nulla expedita maiores ab cumque inventore dolorem minima necessitatibus distinctio tempora quisquam blanditiis qui, velit, sapiente hic aspernatur ea ullam earum? Quae nesciunt dolorem beatae ducimus magnam magni dolor suscipit ipsum dolore vitae incidunt neque atque culpa quibusdam blanditiis non tempore illo reiciendis perferendis assumenda, qui consectetur nobis alias excepturi! Provident quibusdam officiis incidunt veritatis fuga error ullam laborum? Quis est harum voluptatibus fugit magnam accusantium voluptatem labore necessitatibus, corporis autem commodi porro iste minus tempora possimus nesciunt aspernatur nihil quo tenetur repellendus reprehenderit assumenda! Itaque eaque eius necessitatibus nobis pariatur.</div>
+        <div class="min-width">Min width</div>
+
+
+        <div class="responsive">
+            Responsive
+        </div>
+
+
+
+            <hr>
+            <hr>
+            <hr>
+
+            <br><br><br>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

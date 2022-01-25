@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+/* Bu sekilde style verdigimizde div disindaki 
+p etkilenmez */
+
+div p {
+    color: red;
+}
+
+
+
+/* Bu sekilde sadece  p ler sekil alacaktir.
+h1 sekil almaz  */
+
+/* section altindaki iki element , ile ayrilir */
+
+/* dogrudan child olmasi lazim 
+article icindeki etkilenmez */
+
+/* eger > isaretini kaldirirsak descandent olursa
+o zaman artikel altindaki de etkilenir */
+
+section > p, h1 {
+    color: blue;
+}
+
+
+
+h2 + p  {
+    color: brown;
+} 
+
+
+
+h5 ~ p {
+    color: rgb(108, 214, 1);
+}
+
+
+
+
+
+</style>
+
+</head>
+<body>
+    
+
+
+    <!-- CSS Combinators
+A combinator is something that defines the selectors' relationship. There may be more than one simple selector in a  CSS selector. We can include a combinator among the simple selectors. CSS has four different combinators:
+
+descendant selector (space) iki element arasina sadece space konulur
+
+child selector (>)
+
+adjacent sibling selector (+)
+
+general sibling selector (~)
+
+
+
+
+Descendant Selector
+The descendant selector matches all the descending elements of a defined element.
+
+The example below selects all <p> elements within <div> elements.
+
+Example
+div p {
+  background-color: blue;
+  color: white;
+} -->
+
+
+
+
+
+        <div>
+
+            <p>Paragraph1 </p>
+
+            <p>Paragraph 2</p>
+        </div>
+
+
+        <p>Paragraph out</p>
+
+
+
+
+
+        <hr>
+        <hr>
+        <hr>
+        <hr>
+
+
+
+        <section>
+            <p>Inside section</p>
+            <p>Inside section</p>
+            <h1>Inside section</h1>
+
+            <article>
+                <p>artikel p</p>
+            </article>
+        </section>
+
+        <p>outside section</p>
+
+
+
+
+
+        <!-- Child Selector
+The child selector selects all the elements that are a specified element's children.
+
+The example below selects all <p> elements that are children of a <div> element.
+
+Example
+div > p {
+  background-color: blue;
+  color: white;
+} -->
+
+
+
+
+
+<hr>
+<hr>
+<hr>
+
+
+
+
+
+
+    <!-- Adjacent Sibling Selector
+
+
+        Burada h2 + p yazdigimizda sadece h2 yi takip eden ilk p
+        etkilenir. kac tane p olursa olsun h2 yi sadece ilki etkilenir
+
+
+    The adjacent sibling selector selects all elements that are the adjacent  
+    (immediately following)  siblings of a  specified element. 
+
+The parent element of sibling elements must be the same.
+
+The example below selects all <p> elements placed immediately after the <h2> elements.
+
+Example
+h2 + p {
+  background-color: blue;
+  color: white;
+} -->
+
+
+
+
+
+    <main>
+        <h2> main h2 </h2>
+        <p> main p</p>
+        <p> main p</p>
+        <p> main p</p>
+
+        <h2>main h2</h2>
+        <p>main p</p>
+        <p>main p</p>
+        <p>main p</p>
+        <p>main p</p>
+    </main>
+
+
+
+
+
+
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+
+
+
+    <!-- General Sibling Selector
+
+        Bu yöntemde, h5 p dedigimizde
+        h5 den sonra gelen tüm p ler etkilenir
+        
+The general sibling selector selects all elements that are siblings of a defined element.
+
+The example below selects all <p> elements that are siblings of <h2> elements. 
+
+Example
+h2 ~ p {
+  background-color: blue;
+  color: white;
+} -->
+
+
+<!-- p ~ ul
+The example describes: Selects every < ul > element that are preceded by a < p > element. -->
+
+    
+
+
+    <footer>
+        <h4>h4</h4>
+        <p>h4 p</p>
+        <p>h4 p</p>
+        <p>h4 p</p>
+        
+        <h5>h5</h5>
+        <p>h5 p </p>
+        <p>h5 p </p>
+        <p>h5 p </p>
+
+        <h6> h6</h6>
+        <p>h6 p</p>
+        <p>h6 p</p>
+        <p>h6 p</p>
+    </footer>
+
+
+
+    <!-- Which < p > elements should have yellow background color according to example?
+E.g.:
+div > p {
+background-color: yellow;
+}
+< div >
+< p >Paragraph 1< /p >
+< section >< p >Paragraph 2 < p >< /section >
+< p >Paragraph 3< /p >
+< /div >
+< p >Paragraph 4< /p > 
+
+
+Paragraph 1 and Paragraph 3-->
+
+
+
+<!-- Which < p > elements should have blue background color according to example?
+E.g.:
+div + p {
+background-color: blue;
+}
+< div >
+< p >Paragraph 1< p >
+< p >Paragraph 2< p >
+< /div >
+< p >Paragraph 3< /p >
+< p >Paragraph 4< /p > 
+
+Paragraph 3-->
+
+
+
+
+<!-- Which < p > elements should have blue background color according to example?
+E.g.:
+div ~ p {
+background-color: blue;
+}
+< p >Paragraph 1< /p >
+< div >
+< p >Paragraph 2< /p >
+< /div >
+< p >Paragraph 3< /p >
+< p >Paragraph 4< /p >
+
+Paragraph 3, Paragraph 4 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

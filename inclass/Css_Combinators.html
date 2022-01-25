@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        /* seo icin h1 bir tane olmasi lazim  */
+        /* birden fazla kulanilmamali  */
+
+        /* 1: etiketler ile ulasma  */
+            /* 2: class ve id ile ulasma  */
+            /* 3: evrensel secici  
+            tüm sayfayi ilgilendiren degisiklikleri 
+            burada veririz*/
+            
+
+        * {
+            font-size: 20px;
+            /* em rem degisikligi icin  * a
+            yada body ye font size verebiliriz
+              */
+
+            line-height: 25px;
+            background-color: bisque;
+        }
+
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            
+        }
+
+            /* class ile ulasma */
+
+
+        .brand {
+            width: 50%;
+            float: right;
+            padding: 10px;
+
+
+        }
+
+        /* combinators ile ulasma  */
+        /* descandant torun secici  */
+        /* div ici tüm p  */
+        /* div icindeki ul icindekiler dahil  */
+
+
+        /* div p {
+            color: rgb(214, 19, 19);
+            font-weight: 500;
+        } */
+
+
+            /* child ise sadece kendi cocuklari  */
+
+           div > p {
+            color: rgb(214, 19, 19);
+            font-weight: 500;
+        } 
+
+        li > p {
+            border: 2px solid blue;
+        }
+
+
+        /* Bu sadece kendisinden sonra gelen 
+        p tagine uygular  */
+
+        div + p {
+            border: 3px solid greenyellow;
+        }
+
+        /* tilde ise kendisinden sonra gelen
+        tüm p lere uygular */
+
+        /* bunlarin hiyerarsik durumlarini
+        test edelim  
+        ayni seviyede ve alt seviyrlerde*/
+
+
+        /* div ~ p {
+            border: 3px solid tomato;
+        } */
+
+        /* div altinda tek img var 
+        ister + ile ister tilde ile
+        yanlis burada + islemez
+        + nin nasil calistigina bak 
+        hiyerarsi istiyor mu istemiyor mu  
+        
+        + kendisinden hemen sonra gelmesini
+        istiyor elementin 
+        div ile img arasinda p oldugu icin
+        calismiyor*/
+
+        div ~ img {
+            background-color: dodgerblue;
+            border: 3px solid gray;
+            border-radius: 10px 0px;
+        }
+
+
+        /* p, img, h1, hr{
+            outline: 4px solid red;
+        } */
+
+        /* yada class larda listelenebilir
+        brand, class, id seklinde  */
+
+    </style>
+
+    <!-- .form input[type="submit"] -->
+
+    <!-- .class1.class2 {
+
+    }
+
+    bu class1 ve 2 tüm elementlerisecer -->
+
+  </head>
+  <body>
+    <!-- önce class ve id 
+    bunlar ise ilave -->
+
+    <div>
+      <h1>SELECTORS</h1>
+      <hr />
+      <img class="brand" src="./images/cw_son.png" alt="" />
+      <p>
+        In CSS, selectors are used to target the HTML elements on our web pages
+        that we want to style. There are a wide variety of CSS selectors
+        available, allowing for fine-grained precision when selecting elements
+        to style. In this article and its sub-articles we'll run through the
+        different types in great detail, seeing how they work.
+      </p>
+      <p>
+        A CSS selector is the first part of a CSS Rule. It is a pattern of
+        elements and other terms that tell the browser which HTML elements
+        should be selected to have the CSS property values inside the rule
+        applied to them. The element or elements which are selected by the
+        selector are referred to as the subject of the selector.
+      </p>
+      <p>
+        If you have more than one thing which uses the same CSS then the
+        individual selectors can be combined into a selector list so that the
+        rule is applied to all of the individual selectors.
+      </p>
+
+      <ul>
+        <li>
+          <p>Descendant Selectors</p>
+        </li>
+        <li>
+          <p>Adjacent sibling selectors</p>
+        </li>
+        <li>
+          <p>Pseudo Selectors</p>
+        </li>
+        <li>
+          <p>Universal Selector</p>
+        </li>
+      </ul>
+    </div>
+
+    
+    <p>Adjacent Sibling Selector- Bitişik Kardeş seçici</p>
+    <p>general sibling selector - Genel kardeş seçiçi</p>
+    <img src="./images/html-css.png" alt="" width="50%" />
+  
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

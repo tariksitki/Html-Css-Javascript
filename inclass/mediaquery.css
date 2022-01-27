@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color:bisque;
+    color: black;
+  }
+
+  h1 {
+      
+      background-color: RebeccaPurple;
+      width: 300px;
+      margin: 20px auto;
+      padding: 10px;
+      text-align: center;
+      border: 2px solid black;
+      border-radius: 50px;
+  }
+  
+  .header {
+    background-color: green;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 32px;
+  }
+  
+  .navbar {
+    overflow: auto;
+    background-color: #555555;
+    margin-bottom: 20px;
+    /* overflow u silmeyi dene 
+    block element olarak calsimasini sagalyan
+    yöntemlerden biri  
+    clear in muadili*/
+  }
+  
+  .navbar a {
+    float: left;
+    /* float i silmeyi dene  */
+    /* display: block; */
+    color: #f2f2f2;
+    text-align: center;
+    /* kutular icinde ortala  */
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .row {
+    display: flex;
+    /* flexi silmeyi dene  */
+    flex-wrap: wrap;
+
+  }
+  
+  .column {
+    flex: 25%;
+    padding: 20px;
+  }
+
+
+
+  /* burada yukarida verilen özellige ekleme cikarma
+  degistieme yapilabilir */
+
+  @media screen and (max-width: 922px) {
+      body {
+          background-color: blue;
+      }
+
+      .column {
+          flex: 50%
+      }
+
+      .header {
+          font-size: 16px;
+      }
+
+  }
+
+  @media screen and (max-width:600px) {
+      body {
+          background-color: olive;
+          color: white;
+      }
+
+      .header {
+          display: none;
+          
+      }
+
+      .navbar {
+          display: flex;
+          flex-direction: column;
+          background-color: #222;
+
+        
+      }
+
+      .row {
+          
+          flex-direction: column;
+          /* margin: 0 auto; */
+          /* align-content: center; */
+          /* justify-content: center; */
+          align-items: center;
+          /* align-self: center; */
+      }
+
+      .column {
+          width: 80%;
+      }
+
+      /* bunun icinde selecektor body id hersey ile
+      cagirma olur */
+  }
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  /* @media screen and (min-width: 922px) {
+    body {
+        background-color: blue;
+    }
+} */
+
+
+
+

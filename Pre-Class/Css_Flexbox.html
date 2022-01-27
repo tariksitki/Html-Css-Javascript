@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .flex-container {
+            background-color: red;
+            display: flex;
+        }
+
+        .innerdiv {
+            background-color: white;
+        }
+
+
+        body {
+            margin: 0px;
+        }
+
+        .container{
+            border: 6px solid black;
+            display: flex;
+            /* display: inline-flex; */
+            /* flex-direction: row; */
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+
+            /* flex-wrap: wrap; */
+            /* flex-wrap: nowrap;  default */
+            /* flex-wrap: wrap-reverse; */
+
+
+
+            /* flex-direction: column;
+            height: 400px;
+            flex-wrap: wrap; */
+            /* bu 3 satiri kullandigimizda yukaridan asagi dizili ama 
+            son 4 item saga atilir */
+
+
+            /* sorthand  */
+
+            /* flex-flow: row-reverse wrap; */
+
+
+            flex-flow: column-reverse wrap-reverse;
+            height: 400px;
+
+
+        }
+        
+        /* wrap dedigimizde, tüm itemlar ekrana sigiyor ise yine 
+        yanyana dizilir ama ekrani kücültürsek bu durumda
+        son ögeden itibaren asagi dogru inecektir */
+
+        /* not reverse de ise yine tüm elemanlar ilk etap da 
+        ayni satira eklenir. sayfa kücültüldükce 
+        tüm elemanlar alt satira iner 9. item dan 
+        itibaren üst satira cikmaya baslar */
+
+        /* inline flex dedigimizde sadece container in icerisindeki
+         itemlar kadar yer isgal edilir
+        sadece flex dersek ana container icerisinde bos yerler de 
+        kalir ve bu durumda block element olur
+        yani tüm satir uzunlugunu kaplar*/
+
+
+        .flex-item {
+            color: white;
+            font-size: 1.5rem;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .item1 {
+            background-color: green;
+        }
+
+        .item2 {
+            background-color: red;
+        }
+
+        .item3 {
+            background-color: blue;
+        }
+
+        .item4 {
+            background-color: yellow;
+        }
+
+        .item5 {
+            background-color: gray;
+        }
+
+        .item6 {
+            background-color: aquamarine;
+        }
+
+        .item7 {
+            background-color: bisque;
+        }
+        
+        .item8 {
+            background-color: rgb(177, 177, 3);
+        }
+
+        .item9 {
+            background-color: rgb(0, 183, 255);
+        }
+    </style>
+</head>
+<body>
+    
+
+    <!-- Flexbox:
+    flexible and efficient layouts
+    distribute space among items
+    control their alignment -->
+
+
+    <!-- Neden Flexbox:
+
+    a lot of flexibility
+    arrange items 
+    spacing
+    alignment 
+    order of items 
+    bootstrap 4 is built on top of the flex layout  -->
+
+
+
+
+    <!-- Before the Flexbox Layout Module, there were four layout modes:
+
+        - Block, for sections in a webpage
+        - Inline, for text
+        - Table, for two-dimensional table data
+        - Positioned, for the explicit position of an element -->
+
+
+
+        <!-- Main size: en distaki flex tasiyicinin solundan
+        en sag ucuna kadar olan uzunluk 
+        yani main start ile main end arasi mesafe
+
+        cross size: ana tasiyicinin en üstünden en altina 
+        kadar olan uzunluk 
+
+        cross start: ana tasiyicinin en üstünün basladigi 
+        cizgidir
+
+        cross end:  altta bittigi yerdir
+
+        main start: ana tasiyicinin en solda 
+        basladigi cizgidir 
+
+        main end: ana tasiyici sagda bitti yer
+
+        Main Axis/Main Dimension:
+
+        The main axis of a flex container is the primary axis along which flex items are laid out.      
+        It extends in the main dimension.
+        Ana tasiyicinin en solundan en sagina kutu icerisinden 
+        uzanir
+
+
+        Cross Axis/Cross Dimension
+        The axis perpendicular to the main axis is called the cross axis. 
+        It extends in the cross dimension.
+        Cross axis kutu icerisinden uzanir en üstten en alta 
+
+
+        Ana tasiyici kutuya, flex container denir 
+        Icerisindeki kutulara ise flex item denir 
+
+
+        Main-Start/Main-End
+         The flex items are placed within the container starting on the main-start side and going toward the main-end side.
+
+
+         Flex lines are filled with items and placed into the container 
+         starting on the cross-start side of the flex container 
+         and going toward the cross-end side. -->
+
+
+
+
+         <div class="flex-container">
+             <div class="innerdiv">1</div>
+             <div class="innerdiv">2</div>
+             <div class="innerdiv">3</div>
+         </div>
+
+
+
+         <br><br><br><br><br>
+
+
+         <div class="container">
+             <div class="flex-item item1">Item1</div>
+             <div class="flex-item item2">Item2</div>
+             <div class="flex-item item3">Item3</div>
+             <div class="flex-item item4">Item4</div>
+             <div class="flex-item item5">Item5</div>
+             <div class="flex-item item6">Item6</div>
+             <div class="flex-item item7">Item7</div>
+             <div class="flex-item item8">Item8</div>
+             <div class="flex-item item9">Item9</div>
+         </div>
+
+         <!-- Tabloya baktigimizda en dista border i görecegiz  -->
+
+
+
+
+
+
+
+
+         <!-- The Flex Container Properties -->
+
+         <!-- flex-direction
+         flex-wrap
+         flex-flow
+         justify-content
+         align-items
+         align-content -->
+
+
+
+
+         <!-- The flex-direction Property:
+    This property will set the direction of the 
+    main flexbox axis and has four possible values.
+
+    1: flex-direction: row:  defaulttur
+            
+            item lar soldan saga olacak sekilde dizilir 
+            yani tüm itemlari tek bir row icerisine yerlestirir
+
+    2: row_reverse:  itemlar sagdan sola olacak 
+                    ters cevirme sonucunda 1 
+                    numarali item en saga gelir
+
+    3: column: yukaridan asagi 
+            ancak tüm item lar bulunduklari row u 
+            tamamen kaplarlar yani soldan saga 
+            hic bosluk kalmaz
+
+    4: column-reverse:  asagidan yukari  -->
+
+
+
+
+
+
+
+
+
+
+    <!-- The flex-wrap Property -->
+
+    <!-- Default nowrap değeri bize, tüm öğelerin 
+    yan yana tek bir satırda (veya sütun kullanılırken birbirinin altında) kalacağını söyler. -->
+
+
+    <!-- Sonra wrap değerine sahibiz. Öğelerin içeriği tek bir satıra sığamıyorsa, bu değer öğeleri birden çok satıra saracaktır. İlk satırdaki son esnek öğe, sonraki satıra bölünecek ve ilk öğenin altına hizalanacaktır. -->
+
+
+    <!-- wrap reverse değeri tersini yapar - Ögelerin dizilimi sag alttan baslar
+    son öğe yani sigmayan öge önceki satıra atlar ve ilk öğenin üzerine hizalanır. -->
+
+
+    
+
+
+    <!-- The flex-flow Property -->
+
+    <!-- You can combine the two properties flex-direction and flex-wrap into the flex-flow shorthand. The first value specified is flex-direction and the second value is flex-wrap. The default value is row nowrap. -->
+
+    <!-- baslangic flex flow olarak baslar  -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- The justify-content Property -->
+
+
+    <!-- item lari kutu icerisinde yatayda hizalamak 
+    ortalamak sola saga yaslamak icin kullanilir
+
+    initial value;  flex start dir ver itemlari 
+    container in start kösesine yaslar 
+
+
+    flex end ile de saga yaslariz
+
+    center tüm item lari ortalar 
+
+    space between tüm kutular arasinda esit bosluk kalir 
+    ve kenarlardaki kutular en saga ve sola yaslanir 
+    bosluk kalmaz 
+
+
+    space around'in between den farki ise köselerdeki 
+    kutular ile ana kutu arasinda esit seviyelerde 
+    bosluk birakir  -->
+
+
+
+
+
+
+
+
+
+    <!-- The align-items Property -->
+
+    <!-- The align-items property will align the items on the cross axis. -->
+
+
+    <!-- Bu özelliğin ilk değeri streç'tir ve bu nedenle esnek öğeler 
+    varsayılan olarak en uzun olanın yüksekliğine kadar uzanır. 
+    Aslında esnek kabı doldurmak için esniyorlar - en uzun öğe bunun yüksekliğini tanımlıyor. -->
+
+
+
+    <!-- You could instead set align-items to; - flex-start 
+    in order to make the items line up at the start of the flex container, 
+    - flex-end to align them to the end, - center to align 
+    them in the center. - baseline to align the flex items 
+    such as their baselines aligns -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- The align-content Property -->
+
+    <!-- To define the vertical alignment of several lines of items, use the align-content property. This property has no effect when there is only one line of flex items.
+
+    The wrap value should be applied to the flex container
+    The flex container should be higher than the lines of the flex items
+
+    In other words, there must be additional vertical space inside the container, which should be larger than the sum of all the heights of the rows of elements.
+
+    This property may have one of the following values:
+
+    stretch: lines stretch to take up all the available space in the container (it’s the    default value)
+    flex-start: lines are placed in the top part of the container
+    flex-end: lines are placed in the bottom part of the container
+    center: lines are centered in the middle of the container
+    space-between: lines are evenly distributed in the container
+    space-around: lines are evenly distributed with equal space around each line -->
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

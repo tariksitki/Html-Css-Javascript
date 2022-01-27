@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+
+            // Loops  
+
+
+      for (i = 0; i < 10; i++) {
+        document.write(i);
+      }
+
+      //  While loops
+
+      var i = 0;
+
+      var sum = 0;
+
+      while (i < 6) {
+        var sum = sum + i;
+        i++;
+      }
+
+      document.write("The total is: " + sum);
+
+      var i = 0;
+      var mult = 5;
+
+      while (i < 3) {
+        var mult = mult * i;
+        i++;
+      }
+
+      document.write(mult);
+
+      // do.....while statement
+
+      // bunun normal whilde den farki burada
+      // code en az bir kere calistirilir
+
+      var i = 6;
+      var sum = 0;
+
+      do {
+        var sum = sum + i;
+        i++;
+      } while (i < 6);
+
+      document.write(sum);
+
+      // for statement
+
+      // toplamda 3 ifade vardir
+      // 1. ifade code bloku calistirilmadan önce
+      // bir kez calistirilir
+
+      // 2. ifade condition i tanimlar
+
+      // 3. code bloku calistirilirsa daha
+      // sonrasinda her seferinde calistirilir
+
+      var sum = 0;
+
+      for (var i = 0; i < 6; i++) {
+        sum += i;
+      }
+
+      document.write("The total is " + sum);
+
+      // örnek 2;
+
+      var x = 0;
+
+      for (var i = 5; i > 3; i--) {
+        var x = x + i;
+      }
+
+      document.write(x);
+
+      // break
+
+      var i = 0;
+
+      while (i < 10) {
+        if (i === 3) {
+          break;
+        }
+
+        document.write(i);
+        i = i + 1;
+      }
+
+      // if ile diger kismin yeri degisebilir
+
+      var i = 0;
+
+      while (i < 10) {
+        document.write(i);
+        i = i + 1;
+
+        if (i === 3) {
+          break;
+        }
+      }
+
+      // örnek
+
+      var i = 0;
+
+      while (i < 10) {
+        if (i > 5) {
+          break;
+        }
+        i = i + 1;
+      }
+
+      document.write(i);
+
+      while (i < 10) {
+        i = i + 1;
+      }
+
+      document.write(i);
+
+      // continue Statement
+
+      // If a specified condition occurs, the continuation clause breaks one iteration (in the loop) and continues with the next iteration in the loop
+
+      for (var i = 4; i < 8; i++) {
+        if (i === 5) {
+          continue;
+        }
+
+        document.write(i);
+      }
+
+      // Dikkat write for döngüsü icinde olmali
+
+      for (var i = 4; i < 8; i++) {
+        if (i === 5) {
+          continue;
+        }
+      }
+
+      document.write(i);
+
+      // What is the output of the following code?
+
+
+      for (var i = 2; i < 5; i++) {
+        if (i === 3) {
+          continue;
+        }
+        document.write(i);
+      }
+
+
+
+
+      var sum = 0;
+for (var i = 3; i < 7; i++) {
+sum += i;
+if (i ===3 || sum > 10) {
+continue;
+}
+document.write(i);
+}
+
+
+
+
+var players = ["Messi ", "Ronaldo ", "Hazard ", "Neymar ", "Salah "];
+var text = "";
+var i;  
+for (i = 2; i < players.length; i++) {
+text += players[i];
+}
+document.write(text);
+
+
+
+
+var i = 0;
+var sum=0;
+while (i < 3) {
+var sum = sum + i; i++;
+}
+document.write("The total is: " + sum);
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

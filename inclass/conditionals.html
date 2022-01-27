@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // if true ise 
+        // false ise else 
+        // else if birinci olmadi ise ikinci bir 
+        // condition 
+        
+
+
+        // else if de sinirlama yoktur 
+        // 50 else if de olabilir
+
+        var x = 4;
+
+        if (x == 3) {
+            document.write("tebrikler");
+        }   else {
+            document.write("Nicht Tebrik");
+        }
+
+
+        
+
+
+        // let score = 51;
+
+        // if (score >= 50) {
+        //     console.log("Tebrikler Gectiniz");
+        // }
+
+        // console.log("Kod sonu");
+
+
+        // else tanimlamadigimiz icin 
+        // score 49 olursa cikti alamayiz
+
+
+
+         
+
+
+        // let grade = score >= 50;
+
+        // console.log(grade);
+
+        // if (grade) console.log('Tebrikler notunuz ${score} gecti');
+
+
+        // burada + kalkabiulir 
+
+        // let score = +prompt("Notunuzu giriniz: ");
+
+        // let grade = score >= 50;
+
+        // if (grade) console.log(`Tebrikler notunuz ${score} gecti`);
+
+        // template literal denir
+        // console icinde degisken degeri kullanmaya yarar
+        // grade üzerine mausus getir boolean yazar
+
+
+
+
+
+        
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+//         let score = 85;
+
+// if (score >= 50) {
+//     if (score >= 80) {
+//         console.log("Tebrikler cok basarili");
+//     }   else {
+//         console.log("Tebrikler gectiniz");
+//     }
+    
+
+// }   else{
+//     console.log("Üzgünüm");
+// }
+
+
+
+
+
+    // ternary if 
+
+    var score = 51;
+
+    score >= 50 ? console.log("Tebrikler Gectiniz") : console.log("Kaldiniz"); 
+
+    // ? if i temsil eder 
+
+
+
+    score >= 80 ? console.log("cok basarili") : 
+    (score >= 50 ? console.log("Tebrikler gectiniz") : 
+    console.log("Kaldiniz")); 
+
+
+    
+
+
+
+    
+
+    // var text;
+    // var fruits = "Banana";
+
+    // switch (fruits.toLowerCase()) {
+    //     case "banana":
+    //         text = "Banana is good"
+    //     break;
+
+    //     case "portakal":
+    //         text = "I am not a fan of orange";
+    //     break;
+
+    //     case "apple":
+    //         text = "Apples";
+    //     break;
+        
+    //     default:
+    //         text = "I have never heard of that fruit";
+    //         break
+
+    // }
+
+    // console.log(text);
+
+
+    // default olmazsa ve siklar arasinda yoksa case de 
+    // undefined 
+
+
+    // var text;
+    // var fruits = "ali";
+
+    // switch (fruits.toLowerCase()) {
+    //     case "banana":
+    //         text = "Banana is good"
+    //     break;
+
+    //     case "portakal":
+    //         text = "I am not a fan of orange";
+    //     break;
+
+    //     case "apple":
+    //         text = "Apples";
+    //     break;
+        
+
+
+    // }
+
+    // console.log(text);
+
+
+
+
+    // var text;
+    // var fruits = "ali";
+    // var fruits = prompt("Enter your favorite fruit :")
+
+    // switch (fruits.toLowerCase()) {
+    //     case "banana":
+    //         text = "Banana is good"
+    //     break;
+
+    //     case "portakal":
+    //     case "lime":
+    //     case "lemon":
+    //         text = `I am not a fan of ${fruits.toLowerCase()}`;
+    //     break;
+
+    //     case "apple":
+    //         text = "Apples";
+    //     break;
+
+
+    //     default:
+    //         text = "I have never heard of that fruit"
+        
+
+
+    // }
+
+    // console.log(text);
+
+
+
+
+
+
+    // pazartesi car per cumartesi inclass
+    // sali cuma teamwork
+    // pazar tatil
+    /// default yanlis gün girdiniz 
+
+
+    // days = prompt("Enter Your day");
+
+    // switch(days.toLowerCase()) {
+    //     case "monday":
+    //     case "wednesday":
+    //     case "thursday":
+    //     case "saturday": 
+    //         text = "inclass";
+    //     break;
+
+    //     case "tuesday":
+    //     case "friday":
+    //         text = "teamwork";
+    //     break;
+
+    //     case "sunday":
+    //         text = "holiday";
+    //     break;
+
+    //     default:
+    //         text = "No such a day";
+
+    // }
+
+    // console.log(text);
+
+
+    // iki ihtimal var 
+    // her bir case altinda clg de yapabiliriz 
+
+    // case de >  calismaz ama case altinda if calisir 
+
+
+
+
+
+
+
+
+
+
+
+
+//     var year = 2152;
+// var month = 2;
+// var dayCount;
+// switch (month) {
+//     case 1:
+//     case 3:
+//     case 5:
+//     case 7:
+//     case 8:
+//     case 10:
+//     case 12:
+//         dayCount = 31;
+//         break;
+//     case 4:
+//     case 6:
+//     case 9:
+//     case 11:
+//         dayCount = 30;
+//         break;
+//     case 2:
+//         if (((year % 4 == 0) && !(year % 100 == 0))
+//             || (year % 400 == 0))
+//             dayCount = 29;
+//         else
+//             dayCount = 28;
+//         break;
+//     default:
+//         dayCount = -1; // invalid month
+// }
+// console.log(dayCount); // 29
+
+
+
+
+
+
+
+
+        // condition i istersek if icerisinde yapariz 
+        // istersek  let grade  = score > 80 seklinde
+
+
+
+        // https://app.peardeck.com/takeaways/101651142867518915087/ttlvfeumh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

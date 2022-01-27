@@ -1,0 +1,80 @@
+
+/* 
+div {
+    border: 2px solid blue;
+    width: 700px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 30px;
+}
+
+
+img {
+    width: 30%;
+    float: left;
+    margin: auto;
+    margin-top: 15px;
+    padding: 20px;
+
+}
+
+
+p {
+    margin-top: -25px;
+
+} */
+
+
+
+div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;  
+    border: 1px solid blue;
+    width: 700px;
+    height: 500px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 15px;
+
+}
+
+
+img {
+    padding-left: 60%;
+    width: 30%;
+}
+
+
+p {
+    width: 60%;
+    text-align: justify;
+    
+}
+
+h1, p {
+    padding-left: 15px;
+}
+
+
+/* #no1{
+    flex:1;
+}
+
+ #no2 {
+
+    flex:1;   /*  buraya iki dersek oranlar 1 e 2 olur
+} 
+
+width ler %50  %50 de verilebilri*/
+
+/* özellikleri kullanabilmek icin konteynirinda
+dipplay flex olmasi lazim  */
+
+
+
+/* default direction row  */
+
+
+

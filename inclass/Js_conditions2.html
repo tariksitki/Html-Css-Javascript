@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // switch bir degeri birden cok variant ile karsilastirir
+
+
+        let i = 3;
+
+        if (i == 3) {
+            document.write("i = " + 3);
+        }
+
+
+
+        // iki == oldugunda string ve number
+        // esit kabul edilir
+        
+
+        let x = 3;
+
+        if (x == "3") {
+            document.write(` x = ${x} `);
+        }
+
+
+
+
+        let y = 5;
+
+        if (y === "5") {
+            document.write(` y = ${y} `);
+        }   else {
+            document.write(` y != 5 `);
+        }
+
+
+
+
+
+        // burada + olsa da olur olmasa da
+        // buradaki + isaretine template literal denir
+
+        // let money = +prompt("Enter the total amount of your money :")
+
+        // if (money > 100) {
+        //     document.write(`You have more money than 100 Euro`);
+        // } else if (money > 50) {
+        //     document.write("You have between 50 to 100 Euro");
+        // }   else {
+        //     document.write("You have less Money than 50 Euro");
+        // }
+
+        
+
+
+        // if icerisinde kod okunurlugu nedeni ile negatif sart kullanmamaya calisiyoruz
+
+
+
+        
+        // condition imizi ister if parantezi icerisinde tanimlayabiliriz istersek de burada oldugu gibi bir degiskene boolean sorusu sorarak condition olusturabilirz
+
+
+        // let score = 51;
+
+        // let grade = score >= 50;
+
+        // document.write(grade);
+
+        // if (grade) {
+        //     document.write("You have good Grade");
+        // }
+        
+
+
+
+
+
+        // tek satirlik if lerde süslü kalkabilir
+
+
+
+        let a = "a";
+
+        if (a === "a") document.write("True");
+
+
+
+
+        // süslü parantezi blok oluşturmak istediğimiz her yerde, if ve loops ta birden fazla komutu kapsam içine almak istiyorsak süslü paranteze almamız gerekir.
+
+
+
+
+
+
+
+
+        /// if icerisinde if yapisi:
+
+
+        // let note = +prompt("Enter your Grade: ");
+
+        // if (note > 50) {
+        //     if (note > 85) {
+        //         document.write(`You Have ${note} and Very Good `);
+        //     }   else if (note > 70) {
+        //         document.write(`You have ${note} and Good `);
+        //     }   else { document.write(`You have ${note} and so so `);
+        //     }
+        // }   else {
+        //     document.write(`Your Grade is not good ${note} `);
+        // }
+
+
+
+
+
+
+
+
+        // ternary if:
+
+
+        // let b = prompt("Enter Your Name");
+
+        // (b.toLowerCase() == "john") ? document.write("Your Name is John") : document.write(`Your Name is ${b} `);
+
+
+        // bu yapida if kullanmiyoruz buradali ? if i temsil eder  :  ise else i temsil eder
+        // else kismini ister ()  icinde ister normal yazabiliriz
+
+
+
+
+
+
+        //  ternary ile else if kullanimi:
+
+        // Cok Önemli: Eger tolowercase in sonunda () kullanmaz isek kod hata vermez ama bu kisim calismaz yani lowercase yapmaz
+
+        // Ternary de if else if ve else icin 3 ayri kisim da yapabilirz(2 asagida) yada asagidaki örnekte oldugu gibi else if yapisini else kisminin icinde de yazabilirz 
+
+
+    // let c = prompt("Enter Your Name");
+
+    //    (c.toLowerCase()) == "john" ? document.write("Your Name is John") : ((c.toLowerCase() == "kennedy") ? document.write("Your Name Kennedy") : document.write(`Your Name ${c} `));
+
+        // tolowercase kullandigimizda kodumuzu buna göre sekillendirmeyi unutmuyoruz
+
+
+        // let score = 21; 
+
+        // score >= 80 ? console.log("cok basarili"): (score >= 50 ? console.log("Tebrikler gectiniz") : console.log("Kaldiniz"));
+
+
+
+    //     let c = prompt("Enter Your Name");
+
+    //    (c.toLowerCase()) == "john" ? document.write("Your Name is John") : (c.toLowerCase() == "kennedy") ? document.write("Your Name Kennedy") : document.write(`Your Name ${c} `);
+
+
+
+
+        // Js de bosluklarin white space lerin önemi yok 
+    // enter ile asagi gecilebilir
+
+
+
+
+
+    /////////////////  switch
+
+
+    // case sadece birebir aynisini görünce calisir 
+    // >   <  kullanilmaz 
+
+    // case satirinda === yapisi gecerlidir 
+    // break kullanmak zorundayiz
+    // "banana" yazsak da olmaz
+
+    // toLowercase diye bir method var bu kullanilabilir
+    // hepsini kücük harf yapar
+    // ama kodumuzu buna göre dizayn etmemiz gerekir
+
+
+
+
+    let text;
+
+    fruit = prompt("Enter a Fruit name");
+
+    switch (fruit.toLowerCase()) {
+        case "banana":
+            text = "Banana";
+        break;
+
+        case "orange":
+            text = "Orange";
+        break;
+
+        case "apple":
+            text = "Apple";
+        break;
+
+        default:
+            text = "I have never heard of that fruit";
+
+    }
+
+    document.write(text);
+
+
+
+    // default olmazsa ve girilen deger siklar arasinda yoksa undefined
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+
+
+
+
+
+
+
+
+</body>
+</html>

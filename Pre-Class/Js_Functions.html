@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+
+              // function name (parameters) {
+              //     statement
+              // }
+
+
+
+
+              function square(number) {
+                  return number ** 2;
+              }
+
+              var a = square(5);
+              document.write(a);
+
+
+              // function tanimlamanin iki yolu vardir
+              // 1: func statement
+              // 2: func expression
+
+
+
+              // The main difference between a function expression and a function statement is the function name that can be omitted to create anonymous functions in function expressions.
+
+
+              // func statement da yukarida oldugu gibi
+              // function ile basliyoruz
+
+
+
+              // func expression
+
+              var square = function (number) {
+                  return number * number;
+              }
+
+              var b = square(10);
+              document.write(b);
+
+
+
+
+
+
+
+
+              let myfunc = function (number) {
+                  return (" Total is "  + number ** 3);
+              }
+
+              let c = myfunc(10);
+              document.write(c);
+
+
+
+
+
+
+
+
+
+              const myfunct = function (a, b) {
+                  return a / b;
+              }
+
+              const d = myfunct(900, 4);
+              document.write(" Total is " + d);
+
+
+
+
+              // su sekilde de cagrilabilir
+
+              document.write(" 700 / 6 = " + myfunct(700, 6));
+
+
+
+
+
+
+
+
+              // Function Constructor
+
+
+              let myfun = Function ("number", "return number * number");
+
+              document.write(myfun(9));
+
+
+
+    //           Warning :
+    //   You actually don't have to use the function constructor. Most of the time, you should avoid using the new keyword in JavaScript for your code speed and unexpected errors.
+
+
+
+
+
+
+
+
+
+
+    // Arrow Functions
+
+
+    // Arrow function, which is added to JavaScript with ES6, is a short syntax for writing function expressions.
+
+
+    // bu ES5 de bulunan eski koddur
+
+    let f = function (x, y) {
+        return (x * y) ** 2; 
+    }
+
+    document.write(" f(2, 3) = " + f(2, 3));
+
+
+
+
+    ////////////////////////
+
+
+    // ES6 ile gelen yeni kod ise : 
+
+
+    let g = (x, y) => (x * y) / 2;
+
+    document.write(" arrow function =  " + 
+    g(10, 100));
+
+
+
+    ////////////////////////////////
+
+
+
+
+
+    let h = (string1, string2) => string1 + string2;
+
+    document.write(h(" Enter", " Your Name"));
+
+
+
+
+    //////////////////////////////
+
+
+
+
+
+    // function lar parametre almak zorunda degildir
+
+
+
+    let i = () => " Welcome to Istanbul ";
+
+    document.write(i());
+
+
+
+    ////////////////////////////////
+    // direkt func icerisine print tanimlama 
+
+
+    function greet () {
+        document.write("Hello world");
+    }
+
+    greet();
+
+
+
+    /////////////////////////
+
+
+    function greet2 () {
+        console.log(" Hello >> World");
+    }
+
+    greet2();
+
+
+
+    /////////////////////
+
+
+
+    // let k = (t) >> (" Hello " + t);
+
+    // document.write(k("tarik"));
+
+
+
+    let m = function (name) {
+
+       document.write(" Hello " + name) ;
+    }
+
+
+    m("tarik");
+
+    // bu func i yukarida shorthand ile calistiramadim 
+
+
+
+
+        function num() {
+        return 5 + 7;
+        }
+        document.write(typeof(num));
+
+
+
+        var num = [7, 12, 143, 54, 37]
+num.sort(function (a,b){
+return b - a});
+console.log(num);
+
+
+
+
+
+
+
+
+
+function test(x, y) {
+if(x>y) {
+document.write(x);
+} else {
+document.write(y);
+}
+}
+test(7, 3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    </script>
+  </body>
+</html>

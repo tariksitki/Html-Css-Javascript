@@ -149,14 +149,14 @@
                   // console.log({i});
 
 
-                  let i = 0;
+                  // let i = 0;
 
-                  for (i; i < 10;) {
-                      console.log(i);
-                      i++
-                  }
+                  // for (i; i < 10;) {
+                  //     console.log(i);
+                  //     i++
+                  // }
 
-                  console.log({i});
+                  // console.log({i});
 
 
 
@@ -165,6 +165,216 @@
     //   var ın ne olduğunu bilin ama kullanmayın.
     //   artık let ve const kullanılıyor.
     //   var kullananlar eski alışkanlıklarından dolayı kullanıyor
+
+
+
+
+
+      let str = "Clarusway";
+
+      console.log(str.length);
+
+
+                  // lensth property digerleri method
+                  // bunda () yok
+        // primitiv lerin proper özelligi yok ama
+        // Js arka planda calistirir
+
+
+        // method lar built in func gibidir
+        // cagirdigimiz zaman gelir
+
+
+
+        console.log(str[0]);
+        console.log(str[8]);
+        console.log(str[1]);
+
+
+        // length ve indexleme farklidir
+
+        // length 1 2 3 4 5 diye gider
+
+
+
+
+        for (let i = 0; i < str.length; i++) {
+          console.log(str[i]);
+          console.log(i);
+
+          console.log(str[str.length - 1]);
+        }
+
+
+        // str[length - 1] ile son elemana ulas
+
+
+        // let i = 0 dememizin sebebi ilk karakter
+        // sifirinci eleman
+
+
+        // str[i] şeklinde undefined veriyor ancak slice lamada negatif index kullanılabiliyor
+
+
+
+
+
+
+
+        // break sadece  bulundugu loop dan cikar
+
+
+        // bu dersin peardeck ine kesin bakalim
+
+
+
+
+
+
+        for (let i = 1; i <= 100; i++) {
+
+
+          if (i % 5 === 0) continue;
+
+          // if (i % 5 === 0) break;
+
+          console.log(i);
+          }
+
+
+          // ==   ile de saglanabilir
+
+
+
+
+
+
+          // bir sayi gir yada cikmak icin q ya bas
+
+          // calisinca verilen sayi karesi ver
+
+
+
+          // while (true) {
+          //   let x = prompt (`Bir sayi giriniz: \n   q ile cikis yapiniz`);
+
+          //   if (x == "q") {
+          //     console.log("cikis yapildi");
+          //     break;
+          //   } else if (isNaN(x)) {
+          //     continue;
+          //   } else {
+          //     console.log(`${x}'in karesi = ${x*x}`);
+          //     break;
+          //   }
+          // }
+
+          // isnan not a number demektir
+
+
+
+
+
+          console.log(isNaN(0));
+          console.log(isNaN("a"));
+          console.log(isNaN(2));
+
+
+
+          // while (true) {
+          //   let x = prompt(`Enter a number or quit with q: `);
+
+          //   if (x == "q") {
+          //     console.log("cikis yapildi");
+          //     break
+          //   } else if (isNaN(x)) {
+          //     continue;
+          //   } else {
+          //     console.log(`${x}'in karesi = ${x*x}`);
+          //     break;
+          //   }
+          // }
+
+
+
+          // 0 ile 1 arasinda bir sayi
+          // ama hic 1 olmaz hep degisir
+
+
+
+          console.log(Math.random()*6 + 1);
+
+          console.log(Math.trunc(Math.random()*6 + 1));
+
+          // . dan solda ne varsa onu alir
+
+          // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+
+          // *6 deyince 0 ile 5 arasinda üretir
+          // ama biz 1 ile 6 arasinda istiyoruz
+          // o nedenle +1 dedik
+
+          // * degil * 100 dersek 0 ile 99 arasi üretir
+
+          // math 0 ile 1 arasinda sayi atar 
+          // trunc da bunun virgül kismini atar 
+
+
+          let x, y;
+          let count = 0;
+          let cift = 0;
+
+          // count kac zar attigimiz 
+
+
+          while (true) {
+              x = Math.trunc(Math.random()*6 + 1);
+              y = Math.trunc(Math.random()*6 + 1);
+
+              if (x == 6 && y == 6) {
+                count ++;
+                console.log(x, y, "You are win");
+                break;
+              } else if (x == y && x != 6) {
+                cift ++;
+                console.log(x, y, `${cift}. cift zar`);
+
+                if (cift == 3) {
+                  console.log("Kaybettiniz");
+                  break;
+                }
+              }
+
+              console.log(x, y);
+              count ++;
+              // burada cift gelmese de count u artiriyoruz
+          }
+
+          console.log(count);
+
+
+
+          // https://app.peardeck.com/takeaways/101651142867518915087/twhtcjdgo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
   </body>
 </html>

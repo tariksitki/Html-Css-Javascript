@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- dont repeat yourself kod yazarken  -->
+
+
+    <!-- gerekli talimat lari saklar
+    cagirdigimiz zaman gelir  -->
+
+
+    <!-- python da def ile burada function 
+    keyword ile tanimlanir  -->
+
+    <!-- en üst func imzasi
+    orta func body si 
+    en alt ise cagirma kismi  -->
+
+        <script>
+
+            // console.log("Hello");
+
+            // sayHi();
+
+            // buradan cagirsak bile gelir 
+            // buna hosting denir ama 36. satirdan cagirdiniz der
+
+
+            // function sayHi() {
+            //     console.log("Hello");
+            // }
+
+            // sayHi();
+
+
+
+
+            // let username = "Münir";
+
+            // function sayHi(name) {
+            //     console.log(`Hello ${name} `);
+            // }
+
+            // sayHi(username);
+
+            // sayHi();  // hello undefined
+
+            // sayHi("Mark");
+
+            // sayHi(prompt("Enter name"));
+
+
+
+            // function sayHi(name = "New User") {
+            //     console.log(`Hello ${name} `);
+            // }
+
+
+            // sayHi();
+
+            // sayHi("Tarik");
+
+            // eger default olarak name = "new user" kullanirsak, cagirma esnasinda deger girersek default u almaz 
+            // ama girmezsek default u yazar 
+
+
+            // sayHi camel case yazilmasi lazim 
+
+
+            // parametre tanimlarken name 
+            // diyebiliriz ama 
+            // let name = "tarik "
+            // kullanamayoz 
+
+
+
+
+            // 1 micro seviyede 
+            // tüm isleri degil isi ne ise o 
+
+            // 2 icinde clg bulunmayacak 
+            // retutn ile tanimlayacagiz
+            // profesyonel ortamda
+            // ürün piyasaya cikacagi zaman
+            // kötü karsilanir 
+
+
+            // icine deger alacak ve bu degeri degistirmeden döndürecek 
+
+
+            // console a console.log("hello");
+            // yazarsak hello döndürüüe 
+            // sonra undefined yzaar 
+
+
+
+
+
+            function sayHi(){
+                console.log("Hello");
+            } 
+
+
+            function sayHi2(name) {
+                return ("Hello " + name);
+            }
+
+
+            console.log(sayHi2("Matthew"));
+
+
+            console.log(typeof sayHi2());
+            console.log(typeof sayHi2());
+
+            console.log(typeof sayHi2());
+            console.log(typeof sayHi2("ali"));
+            console.log(typeof sayHi2("a" + 2));
+
+            // ne return ederse tip o olur 
+            // return yazdiktan sonra enter yapmak istersek () icerisinde yapmamiz lazim
+            // tanimlama da name + 2 dersek
+            // number verecek 
+
+
+            // sartlari kullanarak birden fazla return kullanilabilir func icerisinde
+
+
+
+            // tek satir return ettirecek isek
+            // parantez kullanmaya gerek yok 
+            // ama birden cok satirsa 
+            // return (
+            //     arferfew
+            //     rtewrew  seklinde
+            // )
+
+
+            // function add100(num1) {
+            //     return(num1 + 100);
+            // }
+
+            // console.log(add100(23));
+
+
+            function add100(num1, num2 = 0) {
+                return(num1 + num2);
+            }
+
+            // eger deger atanmaz ise 0 alir 
+            // yoksa girileni alir 
+
+            console.log(add100(23, 12));
+
+
+
+
+
+
+
+
+
+
+
+
+            // expression bir tanimlama yöntemi 
+            // burada func ismi tanimlamiyoruz
+            // tek satirda hem tanimlama hem bir degiskene atama 
+
+
+            // console.log(square(7));
+
+            // yukaridaki örnekte önce cagirma yapilabilirdi
+            // ama burada yapilamiyor
+            // yani expression da yapilamaz
+
+            // let square = function(a) {return a*a};
+
+            // console.log(square(7));
+
+
+            // bir satirda alt tusuna basip 
+            // ok tuslari ile asagi yukari tasima 
+
+
+
+
+
+
+
+
+            // func constructor const ile 
+            // kurulmak zorunda degil 
+
+
+
+
+            let adder = Function ("a", "b", "return a + b");
+
+            console.log(adder(2, 6));
+
+            console.log(typeof adder);
+
+            // console.log(typeof adder()); yapınca number veriyor hocam
+
+
+
+            // burada new olmasi lazim dedi hoca 
+
+
+
+            // arrow ise >>  ile 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // let sum = function(a, b) {
+            //     return a + b;
+            // };
+
+            // let addtwo = function (num1) {
+            //     return sum(num1, 2);
+            // }
+
+            // console.log(addtwo(5));
+
+            // console.log(addtwo("4")); //string
+            
+            
+
+            let sum = function(a, b) {
+                return a + b;
+            };
+
+            let addtwo = function (num1) {
+                return sum(+num1, 2);
+            }
+
+            // eger num1 önüne + koyarsak 
+            // girilen stringi sayiya cevirip 
+            // islem yapar
+
+
+            console.log(addtwo(5));
+
+            console.log(addtwo("4"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+            function sayHello(name) {
+                if(name) {
+                    console.log(`Hello ${name} `)} else {
+                        console.log("Hello");
+                    
+                }
+            }
+
+
+            sayHello("Mark");
+            sayHello();
+
+
+
+
+
+
+
+
+            // function sayHello(name) {
+            //     name && console.log(`Hello ${name} `);
+
+            //     // 1 && 3 => 3
+            // }
+                
+
+
+            // sayHello("Mark");
+            // sayHello();
+
+            // ikincisinde ici bos false 
+            // döndügü icin sonuc alinmaz
+
+
+
+
+            // stack de referans tipli degiskenlerin sadece adresleri tutulur 
+            // hipp de referans degerleri tutulur 
+
+
+
+
+
+
+
+
+            // fonksiyon kendine verilen degeri degistirmeden isini görecek 
+
+
+            // function square(num1) {
+            //     num1 *= num1;
+            //     return num1;
+
+            // }
+
+
+            // let myNum = 4;
+
+            // console.log(square(myNum));
+
+            // console.log(myNum);
+
+
+
+
+
+            // asagidaki gibi tanimlama yaparska myNum in orijinalini bozduk bu istenmeyen bir durumdur belki ileride baska bir yerde mynum bize lazim olacakti o nedenle yukaridaki gibi tanimlama yapiyoruz 
+
+
+
+            // function square(num1) {
+            //     myNum = num1 * num1;
+            //     return myNum;
+
+            //     // globali bozar istenmeyen durum
+            // }
+
+
+            // let myNum = 4;
+
+            // console.log(square(myNum));
+
+            // console.log(myNum);
+
+
+
+
+
+
+
+
+
+
+            // object 
+
+
+
+            // let student = {};
+
+            // student.name = "Mesut";
+
+            // function sayHi3(student) {
+            //     console.log(`Hello ${student.name} from entry point`);
+            //     student = {name : "Leon"};
+
+            //     console.log(`Hello ${student.name} inside function`);
+
+            // }
+
+
+
+            // sayHi3(student);
+
+            // console.log(`Hello ${student.name} from outside `);
+
+
+
+            // buraya kadar istenen durumdu 
+
+
+
+            let student = {};
+
+            student.name = "Mesut";
+
+            function sayHi3(student) {
+                console.log(`Hello ${student.name} from entry point`);
+
+                student.name = "Zeynep";
+
+                console.log(`Hello ${student.name} inside function`);
+
+                student = {name : "Leon"};
+
+
+
+                console.log(`Hello ${student.name} inside function`);
+
+            }
+
+
+
+            sayHi3(student);
+
+            console.log(`Hello ${student.name} from outside `);
+
+
+
+
+            // birden cok islemi bir araya toplayip bir func a birden cok islem yaptirmak cok iyi oldugunu göstermez 
+
+
+            // yani burada gördügümüz sey 
+            // degisikligi kuralina göre yapmamiz lazim aksi takdirde alttaki örnekte oldugu gibi sikinti olur 
+
+            
+
+            // sali ödevi 
+            // workshop da switch yapisi ile basit hesap makinesi 
+
+            
+
+        </script>
+    
+
+
+
+</body>
+</html>

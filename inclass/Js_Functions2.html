@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js_Functions</title>
+</head>
+<body>
+    
+    <!-- dont repeat yourself kod yazarken  -->
+
+    <!-- Function gerekli talimat lari saklar
+    cagirdigimiz zaman gelir  -->
+
+
+    <!-- python da def ile burada function 
+    keyword ile tanimlanir  -->
+
+    <!-- en üst func imzasi
+    orta func body si 
+    en alt ise cagirma kismi  -->
+
+
+    <script>
+
+        // Func imizi tanimlamadan önce cagirma snsimiz
+        // var. Buna hosting denir.
+
+        console.log(sayHi());
+
+        function sayHi() {
+            return "Hello World";
+        }
+
+        document.write(sayHi());
+
+        //////////////////////////
+
+
+
+
+
+
+        // yukarida return ile tanimladik bu professional olan 
+        // yöntemdi. simdi farkli tanimlayalim
+
+        function sayHello() {
+            document.write("Hello2");
+            console.log("Hello2");
+        }
+
+
+        sayHello();
+
+        // yani bir func icerisine hem console hem de 
+        // document write yazilabiliyor
+
+
+        ///////////////////////////////
+
+
+
+        let username = "John";
+
+        function sayHallo(name) {
+            return (`Hallo ${name}`);
+        }
+
+        document.write(sayHallo(username));
+
+        document.write(sayHallo());  // Bu örnekte output Hallo undefined
+
+
+        document.write(sayHallo("Mark"));
+
+
+        //////////////////////////////
+
+        
+
+        // prompt ile func birlesimi 
+        // degisken tanimlamasini func icerisinde yapiyoruz
+
+        // function user(name) {
+        //     name = prompt("Enter Your Name");
+        //     return (`Hallo ${name} `);
+        // }
+
+        // document.write(user());
+
+
+
+
+        ///////////////////////////
+
+
+        // Ikinci bir ihtimal olarak da, önce degisken olarak
+        // kullanicidan gelecek veri tanimlanir
+        // Burada dikkat etmemiz gereken husus degisken ismi
+        // firstname ile parametre olarak yazilan name in
+        // isimleri ayni olmayacak
+
+        // let firstname = prompt("Enter Your first name");
+
+        // function first(name) {
+        //     return (`Hallo ${firstname} `);
+        // }
+
+        // document.write(first());
+
+
+        //////////////////////////////////
+
+
+
+
+        // function a default deger girme
+        // cagirma esnasinda deger girilmez ise default degeri alir
+        // deger girilirse girilen yeni degeri alir 
+
+
+        function last(lastname = "Kennedy") {
+            return (`Hallo ${lastname} `);
+        }
+
+        document.write(last());
+
+        document.write(last("Merkel"));
+
+
+
+        ///////////////////////////////////////
+
+
+
+
+        // sayHi camel case yazilmasi lazim
+
+            // name özel bir ifade oldugu icin 
+            // parametre tanimlarken name 
+            // diyebiliriz ama 
+            // let name = "tarik "
+            // kullanamayoz 
+
+
+
+            // Bir func in sahip olmasi gereken özellikler:
+
+            
+            // 1: micro seviyede olmali
+            // tüm isleri degil isi kendi isi ne ise onu yapmali 
+
+            // 2: icinde console.log() bulunmayacak 
+            // return ile tanimlayacagiz
+            // profesyonel ortamda
+            // ürün piyasaya cikacagi zaman
+            // console olmasi kötü karsilanir 
+
+
+            // 3: icine deger alacak ve bu degeri degistirmeden döndürecek 
+
+
+            // console a console.log("hello");
+            // yazarsak hello döndürür 
+            // sonra undefined yazar
+
+
+            ///////////////////////
+
+
+
+
+            function a(name) {
+                document.write("Hello ${a} ");
+            }
+
+            document.write(typeof(a));   // type function
+
+
+
+            function b() {
+                document.write("Hello");
+            }
+
+            document.write(typeof(b));  // type function
+
+
+
+
+            // ne return ederse tip o olur 
+            // return yazdiktan sonra enter yapmak istersek 
+            // () icerisinde yapmamiz lazim
+            // tanimlama da name + 2 dersek
+            // number verecek 
+
+
+
+            document.write(typeof("a" + 2));
+            document.write(typeof(2 + 2));
+            document.write(typeof("a"));
+
+
+            ///////////////////////////
+
+
+
+
+            // sartlari kullanarak birden fazla return kullanilabilir func icerisinde
+
+
+
+
+            // function namelength(namee) {
+            //     var namee = prompt("Enter Your Name");
+            //     if (namee.length >= 5) {
+            //         document.write(`Hello ${namee}: Your name is long `)
+            //     } else {
+            //         document.write(`Hello ${namee}: Your name is short `)
+            //     }
+            // }
+
+
+            // namelength();
+
+
+
+
+            ///////////////////////////////////////
+
+
+
+
+            // tek satir return ettirecek isek
+            // parantez kullanmaya gerek yok 
+            // ama birden cok satirsa 
+            // return (
+            //     aaaaaaaaaa
+            //     aaaaaaaaaa  seklinde
+            // )
+
+
+            ///////////////////
+
+
+
+            // ${}  icerisinde matematiksel islem yapabiliriz 
+
+            function add100(number) {
+                return (`Number + 100 = ${number + 100} `);
+            }
+
+            document.write(add100(33));
+
+
+
+            ///////////////////////////
+
+            // default atama yapalim
+
+
+            function add(number1 , number2 = 0) {
+                return (`Number1 + Number2 = ${number1 + number2} `);
+            }
+
+            document.write(add(40, 30));
+            document.write(add(40));
+
+            // eger default atama yapmazsak ve number2 yerine 
+            // herhangi birsey girmezsek bu durumda sonuc NaN olur
+
+
+
+            ///////////////////////////////
+
+
+            
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

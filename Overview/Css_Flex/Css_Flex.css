@@ -16,7 +16,8 @@ body {
 .flex-container {
     background-color: blueviolet;
     display: flex;
-    height: 350px;
+    flex-direction: column;
+    height: 500px;
     /* sadece buraya kadarki kodlari yazinca yanyana dizer
     cünkü flex in default u row dur */
     /* flex-direction: row; */
@@ -25,7 +26,7 @@ body {
     /* flex-direction: row-reverse; */
 
     /* itemslara bir genislik yükseklik vermeden sadece column dersek
-    itemlar satirim tamami boyunca uzanir
+    itemlar satirin tamami boyunca uzanir
     row dedigimizde ise sütunlar burada verdigimiz 250px
     boyunca uzanir. ama sag tarafta ana conteynir da bosluk olur */
 
@@ -36,14 +37,17 @@ body {
     /* flex-wrap: wrap; */
     /* flex-wrap: wrap-reverse; */
 
-
+    /* Not: wraplar eger items larin boyu satira yada sütuna sigmiyorsa
+    calisir. eger wrap kapaliysa ve itemlar büyükse bu durumda
+    satira yada sütuna tam sigacak kadar otomatik kücültülür */
 
     /* flex-flow: row wrap; */
     /* flex-flow: row nowrap; */
     /* flex-flow: row wrap-reverse; */
-    /* flex-flow: column nowrap;
-    flex-flow: column wrap; */
+    /* flex-flow: column nowrap;*/
+    /* flex-flow: column wrap;  */
     /* flex-flow: column wrap-reverse; */
+
 
     /* flex-direction: row-reverse; */
     /* Not: direction row reverse ile
@@ -97,22 +101,21 @@ body {
 
 
 
-    /* iki item basa iki item sona gelsein dersek
+    /* iki item basa iki item sona gelsin dersek
     ikisini ayri ayri divlerin icersine alacagiz
     ana kutu icerisinde iki ana ayri ana kutu olacak
     geri kalan kücükler ise icerideki ana kutular
     icerisine yerlestirilecek ve ayri ayri
     flex ayarlari yapilacak
 
-    yada align self kullanabilirz*/
+    yada align self kullanabiliriz*/
 
 
 
 
 
     /* align items:
-    düsey de tek satir icin kullanilir
-    düsey de birden cok satir icin kullanilir */
+    düsey de tek satir icin kullanilir */
 
 
     /* align-items: flex-start; */
@@ -131,13 +134,17 @@ body {
 
 
 
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     /* align-content basliyor  */
     /* burada flex wrap sarti var */
+
+
+    /* Not: align content in default u stretch dir  */
 
     /* align-content: flex-start; */
     /* align-content: flex-end; */
     /* align-content: center; */
+    /* align-content: stretch; */
     /* align-content: space-around; */
     /* align-content: space-between; */
 
@@ -146,7 +153,7 @@ body {
 
     /* align-content 'in justify-content ve align-items dan farkı
     birden fazla satırda item olursa onları dikey alanda konumlandırmak
-    diyebilir miyiz_? */
+    diyebiliriz*/
 
 
     /* tek bir kutuyu yatay ve düsey ortalamak icin
@@ -183,16 +190,20 @@ body {
     background-color: yellow;
     border: 1px solid red;
     padding: 5px;
-    /* width: 150px; */
-    height: 100px;
-    width: 85px;
+    width: 100px;
+    height: 40px;
+    /* width: 85px; */
 
 }
 
 
+    /* Not: eger bir item i tek basina digerlerinden ayri olarak 
+    yatayda ortalamak istersek, sadece kendisi icin margin auto  */
+
 #item1 {
     /* height: 150px; */
     /* order: 1; */
+    /* margin: auto; */
 
     /* order default 0 dir
     bu nedenle tüm items lerin order i
@@ -256,14 +267,14 @@ body {
 
 
 
-    /* flex-grow: 5; */
+    /* flex-grow: 1; */
 
 
-    /* flex-basis: 200px; */
+    /* flex-basis: 400px; */
     /* flex-basis: auto; */
-    /* flex-basis: 20%; */
-    /* flex-basis: 10rem;  */
-    /* flex-basis: 10em; */
+    /* flex-basis: 30%; */
+    /* flex-basis: 5rem;  */
+    /* flex-basis: 7em; */
     /* flex-basis: 15vw; */
 
 
@@ -273,22 +284,23 @@ body {
 #item5 {
     /* height: 250px; */
     /* padding-top: 70px; */
-    /* order: -1; */
+    /* order: -1; */  
 
-    /* flex-grow: 1; */
+    /* flex-grow: -1; */
 
 
-
+    /* order - olabilir ama grow olamaz  */
 
 
 
     /* shorthand */
+    /* Dikkat shorthand de order yoktur  */
     /* grow shrink basis  
     gsb kisaltma
 
-    default u 
-    flex: 0 1 auto
-    */
+    default u */
+    /* flex: 1 3 36% */
+    
 
     /* flex: 1 5 150px; */
 
@@ -314,3 +326,14 @@ wrap verecegiz */
 marginle ayarlanir */
 
 /* https://app.peardeck.com/review/student/ttovuabvt */
+
+
+
+
+
+
+#item9 {
+    /* align-self: flex-end; */
+    
+    
+}

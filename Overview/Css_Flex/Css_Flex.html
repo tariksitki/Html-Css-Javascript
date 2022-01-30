@@ -84,16 +84,24 @@
             - flex start
             - flex end
             - center
-            - strecth
-            - baseline 
+            - strecth: Tüm nesneler ana conteynir yüksekliğine 
+            eşit olacak şekilde dizilirler.
+            - baseline: İlk satırdaki yazı tipi göz önüne alınarak hizalanmaya başlanılır.
 
         6: align-content:
+
+        İki veya daha fazla satırdan oluşan esnek kutuların 
+        dikeyde hizalanması için kullanılır.
             - flex start
             - flex end
             - center
             - stretch
-            - space between
-            - space around
+            - space between: Dikey de hizala oldugu icin, ilk satir 
+            ana konteynir in baslangic cizgisine sifirlanir. son satir ise
+            alt cizgiye sifirlanir. between oldugu icin sadece satirlar 
+            arasinda bosluk vardir. üstte altta yoktur
+            - space around: burada ise üstte altta ve satirlar arasinda 
+            bosluk vardir. satir aralarindakiler kenarlardakinin iki katidir.
 
             align content de birden cok satir oldugu 
             icin row daki hizalama ile ayni gibi 
@@ -106,7 +114,12 @@
 
             1: order (en düsük en basta)
             2: flex-grow 
-            3: flex-shrink
+            3: flex-shrink: flex-shrink tanımlanmış eleman, 
+            esnek kapsayıcı eleman içindeki diğer elemanlara göre 
+            göreceli olarak nasıl büzüleceğini belirler.
+            tarayıcı genişliği daraltılınca flex-shrink değeri 
+            2 olarak belirlenen kutu daha fazla büzülecektir
+
             4: flex-basis
                 - item in default width degeridir
                 - yada direction column kullaniliyorsa height dir
@@ -115,7 +128,9 @@
                 - auto
                 - initial
                 - inherit
-            5: flex
+            5: flex:
+                - flex-grow,  flex-shrink, ve flex-basis degerlerinin kisaltilmisidr
+                - default u  0 1 auto  
             6: align-self
                 - auto
                 - flex start
@@ -123,6 +138,10 @@
                 - center
                 - baseline
                 - stretch 
+
+
+
+        Not: Esnek öğeler float,clear ve vertical-align tanımlarından etkilenmez.
 
 
                 

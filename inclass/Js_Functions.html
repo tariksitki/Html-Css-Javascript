@@ -4,112 +4,274 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Js_Functions</title>
 </head>
 <body>
     
     <!-- dont repeat yourself kod yazarken  -->
 
-
-    
-
-        <script>
-
-            // console.log("Hello");
-
-            // sayHi();
-
-            // buradan cagirsak bile gelir 
-            // buna hosting denir ama 36. satirdan cagirdiniz der
+    <!-- Function gerekli talimat lari saklar
+    cagirdigimiz zaman gelir  -->
 
 
-            // function sayHi() {
-            //     console.log("Hello");
-            // }
+    <!-- python da def ile burada function 
+    keyword ile tanimlanir  -->
 
-            // sayHi();
+    <!-- en üst func imzasi
+    orta func body si 
+    en alt ise cagirma kismi  -->
 
 
+    <script>
 
+        // Func imizi tanimlamadan önce cagirma snsimiz
+        // var. Buna hosting denir.
 
-            // let username = "Münir";
+        console.log(sayHi());
 
-            // function sayHi(name) {
-            //     console.log(`Hello ${name} `);
-            // }
+        function sayHi() {
+            return "Hello World";
+        }
 
-            // sayHi(username);
+        document.write(sayHi());
 
-            // sayHi();  // hello undefined
-
-            // sayHi("Mark");
-
-            // sayHi(prompt("Enter name"));
+        //////////////////////////
 
 
 
-            // function sayHi(name = "New User") {
-            //     console.log(`Hello ${name} `);
-            // }
 
 
-            // sayHi();
 
-            // sayHi("Tarik");
+        // yukarida return ile tanimladik bu professional olan 
+        // yöntemdi. simdi farkli tanimlayalim
 
-            // eger default olarak name = "new user" kullanirsak, 
-            // cagirma esnasinda deger girersek default u almaz 
-            // ama girmezsek default u yazar 
+        function sayHello() {
+            document.write("Hello2");
+            console.log("Hello2");
+        }
 
 
-             
+        sayHello();
 
+        // yani bir func icerisine hem console hem de 
+        // document write yazilabiliyor
+
+
+        ///////////////////////////////
+
+
+
+        let username = "John";
+
+        function sayHallo(name) {
+            return (`Hallo ${name}`);
+        }
+
+        document.write(sayHallo(username));
+
+        document.write(sayHallo());  // Bu örnekte output Hallo undefined
+
+
+        document.write(sayHallo("Mark"));
+
+
+        //////////////////////////////
+
+        
+
+        // prompt ile func birlesimi 
+        // degisken tanimlamasini func icerisinde yapiyoruz
+
+        // function user(name) {
+        //     name = prompt("Enter Your Name");
+        //     return (`Hallo ${name} `);
+        // }
+
+        // document.write(user());
+
+
+
+
+        ///////////////////////////
+
+
+        // Ikinci bir ihtimal olarak da, önce degisken olarak
+        // kullanicidan gelecek veri tanimlanir
+        // Burada dikkat etmemiz gereken husus degisken ismi
+        // firstname ile parametre olarak yazilan name in
+        // isimleri ayni olmayacak
+
+        // let firstname = prompt("Enter Your first name");
+
+        // function first(name) {
+        //     return (`Hallo ${firstname} `);
+        // }
+
+        // document.write(first());
+
+
+        //////////////////////////////////
+
+
+
+
+        // function a default deger girme
+        // cagirma esnasinda deger girilmez ise default degeri alir
+        // deger girilirse girilen yeni degeri alir 
+
+
+        function last(lastname = "Kennedy") {
+            return (`Hallo ${lastname} `);
+        }
+
+        document.write(last());
+
+        document.write(last("Merkel"));
+
+
+
+        ///////////////////////////////////////
+
+
+
+
+        // sayHi camel case yazilmasi lazim
+
+            // name özel bir ifade oldugu icin 
+            // parametre tanimlarken name 
+            // diyebiliriz ama 
+            // let name = "tarik "
+            // kullanamayoz 
+
+
+
+            // Bir func in sahip olmasi gereken özellikler:
 
             
+            // 1: micro seviyede olmali
+            // tüm isleri degil isi kendi isi ne ise onu yapmali 
+
+            // 2: icinde console.log() bulunmayacak 
+            // return ile tanimlayacagiz
+            // profesyonel ortamda
+            // ürün piyasaya cikacagi zaman
+            // console olmasi kötü karsilanir 
+
+
+            // 3: icine deger alacak ve bu degeri degistirmeden döndürecek 
+
+
+            // console a console.log("hello");
+            // yazarsak hello döndürür 
+            // sonra undefined yazar
+
+
+            ///////////////////////
 
 
 
- 
 
-
-
-
-
-            function sayHi(){
-                console.log("Hello");
-            } 
-
-
-            function sayHi2(name) {
-                return ("Hello " + name);
+            function a(name) {
+                document.write("Hello ${a} ");
             }
 
-
-            console.log(sayHi2("Matthew"));
-
-
-            console.log(typeof sayHi2());
-            console.log(typeof sayHi2());
-
-            console.log(typeof sayHi2());
-            console.log(typeof sayHi2("ali"));
-            console.log(typeof sayHi2("a" + 2));
-
-            
-
-
-            
+            document.write(typeof(a));   // type function
 
 
 
-            
+            function b() {
+                document.write("Hello");
+            }
 
-
-            
+            document.write(typeof(b));  // type function
 
 
 
 
+            // ne return ederse tip o olur 
+            // return yazdiktan sonra enter yapmak istersek 
+            // () icerisinde yapmamiz lazim
+            // tanimlama da name + 2 dersek
+            // number verecek 
+
+
+
+            document.write(typeof("a" + 2));
+            document.write(typeof(2 + 2));
+            document.write(typeof("a"));
+
+
+            ///////////////////////////
+
+
+
+
+            // sartlari kullanarak birden fazla return kullanilabilir func icerisinde
+
+
+
+
+            // function namelength(namee) {
+            //     var namee = prompt("Enter Your Name");
+            //     if (namee.length >= 5) {
+            //         document.write(`Hello ${namee}: Your name is long `)
+            //     } else {
+            //         document.write(`Hello ${namee}: Your name is short `)
+            //     }
+            // }
+
+
+            // namelength();
+
+
+
+
+            ///////////////////////////////////////
+
+
+
+
+            // tek satir return ettirecek isek
+            // parantez kullanmaya gerek yok 
+            // ama birden cok satirsa 
+            // return (
+            //     aaaaaaaaaa
+            //     aaaaaaaaaa  seklinde
+            // )
+
+
+            ///////////////////
+
+
+
+            // ${}  icerisinde matematiksel islem yapabiliriz 
+
+            function add100(number) {
+                return (`Number + 100 = ${number + 100} `);
+            }
+
+            document.write(add100(33));
+
+
+
+            ///////////////////////////
+
+            // default atama yapalim
+
+
+            function add(number1 , number2 = 0) {
+                return (`Number1 + Number2 = ${number1 + number2} `);
+            }
+
+            document.write(add(40, 30));
+            document.write(add(40));
+
+            // eger default atama yapmazsak ve number2 yerine 
+            // herhangi birsey girmezsek bu durumda sonuc NaN olur
+
+
+
+            ///////////////////////////////
 
 
 
@@ -118,95 +280,94 @@
 
 
 
-             
+
+            // expression bir tanimlama yöntemi 
+            // burada func ismi tanimlamiyoruz
+            // tek satirda hem tanimlama hem bir degiskene atama
 
 
-            // console.log(square(7));
 
-            // yukaridaki örnekte önce cagirma yapilabilirdi
+
+            // yukaridaki örnekte yani normal bir func tanimlamasinda
+            // önce cagirma sonra tanimlama yapilabilirdi
             // ama burada yapilamiyor
             // yani expression da yapilamaz
 
-            // let square = function(a) {return a*a};
 
-            // console.log(square(7));
+            let square = function(number) {
+                return number ** 2;
+            }
 
-
-           
-
-
+            document.write(square(21));
 
 
 
 
+            ////////////////////////////////
+
+
+
+             // bir satirda alt tusuna basip 
+             // ok tuslari ile bu satiri asagi yukari tasiyabiliriz 
+             
+             
+
+             ////////////////////////////////
+
+
+            //  Normal bir func tanimlamasi executable bir ifade olmadigi icin 
+            //  ;  ile bitmesine gerek yoktur. ancak expression da bir 
+            //  degiskene atama oldugu icin executable dir ve ;  a ihtiyac vardir
+
+
+
+
+
+
+            ////  Fonksiyon icerisine arguman göndermenin bir diger yolu 
+            // da cagirma esnasinda parantez icerisine prompt girmektir
+
+            
+            // let firstName = function(ff) {
+            //     return(`Hallo ${ff} `)};
+
+            // document.write(firstName(prompt("Enter your name")));
+
+
+
+
+            ///////////////////////////////////
+
+
+
+
+
+
+            // Function Constructor
 
 
             // func constructor const ile 
             // kurulmak zorunda degil 
+            // syntax asagida oldugu gibi new olmak durumunda
+
+
+            const adder = new Function ("a", "b", "return a + b");
+
+            document.write(adder(100, 200));
 
 
 
 
-            let adder = Function ("a", "b", "return a + b");
+            /////////////////////////////
 
-            console.log(adder(2, 6));
+                // Calling esnasinda, iki deger girmek icin iki ayri prompt yapabiliriz 
 
-            console.log(typeof adder);
+            // let multiply = new Function ("a", "b", " return a * b");
 
-            // console.log(typeof adder()); yapınca number veriyor hocam
-
-
-
-            // burada new olmasi lazim dedi hoca 
+            // document.write(multiply(+prompt("Enter a number"), +prompt("Enter second number")));
 
 
-
-            // arrow ise >>  ile 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            // let sum = function(a, b) {
-            //     return a + b;
-            // };
-
-            // let addtwo = function (num1) {
-            //     return sum(num1, 2);
-            // }
-
-            // console.log(addtwo(5));
-
-            // console.log(addtwo("4")); //string
-            
-            
-
-            let sum = function(a, b) {
-                return a + b;
-            };
-
-            let addtwo = function (num1) {
-                return sum(+num1, 2);
-            }
-
-            // eger num1 önüne + koyarsak 
-            // girilen stringi sayiya cevirip 
-            // islem yapar
-
-
-            console.log(addtwo(5));
-
-            console.log(addtwo("4"));
+                // tanimlama da son parantezde return demezsek undefined aliriz 
 
 
 
@@ -218,75 +379,291 @@
 
 
 
+                // Function Hoisting
+                // Earlier in this tutorial, you learned about "hoisting" (JavaScript Hoisting).
+
+                // Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope.
+
+                // Hoisting applies to variable declarations and to function declarations.
+
+                // Because of this, JavaScript functions can be called before they are declared:
+
+                // myFunction(5);
+
+                // function myFunction(y) {
+                //     return y * y;
+                // }
+                // Functions defined using an expression are not hoisted.
 
 
-            function sayHello(name) {
-                if(name) {
-                    console.log(`Hello ${name} `)} else {
-                        console.log("Hello");
-                    
+
+
+
+
+
+                // Self-Invoking Functions
+                // kendi kendini cagiran func lar
+                // syntax ayni asagidaki gibi olmak zorunda
+                // normal func ile kendi kendini cagiran yapamiyoruz
+                // func expression ile yapiyoruz
+
+
+                (function () {
+                    let xx = document.write("Hellooo!!!");
+                }) ();
+
+
+                ////////////////////////////////
+
+
+
+                // arguments.length  bir func cagirildiginda 
+                // kac adet argument girildigini sayar. parametre
+                // olarak a ve b girmemize ragmen 3 ve daha cok 
+                // argument da girebiliriz
+
+                function my (a, b) {
+                    return arguments.length;
                 }
-            }
 
-
-            sayHello("Mark");
-            sayHello();
+                document.write(my(2, 3));
 
 
 
-
+                //////////////////////////////////////
 
 
 
 
-            // function sayHello(name) {
-            //     name && console.log(`Hello ${name} `);
+                // The toString() method returns the function as a string:
 
-            //     // 1 && 3 => 3
-            // }
+
+                function mymy (a, b) {
+                    return a * b;
+                }
+
+
+                document.write(mymy.toString());
+
+
+
+
+                // A function defined as the property of an object, 
+                // is called a method to the object.
+                // A function designed to create new objects, 
+                // is called an object constructor.
+
+
+
+
+                ///////////////////////////////
+
+
+
+                // Arrow Functions
+                // Arrow functions allows a short syntax 
+                // for writing function expressions.
+
+                // You don't need the function keyword, 
+                // the return keyword, and the curly brackets.
+
+
+
+                // Arrow da;
+                // function kelimesi yok 
+                // return yok yerine => 
+                // {} yok 
+
+
+
+                let yy = (a, b) => a * b;
+
+                document.write(yy(5, 6));
+
+
+                //////////////////////////////////////
+
+
+                // arrow ile prompt birlesimi 
+                // eger parametre olarak promp almak istersek
+                // direkt promp yazinca almiyor bunun yerine 
+                // bir degiskene atayabiliiriz
+
+
+
+                // let zz = (a = +prompt("Enter first number"), b = +prompt("Enter second Number")) => a + b;
+
+                // document.write(zz());
+
+                // Bu yöntemde func i bir degiskene atadigimiz icin,
+                // cagirma esnasinda zz()  de ()  kullanmazsak
+                // bize sadece zz degiskeni karsisinda yazan 
+                // tanimlamayi döndürecektir
+
+
+                // String olan iki sayiyi toplarsak concatanate yapar 
+
+
+
+
+                /////////////////////////////////
+
+
+
+
+                // Const kullanmak, var kullanmaktan daha güvenlidir, 
+                // çünkü bir fonksiyon ifadesi her zaman sabit değerdir.
+
+                // Arrow functions are not hoisted. 
+                // They must be defined before they are used.
+
+
+                // Yalnızca işlev tek bir ifadeyse, return anahtar sözcüğünü 
+                // ve küme parantezlerini atlayabilirsiniz. 
+                // Bu nedenle, bunları her zaman tutmak iyi bir alışkanlık olabilir:
+
+
+
+
+
+
+
+
+                ////////////////////////////////
+
+                /// iki func i ic ice kullanma;
+
+                function sum (x, y) {
+                    return x + y;
+                }
+
+
+                function add5 (a) {
+                    return sum(a, 5);
+                }
+
+
+                document.write(add5(100));
+
+
+                document.write(add5("100"));
+                document.write(typeof(add5("100")));
+
+                // bir string ile sayi toplaninca da concatanate yapiyor
+                // ve veri tipi de string olur
+
+                // böyle sikintilarin önün egecmek icin, 
+                // func tanimlama esnasinda kullanicinin girecegi 
+                // parametre önüne + koymamiz yeterli olacaktir
+
+
+
                 
 
 
-            // sayHello("Mark");
-            // sayHello();
+                ///////////////////////////
 
-            // ikincisinde ici bos false 
-            // döndügü icin sonuc alinmaz
+
+
+
+
+
+
+
+
+                // function sayHi4 (name = prompt("Enter your name")) {
+                //     if (name) {
+                //         return (`Hello ${name} ` );
+                //     }   else {
+                //         return ("You are not your name entered");
+                //     }
+                // }
+
+
+                // document.write(sayHi4());
+
+
+
+
+                ////////////////////////////////
+
+                // asagidaki örnekte;
+                // eger kullanici bir deger girmezse bu durumda
+                // && operatörü ilk false u alacak ve hicbir sey 
+                // döndürmeyecektir
+                // veri girerse de o zaman en sondaki true yani
+                // document.write döndürülür
+
+
+
+                // function yourname (name = prompt("Enter your name")) {
+                //     return name && document.write(`Yourname is ${name} `);
+                // }
+
+
+                // yourname();
+
+
+
+
+
+
+                /////////////////////////////
 
 
 
 
             // stack de referans tipli degiskenlerin sadece adresleri tutulur 
-            // hipp de referans degerleri tutulur 
+            // hipp de referans degerleri tutulur
 
 
 
 
+            //////////////////////////
+            
+            // parametre degerini func icinde degistirme 
 
 
-
-
-            // fonksiyon kendine verilen degeri degistirmeden isini görecek 
-
-
-            // function square(num1) {
-            //     num1 *= num1;
-            //     return num1;
-
+            // function squareRoot (number1 = prompt("Enter a number")) {
+            //     number1 **= 0.5;
+            //     return (`The Square root of Your Number is ${number1} `) ; 
             // }
 
-
-            // let myNum = 4;
-
-            // console.log(square(myNum));
-
-            // console.log(myNum);
+            // document.write(squareRoot());
 
 
 
 
 
-            // asagidaki gibi tanimlama yaparska myNum in orijinalini bozduk bu istenmeyen bir durumdur belki ileride baska bir yerde mynum bize lazim olacakti o nedenle yukaridaki gibi tanimlama yapiyoruz 
+            //////////////////////////////////////
+
+
+
+
+
+            function squareRoot (number1) {
+            number1 **= 0.5;
+            return ("<br>" + `The Square root of Your Number is ${number1} `) ; 
+            }
+
+
+            let myNumber = 81;
+
+
+            document.write(squareRoot(81));
+            
+
+            document.write("<br>" + myNumber);
+
+            // burada mynumber cagirildigi zaman tekrar orijinali gelir
+            // bu istedigimiz durumdur original degismez
+
+
+            /////////////////////
+
+
+
+
 
 
 
@@ -313,19 +690,56 @@
 
 
 
-            // object 
 
 
 
-            // let student = {};
+            ////////////////////////////   object:
+            document.write("<br>");
 
-            // student.name = "Mesut";
+            let student = {};   // eger burada tanimlama yapmazsak .name ile atama olmaz
+
+            student.name = "Mesut";
+
+            // document.write(student + "<br>");
+            // document.write(student.name);
+
+
+
+            function sayHi5 (a) {
+                document.write(`${student.name} from entry point` + "<br>");
+
+                student = {name : "Leon"};
+
+                document.write(`${student.name} from inside function` + "<br>");
+            }
+
+
+            sayHi5();
+
+
+            //////////////////////////////
+
+
+
+
+
+
+
+
+            // let student1 = {};
+
+            // student1.name = "Ali";
 
             // function sayHi3(student) {
-            //     console.log(`Hello ${student.name} from entry point`);
-            //     student = {name : "Leon"};
+            //     console.log(`Hello ${student1.name} from entry point`);
 
-            //     console.log(`Hello ${student.name} inside function`);
+            //     student1.name = "Zeynep";
+
+            //     console.log(`Hello ${student1.name} inside function`);
+
+            //     student1 = {name : "Leon"};
+
+            //     console.log(`Hello ${student1.name} inside function`);
 
             // }
 
@@ -337,53 +751,89 @@
 
 
 
-            // buraya kadar istenen durumdu 
 
-
-
-            let student = {};
-
-            student.name = "Mesut";
-
-            function sayHi3(student) {
-                console.log(`Hello ${student.name} from entry point`);
-
-                student.name = "Zeynep";
-
-                console.log(`Hello ${student.name} inside function`);
-
-                student = {name : "Leon"};
-
-
-
-                console.log(`Hello ${student.name} inside function`);
-
-            }
-
-
-
-            sayHi3(student);
-
-            console.log(`Hello ${student.name} from outside `);
-
-
-
-
-            // birden cok islemi bir araya toplayip bir func a birden cok islem yaptirmak cok iyi oldugunu göstermez 
+            // birden cok islemi bir araya toplayip bir func a 
+            //birden cok islem yaptirmak cok iyi oldugunu göstermez 
 
 
             // yani burada gördügümüz sey 
-            // degisikligi kuralina göre yapmamiz lazim aksi takdirde alttaki örnekte oldugu gibi sikinti olur 
+            // degisikligi kuralina göre yapmamiz lazim aksi takdirde 
+            // bu örnekte oldugu gibi sikinti olur
+
+
+
+
+
+
+
+
+
+            ///////////////////////////////
+
+
+            ///// object data type;
+            // python daki dict ler gibidir
+            // araya :  konulur
+
+            // let tt = {
+            //     firstName : "John",
+            //     lastName : "Kennedy"
+            // };
+
+            // document.write("<br>" + typeof(tt));
+
+
+
+
+
+
+
+
+
+            let stu = {};
+
+            stu.name = "veli";
+
+            function sayy (x) {
+                document.write(`${stu.name} `);
+
+                stu = {name : "deli"};
+
+                document.write(`${stu.name} `);
+
+                stu = {name : "seli"};
+
+                document.write(`${stu.name} ` )
+
+            }
+            
+
+
+            sayy();
 
             
 
-            // sali ödevi 
-            // workshop da switch yapisi ile basit hesap makinesi 
 
-            
 
-        </script>
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
 
 
 

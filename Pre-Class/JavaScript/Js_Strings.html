@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+// Primitive values, like "Edward Benedict", cannot have properties or methods (because they are not objects).
+
+
+// Ancak JavaScript ile, yöntemler ve özellikler ilkel değerler için de kullanılabilir, çünkü JavaScript, yöntemleri ve özellikleri yürütürken ilkel değerleri nesneler olarak ele alır.
+
+    // length Property
+
+
+    let a = "Mercedes";
+    let b = "";
+
+    document.write(a.length + "<br>");
+
+    document.write(b.length + "<br>");
+
+
+
+
+    // concat() Method
+
+    // The concat() method is used to combine two or more strings.
+
+    // This method does not modify the current     strings but returns a new string that contains  the joined strings text.
+
+
+    let c = "Hello";
+    let d = " ";
+    let e = "World ";
+    let f = "My Name is Tarik !!!"
+
+    let g = c.concat(d, e, f);
+
+    let h = e.concat(c, d, f)
+
+    document.write(g + "<br>");
+    document.write(h + "<br>");
+
+
+    // The concat() method can be used instead of the plus(+) operator.
+
+
+    let i = "Hi";
+    let j = "<br>  <br> <br>";
+    let k = "World";
+
+    document.write(i.concat(j, k) + "<br>");
+
+
+
+
+
+    // charAt() Method
+
+
+    // The charAt() method returns the char value at the specified index in a string.
+
+
+    let m = "Mercedes";
+    let n = "Volkswagen";
+
+    document.write(m.charAt(0));
+    document.write(m.charAt(1));
+    document.write(m.charAt(2));
+    document.write("<br>");
+    
+    document.write(n.charAt(0));
+    document.write(n.charAt(1));
+    document.write(n.charAt(2));
+
+
+        // Ascii Code verir 
+
+    document.write("m".charCodeAt() + "<br>");
+    document.write("a".charCodeAt() + "<br>");
+    document.write("b".charCodeAt() + "<br>");
+
+
+        // last character:
+
+    document.write(m.charAt(m.length - 1));
+
+    document.write("<br>");
+
+    document.write(n.charAt(n.length - 1));
+
+    document.write("<br>");
+
+
+
+
+    // includes() Method
+
+
+
+    let o = "Hello John welcome to world";
+
+    let ö = o.includes("welcome");
+
+    document.write(ö);
+
+    document.write("<br>");
+
+    ///  case sensitive !!!!!!!!!!!
+
+    document.write(o.includes("World"));
+
+    document.write("<br>");
+
+
+
+    ////////////
+
+    p = "Mercedes";
+
+    document.write(p.includes("Merce"));
+
+    document.write("<br>");
+
+
+
+
+
+
+
+    // indexOf() and lastIIndexOf() Method
+
+
+
+    let r = "Hello John, welcome to Clarusway";
+
+    let s = r.indexOf("J");
+
+    document.write(s);
+
+    document.write("<br>");
+    
+    document.write(r.indexOf("C"));
+
+    document.write("<br>");
+
+
+        //////////////////////
+
+    // You can find second or other letters in the string with second parameter of indexOf() method. Find the first occurrence of the letter "e" in a string, starting the search at position 5:
+
+
+    let t = "Hello John, welcome to Clarusway";
+
+    document.write(t.indexOf("e", 1));
+
+    document.write("<br>");
+
+    document.write(t.indexOf("e", 2));
+
+    document.write("<br>");
+
+    // Burada 2 aramaya baslayacagi index no yu belirtir. e, 1. index te var bundan sonra ise 13. indexte var. 
+
+
+
+
+    /////////////////////////////
+
+    // lastIndexOf() Method
+
+    // The lastIndexOf() method returns the index   of the last occurrence of a specified text in a string:
+
+
+    let u = "Hello John, welcome to Clarusway. How are you John?";
+
+    document.write(u.lastIndexOf("John"));
+
+    document.write("<br>");
+
+
+        /////////////////////////
+
+    // Normal indexleme soldan basladigi icin, biz bir rakam girdigimizde, bu rakamdan itibaren saga dogru gider. Ancak last tersi sekilde calistigi icin, Biz de ikinci John 46. index te bulunudgundan biz last index de 45 yazdigimizda sagdan sola calisir gibi olur ve 46. index in solunda bulunan ilk John u alir 
+
+
+
+    document.write(u.lastIndexOf("John", 45));
+
+    document.write("<br>");
+
+    document.write(u.lastIndexOf("H", 33));
+
+    // 34. ve 0. karakterler de H var
+
+    document.write("<br>");
+
+
+
+    //////////////////////////////
+
+    //  *****
+
+    // if there is no letter in a string
+    // then we see -1 
+
+
+    let ü = "Hello John, welcome to Clarusway. How are you John?";
+
+    document.write(ü.indexOf("x"));
+
+    document.write("<br>");
+
+
+
+        ////////////////
+
+
+        ///// replace() Method
+
+
+        // The replace() method looks for a string for a given value and returns a new string to replace the specified values.
+
+
+        var aa = "Hello John, welcome to Clarusway. Hello John";
+
+        var bb = aa.replace("John", "Edward");
+
+        document.write(bb);
+
+        document.write("<br>");
+
+
+        var cc = aa.replace(",", ";");
+        document.write(cc);
+
+
+        ////////// Önemli Not: Replace methodu stringimizin orijinalini degistirmez. yeni bir string olusturur ve onu print eder.
+
+        document.write("<br>");
+        document.write(aa);
+        
+        document.write("<br>");
+
+
+        ////
+
+        
+
+        document.write(aa.replace("Hello", "Hi"));
+
+        document.write("<br>");
+
+
+        /// Asagidaki islem bile stringin orijinalini degistirmez:
+
+        aa.replace("John", "Kennedy");
+
+        document.write(aa);
+
+
+        ////////////////  
+        // By default, the replace() method replaces only the first match and the replace() method is case sensitive.
+
+
+
+
+
+        /// To replace case insensitive, use a regular expression with an /i flag (insensitive):
+
+        document.write("<br>");
+        document.write("<br>");
+
+        var ee = "Hello John, welcome to Clarusway.";
+
+        document.write(ee.replace(/JOHN/i, "Bush"));
+        document.write("<br>");
+
+        // Bu islemde degistirilmesini istedigimiz orijinal kelime yada harfi "" icerisine almiyoruz. Sadece sonradan gelecek kelimeyi "" icine aliyoruz.
+
+        document.write(ee.replace(/john/i, "Bush"));
+        document.write("<br>");
+
+
+
+
+        //////////////////////
+
+        // search() Method 
+
+        // The search() method searches a string for a given value and returns the position of the match.
+
+        // This method returns -1 if the value is not found.
+
+
+        let ff = "Hello John, welcome to Clarusway.";
+
+        document.write(ff.search("to"));
+
+
+        // The two methods, indexOf() and search(), are equal? NOT equal.
+
+        // The search() method cannot take a second start position argument.
+        
+        //  The indexOf() method cannot take powerful search values (regular expressions).
+
+
+        // yine burada da kelime yok ise -1 döner
+
+        document.write("<br>");
+        document.write(ff.search("Edward"));
+
+
+        document.write("<br>");
+
+
+
+
+
+
+
+
+
+        ///// slice() Method:
+
+
+        var gg = "Hello John, welcome to Clarusway.";
+
+        document.write(gg.slice(0, 6));
+        document.write("<br>");
+
+        document.write(gg.slice(6, 10));
+        document.write("<br>");
+
+        // 10 dan basla sona dogru git
+
+        document.write(gg.slice(10, -1));
+        document.write("<br>");
+
+        document.write(gg.slice(-10, -1));
+        document.write("<br>");
+
+        // eger negativ indexte sayilarin dogru yazmazsak bos string döndürür.
+
+
+
+
+        // If you dont use the second parameter, the method will slice out the rest of the string:
+
+
+        var hh = "Hello John, welcome to Clarusway.";
+
+        document.write(hh.slice(20));
+
+
+
+
+
+        /////////////////
+
+        /// split() Method :
+
+        const ii = "Hello John, welcome to Clarusway.";
+
+        const jj = ii.split(" ");
+
+        document.write(jj);
+
+        document.write("<br>");
+
+
+        // console da ise söyle gösterir:
+
+        console.log(jj);
+
+        // ['Hello', 'John,', 'welcome', 'to', 'Clarusway.']
+
+
+
+        document.write(ii.split("e"));
+
+        console.log(ii.split("e"));
+
+        document.write("<br>");
+
+
+        ////
+        // eger ayrac olarak bos string kullanirsak, her bir harfi ayirir
+
+        console.log(ii.split(""));
+        document.write("<br>");
+
+        
+        //// ayrac koymazsak tüm stringi alir
+
+        console.log(ii.split());
+        document.write("<br>");
+
+
+        // eger stringimizde ","  varsa biz bosluklardan ayirdigimizda bu virgül de kelimelerden birisi icerisinde kalir
+
+
+
+
+
+
+
+        ///////////// substr() Method:
+
+
+        // The substr() method returns the parts of a string, beginning at the character at the specified position and a number of characters after it.
+
+        // The substr() method does not alter the original string.
+
+
+        let kk = "Hello John, welcome to Clarusway.";
+
+        console.log(kk.substr(6, 10));
+
+
+        // substr yi slice ile karistirma. slice da ilk deger baslangic degeri 2. deger ise bitis degeri dir.
+        // burada ise, ilk dgeer baslangic 2. deger ise kac tane karakter alacagini belirtir.
+
+
+
+
+        // If you do not use the second parameter, substr() will slice out the rest of the string.
+
+
+        let mm = "Hello John, welcome to Clarusway.";
+
+        console.log(mm.substr(6));
+
+        // ****************
+        // substr de de - index calisir.
+        
+        console.log(mm.substr(-20));
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+        
+        
+        
+        ////// italics method:
+
+        document.write(kk.italics());
+
+        console.log(kk.italics());
+        // console da italic yazmaz, <i> taglari icerisinde yazar
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

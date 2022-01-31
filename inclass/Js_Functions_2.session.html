@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // let student = "Mustafa";
+
+        // function sayHi(studentName) {
+        //     console.log(`Welcome ${studentName} `);
+        // }
+
+        // sayHi(student);
+
+
+
+        // arry ler farkli tip de veriler tutabilirler
+
+        let students = ["John", "Jane", "Joe", 2, false, [0, 1]];
+
+
+        // function sayHi2(studentName) {
+        //     console.log(`Welcome ${studentName} `);
+        // }
+
+        // indexleme 0 dan basladigi icin for da buna göre düzenleme 
+
+        // sayHi2(students);
+
+        // for (let i = 0; i < students.length; i++) {
+        //     sayHi2(students[i]);
+
+        // }
+
+
+
+
+        // function sayHi3 (student) {
+        //     for (let i = 0; i < students.length; i++) {
+        //         console.log(`Welcome ${student[i]} `);
+        //     }
+
+        // }
+
+
+        // sayHi3(students);
+
+
+
+
+
+
+            // carpma da baslangic 1 kullanilir 
+
+            // bu icerisine ne kadar deger gelecegini bilmedigimiz bir toplama func i 
+
+            // burada arguments in ismi özel mi js de böyle bir özellik var mi bak
+
+        // function sum () {
+        //     let sum = 0;
+        //     for (i = 0; i < arguments.length; i++) {
+        //         sum += arguments[i]
+        //     }
+        //     return sum;
+
+        // }
+
+        // console.log(sum(1));
+
+        // console.log(sum(1, 2, 3, 4, 5, 6));
+
+
+        // function toplama () {
+        //     let toplamsayaci = 0;
+        //     for (i = 0; )
+        // }
+
+
+
+
+
+
+
+
+        // iterable bir nesne olması gerekiyor. kısaca nesnenin length  attribute olması gerekiyor
+
+
+
+
+        // arguments icine gelen herseyi sayarken ...others sadece kendisine gelenleri sayar 
+
+
+        // parametre olarak sadece ...others da yazilabilir. ama bunun bos birakmaktan farki yoktur
+
+
+        // function sum (a, b, ...others) {
+        //     let sum = 0;
+        //     for (i = 0; i < arguments.length; i++) {
+        //         sum += arguments[i]
+        //     }
+        //     return sum;
+
+        // }
+        
+        // degisken ismi ile func ismi farkli olabilir
+
+
+        console.log(sum(1, 2, 3));
+
+        // 1  a ya atanir 
+        // 2 b ye atanir 
+        // diger hepsi other sa atanir 
+
+        // a vergi orani others ürünlerin fiyati 
+
+
+            // rest parametreleri others 
+            // others cogul default eklenmez dedi
+
+
+        function sum (a, ...others) {
+            let sum = 0;
+            for (i = 0; i < others.length; i++) {
+                sum += others[i]
+            }
+            return sum * a;
+
+        }
+
+        console.log(sum(1.5, 2, 3, 4, 5, 6));
+
+        // a vergi orani digerler fiyat 
+
+
+
+
+
+        
+
+
+    //     const bill = function(item, tax){
+    //     let total = 0;
+    //     for(let i =0; i < item.length; i++){
+    //         total += item[i]+item[i]*tax;
+    //     }
+    //     return total;
+    // }
+
+    // console.log(bill([10,15,20],0.18))
+
+
+
+    // others in ismi others olmak zorunda degil
+
+    const bill = function(tax, ...list){
+        let total = 0;
+        for(let i =0; i < list.length; i++){
+            total += list[i]+list[i]*tax;
+        }
+        return total;
+    }
+
+    console.log(bill(0.18, 10, 10, 20));
+
+
+
+
+    // daha önce oluşturduğumuz bir listeyi yazsak anlamında item yerine list yapsak demiştim hocam ama
+
+    // window yazip detaylar abak 
+
+
+    // js de herseyi birer object nesne olarak düsünebiliirz func da bir objecttir
+
+
+
+
+
+
+
+
+
+
+
+    // normal de 2 return olmaz 
+    // burada if yapisi var
+
+
+    function bolme (num1, num2) {
+        if (num2 == 0) {
+            return "Zero Division Error"
+        } else {
+            return num1 / 2
+        }
+    }
+
+    console.log(bolme(12, 2));
+
+    console.log(bolme(12, 0));
+
+
+
+
+    // else olmadan kod 
+
+    // function bolme (num1, num2) {
+    //     if (num2 == 0) return "Zero Division Error"
+    //     return num1 / 2
+        
+    // }
+
+    // console.log(bolme(12, 2));
+
+    // console.log(bolme(12, 0));
+
+
+
+
+
+
+    // ternary if 
+
+
+    function div2 (num1, num2) {
+        return num2 ? num1 / num2 : "Zero Division Error"
+    }
+
+    console.log(div2(20, 2)); 
+
+    console.log(div2(20, 0));
+
+
+
+    ///////  recursive 
+
+    // pascal number interview sorusu
+
+    // kendisine kadar verilen tüm sayilarin toplami 
+
+    // fibonacci number ayri 
+
+    // pascal da recursive kullanilir cikis kapisi unutursak sonsuz döngü
+
+
+    // function pascalNumber1(n){
+    //     let sum = 0;
+    //     for(let i = 1; i < n+1; i++){
+    //     sum +=i
+    //     }
+    //     return sum
+    //     }
+    
+
+        // console.log(pascalNumber1(5));
+
+
+        // function pascalNumber2(n) {
+        //     return (n * (n+1)/2)
+        // }
+
+
+        // console.log(pascalNumber2(100));
+
+
+
+
+
+
+
+
+        function pascalNumber3 (n) {
+            if (n === 1) return 1;
+            return n+ pascalNumber3(n-1)
+        }
+
+        console.log(pascalNumber3(5));
+        console.log(pascalNumber3(5));
+
+
+
+        // bunu for ile yapmayi  dene 
+        // bu örnekte 100 yazarsak 100 kere calisir bu fonksiyon
+
+        // sonsuz döngü olmama sebebi 1 olunca sadece 1 döndürür func calismayi durdurur
+
+
+
+
+
+
+
+        ////////////   arrow function
+
+
+
+        // cok önemli cogu sey bu ile yapilir
+
+        // recursive nerede kullanılır?
+        // verimli bir paradigma olmamasına rağmen bazı        durumlar için zorunlu seçenektir.
+        // örn. a noktasından b noktasına rota planlayan       navigasyon uygulamaları gibi
+
+
+
+
+
+
+        // https://app.peardeck.com/takeaways/101651142867518915087/tsldjdrnn
+
+
+        // klasik
+
+        function add100 (a) {
+            return a + 100;
+        }
+
+
+        // burada func a tekrar isim vermek optional vermeyi dene geleneksel hosting olur bu olmaz 
+        // func expression buna anonim func da denir amac kodu azaltmak
+
+        let toplam = function () {
+            return a + 100
+        }
+
+
+
+        // arrow 
+
+
+        let ahmet = (a) => {
+            return a + 100
+        }
+
+        console.log(ahmet(30));
+
+
+        let mehmet = (a) => a + 100;
+
+        console.log(mehmet(20));
+
+
+
+        // tek parametre varsa () ler de gözardi
+
+        // lamb da ya benzer
+
+        let toplam2 = a => a + 100;
+        
+        console.log(toplam2(40));
+
+        // birden fazla parametre () sart
+
+
+
+
+        // let user = "Murat";
+
+        // let sayHi = () => console.log(`Welcome ${user} `);
+
+        // sayHi();
+
+
+
+
+        let toplam3 = (num1, num2) => num1 + num2;
+
+        console.log(toplam3(3, 5));
+
+        console.log(typeof(toplam3(3, 5)));
+
+        // parantez kullanmazsak tip function
+
+        console.log(typeof(toplam3));
+
+
+
+        // NOTES.md session 5 icerisinde post class
+
+        // fifference limitations 
+
+        // arrow func have not their own syntax
+
+        // immediytely invoked function expressions  (cagirildigi an da kendisini hemen cagiri)
+
+
+
+
+
+
+        // iife normal func gibi cagrilamaz yani cagirma da sonuna ()  koyup icine argument koymuyoruz. tanimlama esnasinda kendini cagirir
+
+
+        let iife = (function trian(num) {
+        if (num === 1) return 1;
+        return num + trian(num-1);
+        })(3);
+        // console.log(iife(5));  hata
+
+
+
+
+
+
+        let nums = 5;
+
+        let iief2 = (function(num) {
+            return num * (num + 1) / 2;
+        }) (nums);
+
+        console.log(iief2);
+
+
+        
+
+
+
+
+
+
+
+
+
+        
+
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -441,9 +441,7 @@
         // ****************
         // substr de de - index calisir.
         
-        console.log(mm.substr(-20));
-
-        
+        console.log(mm.substr(-20, 6));
 
 
 
@@ -451,12 +449,6 @@
 
 
 
-
-
-
-        
-        
-        
         
         ////// italics method:
 
@@ -464,6 +456,122 @@
 
         console.log(kk.italics());
         // console da italic yazmaz, <i> taglari icerisinde yazar
+
+
+
+
+
+
+
+
+            // substring() Method:
+
+        
+        let nn = "Welcome to Clarusway.";
+
+        console.log(nn.substring(5, 10));
+
+
+
+        // start degeri degeri yanlislikla end den büyük yazilirsa bunu otomatik düzeltir ters algilar.
+
+        console.log(nn.substring(10, 5)); 
+
+
+        // substring de negativ deger yoktur. 0 dan kücük deger girilecek olursa hem end de hem de start da bu degeri 0 olarak kabul eder.
+
+        console.log(nn.substring(-1, 7)); 
+
+
+        // bitis degeri dahil degil
+        console.log(nn.substring(0, 1)); 
+
+
+
+        // substring de negativ index yoktur ama su sekilde yapabiliriz.
+
+        console.log(nn.substring(5, nn.length-1));
+        
+
+        console.log(nn.substring(5, nn.length-3));
+
+
+
+        // If you omit the second parameter, substring() will slice out the rest of the string.
+
+
+
+
+
+
+        /// toLowerCase() Method :
+
+        let oo = "WELCOME TO CLARUSWAY.";
+
+        console.log(oo.toLowerCase());
+       
+        
+
+        ////////
+
+        // toLocaleLowerCase(), normal Unicode büyük/küçük harf eşlemeleriyle (Türkçe gibi) çakışan yerel ayarlar dışında, toLowerCase() ile aynı sonucu döndürür.
+
+        // iki yöntem de orijinali degistirmez
+
+
+
+
+
+        /////////////
+
+        ///  toUpperCase()
+
+
+
+
+        /////////////////////
+
+
+
+
+
+        // trim() Method : 
+
+        //  The trim() method eliminates whitespace from both sides of a string.
+
+        //  The trim() method does not alter the original string.
+
+
+
+
+        var pp = "      Welcome to Clarusway       ";
+
+        console.log(pp);
+
+        console.log(pp.trim());
+
+
+
+        // trim sadece bosluklari traslar
+
+        // let rr = "Welcome to Clarusway.";
+
+        // console.log(rr.trim("."));
+
+
+
+
+
+
+        
+
+        
+
+
+
+
+
+
 
 
         

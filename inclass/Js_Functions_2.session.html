@@ -21,33 +21,135 @@
 
 
 
-        // arry ler farkli tip de veriler tutabilirler
-
-        let students = ["John", "Jane", "Joe", 2, false, [0, 1]];
 
 
-        // function sayHi2(studentName) {
-        //     console.log(`Welcome ${studentName} `);
+
+
+            // with 2 prompt:
+    
+
+            // function name (firstname = prompt("Enter your firstname: "), lastname = prompt("Enter your lastname: ")) {
+
+            //     return (`Welcome ${firstname} ${lastname} `);
+            // }
+
+            // console.log(name());
+
+
+
+
+
+
+            /// with one prompt:
+            //  names are separated by commas
+
+
+            // function name2 (name = prompt("Enter please your firstname and lastname (please put commas between firstname and lastname)").split(",")) {
+
+            //     return (`Welcome ${name[0]} ${name[1]}`);
+            // } 
+
+            // console.log(name2());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // array ler farkli tip de veriler tutabilirler
+
+        // let students = ["John", "Jane", "Joe", 2, false, [0, 1]];
+
+            
+        // for (i = 0; i < students.length; i++) {
+        //     console.log(students[i]); ;
         // }
 
-        // indexleme 0 dan basladigi icin for da buna göre düzenleme 
 
-        // sayHi2(students);
 
-        // for (let i = 0; i < students.length; i++) {
-        //     sayHi2(students[i]);
 
+        
+            ///  for loop reverse:
+            /// Note:  In for loop benutzen wir "return" nicht. wir schreiben direkt statement unten von for 
+
+        // let empty = [];
+
+        // for (i = students.length -1; i >= 0; i--) {
+            
+        //     (empty.push(students[i]));
         // }
 
+        // console.log(empty);
 
 
 
-        // function sayHi3 (student) {
-        //     for (let i = 0; i < students.length; i++) {
-        //         console.log(`Welcome ${student[i]} `);
-        //     }
 
-        // }
+
+
+            // in array von numbers können wir mit sort method nicht sortieren. Man sortiert alle numbers mit ersten Number.
+
+
+        let rr = [1, 2, 5, 3, 4, 9, 6, 8, 10, 12, 11];
+
+        console.log(rr.sort());
+
+
+
+
+
+
+            // sortieren von hoch nach niedrig 
+
+
+            var numArray = [140000, 104, 99];
+
+            numArray.sort(function(a, b) {
+                return a - b;
+            });
+
+            console.log(numArray);
+
+
+
+
+
+
+            /// sortieren von unten nach oben:
+
+
+            var numArray2 = [140000, 104, 99];
+
+            numArray2.sort(function (a, b) {
+                return (b - a);
+            })
+
+            console.log(numArray2);
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
 
 
         // sayHi3(students);
@@ -61,7 +163,7 @@
 
             // bu icerisine ne kadar deger gelecegini bilmedigimiz bir toplama func i 
 
-            // burada arguments in ismi özel mi js de böyle bir özellik var mi bak
+            // burada yaptigimiz islemleri js in bize sundugu arguments iel yapabiliriz
 
         // function sum () {
         //     let sum = 0;
@@ -77,27 +179,117 @@
         // console.log(sum(1, 2, 3, 4, 5, 6));
 
 
-        // function toplama () {
-        //     let toplamsayaci = 0;
-        //     for (i = 0; )
+
+
+
+
+
+
+
+
+
+        // function sum4() {
+        //     total = 0;
+        //     for (i = 0; i < arguments.length; i++) {
+        //         total += arguments[i];
+        //     }   
+
+        //     return total;
+        // }
+
+        // console.log(sum4(20, 30, 40, 60, 80));
+
+        // console.log(sum4(1,2,3,4,5,6));
+
+
+
+
+
+
+
+
+
+        //// sum func with prompt;
+
+        // Not: kullanicidan aldigimiz degeri string den sayiya cevirmek icin burada direkt prompt un önüne + koyarsak sonuc 0 cikiyor.
+        //  bu nedenle numbers in yanina koyduk
+        
+        
+        // function sum5 (numbers = prompt("Please enter numbers which you will sum: ").split(" ")) {
+
+        //     total = 0;
+
+        //     for (i = 0; i < numbers.length; i++) {
+        //         total += +numbers[i];
+        //     }
+        //     return total;
         // }
 
 
+        // console.log(sum5());
 
 
 
 
 
 
-        // iterable bir nesne olması gerekiyor. kısaca nesnenin length  attribute olması gerekiyor
 
 
+
+
+
+
+
+
+        // Diese Funktion nimmt von Benutzer Number und gibt uns Quadrat der Numbers:
+
+
+
+        // function square (numbers = prompt("Enter please numbers").split(" ")) {
+        //     empty = [];
+
+        //     for (i = 0; i < numbers.length; i++) {
+        //         empty.push((+numbers[i]) ** 2);
+        //     }
+        //     return empty;
+        // }
+
+        // console.log(square());
+
+        // for loop kullanmak icin iterable bir nesne olması gerekiyor. kısaca nesnenin length  attribute' u olması gerekiyor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+        //////////////   ... others
 
 
         // arguments icine gelen herseyi sayarken ...others sadece kendisine gelenleri sayar 
 
 
         // parametre olarak sadece ...others da yazilabilir. ama bunun bos birakmaktan farki yoktur
+
+        // others in ismi others olmak zorunda degil
 
 
         // function sum (a, b, ...others) {
@@ -118,31 +310,133 @@
         // 2 b ye atanir 
         // diger hepsi other sa atanir 
 
-        // a vergi orani others ürünlerin fiyati 
-
-
-            // rest parametreleri others 
-            // others cogul default eklenmez dedi
-
-
-        function sum (a, ...others) {
-            let sum = 0;
-            for (i = 0; i < others.length; i++) {
-                sum += others[i]
-            }
-            return sum * a;
-
-        }
-
-        console.log(sum(1.5, 2, 3, 4, 5, 6));
-
-        // a vergi orani digerler fiyat 
 
 
 
+                // second example
+
+            // function sum6 (a, ...others) {
+
+            //     total = 0;
+
+            //     for (i = 0; i < arguments.length; i++) {
+            //         total += arguments[i];
+            //     }
+            //     return total;
+            // }
+
+            // console.log(sum6(1, 2,3,4,5,6,7,8));
+            // console.log(sum6(100));
+            // console.log(sum6(100, 300, 400));
+
+
+
+
+
+
+
+
+
+
+
+
+                // sadece other koyarsak bu durumda yine calisiyor
+                // rest parametreleri others 
+                // others cogul default eklenmez dedi
+
+
+
+            // function sum6 (...others) {
+
+            // total = 0;
+
+            // for (i = 0; i < arguments.length; i++) {
+            //     total += arguments[i];
+            // }
+            //     return total;
+            // }
+
+            // console.log(sum6(1, 2,3,4,5,6,7,8));
+            // console.log(sum6(100));
+            // console.log(sum6(100, 300, 400));
+
+
+
+
+
+
+
+
+
+
+
+            /// price and tax with ...others :
+
+            // function priceCalculator (tax, ...others) {
+            //     price = 0;
+
+            //     for (i = 0; i < others.length; i++) {
+            //         price += others[i];
+            //     }
+
+            //     return (`Total Price with tax: ${price + (price * tax)} `);
+            // }
+
+            // console.log(priceCalculator(0.18, 10, 20, 30)); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // Calculate each price separately:
+
+            
+            // function priceCalculator2 (tax, ...others) {
+            //     pricesWithTax = [];
+
+            //     for (i = 0; i < others.length; i++) {
+            //         pricesWithTax.push((others[i] * tax) + others[i]);
+            //     }
+            //     return pricesWithTax;
+            // }
+
+
+            // console.log(priceCalculator2(0.18, 10, 20, 30, 40));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+
+
+            
 
 
         
+
 
 
     //     const bill = function(item, tax){
@@ -157,7 +451,7 @@
 
 
 
-    // others in ismi others olmak zorunda degil
+    
 
     const bill = function(tax, ...list){
         let total = 0;

@@ -9,8 +9,413 @@
 <body>
     
 
-    
 
+    <script>
+
+
+
+        //  string primitive:
+
+        const message = "hi";
+
+        // string object:
+
+        const another = new String("hi");
+
+        console.log(typeof(message));
+
+        console.log(typeof(another)); 
+
+        // type sorgularken direkt olarak console da da type of message yazabiliriz
+
+
+
+
+
+        // startwith  and endswith:
+
+        let message2 = "This is first message";
+
+        console.log(message2.startsWith("Th"));
+        console.log(message2.endsWith("."));
+
+
+
+
+
+
+        // trimleft and right:
+
+        let message3 = "  This is first message  ";
+
+        console.log(message3.trimRight());
+        console.log(message3.trimLeft());
+
+
+
+
+
+
+
+        // Escape Sequence:
+
+        let message4 = "  This is \" first message  ";
+
+        console.log(message4);
+
+
+
+        let message5 = '  This is \' first message  ';
+
+        console.log(message5);
+
+
+
+
+        let message6 = '  This is \\ first message  ';
+
+        console.log(message6);
+
+        ///  burada tek backslash kullandigimizda output da ciktisini göremeyiz.. Cünkü escape seq ler kendisinden sonra gelen karakteri yok sayar. mesela f den öncesine koyarsak f gider
+
+
+
+
+
+
+        let message7 = 'This is \v first message';
+
+        document.write(message7);
+
+
+
+
+
+
+
+        
+        //  string primitive: 
+
+        let message8 = 
+        'This is my\n' +
+        '\'first\' message';
+
+        console.log(message8);
+
+
+        // Object literal  {}
+
+        // Boolean literal  true,  false
+
+        // String literal  '',  ""
+
+        //  Template literal  ``  back tick
+
+
+        // template literal da primitive deki islemlerden kurtuluyoruz:
+        // asagida escape kullanmadan direkt olarak enter ile asagi iniyoruz cikti ayni
+
+        // ve burada backtik kullandigimiz icin cok rahat bir sekilde icerisinde '' kullaniyoruz
+
+
+        const another2 = `This is my
+'first' message`;
+
+        console.log(another2);
+
+
+
+
+
+
+
+        // primitive /  template literals:
+
+
+        const name = "John";
+
+        // primitive mesaj su sekilde gider
+        const message9 = "Hi" + name + ",\n" ;
+
+
+        // template ise söyle cok basit ve dinamik;
+
+        // {} iceriisnde yazacagimiz name placeholder olarak anilir 
+
+        const another3 = `Hi ${name} ${20 + 30} ,
+
+Thank you for joining my mailing list.
+
+Regards,
+
+Tarik`;
+
+        console.log(another3);
+
+
+
+
+
+        var s = "Hello John, welcome welcome to Clarusway.";
+        console.log (s.search("wel"));
+
+
+
+
+        var s = "Hello John, welcome to Clarusway."
+        console.log (s.substr(12, 5));
+        // burada 12 den basla 5 tane al
+
+        console.log (s.substring(5, 12));
+        // burada ise 5 ile 12 arasini al
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        let str1 = "Hello";
+
+        let str2 = "World";
+
+        let str3 = `${str1 + str2}`;
+
+        console.log(typeof str1, str1);
+        console.log(typeof str2, str2);
+        console.log(typeof str3, str3);
+
+
+        // primitive degil object seklinde bir string elde etmis oluyoruz
+
+        // console da yaninda farkli olarak ok cikar
+
+        // primitive lerin methodu olmaz 
+
+        // ok asagi uzatilir  bu js in yaptigi güzellik 
+
+        // primitiveler imutable dir degismez
+        
+        //  primitivelr arka plan da obje ye cevrilir arka planda js bize saglar
+
+
+        let str4 = new String("A string object");
+
+        console.log(str4);
+
+        console.log(str2);
+        console.log(str4.length);
+        console.log(str2.length);
+
+
+        // okun yanina tiklayinca method lar acilir ve primitivelerin 
+
+        // primitiveler deger olarak steak de tutulur
+        // object lerin ve arraylerin ise index0 larinin adresi steak de ama kendileri heap de bulunur
+
+        // referans degerlilerin steak de sadece adresleri tutulutr kendileri heap de 
+        
+        // const sadece heap deki adresini tuttugu icin gecen derste const iel tanimlana bir object i degistirebildik  
+
+
+
+
+        var s1 = " hello ";
+        var s2 = " world ";
+
+        var s3 = s1.concat(s2);
+
+        console.log(s3);
+
+
+        // degisken concat etmek zorunda degiliz
+        // maus ile concat üzerine gelince detayini anlatir 
+
+        console.log(s3.concat("2022"));
+
+        console.log({s1}, {s2} );
+
+        // bu sadece göstermek icin yapiyor object olarak gösterm icin normal de kullanilmaz 
+
+
+
+
+        // char at
+
+        var a = "primitive.\nlerin p\t roperti veya metodu olmaz";
+
+        console.log(a);  
+        console.log(a.charAt()); // bos girilirse ilk indexi döndürür
+
+
+        console.log(a.charAt(9));
+        console.log(a.charAt(10));
+
+
+        var b = "primitive.lerin p\t roperti veya metodu olmaz";
+
+        // escape i cikarirsak 3 karakter degil 1 karakter eksik olur
+        console.log(b.length);
+
+
+
+
+        console.log(a[9]);
+        //  bu da char at in alternatifidir
+        // biri method digeri indexleme
+
+
+        // son eleman length -1 
+
+        console.log(a[a.length-1]);
+        console.log(a.charAt(a.length-1));
+
+
+
+
+
+
+
+
+
+
+
+
+        // [::-1] in karşılayan bir metod var mı sadece döngülerle mi yapılabiliyor reverse 
+
+
+
+        var str = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
+
+
+        var n = str.includes("simply");
+        var n1 = str.includes("Simply");
+
+
+        console.log(n);
+        console.log(n1);
+        console.log(str.includes("imply"));
+
+
+
+
+
+
+
+
+
+
+        /////  indexof 
+
+
+
+        // burada aradigimiz ifade yoksa -1 olarak bir number döner bunu cok kullanacagiz
+
+
+
+        // var str = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
+        // bu örnek ile devam
+
+
+        console.log(str.indexOf("o", 2));
+
+
+        var n = str.indexOf("simply");
+
+        console.log(n);
+
+        console.log(str.indexOf("xa"));
+
+        console.log(str.indexOf("Simply"));
+
+        console.log(str.indexOf("ing"));
+
+
+
+        // for ile tüm text i döndür tüm m leri cikarsin
+
+
+
+        // lastindexof bak tekrar
+
+
+
+
+        // indexOf("o", indexOf("o") + 1)
+
+
+
+        // tüm hello lari degistir sadece g fazladan 
+
+        var a = "Helllo hello  hello gello hello";
+
+        console.log(a.replace(/hello/g,'hi'));
+
+        console.log(a.replace(/hello/, "hi"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
 
 
 

@@ -1,0 +1,374 @@
+
+/* Tasarımımız için kullanacağımız Css değerlerinin en başında gelen bütün tanımlar için sıfır değerini tanımlayarak tarayıcı farklılıklarını bir nebze olsun en aza indirmek için kullanılan yöntemin adı “Css sıfrlama (reset)” yöntemidir. Bütün css taglarını içinde bulundurur ve hepsine margin, padding, font size gibi boyut ve konumlandırmaları aynı ayara getirip çalışmanın ilerleyen sürecinde farklı tarayıcılarda sorun yaşamamızı sağlar. */
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: "Lato", sans-serif; /*indirebilirisn */
+    /* burada font size i 20px yaparsak artik 1 rem 20px olur */
+    color: #666666;  /* #666 da olur*/
+    height: 100%;
+}
+
+/* projelerde genelde * kullanilir 
+bu da ikinci alternatif 
+birde burada html e özel bir yükseklik vermemiz gerekecek*/
+
+
+
+.background--image1 {
+    background-image: url(./images2/bg.jpg);
+    min-height: 100%;
+    /* burada 100% verebilmek icin html ve body de de vermemiz gerekir  w3 herseyi yazmis detayli oku  cünkü alt degerin 100% olabilmesi icin kapsayici div in de bir yüksekligi olmali*/
+
+}
+
+/* min ve max lar responsive tasarim icin önemli  */
+
+
+.background--image2 {
+    background-image: url(./images2/bg2.jpg);
+    height: 80%;
+
+}
+
+
+/* image lari html de de verebilirdik ama bu durumda inline css vermmeiz gerekirdi bu da isimizi zorlastirirdi */
+
+
+.background--image3 {
+    background-image: url(./images2/bg3.jpg);
+    height: 80%;
+
+}
+
+
+.background--image4 {
+    background-image: url(./images2/bg4.jpg);
+    height: 80%;
+    min-height: 80%;
+
+}
+
+
+.background--image1,
+.background--image2,
+.background--image3,
+.background--image4 {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* to do parallax effect  */
+
+    position: relative;
+    opacity: 0.7;
+
+    background-attachment: fixed;
+}
+
+
+/* cover dedigimiz zaman tüm conteynir i cover eder kaplar  */
+
+/* height olan yerlere min height da verebilirisn 
+*/
+
+
+/* paralax efektin kilit preporty'si background-attachment sanırım hocam */
+
+
+/* yazilari ortalamak icin flex yada position  */
+
+.heading-container {
+    text-align: center;
+    /* bunun icin bir genislik gerekir center icin  */
+    /* woidth e %50 vermeyi dene bak genisligi 50 olan bir div icinde ortalama yapar background rengi vererek bak */
+    top: 48%;
+    /* position: absolute;  bununla hepsi akistan cikar body ye göre konumlandi parent a relative vermek lazim bunun calismasi icin */
+
+    position: absolute;
+    width: 100%;
+    /* absolute verince akistan cikar bu nedenle width 100% veriyoruz iptal etmeyi dene  */
+
+    /* %50 demek yazinin üst sinirindan alir o nedenle yazi büyüdükce asagi dogru kayar ve tam ortada olmaz. flex daha net ortalar */
+
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+
+}
+
+
+
+/* position absolute da akistan cikar mutlak deger verilir bottom left right ile konumlandirilir
+ve üst elemente relativ demezsek body ye göre konum alir ve hepsi üst üste biner cakisir 
+
+relativ verirsek de hepsei kendi bulunbdugu div iicn de konum alir
+
+body ye relativ versek body ye göre konum alir  */
+
+
+
+.heading-container__heading {
+    background-color: black;
+    color: white;
+    padding: 2rem;
+    /* border-radius: 20px 0px; */
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    outline: 0.5rem inset purple;
+    outline-offset: 1rem;
+
+}
+
+/* heading container in color ini da beyaz verebilirdik  */
+
+
+
+.heading-container__logo {
+    width: 30%;
+
+    
+}
+
+
+.heading-container__text {
+    background-color: black;
+    color: white;
+    padding: 0.7rem;
+    text-transform: capitalize;
+    border-radius: 0.7rem 0rem 0.7rem 0rem;
+    outline: 0.4rem inset purple; /* bunun zitti outset incele*/
+    outline-offset: 0.2rem; /* border ile outline arasi bosluk*/
+
+}
+
+
+
+.section {
+    text-align: justify;
+    padding: 3rem 5rem;
+
+
+}
+
+
+.section-light {
+    background-color: #f1f1f1;
+    color: #666;
+    line-height: 1.8rem;
+
+}
+
+
+.section-dark {
+    background-color: #282e34;
+    color: #fff;
+    line-height: 1.8rem;
+    
+}
+
+
+
+
+
+
+/* her bir ekrn boyutu icin bastan tasarlama yapilabilir hatta parallax bile kaldirilabilir */
+
+
+
+@media(max-width:768px){
+
+    .heading-container{
+        font-size: 1.5rem;
+        letter-spacing: 0.5rem;
+    }
+    /* .heading-container {
+        font-size: 1rem;
+        padding: 0.7rem;
+        border-radius: 1rem 0rem;
+        outline: 0.5rem inset purple;
+        outline-offset: 1rem;
+        line-height: 3rem;
+        /* font-size: 0.5rem; */
+
+     */
+
+    .heading-container__heading{
+        padding: 0.7rem;
+        border-top-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        outline: 0.5rem inset purple;
+        outline-offset: 1rem;
+    }
+
+    .heading-container__text{
+        padding: 0.7rem;
+        border-radius: 0.7rem 0rem 0.7rem 0rem;
+        outline: 0.4rem inset purple;
+        outline-offset: 0.2rem;
+        line-height: 3rem;
+        
+
+    }
+
+    .section{
+        padding: 1.5rem 2rem;
+
+    }
+}
+
+
+
+@media(max-width:500px){
+
+.background--image1,
+.background--image2,
+.background--image3,
+.background--image4 {
+    background-attachment: scroll;
+
+}
+
+}
+
+
+
+
+
+
+/* ekrani yavas yavas kücülterek sorunlari teker teker tespit et ve ona göre dizayn 
+mesela genellde tabletler 768 ama 912 olanda var buna bak seni rahatsiz ediyor ise degisiklik yap*/
+
+
+
+/* ctrl f ile css de aramak istedigin kelimeyi ara */
+
+
+
+
+
+/* 
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: "Lato",sans-serif;
+    color: #666666;
+    height: 100%;
+}
+.background--image1{
+    background-image: url(./images/bg.jpg);
+    min-height:100% ;
+}
+.background--image2{
+    background-image: url(./images/bg2.jpg);
+    height: 80%;
+}
+.background--image3{
+    background-image: url(./images/bg3.jpg);
+    height: 80%;
+}
+.background--image4{
+    background-image: url(./images/bg4.jpg);
+    min-height: 80%;
+}
+.background--image1,
+.background--image2,
+.background--image3,
+.background--image4{
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    opacity: 0.7;
+    background-attachment: fixed;
+}
+.heading-container{
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    position: absolute;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+.heading-container__heading{
+    background-color: black;
+    color: white;
+    padding: 2rem;
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    outline: 0.5rem inset purple;
+    outline-offset: 1rem;
+}
+.heading-container__logo{
+    width: 30%;
+}
+.heading-container__text{
+    background-color: black;
+    color: white;
+    padding: 0.7rem;
+    text-transform: capitalize;
+    border-radius: 0.7rem 0rem 0.7rem 0rem;
+    outline: 0.4rem inset purple;
+    outline-offset: 0.2rem;
+}
+.section{
+    text-align: center;
+    padding: 3rem 5rem;
+}
+.section-light{
+    background-color: #F1F1F1 ;
+    color: #666666;
+    line-height: 1.8rem;
+}
+.section-dark{
+    background-color: #282E34 ;
+    color: #fff;
+    line-height: 1.8rem;
+}
+@media(max-width:768px){
+    .heading-container{
+        font-size: 1.5rem;
+        letter-spacing: 0.5rem;
+    }
+    .heading-container__heading{
+        padding: 0.7rem;
+        border-top-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        outline: 0.5rem inset purple;
+        outline-offset: 1rem;
+    }
+    .heading-container__text{
+        padding: 0.7rem;
+        border-radius: 0.7rem 0rem 0.7rem 0rem;
+        outline: 0.4rem inset purple;
+        outline-offset: 0.2rem;
+        line-height: 3rem;
+        
+    }
+    .section{
+        padding: 1.5rem 2rem;
+    }
+.heading-container__logo{
+    width: 50%;
+}
+}
+@media(max-width:500px){
+    .background--image1,
+.background--image2,
+.background--image3,
+.background--image4{
+    background-attachment: scroll;
+}
+}*/

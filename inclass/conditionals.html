@@ -57,7 +57,10 @@
         // if (grade) console.log('Tebrikler notunuz ${score} gecti');
 
 
-        // burada + kalkabiulir 
+        //  Bu kullanimda {}  kullanmadik
+
+
+        // burada + kalkabilir 
 
         // let score = +prompt("Notunuzu giriniz: ");
 
@@ -65,7 +68,7 @@
 
         // if (grade) console.log(`Tebrikler notunuz ${score} gecti`);
 
-        // template literal denir
+        // ``  icin template literal denir
         // console icinde degisken degeri kullanmaya yarar
         // grade üzerine mausus getir boolean yazar
 
@@ -78,13 +81,7 @@
 
 
 
-       
-
-
-
-
-
-
+    
 
 
 
@@ -105,6 +102,37 @@
 
 
 
+        // let input = prompt("Enter Your Score");
+        // let output = "";
+
+        // if (input >= 50) {
+        //     if (input >= 85) {
+        //         output = "Very good";
+        //     } else {
+        //         output = "Good";
+        //     }
+        // }   else {
+        //     output = "Bad";
+        // }
+
+        // console.log(output);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // ternary if 
 
@@ -116,9 +144,50 @@
 
 
 
-    score >= 80 ? console.log("cok basarili") : 
-    (score >= 50 ? console.log("Tebrikler gectiniz") : 
-    console.log("Kaldiniz")); 
+
+
+
+
+
+
+    // let input2 = prompt("Enter your Score");
+    // output2 = "";
+
+    // input2 >= 85 ? output2 = "Very good" : (input2 >= 50 ? output2 = "Good" : output2 = "Bad");
+
+    // console.log(output2);
+
+
+
+
+
+
+
+
+        // let input3 = prompt("Enter a fruit please: ");
+
+        // let output3 = "";
+
+        // switch (input3.toLowerCase()) {
+        //     case "banana":
+        //         output3 = "Banana";
+        //     break;
+
+        //     case "apple":
+        //         output3 = "Apple";
+        //     break;
+
+        //     case "orange":
+        //         output3 = "Orange";
+        //     break;
+
+        //     default:
+        //         output3 = "You have not enter a fruit ";
+        // }
+
+        // console.log(output3);
+
+
 
 
     
@@ -156,27 +225,12 @@
     // undefined 
 
 
-    // var text;
-    // var fruits = "ali";
-
-    // switch (fruits.toLowerCase()) {
-    //     case "banana":
-    //         text = "Banana is good"
-    //     break;
-
-    //     case "portakal":
-    //         text = "I am not a fan of orange";
-    //     break;
-
-    //     case "apple":
-    //         text = "Apples";
-    //     break;
-        
 
 
-    // }
 
-    // console.log(text);
+
+
+
 
 
 
@@ -215,39 +269,17 @@
 
 
 
+    
+
     // pazartesi car per cumartesi inclass
     // sali cuma teamwork
     // pazar tatil
     /// default yanlis gün girdiniz 
 
 
-    // days = prompt("Enter Your day");
-
-    // switch(days.toLowerCase()) {
-    //     case "monday":
-    //     case "wednesday":
-    //     case "thursday":
-    //     case "saturday": 
-    //         text = "inclass";
-    //     break;
-
-    //     case "tuesday":
-    //     case "friday":
-    //         text = "teamwork";
-    //     break;
-
-    //     case "sunday":
-    //         text = "holiday";
-    //     break;
-
-    //     default:
-    //         text = "No such a day";
-
-    // }
-
-    // console.log(text);
 
 
+    
     // iki ihtimal var 
     // her bir case altinda clg de yapabiliriz 
 
@@ -256,6 +288,53 @@
 
 
 
+        // input = prompt("Enter a day or days please");
+        
+        // output = "";
+
+        // switch (input.toLowerCase()) {
+        //     case "monday":
+        //     case "wednesday":
+        //     case "saturday":
+        //         output = `${input.toLowerCase()} have you inclass`;
+        //     break;
+
+        //     case "tuesday":
+        //     case "friday":
+        //         output = `${input.toLowerCase()} have you Teamwork`;
+        //     break;
+
+        //     case "sunday":
+        //         output = `${input.toLowerCase()} have you holiday`;
+        //     break;
+
+        //     default:
+        //         output = `You have entered invalid information`;
+        // }
+
+
+        //     console.log(output);
+
+
+
+
+
+
+
+            ///  padStart   //  padEnd  :
+            
+            let text = "5";
+            let padded = text.padStart(3, 0);
+
+            console.log(padded);
+
+            let padded2 = text.padEnd(4, "!");
+            console.log(padded2);
+
+
+
+
+            
 
 
 
@@ -264,36 +343,111 @@
 
 
 
-//     var year = 2152;
-// var month = 2;
-// var dayCount;
-// switch (month) {
-//     case 1:
-//     case 3:
-//     case 5:
-//     case 7:
-//     case 8:
-//     case 10:
-//     case 12:
-//         dayCount = 31;
-//         break;
-//     case 4:
-//     case 6:
-//     case 9:
-//     case 11:
-//         dayCount = 30;
-//         break;
-//     case 2:
-//         if (((year % 4 == 0) && !(year % 100 == 0))
-//             || (year % 400 == 0))
-//             dayCount = 29;
-//         else
-//             dayCount = 28;
-//         break;
-//     default:
-//         dayCount = -1; // invalid month
-// }
-// console.log(dayCount); // 29
+
+
+
+
+
+
+
+
+
+
+    var year = 2152;
+var month = 2;
+var dayCount;
+switch (month) {
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+        dayCount = 31;
+        break;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        dayCount = 30;
+        break;
+    case 2:
+        if (((year % 4 == 0) && !(year % 100 == 0))
+            || (year % 400 == 0))
+            dayCount = 29;
+        else
+            dayCount = 28;
+        break;
+    default:
+        dayCount = -1; // invalid month
+}
+console.log(dayCount); // 29
+
+
+
+
+
+
+
+
+
+
+
+            //  if ile switch birlesimi.
+            // case ler number oldugu icin inputMonth önüne + koyduk
+            // yil sayisi sadece case 2 yi ilgilendirdigi icin, yil girdisini sadece case 2 den sonra aliyoruz
+
+
+
+
+
+    inputMonth = prompt("Enter a month");
+    
+
+    switch (+inputMonth) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            output = `This Month has 31 Days`;
+            break;
+
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            output = `This mounth has 30 Days`;
+            break;
+        
+        case 2:
+            inputYear = prompt("Enter a year");
+
+            if (((inputYear % 4 == 0) && (inputYear % 100 == 0)) || (inputYear % 400 == 0)) {
+                output = `This mount has 29 Days`;
+            } else {output = `This mounth has 28 Days`;}
+            break;
+
+        default:
+            output = "You have entered a invalid mounth and year"
+            
+    }
+
+        console.log(output);
+
+
+
+
+
+
+
+
+
+
+
 
 
 

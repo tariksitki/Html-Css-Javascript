@@ -11,6 +11,53 @@
 
     <script>
 
+
+        const fullname = "Linda Maryam";
+        const department = "IT";
+        const salary = 100000;
+
+
+
+            ////  classic method
+
+        // const html = "<ul>" +
+        //     "<li>" + fullname + "</li>" +
+        //     "<li>" + department + "</li>" +
+        //     "<li>" + salary + "</li>"
+        //     "</ul>";
+
+        // document.body.innerHTML = html;
+
+
+
+            /// template literal:
+
+
+        const html = `
+            <li> ${fullname} </li> 
+            <li> ${department} </li> 
+            <li> ${salary} </li> `;
+
+        document.body.innerHTML = html;
+
+
+            
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
         // switch bir degeri birden cok variant ile karsilastirir
 
 
@@ -29,7 +76,7 @@
         let x = 3;
 
         if (x == "3") {
-            document.write(` x = ${x} `);
+            console.log(` x = ${x} `);;
         }
 
 
@@ -38,9 +85,9 @@
         let y = 5;
 
         if (y === "5") {
-            document.write(` y = ${y} `);
+            console.log(` y = ${y} `);
         }   else {
-            document.write(` y != 5 `);
+            console.log(` y != 5 `);
         }
 
 
@@ -92,7 +139,26 @@
 
         let a = "a";
 
-        if (a === "a") document.write("True");
+        if (a == "a") console.log("Correct");
+
+            /////// ternary:
+
+        (a == "a") ? console.log("Correct") : console.log("False");
+
+        // Bu kullanimda, :  ile baslayan else kismini yazmak zorundayiz.
+
+
+            ///////  without else:
+
+        if (a == "b") console.log("b")
+        console.log("False");
+        
+        
+
+
+
+
+
 
 
 
@@ -106,7 +172,7 @@
 
 
 
-        /// if icerisinde if yapisi:
+        /// nested if:
 
 
         // let note = +prompt("Enter your Grade: ");
@@ -129,6 +195,11 @@
 
 
 
+
+
+
+
+
         // ternary if:
 
 
@@ -137,8 +208,11 @@
         // (b.toLowerCase() == "john") ? document.write("Your Name is John") : document.write(`Your Name is ${b} `);
 
 
-        // bu yapida if kullanmiyoruz buradali ? if i temsil eder  :  ise else i temsil eder
-        // else kismini ister ()  icinde ister normal yazabiliriz
+        // bu yapida if kullanmiyoruz buradaki ? if i temsil eder  :  ise else i temsil eder
+        // else kismini ister ()  icinde ister normal yazabiliriz.  () icerisinde yazarsak bir if else yapisi daha olusturma sansimiz olur.
+
+
+
 
 
 
@@ -165,6 +239,22 @@
 
 
 
+
+
+        // let money = prompt("How much money you have?");
+
+        // money >= 1000 ? console.log("Very Good") : (money >= 500 ? console.log("Good") : console.log("Bad"));
+
+
+
+
+
+
+
+
+
+
+
     //     let c = prompt("Enter Your Name");
 
     //    (c.toLowerCase()) == "john" ? document.write("Your Name is John") : (c.toLowerCase() == "kennedy") ? document.write("Your Name Kennedy") : document.write(`Your Name ${c} `);
@@ -173,7 +263,7 @@
 
 
         // Js de bosluklarin white space lerin önemi yok 
-    // enter ile asagi gecilebilir
+        // enter ile asagi gecilebilir
 
 
 
@@ -198,96 +288,34 @@
 
     let text;
 
-    fruit = prompt("Enter a Fruit name");
+    // fruit = prompt("Enter a Fruit name");
 
-    switch (fruit.toLowerCase()) {
-        case "banana":
-            text = "Banana";
-        break;
+    // switch (fruit.toLowerCase()) {
+    //     case "banana":
+    //         text = "Banana";
+    //     break;
 
-        case "orange":
-            text = "Orange";
-        break;
+    //     case "orange":
+    //         text = "Orange";
+    //     break;
 
-        case "apple":
-            text = "Apple";
-        break;
+    //     case "apple":
+    //         text = "Apple";
+    //     break;
 
-        default:
-            text = "I have never heard of that fruit";
+    //     default:
+    //         text = "I have never heard of that fruit";
 
-    }
+    // }
 
-    document.write(text);
+    // document.write(text);
 
 
 
     // default olmazsa ve girilen deger siklar arasinda yoksa undefined
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </script>
     
-
-
-
-
-
-
-
-
 </body>
 </html>

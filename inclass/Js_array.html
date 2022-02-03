@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        // listeler ile ayni denebilir 
+
+        // , ile ayrilan hersey array in bir elemani 
+
+        // peardeck geldi email 
+
+        // array icin nde array ve object saklanabilri
+
+        var cars = ["Opel", "Audi", "Bmw"];
+
+        console.log(cars);
+
+
+        // object oldugu icin kendi icin methodlari var lenth var console da 
+
+        var cars2 = Array.of("Opel", "Audi", "Bmw");
+
+        console.log(cars);
+
+
+
+        var cars3 = new Array("Opel", "Audi", "Bmw");
+
+        console.log(cars3);
+
+
+
+        var num1 = new Array(2, 10);
+
+        console.log(num1);
+
+        var num2 = new Array(10);
+
+        console.log(num2);
+        // bu 10 tane bos eleman döndürdü
+        /// bazen hata veriyor
+        // ilk yöntem en cok kullanilan
+
+
+
+
+
+
+
+
+        var cars4 = ["Opel", "Audi", "Bmw", [1, 2, true]];
+
+        console.log(cars4[0]);
+        console.log(cars4[3][2]);
+
+
+
+        cars4[3] = "Mercedes";
+
+        console.log(cars4);
+
+
+
+
+
+
+
+        const cars5 = ["Opel", "Audi", "Bmw", [1, 2, true]];
+
+        cars5[3] = "Mercedes";
+
+        console.log(cars5);
+
+
+        // burada constant elemanin heap bölgesinde bulunan kismina bir atama yaptik 
+
+
+        cars5[2] = "toyota"; 
+        
+        console.log(cars5);
+
+
+        // cars5 = [1, 2, 3];   buna izin vermez constant tanimlama yaptigi icin 
+ 
+        // console.log(cars5); 
+
+
+        // object lerd indexlemem yok  key value ile calisir 
+
+
+        // array in adresleri binary olarak hexe decimal adresler saklanir steak de
+
+        // steak de adresler saklandigi icin adreste bir degisiklik yapmadigimiz sürece degisiklik yapabilirz
+
+        cars5[4] = "porsche";
+
+        console.log(cars5);
+
+        cars5[10] = "Ferrari";
+
+        console.log(cars5);
+
+        ///  arada 5 tane bos eleman var diyor yani array 10 eleman oldu
+
+        console.log(cars5.length);
+
+
+
+
+        // array uzunlugu bilmiyorsak en sona eleman atama
+
+        cars5[cars5.length] = "Suzuki";
+
+        console.log(cars5);
+
+        // empty lerin tipi undefined
+
+
+        console.log(cars5[5]);  ///  bos eleman
+
+
+        //  empty kullanim bir binada bos daireler icin 
+
+
+
+        let cars6 = ["opel", , , , , "audi"];
+
+        console.log(cars6);
+
+        // bos eleman atamak icin , koyabilirz
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ///  arraylerin tipi object tir
+
+        console.log(typeof(cars));
+
+        console.log(cars instanceof Array);  
+
+        // array olup olmadigini anlama 2 yöntem
+
+
+        let c = 5;
+
+        console.log(c instanceof Array);
+
+
+
+        console.log(Array.isArray(cars));
+
+        
+
+
+
+        // arraylere indexlerle erisiyoruz
+        // objelere keylerle erisiyoruz yani stringlerle elemanlari ile 
+
+
+
+        // null da bir object olarak verir tip 
+
+
+        ///  evet
+// 8:53
+// stack veya heap ten ziyade
+// 8:53
+// biz değişken tanımlarken ona bir adres veriyoruz.
+// 8:54
+// const ile tanımlayınca adresi değiştiremiyoruz. dolayısıyla her iki alanda da değişiklik yapamıyoruz
+// 8:55
+// primitive olan her değişkene yeni değer atadığımızda stack ta bir adres tanımlanıyor. değer oraya yazılıyor. bizim değişkenin işaret ettiği adres yeni tahsis edilen oluyor.
+
+
+// bir de fonksiyonlara değer aktarırken de aynı
+
+
+// ama const olana atama yapmıyor kopya değişken veriliyor.
+// 9:03
+// deneyip görmek daha faydalı olacaktır
+
+        
+
+
+
+
+
+
+//length
+/* const fruits = ["Banana", "Orange", "Apple"];
+// fruits[6] = "Lemon";
+
+console.log(fruits)
+console.log(fruits.length)
+ */
+
+ const fruits = ["Banana", "Orange","Lemon"];
+const vegetables = ['Broccoli','Celery','Parsley','Artichoke']
+
+console.log(fruits.concat(vegetables));
+
+console.log(fruits);
+
+// bir degiskene atasaydik yeni bir array olusturacakti
+
+
+    console.log(fruits.concat("Fig", 3, "Pear"));
+
+    // hicbirii orijini bozmaz 
+
+
+    console.log("" + fruits);
+
+    // iki arrayi toplarsak o da string dönecek 
+    // string ve aray toplama string 
+
+
+        // 2 .  method
+
+    console.log(fruits.toString());
+
+    console.log(fruits + vegetables);
+    console.log(fruits + "" + vegetables);
+
+    // concat ve tostring ile array üzerinde islem yapabilirz 
+
+
+
+
+
+
+
+    //// sort array icindeki rakamlari siralam,az
+    // bunun icin bir method
+    
+    const daltones = ['Joe','Jack','William','Avarel'];
+
+    console.log(daltones.sort());
+
+    const num = [40, 100, 1, 5, 25, 10];
+
+    console.log(num.sort());  // string olarak siralanir
+
+    console.log(num.sort((a, b) => a - b));
+
+    // python tutor a kod yaz görsellestirir 
+
+
+    // her seferinde 2 sayi aliyor soldakinden sagdakini cikariyor eger sonuc pozitif ise soldaki saga gitmesi gerekir diyor ve yer degistiriyor
+
+    // 29 adimda gerceklesir
+
+
+    // İçerideki fonksiyonu anlamadıysanız sorun değil, zorlamayın kendinizi. Buna callback diyoruz. İleri derslerin konusu. Burada sadece rakamları nasıl sıralayacağız onu bilin yeter. Yöntem bu. Detaylara takılmayın şimdilik.
+
+
+    // console.log(num.sort((b,a) => a-b)); de büyükten küçüğe sıralıyor
+
+
+    // max ve min gibi built in func yok js de 
+
+    // length - 1 en büyük rakami max rakami verir 
+    // birinci elemanda min i verir 
+
+
+    // push ile pop tam tersi 
+    // pop un icine deger yazilamaz
+
+
+
+
+    // console.log(num.sort((a,b)=> a - b) [0]) en küücük eleman
+
+
+
+    const daltones2 = ['Joe','Jack','William','Avarel'];
+
+    console.log(daltones2.reverse());
+
+    //  reverse methodu orijinal array i bozar
+
+    // concat orijinali degistirmez
+
+
+
+
+
+
+
+
+
+
+
+    ////  push ve pop methodu:
+
+    const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+
+    fruits2.push("Pears");
+
+    console.log(fruits2);
+
+    fruits.push("Pears", "pineapple", 2);
+
+    console.log(fruits2);
+
+
+    console.log(fruits2.pop());
+    console.log(fruits2.pop());
+
+
+    console.log(fruits2);
+
+
+
+    // pop sildigi elemani yazdirir. bunu bir degiskene atayarak baska bir yerde kullanabilirz
+
+    // https://www.w3schools.com/jsref/jsref_obj_array.asp
+
+
+
+    /// shift en bastakini siler
+
+    // bunun icine de deger girilemez
+
+    //  unshift de array in en basina eleman ekler ve bize bir rakam döndüürr  ekledikten sonra ki yeni array uzunlugu 
+
+
+    
+
+
+    const fruits3 = ["Banana", "Orange", "Apple", "Mango"];
+
+    // const deleted = fruits3.shift();
+
+    // console.log(deleted);
+
+    // console.log(fruits3);
+
+
+
+    const uns = fruits3.unshift("Pears", "fig", 2, [1, 2]);
+
+    console.log(uns);  //  unshift bize sayi döndürür
+
+    console.log(fruits3);
+
+
+    ///  push u da degiskene atayarak dene ve bu degiskeni yazdir yine sayi döndürecek
+
+
+
+
+
+
+    // pop push unshift en basta ve sonda calisir
+    // splice ise array icinde 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /////////////  splice:
+
+
+    var names = ["John", "Edward", "Victor"];
+
+    // var deleted = names.splice(1, 0, "Mark", "James");
+    // var deleted = names.splice(2, 2, "Mark", "James");
+    // var deleted = names.splice(2, 20, "Mark", "James");
+    var deleted = names.splice(1, 1, "Mark", "James");
+    // degiskene atadigi icin sildigi elemani gösterdi
+
+    console.log({deleted});
+
+    console.log(names);
+    console.log(names.splice(1, 1, "Mark", "James"));
+
+
+
+    // 2. deger 0 olursa birsey silmez araya ekler
+
+    /// orjinali degistirmez
+
+    // silinen birsey yoksa bos array döndürür
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /////////////  slice:
+
+    ///  orijinali bozmaz 
+    // ikinci deger dahil olmaz
+
+    // tek rakam verdiysek sona kadar alir 
+
+    const months = ['Jan', 'March', 'April', 'June',"july"];
+
+    const springs = months.slice(1, 3);
+
+    console.log(springs);
+
+    console.log(months.slice(1, -2));
+
+    console.log(months.slice(-4, -2));
+    /// her zaman soldan saga calisir
+
+    console.log(months.slice(-4, -5));  //  bos string
+
+    console.log(months.slice(-4, 3));
+
+    console.log(months);
+
+
+
+
+
+
+
+
+    /// indexof lastindexof:
+
+    // indexof ilk buldugu 
+
+
+    //indexof lastindexof
+    const colors = ["Red", "Yellow", "Green", "Blue", "Pink",   "Green"];
+    const x = colors.indexOf("Green", 3)
+    console.log(x)
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /// ikinci ders basi heap dinle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -37,6 +37,7 @@
         let message2 = "This is first message";
 
         console.log(message2.startsWith("Th"));
+
         console.log(message2.endsWith("."));
 
 
@@ -48,8 +49,8 @@
 
         let message3 = "  This is first message  ";
 
-        console.log(message3.trimRight());
         console.log(message3.trimLeft());
+        console.log(message3.trimRight());
 
 
 
@@ -76,7 +77,10 @@
 
         console.log(message6);
 
-        ///  burada tek backslash kullandigimizda output da ciktisini göremeyiz.. Cünkü escape seq ler kendisinden sonra gelen karakteri yok sayar. mesela f den öncesine koyarsak f gider
+        ///  burada tek backslash kullandigimizda output da ciktisini göremeyiz.. 
+        // Cünkü escape seq ler kendisinden sonra gelen karakteri yok sayar. 
+        // mesela f den öncesine koyarsak f gider
+
 
 
 
@@ -85,7 +89,67 @@
 
         let message7 = 'This is \v first message';
 
-        document.write(message7);
+        console.log(message7);
+
+
+
+        let text = "We are the so-called \"Vikings\" from the north.";
+
+
+        console.log(text);
+
+
+
+
+        //***********  
+        //  Do not create Strings objects.
+
+    // The new keyword complicates the code and slows down execution speed.
+
+    // String objects can produce unexpected results:
+
+
+        
+
+
+
+
+    ///// Attention:
+
+    //  primitive string ve object string === operatöründe ayni degildir.
+
+    let x = "John";
+    let y = new String("John");
+
+    console.log(x == y);
+
+    console.log(x === y);
+
+
+
+
+
+
+    ////////////
+
+    // hatta iki yöntemle de ayni verileri object olarak atama yapsak veri tipleri yine farkli cikar 
+
+
+    let xx = new String("John");
+    let yy = new String("John");
+
+    console.log(xx == yy);
+
+    console.log(xx === yy);
+
+
+
+
+
+
+    /////////////
+
+    
 
 
 
@@ -159,10 +223,13 @@ Tarik`;
         var s = "Hello John, welcome welcome to Clarusway.";
         console.log (s.search("wel"));
 
+        console.log(s.search("Cl"));
+
 
 
 
         var s = "Hello John, welcome to Clarusway."
+
         console.log (s.substr(12, 5));
         // burada 12 den basla 5 tane al
 
@@ -171,22 +238,6 @@ Tarik`;
 
 
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -205,6 +256,13 @@ Tarik`;
         console.log(typeof str2, str2);
         console.log(typeof str3, str3);
 
+
+
+
+
+
+
+        // asagidaki yöntemde:
 
         // primitive degil object seklinde bir string elde etmis oluyoruz
 
@@ -231,15 +289,22 @@ Tarik`;
         // okun yanina tiklayinca method lar acilir ve primitivelerin 
 
         // primitiveler deger olarak steak de tutulur
-        // object lerin ve arraylerin ise index0 larinin adresi steak de ama kendileri heap de bulunur
+        // object lerin ve arraylerin ise index0 larinin 
+        // adresi steak de ama kendileri heap de bulunur
 
         // referans degerlilerin steak de sadece adresleri tutulutr kendileri heap de 
         
-        // const sadece heap deki adresini tuttugu icin gecen derste const iel tanimlana bir object i degistirebildik  
+        // const sadece heap deki adresini tuttugu icin gecen derste const ile tanimlanan bir object i degistirebildik  
 
 
 
 
+        
+        
+        
+        
+        
+        
         var s1 = " hello ";
         var s2 = " world ";
 
@@ -265,8 +330,15 @@ Tarik`;
         var a = "primitive.\nlerin p\t roperti veya metodu olmaz";
 
         console.log(a);  
-        console.log(a.charAt()); // bos girilirse ilk indexi döndürür
+        console.log(a.charAt(4)); // bos girilirse ilk indexi döndürür
 
+
+
+        /// charAt in mantigi su sekildedir:
+        // Bir sayi gireriz ve bu sayiya denk gelen 
+        // index deki karakteri print eder
+
+        // yani at 9 daki karakter 
 
         console.log(a.charAt(9));
         console.log(a.charAt(10));
@@ -293,6 +365,25 @@ Tarik`;
 
 
 
+
+
+
+
+
+
+
+        //////////  reverse a string:
+
+
+
+
+        let tt = "I love you";
+
+        new_tt = tt.split("").reverse().join("");
+
+        console.log(new_tt);
+
+        console.log(typeof(new_tt));   // veri type string
 
 
 
@@ -384,11 +475,267 @@ Tarik`;
 
 
 
+        //////////////////// 
+
+        ////////////////   string devam 2. session:
+
+
+        // regular expressions bak internetten  önemli
+        
+        
 
 
 
 
 
+        var s = "Lorem Ipsum is simply dummy text of the printing and 'printing' typesetting industry.";
+
+
+
+        console.log(s.replace("Lorem", "Hi"));
+
+        console.log(s);
+
+        // replace ile original degismez
+
+        let ss = s.replace("Lorem", "Hi");
+
+        console.log(ss);
+
+
+        // replace kücük büyük duyarli 
+
+        console.log(s.replace("lorem", "hi"));
+
+        console.log(s.replace(/lorem/i, "hi"));
+
+        console.log(s.replace(/e/g, "hi"));
+
+
+
+        // mesela bir email sorgulatacagiz @ var mi @ den sonra ne var gibi 
+
+        // regex regular expressions
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //////////////////// search:
+
+        // indexof ve lastindex of a benzer
+
+        // search in farki burada regex kullanilir index of da yok
+
+
+        // -1 önemli  eger daha önce girildi ise birdaha girilmesin gibi 
+
+
+
+        var sss = "Lorem Ipsum is simply dummy text of the printing and 'printing' typesetting industry.";
+
+
+        console.log(sss.search("text"));
+
+        // ne aratirsak ilk baslangic index no
+
+        console.log(sss.search("Text"));
+
+        console.log(sss.search(/Text/i));
+
+
+        // The search() method cannot take a second start position argument. The indexOf() method cannot take powerful search values (regular expressions).
+
+
+
+
+
+
+
+
+
+
+        /////////////// slice:
+
+        console.log();
+
+        let ssss = "Lorem Ipsum is simply dummy text of the printing and 'printing' typesetting industry.";
+
+        console.log(ssss.slice(0, 5));
+
+        console.log(ssss.slice(12, -10));
+
+        // - deger versek de soldan saga calisir
+        // terse calismaz
+
+
+        console.log(ssss.slice(-30, 10));
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        //////////// split:
+
+        // array yapar object type olur
+
+        console.log(ssss.split(" "));
+
+        console.log(ssss.split());
+
+        // icine bir deger girmez isek tüm stringi tek bir array yapar
+
+        // console.log(ssss.split(""));  
+
+        // bu ise her bir karakteri tek tek ayirir
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //////////////  substr:
+
+        // ilk degerden basla ve 2. deger kadar karakter al
+
+        //  ikinci deger olmazsa sonuna kadar alir
+
+        console.log(ssss.substr(4, 5));
+
+        // Bu kullanimdan kalkacak 
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Deprecated_and_obsolete_features
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //////// substring:
+
+        // substr yerine bu kullanilir
+
+        // birinci deger baslangic ikincisi bitis
+
+        console.log(ssss.substring(19, 33));
+
+        console.log(ssss.substring(33, 19));
+
+        console.log(ssss.substring(5, -4));
+
+        // eksi degerleri 0 kabul eder
+        // birde son index numarasindan fazla bir deger girmeyi dene
+
+
+        /// burada negativ index yok
+        // ve index nolari ters yazsak da calisiyor
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //////////  toLowerCase:
+
+        // bazi sitelerde canakkale zonguldaktan sonra siralanir
+
+        // tolocaluppercase daha iyi olur dedi bunu da arastir 
+
+
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase
+
+
+        // her dile özgü bir pangram var o dilde olan tüm harfler
+
+        // lokal neye göre lokal  pc nin yerel diline göre cevirir
+
+
+        var pangram = "pijamalı hasta yağız şoföre çabucak güvendi";
+
+        console.log(pangram.toLocaleUpperCase());
+
+        console.log(pangram.toUpperCase());
+
+        console.log(pangram.toLocaleUpperCase('tr-TR'));
+
+
+
+
+        console.log(pangram.toLowerCase());
+        console.log(pangram.toLocaleLowerCase());
+        console.log(pangram.toLocaleLowerCase('tr-TR'));
+
+
+        // yurtdisinda yasiyorsak tr TR koymamiz gerekir
+
+
+
+
+
+
+
+
+
+
+        ////////////// trim :
+
+        var snew = "                      <-Welcome \t to Clarusway\tway->                         ";
+
+        console.log(snew);
+
+        console.log(snew.trim());
+
+        console.log(snew.trimLeft());
+
+        console.log(snew.trimRight());
+
+
+
+
+        // string.replace(" ", "")
+
+        // toString() anlatirmisiniz
+
+        
 
 
 

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Array JavaScript'te çeşitli öğeleri depolamak için kullanılan tek bir değişkendir. Genellikle bir öğe listesi depolandığında ve tek bir değişken tarafından erişildiğinde kullanılır. Dizinin çok değişkenli ilişkiler olduğu çoğu dilin aksine, JavaScript dizisinde birden çok öğe depolayan tek bir değişken vardır.
+
+
+        // Spaces and line breaks are not important. A declaration can span multiple lines.
+
+
+        let colors = [
+            "Red",
+            "Yellow",
+            "Blue"
+        ]
+
+
+        // array olusturmanin yukarida gördügümüz yöntemi manuel yöntemdi. simdi ise func ile olusuturmaya bakalim:
+
+        let colors2 = new Array("Red", "Yellow", "Blue");
+        console.log(colors2);
+
+        let colors22 = new Array(1, 2, 3);
+
+        console.log(colors22);
+
+
+
+        // The two examples above do exactly the same. There is no need to use new Array(). For simplicity, readability and execution speed, use the first one (the array literal method).
+
+
+        // index no start with 0
+        // but length start with 1
+
+
+
+
+        // Change an element of the array
+
+
+        let colors3 = new Array("Red", "Yellow", "Blue");
+
+        colors3[1] = "green";
+
+        console.log(colors3);
+
+
+
+
+
+        // Arrays are Objects
+        // ➤ Arrays are a particular type of object. The JavaScript type operator returns "object" for       arrays.
+
+        // ➤ However, it is better to define JavaScript arrays like arrays.
+
+
+
+        console.log(typeof(colors3));
+
+
+
+        //Objects are using names to control their "members".
+
+
+        let name = {firstname : "John", lastname : "James", age : 24};
+
+        console.log(name);
+
+        console.log(typeof(name));
+
+
+
+
+
+        ///////////  **************  
+        // An array uses numbers to access its elements, and an object uses names to access its members.
+
+
+
+        
+        
+        /// length property
+        // ➤ The length property returns the number of elements.
+
+        console.log(colors3.length);
+
+        // bos array de uzunluk 0 cikar undefined cikmaz
+
+
+
+
+
+
+
+
+        // concat() method
+// ➤ The concat() method is used to combine two or more arrays.
+
+// ➤ This method does not modify the current arrays but returns a new array that contains the elements of the joined arrays.
+
+
+
+    var dogs = ["Bulldog" , "Beagle" , "Rottweiler"];
+    var cats = ["Ragdoll" , "Sphynx" , "Birman"];
+
+    let pets = dogs.concat(cats);
+
+    console.log(pets);
+
+    var birds = ["Parrot" , "Owl" , "Finch"];
+
+    let pets2 = pets.concat(birds);
+
+    console.log(pets2);
+
+
+
+
+
+
+    ///////////  2. Method:
+
+    // dogs.concat(cats).concat(birds);
+
+
+
+
+
+
+
+
+
+
+    /// sort() method
+        // ➤ The sort() method sorts arrays alphabetically.
+
+
+        var arr = ["John" , "James" , "Oliver" , "Aaron" , "Scott"];
+
+
+        /// first method: 
+
+        // arr.sort();
+
+        // console.log(arr);
+
+
+
+        /// second method:
+
+        console.log(arr.sort());
+
+
+
+
+        // By default, the sort() function sorts values as strings. If numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1". Because of this, the sort() method will produce incorrect result when sorting numbers.
+
+
+
+
+        // What is the output of this code?
+
+        //var num = ["23","198","34","3","9"];
+
+        // ["198", "23", "3", "34", "9"]
+
+
+
+
+
+
+
+
+
+        //  push() and pop() Methods
+    // The push() Method
+    // ➤ The push() method adds a new element to the end of an array.
+
+
+
+
+
+    // The pop() Method
+        // ➤ The pop() method allows you to remove the last element from an array.
+
+
+        var names = ["John", "James", "Oliver", "Aaron", "Scott"];
+
+        names.push("Kennedy");
+
+        console.log(names);
+
+
+
+        names.pop();
+
+        console.log(names);
+
+
+
+
+
+
+
+
+
+
+
+        //// shift Method()
+        // ➤ The shift() method removes the first element from an array and returns the string that removed element.
+
+
+        var colors4 = ["Red", "Yellow", "Green"];
+
+        let newArray = colors4.shift();
+
+        console.log(newArray);
+        console.log(typeof(newArray));
+
+
+        console.log(colors4);
+
+
+
+
+
+
+
+
+
+        ///////// unshift Method:
+
+
+        // The unshift() method adds a new element to the beginning of an array and returns the new array length.
+
+
+        var colors5 = ["Red", "Yellow", "Green"];
+
+        colors5.unshift("Blue");
+
+        console.log(colors5);
+
+
+
+
+
+
+        let newArray2 = colors5.unshift("black");
+
+        console.log(newArray2);
+
+        console.log(colors5);
+
+
+
+
+
+
+
+
+
+
+        // splice() Method
+        // ➤ The splice() method is used to add new elements to an array and delete elements from an array.
+
+
+
+
+        // sadece splice calisinca tesir etmez:
+
+        // colors6.splice();
+
+
+
+        // ➤ The first parameter (1) determines the position of the first element to delete and starting position to insert.
+
+        // ➤ The second parameter (2) determines the number of elements to delete.
+
+        // ➤ The remaining parameters ("White", "Pink") determines the new elements to be added.
+
+
+        var colors6 = ["Red" ,"Yellow", "Green", "Blue"];
+
+
+
+        colors6.splice(1, 1, "Pink");
+
+        console.log(colors6);
+
+
+
+
+        var colors7 = ["Red" ,"Yellow", "Green", "Blue"];
+
+        colors7.splice(0, 3, "one", "two", "three");
+
+        console.log(colors7);
+
+
+
+
+
+
+
+
+
+
+        var colors8 = ["Red" ,"Yellow", "Green", "Blue"];
+
+        colors8.splice(0, 3, "one");
+
+        console.log(colors8);
+
+
+
+
+
+
+
+
+
+        var colors9 = ["Red" ,"Yellow", "Green", "Blue"];
+
+        colors9.splice(0, 3, "one", "two", "three", "four", "five", "six");
+
+        console.log(colors9);
+
+
+
+
+
+
+
+
+
+
+        var colors10 = ["Red" ,"Yellow", "Green", "Blue"];
+
+        colors10.splice(1, 0, "one", "two");
+
+        console.log(colors10);
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -346,7 +346,267 @@
         colors10.splice(1, 0, "one", "two");
 
         console.log(colors10);
+
+
+
+
+
+
+
+        // splice methodu degiskene atanarak calismaz
+
+        // var colors11 = ["Red" ,"Yellow", "Green", "Blue"];
+
+
+        // neww = colors11.splice(1, 0, "Orange", "Purple");
+
+        // console.log(neww);
+
+
+
+
+        // direkt console icerisinde de calismaz
         
+
+        // console.log(colors11.splice(1, 0, "Orange", "Purple"));
+
+
+
+
+        // önce splice yapip daha sonra console gerekir
+
+        var colors11 = ["Red" ,"Yellow", "Green", "Blue"];
+
+        colors11.splice(1, 0, "Orange", "Purple");
+
+        console.log(colors11);
+
+
+
+
+
+
+
+
+
+
+        // slice() Method
+    // ➤ The slice() method slices a piece of an array into a new array. - The original array will not be modified.
+
+
+
+
+
+
+
+    let colors12 = ["Red" ,"Yellow", "Green", "Blue"];
+
+    let new_colors12 = colors12.slice(1, 3);
+
+    let new_colors13 = colors12.slice(2,3)
+
+    console.log(new_colors12);
+
+    console.log(new_colors13);
+
+    
+
+
+    // slice lama da bitis degeri dahil degildir baslangic dahildir
+
+    // slice lama da colors[1, 3] yöntemi calismaz bu sadece index leme de yani bir rakam girilecekse calisir
+    
+    // The first parameter (1) determines the starting position of the new array. - The second parameter (3) determines the ending (not included end) position of the new array.
+
+
+
+
+
+
+
+
+    let colors13 = ["Red" ,"Yellow", "Green", "Blue"];
+
+    newColors13 = colors13.slice(2, 4);
+
+    console.log(newColors13);
+
+
+
+
+
+
+
+
+
+
+
+    /// indexOf() and lastIndexOf() Methods
+
+
+    // The indexOf() method returns the position of a specified element in an array at the first occurrence
+
+    // ➤ This method returns -1 if the element is not found.
+
+
+
+    let colors14 = ["Red" ,"Yellow", "Green", "Blue", "Pink", "Green"];
+
+    console.log(colors14.indexOf("Green", 3));
+
+
+    ////   degiskene atayarak:
+
+    let index14 = colors14.indexOf("Green");
+
+    let index144 = colors14.indexOf("Green", 3);
+
+    console.log(index14);
+    console.log(index144);
+
+
+        ///  eger yoksa -1 return:
+
+
+    console.log(colors14.indexOf("black"));
+
+
+
+
+
+    // The first parameter ("Green") determines the item to search for.
+    // ➤ The second parameter (3) determines the starting position of the search.
+
+
+
+
+
+
+
+
+
+
+
+
+    //////////   lastIndexOf() Method
+
+
+    // The lastIndexOf() method returns the last index of a specified element in an array and returns -1 if the element is not found.
+    
+    // ➤ In this method, the search begins at the started position, or at the end if no starting position is specified, and the search ends at the beginning of the array.
+
+    //  bu yöntemde indexof un aksine tarama islemi sondan baslar ve basa dogru gider.
+
+    // bu nedenle eger deger gireceksek sayisal deger, terseten düsünmemiz gerekir.
+
+
+    var colors15 = ["Red" ,"Yellow", "Green", "Blue", "Pink", "Green"];
+
+    console.log(colors15.lastIndexOf("Green"));
+    
+    console.log(colors15.lastIndexOf("Green", 4));
+
+
+
+    //   eger bizim girdigimiz index no dan sonra aradigimiz deger bulunmazsa yine -1 döner
+
+    console.log(colors15.lastIndexOf("Green", 1));
+
+
+
+
+
+
+
+
+
+
+
+    //// assigning a new item:
+
+
+    var colors16 = ["Red" ,"Yellow", "Green", "Blue", "Pink", "Green"];
+
+    colors16[1] = "Black";
+
+
+
+    // en sona eleman eklemenin bir diger yöntemi:
+
+
+    colors16[colors16.length -1] = 10;
+
+    console.log(colors16);
+
+
+
+    /// pop() son elemani alir
+    // shift ise ilk elemani alir
+    // push sona ekler
+
+    colors16.shift();
+
+    console.log(colors16);
+
+
+
+
+
+
+
+    /// Examples:
+
+    // What is the output of this code?
+// var colors = ["Red", "Green", "Yellow", "Green" , "Blue", "Green", "Pink", "Green", "Black", "Green"];
+// var x = colors.lastIndexOf("Green", 8);
+// console.log(x);
+
+
+/// answer 7
+
+
+
+
+
+
+
+/// What is the output of this code?
+// var colors = ["Red", "Yellow", "Green"];
+// colors.push("Red");
+// colors.shift();
+// document.write(colors);
+
+
+
+
+
+
+
+
+// What is the output of this code?
+
+
+// var x = ["9","25","111","John","James","Aaron"];
+// console.log (x.sort());
+
+
+// sort yapildiginda sayilar harflerden önce gelir 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

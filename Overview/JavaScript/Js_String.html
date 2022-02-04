@@ -722,6 +722,14 @@ Tarik`;
 
         // tolocaluppercase daha iyi olur dedi bunu da arastir 
 
+        //The toLocaleUpperCase() method converts a string to uppercase letters, using current locale.
+
+        //The locale is based on the language settings of the browser.
+
+        //The toLocaleUpperCase() method does not change the original string.
+
+        //The toLocaleUpperCase() returns the same result as toUpperCase(), except for locales that conflict with the regular Unicode case mappings (such as Turkish).
+
 
 
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase
@@ -734,26 +742,38 @@ Tarik`;
 
         var pangram = "pijamalı hasta yağız şoföre çabucak güvendi";
 
-        console.log(pangram.toLocaleUpperCase());
+        // pangram.toUpperCase();  
+        // Bu sekilde kullanim ile de orijinal degismez
 
         console.log(pangram.toUpperCase());
+        // bu kullanimda ise türkce karakterlerin hepsi büyük harfe cevrilemedi
 
-        console.log(pangram.toLocaleUpperCase('tr-TR'));
+        console.log(pangram.toLocaleUpperCase());
+        // burada yine i ler büyük yapilamadi
+
+        console.log(pangram.toLocaleUpperCase("tr-TR"));
+        // burada hepsi tamam
+
+        
+
+        ///  tersini uygulayalim:
+        
+        let lowerPangram = pangram.toLocaleUpperCase("tr-TR");
+
+        console.log(lowerPangram.toLowerCase());
+
+        ///  büyük harften kücük harfe kücültünce de kücük ı harfleri i oluyor
+
+        console.log(lowerPangram.toLocaleLowerCase("tr-TR"));
+        // yine bu sekilde problem kalkiyor
 
 
-
-
-        console.log(pangram.toLowerCase());
-        console.log(pangram.toLocaleLowerCase());
-        console.log(pangram.toLocaleLowerCase('tr-TR'));
-
-
-        // yurtdisinda yasiyorsak tr TR koymamiz gerekir
-
-
-
-
-
+        
+        
+        
+        
+        
+        
 
 
 
@@ -767,19 +787,180 @@ Tarik`;
 
         console.log(snew.trim());
 
-        console.log(snew.trimLeft());
+        // console.log(snew.trimLeft());
+        // yeni kullanim start ve end
 
-        console.log(snew.trimRight());
+        console.log(snew.trimStart());
+
+        console.log(snew.trimEnd());
+
+
 
 
 
 
         // string.replace(" ", "")
 
-        // toString() anlatirmisiniz
+        // replace methodu ile bosluklari kaldirip tüm stringi concatane yapmak icin g kullanilmak zorundadir:
+
+        console.log(snew.replace(/ /g, ""));
+        // burada tüm bosluklar kalkar tablar kalir
+
+        let stringReplace = "a   b   c   d   e   f";
+
+        console.log(stringReplace.replace(/ /g, ""));
+
+        console.log(stringReplace.replace(" ", ""));
+        /// burada ise a dan önce gördügü ilk boslugu alir islem biter
+
+
+
+
+
+
+
+
+
+
+
+
+        // toString() :
+
+        // toString() yöntemi, bir nesnenin metin olarak görüntülenmesi gerektiğinde (HTML'deki gibi) veya bir object in dize olarak kullanılması gerektiğinde JavaScript tarafından dahili olarak kullanılır.
+        // Normally, you will not use it in your own code.
+
+        //The toString() method returns a string as a string.
+
+        //The toString() method does not change the original string.
+
+        //The toString() method can be used to convert a string object into a string.
+        
+
+        let myString = new String("John");
+
+        console.log(typeof(myString), myString);
+
+        // Bu sekilde output da {"John"} yazar ve yaninda da String yazar
+
+
+
+        let newString = myString.toString();
+
+        console.log(typeof(newString));
+        // simdi type string oldu
+
+
+
+
+
+        let myArray = ["john", "Kennedy", 1, 2];
+
+        console.log(typeof(myArray), myArray);
+
+
+
+        let newArray = myArray.toString();
+
+        console.log(typeof(newArray), newArray);
+        console.log(newArray.length);
+
+        ///  Bir array i tostring ile stringe cevirdigimizde, array in tüm elemanlarini alir tek bir string yapar ve hepsini concatanate yapar 
+
+
+
+
+
+
+            ///////
+
+        let myNumber = (1, 2, 3, 4);
+
+        console.log(typeof(myNumber), myNumber);
+
+        // normal parantez ile yazimda son elemani döndürür.
+
+
+
+
+
+
+        let myNumber2 = 12345678;
+
+        console.log(typeof(myNumber2), myNumber2);
 
         
 
+        let newMyNumber2 = myNumber2.toString();
+
+        let empty = [];
+
+        let neww;
+
+        for (i = 0; i < newMyNumber2.length; i++) {
+            neww = Number(newMyNumber2[i]);
+
+            empty.push(neww);
+        }
+
+        console.log(empty);
+        console.log(typeof(empty));
+        console.log(typeof(empty[0]));
+        // son  halinde array imizin her bir elemani number olmus oldu
+
+
+
+
+
+
+
+
+
+
+
+
+        //////////// join:
+
+        // array methodlarindandir
+
+        // The join() method returns an array as a string.
+
+        // The join() method does not change the original array.
+
+        // Any separator can be specified. The default is comma (,).
+
+        let array1 = ["a", "b", "c", "d"];
+
+        let string1 = array1.join(); 
+        
+        // default bu sekildedir
+        // python gibi "" yapmak zorunda degiliz
+
+        console.log(typeof(string1),string1);
+
+
+        ///////
+
+        let array2 = [1, 2, 3, 4, 5];
+
+
+        let string2 = array2.join("");
+
+        console.log(typeof(string2),string2);
+
+
+        /////////
+
+
+        let string3 = array2.join(" and ");
+
+        console.log(string3);
+
+
+        ////
+
+        let string4 = array2.join(", ");
+
+        console.log(string4);
 
 
 
@@ -794,28 +975,58 @@ Tarik`;
 
 
 
+        //////  key:
+
+        // array in key leri yoktur
+
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+        const keys = fruits.keys();
+
+        console.log(keys);
+
+
+
+        ///// Object func ile bir veri object e cevrilir
+
+
+        const keys2 = Object.keys(fruits);
+
+        console.log(keys2, typeof(keys2));
+
+
+        // array veri tipi olarak zaten object tir:
+
+        const Object1 = Object(fruits);
+
+        console.log(Object1);
+        console.log(typeof(Object1));
+
+
+
+        //// string i object e cevirme:
+
+        let string5 = "Hello world";
+
+        let string5New = Object(string5);
+
+        console.log(string5New);
+        console.log(typeof(string5New));
 
 
 
 
+        //////////
 
 
 
+        let number = 12345;
 
+        let objectNumber = Object(number);
 
+        console.log(objectNumber, typeof(objectNumber));
 
 
     </script>
-
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>

@@ -488,7 +488,7 @@ Tarik`;
 
 
 
-        var s = "Lorem Ipsum is simply dummy text of the printing and 'printing' typesetting industry.";
+        var s = "Lorem Ipsum is simply dummy text of the printing and Ipsum 'printing' typesetting industry. Ipsum";
 
 
 
@@ -503,13 +503,30 @@ Tarik`;
         console.log(ss);
 
 
+        ///////// Regular Expression:
+
+        //  i = incasesensitive
+
+        console.log(s.replace(/ipsum/i, "Picsum"));
+
+        // i ve g birlikte kullanilabiliyor
+
+        console.log(s.replace(/ipsum/ig, "Picsum"));
+
+
+        ///  regex ler de birde m var. bu da multiline search icin kullaniliyor.
+
+
+
+
+
         // replace kücük büyük duyarli 
 
-        console.log(s.replace("lorem", "hi"));
+        // console.log(s.replace("lorem", "hi"));
 
-        console.log(s.replace(/lorem/i, "hi"));
+        // console.log(s.replace(/lorem/i, "hi"));
 
-        console.log(s.replace(/e/g, "hi"));
+        // console.log(s.replace(/e/g, "hi"));
 
 
 
@@ -542,14 +559,14 @@ Tarik`;
 
         var sss = "Lorem Ipsum is simply dummy text of the printing and 'printing' typesetting industry.";
 
-
-        console.log(sss.search("text"));
+    
+        // console.log(sss.search("text"));
 
         // ne aratirsak ilk baslangic index no
 
-        console.log(sss.search("Text"));
+        // console.log(sss.search("Text"));
 
-        console.log(sss.search(/Text/i));
+        // console.log(sss.search(/Text/i));
 
 
         // The search() method cannot take a second start position argument. The indexOf() method cannot take powerful search values (regular expressions).
@@ -569,9 +586,15 @@ Tarik`;
 
         let ssss = "Lorem Ipsum is simply dummy text of the printing and 'printing' typesetting industry.";
 
-        console.log(ssss.slice(0, 5));
+        
+        console.log(ssss.slice(1, 5));
+        console.log(ssss.slice(-40, 60));
+        console.log(ssss.slice(-50, -10));
+        
+        
+        // console.log(ssss.slice(0, 5));
 
-        console.log(ssss.slice(12, -10));
+        // console.log(ssss.slice(12, -10));
 
         // - deger versek de soldan saga calisir
         // terse calismaz
@@ -653,8 +676,11 @@ Tarik`;
         console.log(ssss.substring(33, 19));
 
         console.log(ssss.substring(5, -4));
-
+        
         // eksi degerleri 0 kabul eder
+        // Bu nedenle burada -4 ü 0 kabul  etti ve 0 da 5 den kücük oldugu icin ilk deger olarak 0 i kabul etti ve 0 dan basladi 5 tane karakter aldi
+
+
         // birde son index numarasindan fazla bir deger girmeyi dene
 
 
@@ -662,6 +688,23 @@ Tarik`;
         // ve index nolari ters yazsak da calisiyor
 
 
+        console.log(ssss.substring(5, 100));
+
+        // bitis degerinden fazla bir deger girsek de baslangic degerinden bitise kadar alir
+
+
+
+
+
+
+        //// substring()
+
+// Eğer start > stop ise substring, bu 2 argümanı değiştirir.
+// Her iki argüman da negatifse veya NaN ise, sanki 0 mis gibi ele alınır.
+
+        // slice()
+
+    // Eğer start > stop, slice()boş dize döndürür. ( "")
 
 
 

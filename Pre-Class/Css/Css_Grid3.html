@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid3</title>
+
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-auto-rows: minmax(100px, auto);
+            grid-gap: 1em;
+            /* justify-items: center; */
+            /* justify-items: start; */
+            /* justify-items: end; */
+            justify-items: stretch;
+            /* default stretch dir  */
+
+            /* align-items: start; */
+            /* align-items: end; */
+            /* align-items: center; */
+            align-items: stretch;
+            /* Yine burada da default stretch dir  */
+        }
+
+        .wrapper > div {
+            background-color: #eee;
+            padding: 1em;
+        }
+
+        .wrapper > div:nth-child(odd) {
+            background-color: #ddd;
+
+        }
+
+        .box1 {
+            /* align-self: start; */
+            /* Bu dikey de yapar. yatay da ise justify self */
+            grid-column: 1/3;
+            /* Bu demek oluyor ki senin sütunun 1. sütun cizgisinden baslasin ve 3. sütun cizgisinde bitsin 
+            Peki buradaki column line lar nereden geliyor. Yukarida ana wrapper i mizi 3 e bölmüstük. Bu nedenle 3 column oldugundan kenardakiler dahil toplam 4 tane cizgi oldu. iste bu cizgiler esas alinir*/
+
+            grid-row: 1/3;
+            grid-row: 1/3;
+            /* grid-row: 1/9;
+            bu da calisir */
+            
+        }
+
+        .box2 {
+            /* align-self: end; */
+            /* grid-column: 2; */
+            /* ilk box 3. cizgide bittiginden eger box 2 ye 2 . cizgiden basla dersek bu durumda 2. box asagi atilir. */
+            grid-column: 3;
+            grid-row: 1/3;
+
+        }
+        .box3 {
+            /* justify-self: end; */
+
+            grid-column: 2/4;
+            grid-row: 3;
+            /* bu satir sayesinde 4 3 ile ayni satirda oluyor. eger bu satiri yazmazsak 4. box 3. box in altina atilir */
+
+
+        }
+        .box4 {
+            grid-column: 1;
+            grid-row: 2/4;
+            /* Box 1 row 3 e kadar geliyor ama biz burada box4 e 2 den basla dedik. Bu nedenle box 4 box1 in üzerine cikacaktir  */
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="wrapper">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+
+    </div>
+
+
+
+
+
+
+</body>
+</html>

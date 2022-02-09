@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid 2</title>
+
+    <style>
+
+                .wrapper {
+                    display: grid;
+                    /* grid-template-columns: 1fr 1fr 1fr; */
+
+                    grid-template-columns: repeat(3, 1fr);
+                    /* grid-template-columns: repeat(4, 1fr); */
+                    /* grid-template-columns: repeat(4, 1fr 2fr); */
+                    /* üstteki kod ekrani büyütünce belli olur ne yaptigi. Normalde 4, 1fr deyince 4 e böler ve her biri 1fr olur. ama 4, 1fr 2fr deyince 4 tane 1fr column u 4 tane de 2fr column u yapar */
+                    grid-gap: 1em;
+                    /* grid-auto-rows: 100px; */
+                    /* Bu durumda eger divlerden bir tanesinin icindeki yaziyi cok uzun yaparsak, deger sabit 100px oldugundan yazi div disina tasacaktir */
+
+                    /* flex su sekilde yapariz  */
+                    grid-auto-rows: minmax(100px auto);
+                    /* Bu durumda eger icerik az ise tüm divler 100 px olur eger bir rowdaki divlerden birinin icerigi fazla ise bu durumda o satirdaki tüm row larin boyu uzar 
+                    burada minmax icin func dedi*/
+
+
+                }
+
+                .wrapper > div {
+                    background-color: #eee;
+                    padding: 1em;
+
+                }
+
+                .wrapper > div:nth-child(odd) {
+                    background-color: #ccc;
+
+                }
+
+                .nested {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-auto-rows: 70px;
+                    grid-gap: 1em;
+                }
+
+                .nested > div {
+                    border: #333 1px solid;
+                    padding: 1em;
+
+                }
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="wrapper">
+        <div>
+            Lorem ipsum dolor sit.
+        </div>
+        <div>
+            Lorem ipsum dolor sit.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta totam corrupti ipsa pariatur hic reiciendis, saepe in aliquid quas, cupiditate ipsam fugit doloribus molestiae perferendis beatae reprehenderit optio? Id dolorem laudantium harum, neque, laboriosam beatae voluptatem quae nulla itaque, explicabo repudiandae veniam blanditiis non magni! Perferendis placeat ipsam iure ullam.
+        </div>
+        <div class="nested">
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+            <div>Lorem</div>
+        </div>
+        <div>
+            Lorem ipsum dolor sit.
+        </div>
+        <div>
+            Lorem ipsum dolor sit.
+        </div>
+        <div>
+            Lorem ipsum dolor sit.
+        </div>
+        <div>
+            Lorem ipsum dolor sit.
+        </div>
+        <div>
+            Lorem ipsum dolor sit.
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

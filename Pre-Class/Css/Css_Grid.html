@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid1</title>
+</head>
+<body>
+    
+
+    <!-- Grid Lines : The vertical and horizontal lines that divide the grid and separate the columns and rows.
+
+
+    Grid Area : Dört ızgara çizgisiyle çevrili dikdörtgen boşluk. Bir ızgara alanı, herhangi bir sayıda ızgara hücresi içerebilir.
+
+    Grid track : The space between two grid lines. This space can be horizontal or vertical.. Iki tane cizgi arasinda kalan kisim yani aslinda sütun yada row un icerigi
+
+    Grid row : A horizontal track of a grid.
+
+    Grid column : A vertical track of a grid.
+
+    Gutter : The space between rows and columns in a grid.
+
+    Grid container : The container that holds the entire CSS grid.
+
+    Grid item : Any element that is a direct child of a grid container.     
+
+    Grid cell : A single unit of a CSS grid. -->
+
+
+
+
+    <!-- Properties for the Grid Container -->
+
+    <!-- display:
+    Defines the element as a grid container and establishes a new grid formatting context for its contents.
+
+    grid :generates a block-level grid
+    inline grid- generates an inline-level grid
+
+
+    grid-template
+grid-template-columns
+grid-template-rows
+grid template-areas
+grid template (A shorthand for setting grid-template-rows, grid-template-columns, and grid-template-areas in a single declaration.) -->
+
+        
+<!-- .container {
+    grid-template: none | grid-template-rows / grid-template-columns;
+  }
+
+  
+
+  .container {
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "header header header header"
+      "main main . sidebar"
+      "footer footer footer footer";
+  }
+
+
+  gap
+column-gap
+row-gap
+grid-column-gap
+grid-row-gap
+grid-gap (A shorthand for row-gap and column-gap ) -->
+
+
+
+<!-- .container {
+    grid-template-columns: 100px 50px 100px;
+    grid-template-rows: 80px auto 80px; 
+    column-gap: 10px;
+    row-gap: 15px;
+  } -->
+
+
+
+  <!-- Properties for the Grid Items -->
+
+
+  <!-- A grid container contains grid items.
+
+  float, display: inline-block, display: table-cell, vertical-align and column-* properties have no effect on a grid item.
+
+
+
+  grid-column & grid-row:
+
+Shorthand for grid-column-start + grid-column-end, and grid-row-start + grid-row-end.
+
+
+.item {
+    grid-column: start-line / end-line | start-line / span value;
+    grid-row: start-line / end-line | start-line / span value;
+  }
+
+
+  .item-c {
+    grid-column: 3 / span 2;
+    grid-row: third-line / 4;
+  }
+
+
+  name – a name of your choosing
+row-start / column-start / row-end/ column-end – can be numbers or named lines
+  
+
+.item-d {
+    grid-area: 1 / col4-start / last-line / 6;
+  } -->
+
+
+
+            <!-- grid-area -->
+
+
+        <!-- flex tek boyutlu grid ise iki boyutludur -->
+
+
+            <style>
+
+                .wrapper {
+                    display: grid;
+                    grid-template-columns: 70% 30%;
+                    /* grid-column-gap: 1em;
+                    grid-row-gap: 1em; */
+                    grid-gap: 1em; /* shorthand */
+
+                }
+
+
+                .wrapper > div {
+                    background-color: #eee;
+                    padding: 1em;
+
+                }
+
+                .wrapper > div:nth-child(odd) {
+                    background-color: #ccc;
+
+                }
+            </style>
+
+
+    
+            <div class="wrapper">
+                <div>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos numquam ipsam consequuntur pariatur magni ad voluptatibus fuga sit eligendi molestiae. Sapiente voluptate voluptas optio necessitatibus ad eligendi fugit, ipsum qui aperiam in enim esse blanditiis suscipit nostrum impedit, quidem dolore minus reiciendis molestias quam quae. Accusantium recusandae iusto deserunt, odio blanditiis tempore accusamus optio aut eaque consequuntur at iure natus sit atque exercitationem, aliquid repellendus laboriosam delectus similique neque? Quam ipsam alias mollitia itaque ea consequuntur sunt deserunt temporibus quod.
+                </div>
+        
+                <div>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos rem alias tempore totam qui aliquam, aliquid enim placeat consectetur doloribus soluta itaque rerum delectus. Magni incidunt tenetur officiis veritatis veniam.
+                </div>
+
+
+
+                <div>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos numquam ipsam consequuntur pariatur magni ad voluptatibus fuga sit eligendi molestiae. Sapiente voluptate voluptas optio necessitatibus ad eligendi fugit, ipsum qui aperiam in enim esse blanditiis suscipit nostrum impedit, quidem dolore minus reiciendis molestias quam quae. Accusantium recusandae iusto deserunt, odio blanditiis tempore accusamus optio aut eaque consequuntur at iure natus sit atque exercitationem, aliquid repellendus laboriosam delectus similique neque? Quam ipsam alias mollitia itaque ea consequuntur sunt deserunt temporibus quod.
+                </div>
+        
+                <div>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos rem alias tempore totam qui aliquam, aliquid enim placeat consectetur doloribus soluta itaque rerum delectus. Magni incidunt tenetur officiis veritatis veniam.
+                </div>
+
+                <!-- <div>
+                    hello
+                </div> -->
+            </div>
+
+
+
+    
+                <!-- Check yourself  -->
+
+    <!-- CSS Grid Layout (aka “Grid”), is a two-dimensional grid-based layout system that aims to do nothing less than completely change the way we design grid-based user interfaces.   (True) -->
+
+    <!-- grid-column & grid-row are Shorthand for grid-column-start + grid-column-end, and grid-row-start + grid-row-end (True) -->
+    
+
+    
+
+
+
+
+
+
+</body>
+</html>

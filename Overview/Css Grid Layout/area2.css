@@ -1,0 +1,60 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 15vh 15vh 15vh;
+    grid-template-areas: 
+    "header header header"
+    "sidebar main main"
+    "sidebar main main"
+    "card card card"
+    "footer footer footer"
+    ;
+}
+
+
+
+
+.content {
+    background-color: bisque;
+    border: 1px solid black;
+    text-align: center;
+
+}
+
+.content1 {
+    grid-area: header;
+
+}
+
+/* Content1 tek basina yukariyi kapladigi icin 
+2 ve 3 asagi atildi  */
+
+.content2 {
+    grid-area: sidebar;
+    background-color: rgb(205, 109, 247);
+}
+   
+.content3 {
+    grid-area: main;
+    background-color: rgb(252, 79, 252);
+}
+
+.content4 {
+    grid-area: card;
+    height: 15vh;
+    background-color: rgb(174, 253, 227);
+}
+
+.content5 {
+    grid-area: footer;
+    height: 15vh;
+    background-color: darkgray;
+}

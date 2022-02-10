@@ -1,0 +1,221 @@
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+
+}
+.wrapper {
+    /* display: grid;
+    justify-content: center; */
+
+}
+
+.container {
+    display: grid;
+    /* grid-template-columns: 10% 10% 20% 20%; */
+
+    /* min */
+    /* Attention: sadece max yada sadece min kullandigimizda sayisal deger girmeyiz. min content sadece kendi basina verdigimiz bir degerdir. asagida min content den sonra gelen 200 px ayri bir degerdir min e ait degildir. 
+    sadece minmax da deger veririz*/
+    /* grid-template-columns: 100px 100px min-content 200px; */
+
+    /* max */
+    /* grid-template-columns: 100px 100px max-content 200px; */
+
+    /* grid-template-columns: 100px 100px minmax(100px, 240px) 200px; */
+    /* min en uzun kelimeye göre uzunluk alir 
+    max ise cümleyi bölmez sürekli gider  */
+
+    /* min content i de deger olarak alir  
+    yani 4. sütun acilir*/
+
+    /* minmax ise kücülttügümde sundan kücük büyütünce sundan büyük olmasin 
+    auto kullanmayi dene */
+
+    grid-template-columns: auto auto auto auto;
+    /* kac tane auto verirsek ve hepsi de auto ise bu durumda auto verdigimiz kadar sütun acar ve hepsi ekrani kaplayacak sekilde esit parcalara bölünür
+    sadece bir tane auto verirsek o kalan tüm boslugu alir */
+
+    /* minmax ile media query kullanmadan responsive yapma sansimiz var cok önemli  */
+    /* grid-template-rows: 100px 300px 100px 100px; */
+
+    height: 50vh;
+    grid-template-rows: auto auto auto auto; 
+    /* bu sekilde yükseklik verip rows verirsek yine auto oldugu icin esit böler  */
+
+    /* Gap özellikleri  */
+    /* column-gap: 20px;
+    row-gap: 10px; */
+    
+    /* shorthand  */
+
+    /* gap: 20px 10px; */
+    /* Önce row sonra column  */
+
+    /* grid-template-columns: 100px 100px auto 200px; */
+    /* auto ise kalan tüm alani kaplar  */
+
+
+    /* fraction  */
+    /* grid-template-columns: 1fr 1fr 5fr 2fr 1fr; */
+
+    /* grid-template-rows: 1fr 1fr 2fr 1fr; */
+
+    /* Note: sütun olarak 4 e böldük. elimizde de 16 tane kutu var. eger fr lar ile 5. row icin de deger yazarsak bu durumda 5. row icin yer ayirir yani diger kutulari kücülterek yer tahsis eder ama elimizde kutu olmadigi icin görüntü olmaz  */
+
+
+        /* repeat  */
+
+
+    /* grid-template-columns: repeat(2, 1fr) 5fr repeat(2, 2fr); */
+
+    /* grid-template-columns: repeat(2, 1fr) 200px repeat(2, 2fr); */
+    /* aradaki alan hic degismesin istersek */
+
+    /* grid-template-columns: repeat(2, 1fr) auto repeat(2, 2fr); */
+
+    /* column icin yaptigimiz hersey rows icin de gecerli */
+
+    /* grid-template-rows: repeat(2, 2fr) 300px; */
+    /* grid-template-rows: repeat(2, 2fr) 300px; */
+    /* grid-template-rows: repeat(3, 200px) ; */
+
+    /* grid-template-rows: repeat(2, 0.5fr) auto 1fr; */
+
+
+    /* grid-template-columns: 100px 300px 100px 100px; */
+
+
+    /* repeat(auto-fit, minmax(100px, 1fr)) */
+
+    grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+
+    /* Bu kod ile, iceriklerin kapladigi en az alan kadar genislik yapar. eger icerik az ise 100 px yapar minimum genislik olarak. ve ekranin tüm genisligi kadar kutu olusturur. ekran 700px ise 7 tane 1300 px ise 13 tane yanyana kutu olusturur  */
+
+    /* Note: auto ile auto-fix ayni seyler degildir */
+
+    /* repeat te de px kullanabilirz  */ 
+    gap: 0.5rem 0.5rem;
+}
+
+/* content olan divlerin icine de grid olusturabiliriz */
+
+.content {
+    background-color: coral;
+    border: 2px solid black;
+    box-shadow: 3px 3px gray;
+    border-radius: 5px;
+
+}
+
+
+    /* 1. method  
+    area tanimlama*/
+
+.content1 {
+     background-color: brown;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    /* Box lar arasinda yer tahsisi yaparken, sadece il template asamasinda yapmak zorunda degiliz. orasi ana container i yerlestirme yeridir. daha sonra box larin kendi css kisminda da kaplayacaklari alani belirleyebiliriz */
+}
+
+/* content 2 yi silersek 3 hemen onun yerini alir  */
+
+.content4 {
+    /* grid-column-start: 2;
+    grid-column-end: 4;
+    background-color: bisque; */
+
+}
+
+
+/* area tanimlama kisa yolu  */
+
+/* .content7 {
+    grid-column: 1/3;
+    grid-row: 3/ 5;
+}  */
+/* best practice  */
+
+
+/* dikkat aralarda , degil / kullaniyoruz */
+
+/* .content6 {
+    grid-column: 1/3;
+    grid-row: 2/4;
+} */
+
+
+
+/* 2. method  
+span: tane */
+
+
+/* .content6 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}  */
+/* bu örnek üzerinden gidecegiz  */
+
+
+/* .content6 {
+    grid-column: 3 / span 2;
+
+}    */
+/* 3 / 5 dedigimizde 3 den basla 5 de bitir 
+span de ise 3 den basla 2 tane git  */
+
+
+/* ne kadar kutulari birlestirsek de arkadaki hayali ana cizgiler durur ve ilk etapda 16 kutu olusturdu isek o aslinda hep kalir
+bu tablodan farkli ve önemli bir yapi eger kutu birlestirme gibi düsünürsek tablodan öteye gidemeyiz
+sanal birleştirme*/
+
+/* console kismindan baktiginda grid orijinal cizgileri görünür */
+
+
+
+.content16 {
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr) 1fr 1fr;
+    gap: 0.5rem 0.5rem;
+    padding: 0px;
+
+    grid-template-areas: 
+    "header header"
+    "left right1"
+    "left right2"
+    "footer footer";
+}
+
+.content-inner {
+    border: 1px solid black;
+    background-color: bisque;
+    text-align: center;
+
+}
+
+.inner-11 {
+    grid-area: header;
+}
+
+.inner-12 {
+    grid-area: left;
+}
+
+.inner-13 {
+    grid-area: right1;
+}
+
+.inner-14 {
+    grid-area: right2;
+
+}
+
+.inner-15 {
+    grid-area: footer;
+
+}

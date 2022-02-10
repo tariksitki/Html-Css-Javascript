@@ -1,0 +1,19 @@
+
+
+.conteyner {
+    display: grid;
+    grid-template-columns: 200px 500px 100px 100px;
+    grid-template-rows: 100px 400px;
+}
+
+.content {
+    background-color: rgb(102, 102, 255);
+    border: 1px solid black;
+}
+
+
+h1 {
+    text-align: center;
+    vertical-align: middle;
+    
+}

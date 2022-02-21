@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+
+//         let my_list = {
+//             animal: "Cat",
+//             fruit: "Apple",
+//             auto: ["mercedes", "audi"]
+//         }
+
+//         console.log(my_list);
+
+
+
+//         JavaScript Objects
+// ➤ In previous lessons, we learned that JavaScript variables are containers for data values.
+
+// ➤ Objects are also variables. Unlike other variables, objects can contain many values.
+
+// ➤ Objects are useful for storing data in an organized manner.
+
+// ➤ Objects are composed of properties. A property is a “name: value” pair.
+
+// var dog = {
+//   name: "Rocky",
+//   legs: 4,
+//   tail: 1,
+//   qualities: ["loyalty","companionship"]
+//   };
+// ➤ dog is an object and has properties just like the real world.
+
+// Property	Property Value
+// name	Rocky
+// legs	4
+// tail	1
+// qualities	loyalty, companionship
+
+
+
+
+// Accessing Object Properties
+// ➤ There are two ways to access object properties.
+
+// objectName.propertyName
+// objectName['propertyName']
+// var dog = {
+//   name: "Rocky",
+//   legs: 4,
+//   tail: 1,
+//   qualities: ["loyalty","companionship"]
+//   };
+
+// var myDog=dog.name;
+// var yourDog=dog["name"] ;
+
+
+
+
+
+// var dog = {
+//   name: "Rocky",
+//   legs: 4,
+//   tail: 1,
+//   qualities: ["loyalty","companionship"]
+//   };
+
+//     let myDog = dog.name;
+//     let yourDog = dog["name"];
+
+//     console.log(myDog);
+//     console.log(yourDog);
+
+
+
+
+// Object Methods
+// ➤ Objects can also have functions.
+
+// ➤ An object method is a function stored as a property.
+
+// ➤ We can use the following syntax to access an object method.
+
+// objectName.methodName()
+
+var dog = {
+  name: "Rocky",
+  legs: 4,
+  tail: 1,
+  qualities: ["loyalty","companionship"],
+  bark: function() {
+      console.log("hello");
+  },
+  result: function() {
+      return this.name + " has "+ this.legs + " legs."
+  }
+}
+
+    dog.bark();
+    console.log(dog.result());
+
+    // Objects are also variables. Unlike other variables, objects can contain many values. (true)
+
+
+
+
+
+
+
+
+    // The Object Constructor
+
+    // Tek bir türden çok sayıda nesneye ihtiyacımız varsa, bir nesne türü belirlememiz gerekir. ➤ Bir nesne türü oluşturmak için bir nesne oluşturucu işlevi kullanabiliriz.
+
+    /// this is a keyword that refers to the current object. It is not a variable. And we cannot change the value of this.
+
+
+    // function dog(name, legs, tail) {
+    //     this.name = name;
+    //     this.legs = legs;
+    //     this.tail = tail;
+    //   }
+
+    //   var dog1 = new dog("Riley", 4, 1);
+    // var dog2 = new dog("Ginger", 4, 1);
+
+    // document.write(dog1.name); // Output: "Riley"
+
+    // document.write(dog2.tail); // Output: 1
+
+
+
+
+
+    function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+    }
+
+
+    let myFather = new Person("John", "Kennedy", 50 ,"Blue");
+
+    console.log(myFather);
+    console.log(myFather.firstName);
+    console.log(myFather.lastName);
+
+
+
+    // Adding a Property : 
+
+    myFather.auto = "Mercedes";
+    console.log(myFather);
+
+    myFather["nationality"] = "Germany";
+    console.log(myFather);
+
+
+        /// ayni property tekrar eklendiginde hata almayiz ama eklemez
+
+    myFather.auto = "Mercedes";
+    console.log(myFather);
+
+
+
+        /// Adding a Method to an Object:
+
+
+    myFather.nameMethod = function() {
+        return this.firstName + " " + this.lastName;
+    }
+
+    console.log(myFather.nameMethod());
+
+
+
+
+
+
+            /// Adding a Property to a Constructor
+        // You cannot add a new property to an object constructor the same way you add a new property to an existing object:
+        // hata vermet ama eklemez
+
+        Person.nationality = "England";
+        console.log(Person);
+
+
+
+        /// To add a new property to a constructor, you must add it to the constructor function:
+
+
+        function Person(first, last, age, eye){
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+            this.nationality = "England";
+    }
+        // Person yukarida tanimli olmasina ragmen burada bir daha tanimladik hata almadik
+
+
+        console.log(Person);
+
+
+
+
+
+
+
+        // Var olan bir nesneye yeni bir yöntem eklediğiniz gibi, bir nesne oluşturucusuna yeni bir yöntem ekleyemezsiniz. Bir nesne oluşturucuya yöntemler ekleme, yapıcıfunc içinde yapılmalıdır:
+
+
+        function Person(first, last, age, eye){
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+            this.nationality = "England";
+            this.namename = function(firstName, lastName) {
+                this.firstName + " " + this.lastName;
+            }
+    }
+
+        /// bir constructor a method ekledik
+       
+
+        
+
+        console.log(new Boolean("John"));
+        console.log(new Boolean);
+
+        console.log(new RegExp);
+
+
+        
+
+
+        ////  Function Expression:
+
+        let x = function() {return "Hello"};
+
+        console.log(x());
+
+
+
+
+        //// Arrow:
+
+        let y = () => "Hello Arrow";
+        console.log(y());
+
+        /// Burada func imiz tek satir oldugu icin return ve {} kullanmadik. tek satir olmasaydi kullanacaktik
+
+
+        let yy = () => {
+            let a = 2 * 6;
+            return a;
+        }
+        console.log(yy());
+
+
+
+
+
+        ////// Function Constructor:
+
+        let z = new Function("a", "b", "return 'Hello Constructor' ");
+        console.log(z());
+
+            /// hallo kismi ayri parantez icinde
+
+        let t = new Function("return 'Hallo Constructor without Parameter'");
+
+        console.log(t());
+
+        // Bu yöntemde eger parameter vermeyeceksek sadece return kismi
+
+
+
+
+        ////////////
+
+        (function () {
+            console.log("HelloHello");
+        }) ();
+
+
+
+
+        ////////////
+
+        function funcValue(a, b) {
+            return a * b;
+        }
+
+        let xx = funcValue(2, 3) * 3;
+        console.log(xx);
+
+
+
+        
+
+        ///////////////
+
+
+
+
+        let x1 = "";
+        console.log(typeof(x1));
+
+        let x2 = new String();
+        console.log(typeof(x2));
+
+        //  yukaridaki yöntem primitive bir string olusturur type string dir
+        // asagidaki ise object return eder
+
+
+
+        // ayni yukaridaki gibi:
+
+        let x3 = new Function();
+        let x4 = function() {
+            return "Hallo";
+        } 
+
+        console.log(typeof(x3));
+        console.log(typeof(x4));
+
+        // burada ise ikisinin tipi de func dir
+
+
+
+
+
+
+
+
+
+            // JavaScript Classes:
+
+
+            /// A class is a type of function, but we use the keyword class and assign the properties within a constructor() method instead of using the keyword function to initiate it.
+
+        // Class Definition
+
+        /// Classes are "special functions," and the class syntax has two components just as you can describe function expressions and function declarations: class expressions and class declarations.
+        /// ➤ The standard way to define a class is to use a declaration of class. You use the class keyword with the class name to designate a class, and always add the constructor() method.
+
+
+        class Fruits {
+            constructor(name, type) {
+                this.name = name;
+                this.type = type;
+            }
+        }
+
+        let myFruit = new Fruits("Apple", "Normal");
+        console.log(myFruit);
+
+        ///  bu sekilde bir object olusturduk
+
+
+
+
+
+        /// class icinde method olusturma:
+
+
+        class Fruits2 {
+            constructor(name, type) {
+                this.name = name;
+                this.type = type;
+            }
+
+            myMethod() {
+                return "A Method in Class";
+            }
+            
+        }
+            /// Dikkat: constructor ifadesi new anahtar kelimesi olmadan kullanilmaz. yani önce bir degiskene new ile object atayacagiz daha sonra ise cikti 
+
+        
+            /// bu class icinde olusturdugumuz methodu kullanirken class ile kullanamayacagiz. constructor vasitasi ile olusturdugumuz object in bir methodu olarak kullanacagiz:
+
+
+
+            // bu nedenle simdi yeni bir object olusturalim:
+
+            let myFruit2 = new Fruits2("Banana", "Tropik");
+
+            console.log(myFruit2);
+
+            console.log(myFruit2.myMethod());
+
+
+        ///////////////////////
+
+
+
+
+        // Static Methods
+
+        //  Static methods are defined on the class itself, and not on the prototype.
+
+        // ➤ That means you cannot call a static method on the object, but on the class:
+
+        // yani yukarida karsilastigimiz durum. static olmayan da method u object ile kullanmistik burada ise class ile kullanacagiz
+
+
+
+
+
+        class Fruits3 {
+            constructor(name, type) {
+                this.name = name;
+                this.type = type;
+            }
+
+            static hello() {
+                return "Static Hello";
+            }
+            
+        }
+
+        myFruit3 = new Fruits3("Kiwi", "Tropic");
+        console.log(myFruit3);
+
+        console.log(Fruits3.hello());
+
+
+
+
+
+
+
+
+
+
+        ///     Inheritance:
+
+
+        //  To create a class inheritance, use the extends keyword.
+
+        // ➤ A class created with a class inheritance inherits all the methods from another class:
+
+
+        // simdi miras yöntemi ile bir class olusturacagiz. bu yöntemde miras alinan class in tüm özellikleri alinir üzerine de yeni class icin özellikler tanimladi isek onlar alinir
+
+        // super methodu ise parent class i temsil eder bu methodu yeni olusturdugumuz class icinde cagirarak, yeni class in parent in özelliklerini almasini saglariz
+
+        class Fruits4 {
+            constructor(name, type) {
+                this.name = name;
+                this.type = type;
+            }
+
+            myMethod() {
+                return "Hello MyMethod";
+            }
+        }
+
+
+        class Fruits5 extends Fruits4 {
+            constructor(name, type, region) {
+                super(name, type);
+                this.region = region;
+            }
+
+            methodInherit() {
+                return "A Method in a class created with Inheritance";
+            }
+        }
+
+        /// superi  yeni class in constructor i icinde kullaniyoruz.
+
+        let xxx = new Fruits5("Banana", "Tropic", "Soud America");
+        console.log(xxx);
+
+        console.log(xxx.methodInherit());
+
+        console.log(xxx.myMethod());
+
+        // Normal de yeni class in myMethod adinda bir methodu yok. Inherit ten gelir
+
+
+
+
+
+
+
+            ///  Getters and Setters
+
+
+        // Classes also allows us to use getters and setters.
+
+        // ➤ To add getters and setters in the class, use the get and set keywords.
+
+            
+        class Song {
+            constructor (genre) {
+                this.genre = genre;
+        }
+
+        get sgenre() {
+            return this.genre;
+        }
+
+        set sgenre(newgenre) {
+            return this.genre = newgenre;
+        }
+        }
+
+    
+        let mySong = new Song("Classical");
+        console.log(mySong);
+    
+
+        mySong.sgenre = "Jazz";
+        console.log(mySong.sgenre);
+
+        
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

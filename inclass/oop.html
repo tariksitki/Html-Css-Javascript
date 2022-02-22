@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+
+
+    //// https://www.javascripttutorial.net/javascript-this/   makale this
+
+    // Kredi kartınızla işlem yaptınız. Limit yetersiz derse iş yeri sadece bunu görür. Limitin ne kadar olduğunu vs sadece siz bilirsiniz.
+
+    
+
+    //  Object lerde bir variable dir. ama diger variable lardan farkli olarak birden fazla türde veri tutabilirler
+
+    // object ler verileri organize bir sekilde depolayabilmek icin cok kullanislidir.
+
+    // object ler propertilerden olusur. bir property ise bir name value pair dir
+
+    // burada tutulan veriler arrayler gibi sirali degildir
+
+    // object icinde tutulan her bir deger property olarak isimlendirilir
+
+    //  OOP,  object konsepti üzerine dayali bir programlama paradigmasidir. yani bakis acisidir
+
+    // Biz object leri, gercek hayati modellemek icin yada özellikleri soyutlamak icin kullaniriz
+
+    // Object ler data yani property yada code yani methods icerebilir.
+
+    // Object leri kullanarak, datayi ve bununla ilgili olan davranisi tek bir block icine paketliyoruz
+
+    // Bir object e ait func a method denir
+
+    // OOP de objectler kendi kodlarini barindirirlar
+
+    // Eger object icine func tanimlamazsak sadece data barindiran bir container olusturmus oluruz
+
+    // Object ler application block lari olustururlar ve bir digeri ile irtibat halindedirler
+
+    const person = {
+        firstName: "Barry",
+        lastName: "Mitchell",
+        birthYear: 1977,
+        skills: ["Js", "Aws", "Docker", "Python"],
+        employed: true,
+        calcAgeBad: function (bYear) {
+            return 2022 - bYear;
+        }
+    }
+    console.log(person);
+    console.log(person.firstName);  ///  1. method
+    console.log(person.calcAgeBad(1991));
+    console.log(person["skills"]);  // 2. method
+    console.log(person["skills"][1]);
+
+    /// object icindeki array de aslinda bir nesnedir yani object tir
+
+    console.log(person.auto); // olmayan bir propertiye erismeye calisirsak undefined aliriz
+
+
+    /// [] kullanimi bize sunu saglar: person icerisindeki birthYear i su sekilde yazacagiz:
+
+    let tag = "Year";
+    console.log(person["birth" + tag]);  //  aritmetik islem ile concat yaptik
+
+
+    ///  change the value of a parameter:
+
+    person.birthYear = 1980;
+    console.log(person);
+
+    person["birthYear"] = 1982;
+    console.log(person);
+
+
+    /// steak de verilerimizin adresleri tutulur heap de ise bu adreslerin isaret ettigi verilerin kendisi tutulur. Biz const ile tanimlanan verilerimizin adreslerini degistiremeyiz ama heap de tutulan iceriklerini degistirebiliriz
+
+    // person = {
+    //     firstName: "Matthew"
+    // }
+    // console.log(person); bu sekilde bir atamaya izin vermez
+
+    ///  bir object i read only yapmak istiyorsak bunu getter setter lar ile kapatabiliriz
+
+    
+
+    /// olmayan bir property ekleme:
+
+    person.midName = "Adam";
+    console.log(person);
+
+    person["auto"] = "mercedes";
+    console.log(person);
+
+    
+    // case sensitive oldugu icin firstName var biz firstname yazarsak eskisini degistirmez yeni degisken atar
+
+    // programatik olarak silme:
+
+    delete person.auto;
+    console.log(person);
+
+
+
+    /// array de bir objecttir. bunun icin de de object olabilir
+    /// yani nested object
+
+    const comments = [
+        {userName: "John", comment: "very good"},
+        {userName: "Mike", comment: "good"}
+    ];
+
+        // nested object te indexleme
+
+    console.log(comments[1].userName);
+    console.log(comments[0]["comment"]);
+
+
+    ///  for of:
+
+
+        ////  keys
+    for (const key of Object.keys(person)) {
+        console.log(key);
+    }
+
+        /////  values
+    for (const value of Object.values(person)) {
+        console.log(value);
+    }
+
+
+        //// keys + values:
+
+    for (const [key, value] of Object.entries(person)) {
+        console.log(key + " :=> " + value);
+    }
+    
+
+
+
+    //// array bir object oldugu icin array icinde bulunan func lari yani method lari biz daha önce kullandik. mesela filter, remove, split reverse
+    
+
+
+
+
+
+    
+
+        ////////// Methods:
+        
+
+        const person2 = {
+        firstName: "Barry",
+        lastName: "Mitchell",
+        birthYear: 1977,
+        skills: ["Js", "Aws", "Docker", "Python"],
+        employed: true,
+        calcAgeBad: function (bYear) {  
+            return 2022 - bYear;
+        },   // Burada iceride tanimlanan func eski yöntemledir ve 
+           // ve bu kötü bir yöntemdir. kaynak israfina sebep olur
+        
+        calcAge() {
+            return 2022 - this.birthYear;
+        }
+
+        // calcAge() {
+        //     this.age = 2022 - this.birthYear;
+        //     return this.age;
+        // }    // bu da ikinci yöntem. burada property ürettik ve iceride sakladik
+        
+        }
+        console.log(person2.calcAgeBad(1991));
+        console.log(person2.calcAge());
+
+        // Biz zaten object icinde birthday olarak veri tutuyoruz. Bu nedenle bad dedigimiz kötü yöntemde bize tekrar yil sormasi kötü bir yöntem olmasina sebep oluyor
+
+
+
+
+
+
+
+
+
+
+            //////////////////  This:
+
+
+
+        // this static degildir. Func in nasil call edildigine baglidir ve this in degeri sadece func call edildiginde assign edilir
+
+        // This func in kendisini isaret etmez
+
+        // this func in sahibi kim ise yani owner i isaret eder
+
+
+
+
+
+        /// Object method:  
+        // this = Object that is calling the method
+        // mesela calcAge func icinde this kullanirsak bu durumda this, bu methodu cagiran object yani person olacaktir 
+
+        // Simple func call:
+        //  this = Browser window object
+
+        // arrow func:
+        // this = this of surrounding(cevreleyen) func(lexical this)
+
+        // Event listener:
+        // this: DOM element that the handler is attached to
+
+        // new, call, apply, bind:
+        //  this = we can change this with these methods
+
+        // console a gelip sadece this yazdigimizda window object cikar
+
+        function f1() {
+            console.log(this);
+        }
+
+        f1();
+        window.f1();  // sol tarafinda window oldugu icin output window
+
+        /// arrow func in kendine ait this i yoktur. yazili oldugu ortamin this ini alir (lexical sözlüksel). yani her zaman sabit bir this i yoktur
+
+    </script>
+
+
+    <h1 class="h1">Header</h1>
+
+    <script>
+
+        let header = document.querySelector(".h1");
+        header.addEventListener("click", (e) => {
+            console.log(this);
+            
+        })
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

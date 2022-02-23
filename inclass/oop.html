@@ -16,8 +16,6 @@
 
     //// https://www.javascripttutorial.net/javascript-this/   makale this
 
-    // Kredi kartınızla işlem yaptınız. Limit yetersiz derse iş yeri sadece bunu görür. Limitin ne kadar olduğunu vs sadece siz bilirsiniz.
-
     
 
     //  Object lerde bir variable dir. ama diger variable lardan farkli olarak birden fazla türde veri tutabilirler
@@ -243,11 +241,409 @@
 
     <script>
 
-        let header = document.querySelector(".h1");
-        header.addEventListener("click", (e) => {
+        // let header = document.querySelector(".h1");
+        // header.addEventListener("click", (e) => {
+        //     console.log(this);
+            
+        // })
+
+            // Burada arrow func  yani window verir
+
+
+            let header = document.querySelector(".h1");
+        header.addEventListener("click", function(e){
             console.log(this);
             
         })
+
+        ///  burada ise header elementi verir this
+        
+
+
+
+
+
+
+        ////
+
+        const teacher = {
+            birthyear: 1985,
+
+            calcAge: function () {  // eski yöntem func
+                console.log(this);
+                console.log(2022 - this.birthyear);
+            },
+            
+
+            calcAge2() {
+                console.log(this);
+            },
+
+
+            calcAgeArrow: () => {
+                console.log(this);
+            },
+
+
+            calcAgeDeleyed() {
+                setTimeout(function() { // normal func
+                    console.log(this);  // window return
+                    // this.calcAge();
+                    // calcAge not defined verir
+                }, 2000)
+            },
+
+
+
+            calcAgeDeleyedArrow() {
+                setTimeout(() => { // arrow func
+                    console.log(this);  // window return
+                    // this.calcAge();
+                    // calcAge not defined verir
+                }, 2000)
+            }
+        }
+
+        teacher.calcAge();      // teacher return eder
+        teacher.calcAge2();     // teacher
+        teacher.calcAgeArrow(); // window
+        teacher.calcAgeDeleyed();
+        teacher.calcAgeDeleyedArrow();
+
+        // Object icersiinde tanimladigimiz settimeout func icindeki func normal tanimlandiginda this window geldi. arrow ise objectin kendisini return etti.
+
+
+
+
+
+
+        /// yeni bir degisken ve 
+
+
+        const student = {
+            birthyear: 1995,
+        };
+
+        student.calcAge = teacher.calcAge;
+        student.calcAge();
+
+        ///  kendisine ait birthyear i olan ancak func olmayan bir object tanimladik. buna teacher in func inini atadik ve direkt 276 satirdan hesaplama yapti ve output olarak 27 verdi.
+
+
+
+
+
+
+        /// methodu bir degiskene atama:
+
+    const myFunc = teacher.calcAge;
+    myFunc();
+
+    /// burada nan aldik. cünkü globalde tanimladik ve aslinda görmedigimiz window.myFunc var. window da ise birthday olmadigindan nan aldik
+
+    // OOP de oldugumuz icin su an object ile iletisim halindeyiz. teacher.  ile baslayanlar  özelliklerini teacher dan alir. digerleri ise global den alir
+
+
+
+        /// eger bu degiskenimizi calistirmak istersek su sekilde atamalar yapmamiz gerekir
+
+    const myFunc2 = {};
+    myFunc2.birthyear = teacher.birthyear;
+    myFunc2.calcAge = teacher.calcAge;
+
+    myFunc2.calcAge();
+
+
+    
+
+
+
+
+        ///////////
+
+    let anObject = {
+        firstName: "John",
+        age: 30,
+        isMarried: false,
+        
+        introduce: () => {   //  arrow
+            return `${this.firstName} is ${this.age} years old.`
+        },
+
+        introduce2: function() {    ///  normal
+            return `${this.firstName} is ${this.age} years old.`
+        }
+    };
+
+    console.log(anObject.introduce());
+    console.log(anObject.introduce2());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ///////////////////////////////////////
+
+    ///// 4 Fundamental Principles of OOP:
+    // en önemlisi inheritance
+
+    // 1: Abstraction: Ignoring or hiding details that dont matter
+
+    // arabayi siniflandirdigimizda bir grafik designer icin renk önemlidir. mühendis icin motor gücü. ihtiyac duymadigimiz verileri gözardi etme
+
+
+    // 2: Encapsulation:
+    // Keeping properties and methods private inside the class, so they are not accessible from outside the class
+
+    ///  degistirilmesini istemedigimiz verilerin saklanmasi. mesela arabanin beyninde hiz sabitleyici var ama gizli tutuyor ekstra para verince aciliyor
+    // mesela twitter da kullanicilarin mail adresleri encapsule edilmis biz göremeyiz
+
+    // Kredi kartınızla işlem yaptınız. Limit yetersiz derse iş yeri sadece bunu görür. Limitin ne kadar olduğunu vs sadece siz bilirsiniz. 
+
+
+
+
+    // 3: Inheritance: Making all properties and methods of a certain class available to a child class
+
+    // student da teacher da birer insan. ikisinin ortak özellikleri var bunlari  birbirlerinden aliyorlar. sadece tek fark ders verme ve ders alma.
+
+
+
+
+    /// 4: Polymorphism: A child class can overwrite a method it inherited from a parent class.
+
+    // ana catida parent da tanimlanan bir method child lar tarafindan degistirilebilir. yada yeni özellikler eklenebilir
+
+
+
+
+
+
+
+
+
+
+
+    //////////  CLASS:
+
+    // Blueprint tir. Yani bir mimarin bir evi tasarladigi mavi resim gibidir. Class vasitasi ile elimizde bir tane model olur ve bundan sonra bu modelden istedigimiz kadar üretebiliriz. class dan üretilen her bir örnege instance yani örnek denir. simdi dog adinda bir mavi resim olusturalim:
+
+
+
+    class Dog {
+        constructor(name, foot) {
+            this.dogName = name;
+            this.foot = foot;
+        }
+    }
+
+    myDog = new Dog("Fifi");
+    console.log(myDog);
+
+    // class ile bir taslak olusturduk. daha sonra bu taslak üzerinden kendimize ait bir örnek yaptik.
+
+    // söyle de düsünebiliriz. Belediye tarafindan bir evde olmasi gereken tüm özellikler aciklaniyor. Bu class. 
+    // daha sonra biz bu özellikleri kendi zevkimize göre tasarlayarak kendimize ait bir ev olusturuyoruz
+
+
+
+    // aslinda js de diger dillerde oldugu gibi bir class yapisi yoktur. esas olarak js de prototype based bir OOP vardir js de. Ancak diger dillerden gelen developerlar sikinti yasamasin diye js de de class varmis gibi gösterilmektedir. Ancak arka plana baktigimizda js bunu farkli bir sekilde calistirir.
+
+    // class sadece mavi resimdir. prototype ise canli bir nesnedir. yani togg adinda bir araba prototipi üretildi. simdi ona bakarak arabalar üretecekler
+
+
+        
+
+    class Pet {
+        constructor (name, age) {
+            this.name = name;
+            this.age  = age;
+        }
+
+        walk() {
+            console.log("I'm walking");
+        }
+
+        speak() {
+            return ("I like Humans");
+        }
+    }
+
+        /// class da constructor sart. yeni bir örnek üretirken ise parametre ister kullaniriz ister kullanmayiz. istersek yeni örnegimizin propertilerini de degistirebiliriz
+
+    console.dir(Pet);
+
+
+    myPet = new Pet();
+    myPet.age = 2;
+    myPet.color = "pink";
+    console.log(myPet);
+
+
+
+        /// Class tanimlamasinda Büyük harf kullanimi dikkat. Buna Js kütüphanesi de uyar
+
+        // const neww1 = new String(334);
+        // const neww1 = new Number(334);
+
+
+        // Aslinda class da bir function dir
+
+
+
+
+
+
+
+        //// Simdi de bir Cat mavi resmi olusturalim. Kedi de bir evcil hayvan oldugu icin Pet den ortak özellikleri miras alacagiz.
+
+        class Cat extends Pet {
+            #weight = 5555; // disaridan ulasilmasini istemedigimiz veriler privat olarak bu sekilde tanimlanir. bu class bloku icerisindeki hersey bu bilgiye ulasabilir ama disaridan kimse ulasamaz
+            
+            constructor (name, age, color) {
+                super(name, age);
+                // Cat subclass Pet ise superclass
+                // maus super üzerine gelince pet yazar
+                this.color = color;
+            }
+
+            speak() {
+                // speak i de miras aldik ama biz biraz degistirmek kendimize göre uyarlamak istiyoruz.
+
+                let prevMsg = super.speak();
+                prevMsg += " and I like to meow";
+                return prevMsg;
+
+                // yani burada Polymorphism ile overwrite yapmis olduk.
+            }
+        }
+
+
+
+        const muezza = new Cat("Müezza", 2, "blue");
+        console.log(muezza);
+        // miras aldigimiz icin console da prototype kismina bakarsak speak ve walk methodlarinin da geldigini görecegiz
+
+        muezza.walk();
+        console.log(muezza.speak());
+
+
+        console.log(muezza.weight);
+        // bu degere yeni atama da yapilamaz
+        // asagidaki islem ile yeni bir property ekler eski weight i degistirmez
+
+        muezza.weight = 4444;
+        console.log(muezza);
+
+        // bu sekilde ulasmaya calistigimizda undefined aliriz. Ancak console da tüm output u inceledigimizde object icerisinde weight oldugunu görürüz.
+
+
+
+
+
+
+
+
+
+
+            ////////// Prototype base:
+
+    // class base de class in icerisine sonradan bir property yada method ekleyemiyoruz. bunu class in icerisine girip yapmamiz gerekiyor. ama prototype da bunu yapabiliyorz. bu nedenle bize bir dinamizm katar.
+    // ve prototype da ata nesneye bir özellik ekledigimizde bütün hepsine yansiyor
+
+
+
+        // Js bir prototype based language dir
+
+    
+            ///// Prototype:
+
+
+
+
+
+        /// ---------------------------------------
+
+        //// simdi de prototype a func ekleyecegiz:
+
+    function Pet3(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    // yukarida ilklendirmeyi yaptik
+    // asagida ise pet3 den üretilen tüm örneklerin almasini istedigimiz func lari tanimladik
+
+    Pet3.prototype.walk = function() {
+        console.log("I m walking");
+    };
+
+    Pet3.prototype.speak = function() {
+        return "I like humans"
+    };
+
+    // class yapisindan farkli olarak burada sonradan eklenen func lari ana func dan ciktiktan sonra tanimladik. class da ana yapi icinde yapiyorduk
+
+    const myPet3 = new Pet3("John", 4);
+    console.log(myPet3);
+
+    // Prototype da canli bir tane canli nesne yani prototip olusturuyoruz. tüm methodlar ve property ler bu property ye ekleniyor. Bundan sonra üretilecek tüm örneklerde bu prototipin sahip oldugu özellikler kullanilir. sadece 1 kez tanimlandigi icin bellekte yer kaplama sadece 1 taneliktir.
+
+
+
+
+
+
+        // ---------------------------------------
+
+        // Bu constructor Function dir
+    function Cat2(name, age, color) {
+    
+        this.name = name;
+        this.age = age;
+        this.color = color;
+        // return demedik
+    }
+
+        /// bu kod ile pet3 ile cat2 yi birbirine bagladik. tam burada baglamamiz gerekir yoksa calismaz. Bu koddan sonra en asagida yazacagimiz pisi.walk() kodu calisacaktir normal de pisye ait walk olmamasina ragmen
+    Cat2.prototype = Object.create(Pet3.prototype);
+
+    // bad way func added:
+    Cat2.speak = function() {
+        return "Meow";
+    }
+
+    const pisi = new Cat2("Pisi", 1, "Yellow");
+    console.log(pisi);
+
+
+    const arr = [1, 2, 3];
+    console.log(arr.__proto__);
+    // Biz normal arr tanimlarken baska hicbir method yada func tanimlamadik. Bu kodu yazdigimizda, arr bir array oldugu icin array in üst taraftan sahip oldugu tüm özellikler otomatik olarak geldi. 
+    // ve consol da output un icerisine girdigimizde, array in prototype inin da object oldugunu görürüz.
+    // simdi de ayni duruma func icin bakalim:
+
+    console.dir((x => x + 2).__proto__);
+
+
+    
+    
+    pisi.walk();            
+
+
+
+
+
 
 
 

@@ -1,0 +1,222 @@
+
+@import "reset";
+@import "variables";
+@import "mixin";
+@import "article";
+
+
+
+
+img {
+    width: 250px;
+}
+
+.container {
+    padding: 0 1rem;
+}
+// burada vermis oldugumuz container style ini istersek reset de de variable da da verebilirz tamamen bize kalmis
+
+
+body {
+    background-color: $bgColor;
+    // basina $ koydugumuzda bize yardimci oluyor
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    color: $fontColor;
+
+}
+    
+
+
+
+// reset ve variable gibi olusturdugumuz her bir dosyanin adi purtual dir
+// yani scss dosyasini parcalara bölüyoruz
+
+
+
+
+/////////  Nesting usage: 
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: $navBgColor;
+    
+    .brand {
+        img {
+            width: 80px;
+            border: 3px solid red;
+            border-radius: 30%;
+            padding: 10px;
+            margin: 10px;
+        }
+    }
+}
+
+
+.navbar {
+    ul {
+        list-style-type: none;
+        display: flex;
+        li {
+            a {
+                text-decoration: none;
+                padding: 5px;
+                color: black;
+                font-size: $myLinkSize;
+            }
+
+            input {
+                width: 60px;
+            }
+        }
+    }
+}
+
+
+.slider {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: $sliderBgColor;
+    
+    .left {
+        margin-top: 20px;
+
+        button {
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px;
+            background-color: $navBgColor;
+            font-size: $myLinkSize;
+            border: 2px solid grey;
+
+            //// important: yine button parantezleri icinde ve & ile
+            &:hover {
+                cursor: pointer;
+                background-color: pink;
+                border: 2px solid $navBgColor;
+            }
+
+        }
+    }
+
+    img {
+        width: 30%;
+    }
+}
+
+
+
+//////// mixin usage: 
+// parametre olarak girdiklerimiz haric hepsini mybox dan cekecek
+
+.content {
+    .cards {
+        display: flex;
+        .card1 {
+            @include myBox(brown, white);
+        }
+
+        .card2 {
+            @include myBox(rgb(199, 255, 192), blue);
+        }
+
+        .card3 {
+            @include myBox(green, black);
+        }
+
+        .card4 {
+            @include myBox(blue, grey)
+        }
+    }
+}
+
+
+
+////////   extend / inheritance usage2: 
+///  article1 i _article dosyasinda tanimladik. article2 yi ise burada. burada 1 den miras alabilmek icin buradaki 2 yi article ana basligi altina yazmamiz gerekir
+
+article {
+    .article2 {
+    @extend .article1;
+    background-color: purple;
+  }
+}
+
+
+
+
+
+
+/////////  for loop: 
+
+
+.socialBoxes {
+    display: flex;
+    @for $i from 1 through 5 {  // or to 6 
+        .social#{$i} { //  use # (social in i ninci elemani)
+            width: 20%;
+            height: 100px;
+            // background-color: lighten($color: black, $amount: ($i * 10));
+            // 2. method:
+            // background-color: lighten(black, ($i * 10));
+            // darken
+            background-color: darken(grey, ($i * 10));
+        }
+    }
+}
+
+
+
+
+
+
+
+
+//////////////   array: 
+
+
+$textColor: #990000, #55004e, #0faBa1, #121456, #64c217;
+
+@for $i from 1 through length($textColor) { // buraya 5 de olur
+    .social#{$i} { 
+        // color: nth($list: $textColor, $n: $i); // 1. method
+        color: nth($textColor, $i);
+        // color: $textColor#{$i}; // bu calismiyor
+        font-size: $i * 1rem;
+    }
+}
+
+
+@each $i in $textColor {
+    .social#{$i} {
+        background-color: $i;
+    }
+}
+
+
+
+
+/////////////////  if else:
+
+
+$dark: 3;
+
+.footer {
+    @if $dark == 1 {
+        background-color: #0faBa1;
+
+    }   @else if $dark == 2 {
+        background-color: #121456;
+
+    }   @else if $dark == 3 {
+        background-color: green;
+    }  
+}
+
+
+// en son baktigimizda style.css de ki kod satir sayisi daha fazladir
+
+// mesela sirkette bir karar alindiginda, bg color i degistirelim diye, bu durumda sadece degiskenlerdeki verileri degistirmemiz yetecektir.
+

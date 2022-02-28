@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+
+        // ES6 ile birlikte js de 4 adet collection olmustur. 
+        // 1: Array
+        // 2: object 
+        // 3: map 
+        // 4: set
+
+
+
+//         Map
+// Map is similar to objects in JavaScript that allows us to store elements of any type in a key/value pair.
+
+// A Map object iterates its elements in insertion order.
+// Better performance
+// Keys can have any data type
+// Easy to iterate
+// Easy to compute size
+// Use when you simply need to map key to values
+// Use when you need keys that are not strings
+
+
+// By definition, a Map object holds key-value pairs where values of any type can be used as either keys or values. In addition, a Map object remembers the original insertion order of the keys. However, unlike an object, a map can contain objects, functions and other data types as key.
+
+// map ler object ten afrkli olarak, key lerin de farkli veri tipi tutabilir 
+
+
+// To create a new Map, you use the following syntax:
+
+// let map = new Map([iterable]);
+
+
+
+
+
+// Map	Object
+
+// Map	Object
+// contain any data type including objects as keys.	only contain strings and symbols as keys.
+// can be directly iterated and their value can be accessed.
+// The number of elements can be determined by size property.
+// performs better for adding/removing of elements frequently.
+
+
+
+// Object: only contain strings and symbols as keys.
+// can be iterated by accessing its keys.
+// The number of elements of an object can be determined manually.
+// does not perform well for adding/removing of elements frequently.
+
+
+
+        let myMap = new Map([
+            ["apples", 500],
+            ["banana", 200] 
+        ]);
+        console.log(myMap);
+        console.log(typeof(myMap));
+
+
+            /// set ile hem yeni degerler eklenebilir hem de eskiler degistirilebilir
+
+        let emptyMap = new Map();
+
+        emptyMap.set("apples", 100);
+        emptyMap.set("kiwi", 200);
+        console.log(emptyMap);
+
+
+        // change:
+
+        emptyMap.set("apples", 350);
+        console.log(emptyMap);
+
+
+        // get: (parantez icine yazilan verinin degerini alir)
+
+        let a = emptyMap.get("apples");
+
+        console.log(a);
+
+
+
+        // size:
+
+        console.log(emptyMap.size);
+
+
+
+        //////////  delete:
+        // delete methodundan önce map imizin adi yazilir. sonrasinda gelen paranteze ise map e ait bir key yazilir. delete, her seferinde sadece bir tane key ve value cifti siler
+
+        emptyMap.delete("apples");
+
+        console.log(emptyMap);
+
+        
+
+
+
+
+
+        /////////  clear:
+        // map in tüm elementlerini ele alir ve siler. ancak map i tamamen ortadan kaldirmaz. output da yine bir map görünür ama element sayisi 0 dir.
+
+
+        let myMap2 = new Map([
+            ["apples", 500],
+            ["banana", 200], 
+            ["kiwi", 500] 
+        ]);
+        console.log(myMap2);
+        
+
+        myMap2.clear();
+
+        console.log(myMap2);
+
+
+
+
+
+
+        ///////  has: true or false return
+        // bir key var mi yok mu kontrol eder
+
+        // has;  var ise true yoksa false return eder. get ise; key varsa o key in  value sunu return eder yoksa undefined
+        
+
+        let autos = new Map([
+            [1 , "mercedes"],
+            [2 , "audi"],
+            [3 , "bmw"]
+        ]);
+
+        console.log(autos);
+
+        console.log(autos.has("opel"));
+        console.log(autos.has("volkswagen"));
+        console.log(autos.has("mercedes"));
+        console.log(autos.has(1));
+
+        // kontrol key ler üzerinde yapilir. value sorgulamasi olmaz.
+
+
+
+
+
+
+        /// instanceof:
+
+
+        console.log(autos instanceof Map);
+        console.log(autos instanceof Object);
+        console.log(autos instanceof Array);
+        
+
+
+
+
+        ///  foreach:
+
+
+        let text = "";
+
+        autos.forEach(function(key, value) {
+            text += key + " : " + value + "\n";
+        })
+
+        console.log(text);
+
+
+
+
+
+            ///  Map.keys():
+
+
+        console.log(autos.keys());
+
+        // for loop with keys:
+
+        let text2 = "";
+
+        for (let i of autos.keys()) {
+            text2 += i + "--";
+        }
+
+        console.log(text2);
+
+
+
+
+
+        ///////  for loop with values:
+
+        let text3 = "";
+
+        for (let i of autos.values()) {
+            text3 += i + "\n";
+        }
+
+        console.log(text3);
+
+
+
+
+
+
+        ///////  for loop entries:
+
+
+        let text4 = [];
+
+        for (let i of autos.entries()) {
+            text4.push(i);
+            console.log(typeof(i));
+        }
+
+        console.log(text4);
+
+
+
+
+        ///////// 2. Method:
+
+        for (let [key, value] of autos) {
+            console.log(key + " " + value);
+        }
+
+        // burada key value yerine a ve b yazilabilir.
+
+
+
+
+
+        //////////////////////
+
+
+        ///  Objects as Keys:
+
+        /// map lerin key olarak object leri aliyor olmasi cok önemli bir özelliktir.
+
+        // simdi önce object olusturalim sonrasinda bunlari map lere atayalim:
+
+        const apples = {name : "apples"};
+        const bananas = {name : "banana"};
+        const oranges = {name : "Orange"};
+
+
+        const fruits = new Map();
+
+
+        fruits.set(apples, 500);
+        fruits.set(bananas, 500);
+        fruits.set(oranges, 500);
+
+        console.log(fruits);
+
+
+
+
+        ////    burada dikkat:
+        // apples key i bir string degildir. objecttir
+
+
+        console.log(fruits.has("apples"));
+        console.log(fruits.get("apples"));
+
+        
+
+            // eger delete parantezi icerisine yazilan deger map icinde yoksa false return eder
+
+        console.log(fruits);
+
+        let aa = fruits.delete(5);
+
+        console.log(aa);
+
+
+
+
+        //////////////
+
+        // new map:
+        // burada 2. degerler 1. siradaki key lere assign edilir.
+
+        const map = new Map([
+            [1, 2],
+            [3, 4],
+            [5, 6]
+        ])
+
+        console.log(map);
+
+
+
+
+        
+
+
+
+
+        const arr = ['nap', 'teachers', 'cheaters', 'PAN', 'ear', 'era', 'hectares'];
+
+        function cleanArr(arr) {
+        let map = new Map();
+
+  for (let value of arr) {
+    let key = value.toLowerCase().split('').sort().join('');
+    map.set(key, value);
+    console.log(map.keys());
+    console.log(map.values());
+    
+  }
+  return Array.from(map.values());
+}
+
+console.log(cleanArr(arr));
+
+
+
+
+
+
+
+
+
+
+
+
+        ///////////////  set:
+
+
+
+    const mySet = new Set();
+
+    mySet.add(1);
+    mySet.add(2);
+    mySet.add(2);
+
+    console.log(mySet);
+
+    mySet.add("string");
+    console.log(mySet);
+
+    let obj = {a : 1, b : 2};
+    mySet.add(obj);
+    console.log(mySet);
+
+
+        // bu kez ekledigimiz de hicbir islem yapmaz
+    mySet.add(obj);
+    console.log(mySet);
+
+
+        /// simdi ise ekleme yapar. iki object ayni olmasina ragmen bu tarz ekleme de ikisini farkli olarak degerlendirir
+    mySet.add({a : 1, b : 2});
+    console.log(mySet);
+
+
+
+
+
+    //// iteration in sets:
+
+    for (let i of mySet) {
+        console.log(i);
+    }
+
+        // setler de key ve value ciftligi olmadigi icin asagidaki kod da iki deger de value olarak döner
+
+    mySet.forEach((i, j) => {
+        console.log(i, j);
+    } )
+
+
+
+
+
+    //// entries in sets:
+
+    let mySet2 = new Set(["a", "b", "c", "d", "e", "f", "g"]);
+
+    let myEntries = mySet2.entries();
+
+    let text5 = "";
+
+    for (let i of myEntries) {
+        text5 += (i + " ");
+    }
+
+    console.log(text5);
+
+
+
+    /////
+
+    console.log(mySet2 instanceof Set);
+    console.log(mySet2 instanceof Object);
+    console.log(mySet2 instanceof Array);
+
+
+
+
+
+
+
+
+
+
+    //////////////
+
+    ///  WeakMap
+
+// The WeakMap object is a collection of key/value pairs in which the keys are objects only and the values can be arbitrary values. The object references in the keys are held weakly, meaning that they are a target of garbage collection (GC) if there is no other reference to the object anymore. The WeakMap API is the same as the Map API.
+
+
+
+// store additional data related to some object without modifying it or worrying about memory management!
+// in caching for example shopping chart of user:
+
+
+
+// const cache = new WeakMap();
+// function computeTotalPrice(chart) {
+//     if (cache.has(chart)) {
+//         return cache.get(chart);
+//     } else {
+//         let total = 0;
+//         chart.forEach(item => total += item.price)
+//         cache.set(chart, total)
+//         return total;
+//     }
+// }
+
+
+
+
+// monitoring DOM changes
+// We can also store additional information of the DOM nodes without modifying them. The Google Polymer project uses WeakMaps to keep track of DOM node edits, removals, and changes!
+
+// Store private data of a class
+// However this approach is a less common use case, we can also use WeakMap ,since it is a black box, to store private data on classes and objects.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

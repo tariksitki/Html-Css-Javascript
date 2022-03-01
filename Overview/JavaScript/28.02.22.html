@@ -59,8 +59,262 @@
         console.log(john.birthdayCalculate());
 
 
+
+            // Note: constructor func ile olusturdugumuz sey object prototype dir. bundan üretilen ise object tir.
+
+
+            // simdi object prototype imizin kendisine degil, prototype ina bi method ekliyoruz. bu islemden sonra Person i console da yazdirdigimizda, icerisinde walk methodu görünmez. cünkü kendisine eklemiyoruz.
+
+        Person.prototype.walk = function() {
+            console.log("I am walking");
+        } 
+        console.log(Person);
+        john.walk();
+
+
+
+
+        /// yukarida object constructor prototype a(yani nesne kurucu prorotype) method ekledik. simdi ise buna property yani özellik ekleyecegiz.
+
+        Person.prototype.gender = "Male";
+            // dolayisi ile bu özellik artik john tarafindan da kullanilabilir
+        console.log(john.gender);
+
+
+        // Tüm JavaScript nesneleri prototype özelliğine sahiptir.
+
+        // JavaScript nesnelerine ait prototiplerin değiştirilmesi beklenmedik sonuçlar verebilir.
+
+
+
+            // for loop ile john un propertyleri arasinda gezinme
+
+        for (x in john) {
+            console.log(x);
+        }
+
+
+        for (x in john) {
+            console.log(x + " " + john[x]);
+        }
+
+
+
+
+        /// property delete:
+
+        console.log(john);
+
+        delete john.age;
+
+        console.log(john);
+
+
+
+
+        ///  bir object e ait bir property nin nitelikleri degistirerek buna kisitlama getirebiliriz:
+        // enumerable: döngü icinde kullanmama
+        // configurable false silinmeme
+        // writable: degistirilemez
+
+        Object.defineProperty(john, "name", {
+            enumerable: false,
+            configurable: false,
+            writable: false
+        })
+
+        delete john.name;
+        console.log(john);
+
+            // ismi degistiremeyiz:
+        john.name = "Jack";
+        // console.log(john.name);
+
+
+
+            //  john a ait olan name özelligini loop icinde kullanamayiz. bu nedenle output da sonucu görünmez
+        for (x in john) {
+            console.log(x);
+        }
+
+
+
+
+        ///  john un lastname i ni de kisitli yapalim:
+
+        Object.defineProperty(john, "lastname", {
+            enumerable : false,
+            writable : false,
+            configurable : false
+        });
+
+
+
+
+
+
+
+        //////////////////////
+
+
+
+
+            /// yeni bir prototype ve nesne olusturalim ve bu yeni nesneye isim degistirme methodu ekleyelim:
+            // burada nesne kurucusuna method ekliyoruz bu nedenle kururu func icerisinde yapilir:
+
+
+        function Person2(name, lastname, age) {
+            this.name = name;
+            this.lastname = lastname;
+            this.age = age;
+            this.changeName = function(newName) {
+                this.name = newName;
+            }
+        };
+
+
+        let jack = new Person2("jack", "Happy", 30);
+
+        console.log(jack);
+
+        jack.changeName("Barry");
+        console.log(jack);
+
+
+
+
+
+        //// js de Object olusturmanin 3 farkli yolu vardir:
+
+        // 1: Sabit değer kullanarak oluşturma:
+
+        let xx = {
+            a : 1, 
+            b : 2,
+            c : 3};
+
+        console.log(xx.a, xx.b, xx.c);
+
+
+
+
+
+
+        // 2: new anahtar kelimesi kullanarak oluşturma:
+
+        let yy = new Object;
+        yy.a = 1;
+        yy.b = 2;
+        yy.c = 3;
+
+        console.log(yy.a, yy.b, yy.c);
+
+            // sabit deger ve new ayni sonucu verir. ancak hiz bakimindan sabit deger daha hizlidir.
+
+
         
 
+        // Sabit değer (literal) ve new anahtar kelimesi ile sadece bir nesne oluşturulur.
+
+        // Bazen bir nesnenin birden fazla kopyasını oluşturmak isteyebiliriz.
+
+        // Bir nesneden birden fazla kopyasını oluşturmak için nesne kurucusunu kullanarak nesne oluşturma kullanılır.
+
+
+
+
+
+
+        //  Bir object, bir degiskene atandiginda, bu degisken object in kendisini kopyalamaz. bu object e ait bellek adresini tutar. ve bu degisken de yapilan degisiklik object i etkiler.
+
+
+        var kisi = {adi:"Yusuf", soyAdi:"SEZER", yas:75};
+
+        let z = kisi;
+        console.log(z);
+
+        z.age = 30;
+        console.log(z);
+        console.log(kisi);
+
+        // kisi nesnesi ve z degiskeni ayni bellek alanini isaret eder
+
+
+
+
+
+        ////  static Methods:
+
+        // Array.from static bir method dur. yani önceden array olusturulup da kullanilmaz direkt olarak cagrilir.
+
+        let myArray = Array.from("Paris");
+        console.log(myArray);
+
+
+
+
+
+        class Car {
+            constructor(name) {
+                this.name = name;
+            }
+
+            static hello() {
+                return "Hello!!"
+            }
+        }
+
+        let myCar = new Car("Ford");
+
+            // Car class ina ait methodu su sekilde cagirabiliriz.
+        console.log(Car.hello());
+
+            // Ama bu bir static method oldugu icin su sekilde cagiramayiz. yani mycar object i icinde cagirilamaz. 
+        // console.log(myCar.hello());
+
+
+
+
+
+
+        /// eger bunu object icinde kullanmak istersek parametre göndermemiz gerekir:
+
+
+        class Car2 {
+            constructor(name) {
+                this.name = name;
+            }
+
+            static hello(x) {
+                return "Hello!! " + x.name;
+            }
+        }
+
+        let myCar2 = new Car2("Ford");
+        console.log(myCar2);
+
+            // yukarida car örneginde, sadece Car a ait olan hello yu cagirabilmistik. simdi ise bir parameter atadik ve su an da car2 ye ait olan hello yu cagiramiyoruz. yeni bir nesne olusturmamiz lazim. bu nesnenin ismini parameter olarak static func icerisine vermmeiz lazim. func da bu nesnenin ismini alip cikti verir.
+
+        console.log(Car2.hello("Opel"));
+
+        console.log(Car2.hello(myCar2));
+
+
+
+        /// Array.from static bir method dur ve bir shallow copy yani sig bir kopya olusturur.
+        // Array bir class dir. from ise bu class a ait bir func yani bir methoddur.
+
+
+        // bir string i array.from ve split ile array yapabiliirz ama bir html collection i split ile array yapamayiz bu nedenle array.from kullanmak zorundayiz.
+
+
+
+        ///  [...]  ile array yapmak:
+
+        let string = "hello";
+        let array = [...string];
+        console.log(array);
+        console.log(typeof(array));
 
 
 
@@ -69,9 +323,186 @@
 
 
 
+        ////////  Getters and Setters:
+
+        // bir object in property degerine ulastigimizda bunu elde ettigimizde get etmis oluruz. 
+        // = ile bu property ye yeni bir deger atadigimizda ise bunu set etmis oluruz.
+
+        // getter ve setter lar, property lere parantezsiz olarak atama yapmamizi ve parantezsiz olarak onlara ulasmamizi saglar.
 
 
 
+
+        const person = {
+            name : "John",
+            birthYear : 1977,
+            location : {
+                city : "NewYork"
+            },
+            get age() {
+                return new Date().getFullYear() - this.birthYear;
+            },
+
+            set age(value) {
+                if (value > 0 && value < 150) {
+                    this.birthYear = new Date().getFullYear() - value;
+                }
+            }
+        }
+        console.log(person.age);
+
+        person.age = 160;  // degistirmez
+        console.log(person.birthYear);
+
+
+        /// Bu örnekte dikkat etmmeiz gerekenler: 
+        // age bir func gibi tanimlaniyor ama cagrilirken normal bir property gibi yani () olmadan cagriliyor.
+
+
+    </script>
+
+    <h1 class="hello">Hello</h1>
+
+    <script>
+        let hello = document.querySelector(".hello");
+        console.dir(hello);
+
+        // console.dir ile console da bu elemente ait tüm hiyerarsi gösterilir:
+
+    </script>
+
+
+
+
+
+
+    <script>
+                /// Destructuring:
+
+
+    const hotel = {
+    brand: 'Hotel Clarusway',
+    categories: ['Spa', 'Swimming Pool', 'Resort'],
+    options: ['just stay', 'free breakfast', 'all inclusive'],
+    rooms: ['2-bed', '3-bed', '4-bed'],
+    receptionHours: {
+      mon: {
+        open: 8,
+        close: 22,
+      },
+      fri: {
+        open: 9,
+        close: 21,
+      },
+      sat: {
+        open: 10,
+        close: 20,
+      },
+    },
+  
+    // book: function (obj) {
+    // console.log(obj)
+    book: function ({ arrival, departure, optionIndex = 0, roomIndex = 0 }) {
+      console.log(
+        `${this.rooms[roomIndex]} is booked with ${this.options[optionIndex]} between ${arrival}-${departure}`
+      );
+    },
+  };
+
+
+    // normal using:
+
+    console.log(hotel.brand);
+
+
+    /// destructuring:
+    
+    const {brand, options} = hotel;
+    
+    console.log(brand);
+    console.log(options);
+    console.log(options[0]);
+    console.log(options[1]);
+
+
+
+        /// isim degistirme:
+        // burada brand artik hotelName olsun diyoruz ve cagirirken brand olarak cagirmiyoruz
+
+    const {brand : hotelName, rooms} = hotel;
+
+    console.log(hotelName);
+    
+    
+    
+
+        /// nested object den veri cekme:
+        // bu sekilde yaparsak undefined verir. cünkü receptionhours da bir nesnedir ve biz bu nesnenin property sine ulasmaya calisiyoruz.
+
+    // const {mon} = hotel;
+    // console.log(mon); 
+    
+
+    // const {mon} = hotel.receptionHours;
+    // console.log(mon);
+    // yukarida mon tanimli oldugi icin burada bir daha tanimlamamiza izin vermez.
+
+
+
+        // sadece friday open i almak istiyoruz.
+
+    const {fri} = hotel.receptionHours;
+    console.log(fri.open);
+    console.log(fri["open"]);
+
+
+
+
+
+
+        /// alt elemeanlara inmenin alternatif yolu:
+
+    // const {receptionHours : mon} = hotel;
+    // console.log(mon);
+    // bu sekilde mon {} icerisine almadan yaparsak, 3 günü birden getirir.
+
+
+    const {receptionHours : {mon : Monday}} = hotel;
+    console.log(Monday);
+    // burada mon ismini Monday olarak degistirdik
+
+
+
+
+
+
+
+
+    //////
+
+    const {fri : {open : openingFriday, close : closingFriday}} = hotel.receptionHours;
+
+    console.log(openingFriday, closingFriday);
+
+
+
+    /// biz destructuring yapmasaydik burada su sekilde yapmamiz gerekecekti:
+
+    console.log(hotel.receptionHours.fri.open);
+    console.log(hotel.receptionHours.fri.close);
+
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 

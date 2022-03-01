@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // olusturdugumuz nesne icerisine method lar ekleyebiliriz ama bunun hafiza kullaniminda söyle bir dezavantaji vardir. bu nesneden olusturulan her bir örnek icin bu method eklenir. bu nedenle bu durum istenmez. bunun yerine bu nesneden olusturulacak örneklerin prorotype ina ekleriz. böylece bu method dan sadece bir tane üretilir ama hepsinde ortak olur.
+        // mesela array in method lari string in methodlari hepsi prototype dan gelen methodlardir.
+
+
+        ////  prototype:
+        // burada yeni bir prototype olusturuyoruz:
+
+        function Person(name, lastname, age) {
+            this.name = name;
+            this.lastname = lastname;
+            this.age = age;
+        };
+
+        /// burada prototype dan yeni bir nesne olusturuyoruz
+
+        let john = new Person("John", "Kennedy", 45);
+
+        console.log(john);
+
+            //  burada olusturdugumuz yeni nesneye property ekliyoruz.
+        john["eyecolor"] = "black";
+        console.log(john);
+
+            /// burada ise 2. method ile yeni property ekliyoruz.
+        john.auto = "mercedes";
+        console.log(john);
+
+
+
+            // olusturdugumuz nesneye yeni method ekleme:
+            // array bir object tir ve kendine ait methodlari vardir. iste burada da bizim john nesnemiz bir objecttir ve kendine ait methodlari olabilir.
+
+        john.fullname = function() {
+            return this.name + " " + this.lastname;
+        }
+
+        console.log(john.fullname());
+
+
+
+            // nesnemize method eklemenin 2. yöntemi:
+        john["birthdayCalculate"] = function() {
+            return 2022 - this.age;
+        }
+
+        console.log(john.birthdayCalculate());
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

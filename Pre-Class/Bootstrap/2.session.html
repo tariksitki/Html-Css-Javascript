@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <!-- List & List Group
+Unstyled
+Remove the default list-style and left margin on list items (immediate children only). This only applies to immediate children list items, meaning you will need to add the class for any nested lists as well. -->
+
+
+
+<ul class="list-unstyled">
+    <li>This is a list.</li>
+    <li>It appears completely unstyled.</li>
+    <li>Structurally, it's still a list.</li>
+    <li>However, this style only applies to immediate child elements.</li>
+    <li>Nested lists:
+      <ul>
+        <li>are unaffected by this style</li>
+        <li>will still show a bullet</li>
+        <li>and have appropriate left margin</li>
+      </ul>
+    </li>
+    <li>This may still come in handy in some situations.</li>
+  </ul>
+
+
+
+
+
+
+  <!-- Inline -->
+
+  <!-- Remove a list’s bullets and apply some light margin with a combination of two classes, .list-inline and .list-inline-item.
+
+    list item lari alt alta degil yanyana yazar her bir item baslangicinda bir space bosluk-->
+
+  <ul class="list-inline">
+    <li class="list-inline-item">This is a list item.</li>
+    <li class="list-inline-item">And another one.</li>
+    <li class="list-inline-item">But they're displayed inline.</li>
+  </ul>
+
+
+
+
+
+  <!-- List Groups -->
+
+
+  <!-- List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just about any content within.
+
+Basic List Groups
+The most basic list group is an unordered list with list items. To create a basic list group, use an <ul> element with class .list-group, and <li> elements with class .list-group-item. -->
+
+    <!-- list group da satir aralarinda cizgi olur -->
+
+    <ul class="list-group">
+        <li class="list-group-item">First item</li>
+        <li class="list-group-item">Second item</li>
+        <li class="list-group-item">Third item</li>
+      </ul>
+
+
+
+
+
+
+
+
+
+      <!-- Active items -->
+
+
+      <ul class="list-group">
+        <li class="list-group-item active">Active item</li>
+        <li class="list-group-item">Second item</li>
+        <li class="list-group-item disabled">Third item</li>
+      </ul>
+
+
+
+
+      <!-- Disabled items -->
+
+      <!-- disabled örnegi yukarida var -->
+
+
+
+      <!-- List Group With Linked Items
+To create a list group with linked items, use <div> instead of <ul> and <a> instead of <li>. Optionally, add the .list-group-item-action class if you want a grey background color on hover. 
+    
+burada itemlara tiklama özelligi ve hover ekledik-->
+
+
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action">First item</a>
+        <a href="#" class="list-group-item list-group-item-action">Second item</a>
+        <a href="#" class="list-group-item list-group-item-action">Third item</a>
+      </div>
+
+
+
+
+      <!-- Disabled Item
+The .disabled class adds a lighter text color to the disabled item. And when used on links, it will remove the hover effect. -->
+
+
+<!-- Horizontal List Groups
+If you want the list items to display horizontally instead of vertically (side by side instead of on top of each other), add the .list-group-horizontal class to .list-group. -->
+
+
+<ul class="list-group list-group-horizontal">
+    <li class="list-group-item">First item</li>
+    <li class="list-group-item">Second item</li>
+    <li class="list-group-item">Third item</li>
+    <li class="list-group-item">Fourth item</li>
+  </ul>
+
+
+
+
+
+
+  <!-- Contextual Classes
+The classes for coloring list-items are: .list-group-item-success, list-group-item-secondary, list-group-item-info, list-group-item-warning, .list-group-item-danger, .list-group-item-primary, list-group-item-dark and list-group-item-light. -->
+
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-success">Success item</li>
+    <li class="list-group-item list-group-item-secondary">Secondary item</li>
+    <li class="list-group-item list-group-item-info">Info item</li>
+    <li class="list-group-item list-group-item-warning">Warning item</li>
+    <li class="list-group-item list-group-item-danger">Danger item</li>
+    <li class="list-group-item list-group-item-primary">Primary item</li>
+    <li class="list-group-item list-group-item-dark">Dark item</li>
+    <li class="list-group-item list-group-item-light">Light item</li>
+  </ul>
+
+
+
+
+
+
+
+  <!-- Alerts -->
+
+
+
+  <div class="alert alert-success">
+    <strong>Success!</strong> This alert box could indicate a successful or positive action.
+  </div>
+  <div class="alert alert-info">
+    <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+  </div>
+  <div class="alert alert-warning">
+    <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+  </div>
+  <div class="alert alert-danger">
+    <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+  </div>
+  <div class="alert alert-primary">
+    <strong>Primary!</strong> Indicates an important action.
+  </div>
+  <div class="alert alert-secondary">
+    <strong>Secondary!</strong> Indicates a slightly less important action.
+  </div>
+  <div class="alert alert-dark">
+    <strong>Dark!</strong> Dark grey alert.
+  </div>
+  <div class="alert alert-light">
+    <strong>Light!</strong> Light grey alert.
+  </div>
+
+
+
+
+  <!-- Alert Links -->
+
+  <!-- Add the alert-link class to any links inside the alert box to create "matching colored links". -->
+
+  <div class="alert alert-success">
+    <strong>Success!</strong> You should <a href="#" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-info">
+    <strong>Info!</strong> You should <a href="#" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-warning">
+    <strong>Warning!</strong> You should <a href="#" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-danger">
+    <strong>Danger!</strong> You should <a href="#" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-primary">
+    <strong>Primary!</strong> You should <a href="#" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-secondary">
+    <strong>Secondary!</strong> You should <a href="#" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-dark">
+    <strong>Dark!</strong> You should <a href="#" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-light">
+    <strong>Light!</strong> You should <a href="#" class="alert-link">read this message</a>.
+  </div>
+
+
+
+
+
+
+  <!-- Additional Content -->
+
+  <!-- Alerts can also contain additional HTML elements like headings, paragraphs and dividers. -->
+
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Well done!</h4>
+    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+    <hr>
+    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+  </div>
+
+
+
+
+
+
+
+  <!-- Closing Alerts -->
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+</html>

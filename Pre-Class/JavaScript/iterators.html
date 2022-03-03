@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        /////////////  for in
+
+            // array de for in index no return ediyor
+
+        let a = ["a", "b", "c"];
+
+        for (let i in a) {
+            console.log(i);
+        }
+
+
+
+
+        ///////////////////////////
+
+        let obj = {x: 1, y: 2, z: 3};
+
+        for (let i in obj) {
+            console.log(i);
+        }
+
+
+
+        // for ... in ifadesi, devralınan numaralandırılabilir özellikler de dahil olmak üzere, dizeler tarafından anahtarlanan (Simgeler tarafından anahtarlananları yok sayarak) bir nesnenin tüm numaralandırılabilir özellikleri üzerinde yinelenir.
+
+        // Warning :
+    //The for ... in loop should not be used to iterate over arrays where index order is important, because, depending on the JavaScript engine, it could iterate in an arbitrary order. Also, the iterating variable is a string, not a number, so if you try to do any math with the variable, you'll be performing string concatenation instead of addition.
+
+
+
+
+
+
+    ///  for/of Statement
+// ➤ The for ... of statement creates a loop iterating over iterable objects, including: built-in String, Array, array-like objects (e.g., arguments or NodeList), TypedArray, Map, Set, and user-defined iterables. It invokes a custom iteration hook with statements to be executed for the value of each distinct property of the object.
+
+
+
+var names = ['Aaron', 'James', 'Oliver'];
+
+for (a of names) {
+    console.log(a);
+}
+
+
+
+
+        //// Array.from():
+
+    
+    // The Array.from() static method creates a new Array instance from an array-like or iterable object.
+
+    // Array.from(arrayLike, function mapFn(currentValue, index, array) { ... }, thisArg)
+
+
+
+
+    console.log(new Array(5));
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

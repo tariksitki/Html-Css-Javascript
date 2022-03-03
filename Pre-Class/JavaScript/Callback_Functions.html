@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <button id="btn">Click Me</button>
+
+    <script>
+
+    let button = document.getElementById("btn");
+
+    button.addEventListener("click", myFunction);
+
+    function myFunction(event) {
+        console.log("You clicked over me!!!");
+    }
+
+    // burada func icerisine parametre olarak event versek de vermesek de button a tikladigimizda calisiyor.
+
+    </script>
+
+
+
+
+    <script>
+
+
+// What is a Callback Function?
+// In JavaScript, functions are objects. We pass objects to functions as parameters.
+
+// We can also pass functions as parameters to other functions and call them inside the outer functions.
+
+// Functions that do this are called higher-order functions. Any function that is passed as an argument is called a callback function.
+
+// We have already learned event handlers. Please remind that we used functions as parameter into addEventListener functions.
+
+// The addEventListener( ) function takes another function as a parameter and calls it inside. This is valid in JavaScript and we call it a callback. So a function that is passed to another function as a parameter is a callback function.
+
+
+
+// Why do we need Callback Functions?
+// JavaScript runs code sequentially in top-down order. However, there are some cases that code runs (or must run) after something else happens and also not sequentially. This is called asynchronous programming.
+
+// Callbacks make sure that a function is not going to run before a task is completed but will run right after the task has completed. It helps us develop asynchronous JavaScript code and keeps us safe from problems and errors.
+
+// In JavaScript, the way to create a callback function is to pass it as a parameter to another function, and then to call it back right after something has happened or some task is completed.
+
+
+
+
+
+
+    // Array Map Method:
+
+    // square root:
+
+    let numbers = [4, 9, 16, 25];
+
+    let square = numbers.map(Math.sqrt);
+    console.log(square);
+
+
+
+
+        // 2. method:
+    
+    let square2 = numbers.map(item => Math.sqrt(item));
+    console.log(square2);
+
+
+
+
+
+
+        /// multiply with 10:
+
+    let numbers2 = [4, 9, 16, 25];
+    let multiply = numbers2.map(myMultiply);
+
+    function myMultiply(item) {
+        return item * 10;
+    }
+    console.log(multiply);
+
+
+
+
+
+
+    //////////  get fullname:
+
+    const persons = [
+        {firstname : "John", lastname : "Kennedy"},
+        {firstname : "Harry", lastname : "Kennedy"},
+        {firstname : "Jayne", lastname: "Cobb"}
+    ];
+
+    let fullname = persons.map(getFullname, "Hello");
+
+    function getFullname(item) {
+    
+        return this + " " + [item.firstname, item.lastname].join(" ");
+    }
+    console.log(fullname);
+
+    // map methodu array e ait bir method dur ve islem sonunda yeni bir array return eder. yani sonuc array olur. biz mesla string istersek join yapabiliriz.
+
+    // map methodu icerisinde bulunan argumentlar:
+    // currentvalue, index ve arr  bu 3 argument map icerisine giren callback func in parantezi icerisinde bulunur. bunlardan sonra , ile ayirarak this value girebiliirz.
+    // bu this in kullanimi ise callback func icerisinde tanimlanmali 
+
+
+
+    
+
+
+    
+
+
+        /////////////////////////////
+
+    // Array Filter Method
+
+
+//     The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+
+
+
+// ➤ The filter() method returns an array containing elements of the parent array that match the set test. A function containing a test is passed as an argument to the filter method. To keep an element the test function should return true and false to discard an element.
+
+
+
+// ➤ The filter method:
+
+// Will take a test function
+// Returns a new array containing the elements that matches the set test
+// Returns an empty array if there are no matches
+
+        // 1. method: eger callback func i disarida tanimlarsak filter icerisine sadece callback yazmamiz yeterlidir.
+
+    const numbers4 = [1, 2, 3, 4, 5, 6, 7, 9];
+    function myFilter(item) {
+        return !(item % 2) ? item : null;
+    }
+
+    let filterArray2 = numbers4.filter(myFilter);
+    console.log(filterArray2);
+
+
+
+
+
+            ///// 2. Method:
+
+    //  eger callback disarida degil de direkt filter icinde tanimlanacaksa bu durumda önce current value yu yazip sonra bu value ya yapilacak islemi yapacak func yazilir.
+
+    let filterArray = numbers4.filter(item => (item % 2));
+
+    console.log(filterArray);
+
+    </script>
+
+
+
+
+    <script>
+
+    const ages = [32, 33, 16, 40];
+    let ages18 = ages.filter(item => item > 18);
+
+    console.log(ages18);
+
+
+            // 2. method:
+
+    // filter func callback func sonucunda true return eden degerlerin kendisini döndürür. Bu nedenle asagidaki kod da calisir. yukaridaki kodlar da item in kendisini return ediyorduk burada ise func icinde true yazdik.
+
+    function func18(item) {
+        console.log(this);
+        return (item > 18 ? true : false);
+        
+    }
+
+    let ages18_2 = ages.filter(func18, "hello");
+    console.log(ages18_2);
+
+    </script>
+
+
+
+
+    <!-- filter task  -->
+
+    <input type="number" id="input" value="30"> 
+
+    <button id="button" onclick="agePrint()">Check Age</button>
+    <br>
+    <span id="span">Output of Check</span>
+
+    
+    <script>
+        let input = document.getElementById("input");
+
+        let span = document.getElementById("span");
+
+        let ages2 = [40, 20, 50, 60, 10];
+
+        function ageControl(age) {
+            return age > input.value ? true : false;
+        }
+
+        function agePrint() {
+            span.innerText = ages2.filter(ageControl);
+        }
+    </script>
+
+
+
+
+
+
+
+    <script>
+            ///////////////////
+        // Array Reduce Method
+
+// reduce method icerisindeki callback func esasinda 4 adet argument alir.
+
+// callback(1: accumulator, 2: currentvalue, 3:currentvalue nun array icindeki index no, 4: su an üzerinde calistigimiz orijinal array) callback func parantezi kapandiktan sonra ise , koyarak baslangic degeri girilebilir.
+
+
+//         Array Reduce Method
+// ➤ The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in single output value.
+
+// Takes a callback function that is called once for each element.
+
+// Calls the callback function and gets the result of the operation run on the element and collects these values on accumulator argument.
+
+// In the end it returns the accumulator value.
+
+
+// callbackFunction The function that executes each of the elements of the array. The callback function is required and can take four parameters - required.
+
+// Accumulator The accumulator accumulates callback's return values. It is the accumulated value previously returned in the last invocation of the callback—or initialValue, if it was supplied - required.
+// currentValue This is the element currently being executed - required.
+// index This is the index of the current item - optional.
+// array This is the array that is currently being processed - optional.
+// initialValue A value to use as the first argument to the first call of the callback. If no initialValue is supplied, the first element in the array will be used as the initial accumulator value and skipped as currentValue. Calling reduce() on an empty array without an initialValue will throw a TypeError.
+
+
+
+const array1 = [1, 2, 3, 4];
+
+const newArray = array1.reduce(funcReduce, 0);
+
+// 0 yazdigimiz yer initial value yani baslangic degeridir. buraya 10 yazarsak 10 dan baslar.
+
+function funcReduce(total, number) {
+    return total + number;
+}
+console.log(newArray);
+
+
+
+
+        ////    example2:
+    // bu örnekte ilk degeri total e assign ediyor. sonrakileri total den cikariyor.
+
+    // reduce methodunda eger ilk deger kullanmadiysak, bu durumda accumulator array imizin ilk degerine esit olarak baslar
+
+    const array2 = [175, 50, 25];
+
+    function funcReduce2(total, current) {
+        return total - current;
+    }
+
+    const newArray2 = array2.reduce(funcReduce2);
+
+    console.log(newArray2);
+
+
+
+
+
+
+        //// example3:
+
+    const numbers5 = [15.5, 2.3, 1.1, 4.7];
+
+    let newNumbers5 = numbers5.reduce(funcRound);
+
+    function funcRound(accumulator, current) {
+        return accumulator + Math.round(current);
+    }
+
+    console.log(newNumbers5);
+
+
+
+
+        /////////////
+
+
+    const sum = [1, 2, 3].reduce((accumulator, current) => accumulator + current);
+    console.log(sum);
+
+    // burada accumulator ilk etap da 1 oldu ve digerlerini üzerine toplamaya basladi
+
+
+
+
+
+
+
+
+
+
+
+    ////////////////////////////////
+
+
+    const users = [{
+        id: "124124124124",
+        name: "Some Person",
+        username: "some123",
+        insterests: ["hiking", "sports"],
+        country: {
+            code: "tr",
+            name: "Turkey"
+        }
+    },
+    {
+        id: "456456",
+        name: "John Doe",
+        username: "john123",
+        insterests: ["sci-fi", "coding"],
+        country: {
+            code: "us",
+            name: "United States"
+        }
+    },
+    {
+        id: "56356456",
+        name: "Foo Bar",
+        username: "foo123",
+        insterests: ["board games"],
+        country: {
+            code: "de",
+            name: "Germany"
+        }
+    },
+
+]
+
+    const usersReduce = users.reduce((accumulator, current) => {
+        accumulator[current.id] = current.name;
+        return accumulator;
+    }, {})
+
+    console.log(usersReduce);
+
+
+
+
+
+
+
+
+    ////////////////////////
+
+    const nameById = users.reduce((accumulator, current) => {
+        accumulator = [...accumulator, {name : current.name, id : current.id}];
+        return accumulator; 
+    }, [])
+
+    console.log(nameById);
+
+
+
+
+
+
+
+    /////////////////////////
+
+    const array3 = [1, 2, 3, 4];
+    // asagida callback func tanimliyoruz
+    const reducer = (accumulator, current) => accumulator * current;
+
+    let arrayReduce = array3.reduce(reducer);
+
+    console.log(arrayReduce);
+
+
+
+
+
+
+
+
+
+    function withVar() {
+  const b = () => a;
+  var a = 24;
+  return b;
+}
+
+function withLet() {
+  const b = () => a;
+  let a = 24;
+  return b;
+}
+
+function changingValue() {
+  let a = 24;
+  const b = () => a;
+  a = 42;
+  return b;
+}
+
+console.log(withVar()());  // ??
+console.log(withLet()());  // ??
+console.log(changingValue()());  // ??
+
+
+
+
+
+
+    // burada i her seferinde degismez. bu func da 6 sayisi 5 kez print edilir. iki sebebi vardir:
+    // yüzeysel sebep: for loop bittiginde i sayisi 6 degerine ulasir ve i bu degeri alarak her seferind ebunu print eder.
+    // derinlemesine sebep, var ile tanimlama yaptigimiz icin, settimeout func i degerini kapatir bu nedenle degisme gerceklesmez.
+    // iki tane cözüm yolu vardir. birincisi let ile tanimlama yapmaktir. ikincisi ise settimeout func in üzerinde ve yine for loop altinda bir iife aninda kendini cagiran func tanimlamaktir. asagida örnegini yapacagiz:
+    
+    /// var ile
+function basla() {
+  for(var i = 1; i<=5;i++){
+    setTimeout(function(){
+      console.log(i);
+    },i*1000); 
+  }
+}
+basla();
+
+
+
+        /// iief ile
+function basla2() {
+  for(var i = 1; i<=5;i++){
+      (function(i) {
+    setTimeout(function(){
+      console.log(i);
+    },i*1000); 
+})(i);
+  }
+}
+basla2();
+
+
+
+
+        /// let ile:
+
+        function basla3() {
+  for(let i = 1; i<=5;i++){
+    setTimeout(function(){
+      console.log(i);
+    },i*1000); 
+  }
+}
+basla3();
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

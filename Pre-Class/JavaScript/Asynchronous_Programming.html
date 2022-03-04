@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+// Eşzamanlı programlarda, iki satır kodunuz varsa (L1 ardından L2), L1 yürütmeyi bitirene kadar L2 çalışmaya başlayamaz.
+
+
+// Bunu, tren bileti almak için bekleyen bir insan kuyruğundaymış gibi hayal edebilirsiniz. Önünüzdeki tüm insanlar kendi biletlerini almayı bitirmeden tren bileti almaya başlayamazsınız.
+
+// Eşzamansız programlarda, iki satır kodunuz olabilir (L1'in ardından L2); burada L1 bazı görevleri gelecekte çalıştırılmak üzere planlar, ancak L2 bu görev tamamlanmadan önce çalışır.
+
+
+// You can imagine as if you are eating at a sit-down restaurant. Other people order their food. You can also order your food. You don't have to wait for them to receive their food and finish eating before you order. Similarly, other people don't have to wait for you to get your food and finish eating before they can order. Everybody will get their food as soon as it is finished cooking.
+
+
+        /// an example:
+
+    console.log("Hello");
+
+    setTimeout(() => {
+        console.log("Good Bye");
+    }, 2000);
+
+    console.log("Hello Again");
+
+
+
+
+    // Note that asynchronous does not mean the same thing as concurrent or multi-threaded. JavaScript can have asynchronous code, but it is generally single-threaded. This is like a restaurant with a single worker who does all of the waiting and cooking. But if this worker works quickly enough and can switch between tasks efficiently enough, then the restaurant seemingly has multiple workers.
+
+
+
+
+    /// Async callbacks
+
+    </script>
+
+
+    <button id="button">Button</button>
+
+    <script>
+
+        let button = document.getElementById("button");
+
+        button.addEventListener("click", () => {
+            let p = document.createElement("p");
+            p.textContent = "This is a new Element";
+            document.body.appendChild(p);
+        })
+
+        // addevent de ilk parametre event in type idir. mesela click
+        // ikinci parametre ise event tetiklendiginde gerceklesecek callback dir.
+
+
+
+
+
+    /// Promises:
+
+    // Promises are the new style of async code that you'll see used in modern Web APIs.
+
+    // A good example is the fetch() API, which is basically very efficient. Let's look at a quick example, from our Fetching data from the server article:
+
+
+
+//     fetch('products.json')
+// .then(function(response) {
+//   return response.json();
+// })
+// .then(function(json) {
+//   products = json;
+//   initialize();
+// })
+// .catch(function(err) {
+//   console.log('Fetch problem: ' + err.message);
+// });
+
+
+// İki then() bloğu. Her ikisi de, önceki işlem başarılı olursa çalışacak bir geri arama işlevi içerir ve her geri arama, önceki başarılı işlemin sonucunu girdi olarak alır, böylece ileri gidebilir ve ona başka bir şey yapabilirsiniz.
+
+
+// Sondaki catch() bloğu, .then() bloklarından herhangi biri başarısız olursa çalışır - eşzamanlı try...catch bloklarına benzer bir şekilde, catch() içinde bir hata nesnesi kullanılabilir hale getirilir ve bu nesne aşağıdakileri yapmak için kullanılabilir: meydana gelen hatanın türünü bildir
+
+
+
+
+    
+
+    // Async/await
+
+
+    async function f() {
+        return 1;
+    }
+
+    f().then(console.log);
+
+
+    // The async keyword can be placed before a function. The word “async” before a function means one simple thing: a function always returns a promise. Other values are wrapped in a resolved promise automatically.
+
+
+    // The keyword await makes JavaScript wait until that promise settles and returns its result.
+
+
+
+    async function f() {
+
+let promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("done!"), 1000)
+});
+let result = await promise; // wait until the promise resolves (*)
+console.log(result); // "done!"
+}
+f();
+
+
+
+    // Async callbacks are functions that are specified as arguments when calling a function which will start executing code in the background.
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

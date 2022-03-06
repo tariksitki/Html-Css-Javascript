@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Bootstrap</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+
+    <!-- <div class="spinner-border text-primary"> -->
+        <!-- Direkt olarak div icine yazi yazarsak bu yazi da dönmeye baslar -->
+        <span class="visually-hidden"> Loading </span>
+    </div>
+
+
+
+    <!-- Note: role, area-label ve area-labelby;  bu 3 seyin kodun calismasina bir tesiri yoktur. sadece screenreader larin okumasina yardimci olur yani ekran okuyucular sadece yazili seyleri okuyabildiginden 
+    
+    text icin verebildigimiz tüm renkleri ayni sekilde spinner a da verebiliriz
+
+    div icerisine span koymasak da calisir ama koyulmasi tavsiye ediliyor
+    -->
+
+    <!-- https://medium.com/sherpa-blog-bulten/eri%C5%9Filebilirlikte-aria-label-ve-role-kullan%C4%B1m%C4%B1-9d3800a3577a -->
+
+
+    <!-- <div class="border border-5 w-25 mx-auto rounded-3 text-center">
+        <div class="spinner-border text-warning mx-auto ">
+        </div>
+        <br>
+        Loading
+    </div> -->
+
+    <!-- Eger loading in spinner icinde dönmesini istemiyorsak, bu durumda spinner baska bir divin icine konulur ve yazi d abu kapsayici div icine konulur. spinner zaten kendisi bir div dir.  -->
+
+
+
+
+
+
+    <!-- Growing -->
+
+
+    <!-- <div class="spinner-grow text-primary m-auto d-block">
+        <span class="visually-hidden">Loading</span>
+    </div> -->
+
+    <!-- Normal de div block elementtir. ama burada spinner inline elementtir. -->
+
+
+    <!-- Konumlandirma:
+    1: flex 
+    2: m ile 
+    3: float ile 
+    4: grid 
+
+    mx-auto yada m-auto calismasi icin div e d-block vermemiz gerekir.
+-->
+
+
+
+
+
+
+    <div class="d-flex p-2 bg-warning">
+        tarik
+    </div>
+
+    <div class="d-inline-flex p-2 bg-warning mt-3">I'm a flexbox container!</div>
+
+
+
+    <!-- flex ile ortalamak icin de disariya bir div olusturulur bu div e flex verilir  -->
+
+    <!-- <div class="d-flex justify-content-center">
+        <div class="spinner-grow text-primary ">
+            <span class="visually-hidden">Loading</span>
+        </div>
+    </div> -->
+
+    <br><br>
+
+
+
+
+    <div class="d-flex bg-danger">
+        <div class="bg-danger flex-fill">Tarik</div>
+        <div class="bg-warning">Tarik</div>
+        <div class="bg-warning">Tarik</div>
+    </div>
+
+    <!-- Önemli: sm lg md gibi degerler responsiv icin kullanilir. yani sm md ve lg ekran boyutlari kast edilir . -->
+
+
+    <div class="d-flex bg-danger mt-5">
+        <div class="bg-danger flex-grow-1">Tarik</div>
+        <div class="bg-warning">Tarik</div>
+        <div class="bg-warning">Tarik</div>
+    </div>
+
+    <br>
+        <!-- üstteki div e w-100 verdigimizde sagda kalan div in icerigini default olarak kisitlar. shrink e 0 verirsek tarik lar yan yana yazilir. 1 verirsek alta atar.  -->
+
+    <div class="d-flex bg-danger mt-5">
+        <div class="bg-danger w-100">Tarik</div>
+        <div class="bg-warning flex-shrink-0">Tarik Tarik</div>
+    </div>
+
+    <br>
+
+    <div class="d-flex bg-danger mt-5">
+        <div class="bg-danger w-100">Tarik</div>
+        <div class="bg-warning flex-shrink-1">Tarik Tarik</div>
+    </div>
+
+    <br>
+
+
+    <div class="d-flex bg-info">
+        <div class="bg-danger me-auto">Div 1</div>
+        <div class="bg-warning ">Div 2</div>
+        <div class="bg-warning ">Div 3</div>
+    </div>
+
+    <br>
+
+    <div class="d-flex bg-info">
+        <div class="bg-danger">Div 1</div>
+        <div class="bg-warning ">Div 2</div>
+        <div class="bg-warning ms-auto">Div 3</div>
+    </div>
+
+
+    <!-- en bastaki div e margin end verdigimizde sagdakiler sona itilir 1. div en solda kalir. 
+    en sondakine div margin start verdigimizde de o en sona itilir  
+    eger diger div lere verirsek digerlerini de etkiler
+-->
+
+    <br>
+
+        <!-- order    -->
+    <div class="d-flex bg-info justify-content-evenly">
+        <div class="bg-danger order-3">Div 1</div>
+        <div class="bg-warning order-2">Div 2</div>
+        <div class="bg-warning order-1">Div 3</div>
+    </div>
+
+    <br><br>
+
+
+    <div class="d-flex bg-info justify-content-evenly">
+        <div class="bg-danger order-last">Div 1</div>
+        <div class="bg-warning order-2">Div 2</div>
+        <div class="bg-warning order-1">Div 3</div>
+    </div>
+
+    <!-- first -1 index kullanir ve en basa alir 
+    first ve last haricinde kalanlar, numarasi kücük olan önce gelir-->
+
+    <br>
+
+    <div class="d-flex bg-info justify-content-evenly">
+        <div class="bg-danger order-2">Div 1</div>
+        <div class="bg-warning order-1">Div 2</div>
+        <div class="bg-warning order-first">Div 3</div>
+    </div>
+    
+
+    <br>
+        <!-- flex ile foto ve yazi düzenleme -->
+
+
+    <div class="d-flex bg-warning align-items-center">
+        <div>
+            <img src="https://picsum.photos/id/684/100/100" alt="" class="flex-shrink-0">
+        </div>
+
+        <div class="flex-grow-1 text-center mx-3">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores earum quibusdam, fugiat eaque nemo sit sunt cumque officia voluptates eligendi?
+        </div>
+    </div>
+
+
+    <br>
+            <!-- speed -->
+
+    <!-- <div class="spinner-border" id="spinner"></div> -->
+
+    <style>
+        #spinner {
+            animation-duration: 3s;
+        }
+    </style>
+
+
+    <br>
+
+
+    <!-- Büyüklük
+        iki ihtimal var. sm kullanimi ve style ile düzenleme
+
+        boyut olarak sadece sm var. md ve large yok. sm yazmazsak default olarak büyük olur
+    -->
+
+    
+    <!-- <div class="spinner-border spinner-border-sm" id="spinner"></div>
+
+    <div class="spinner-border " id="spinner"></div>
+
+    <div class="spinner-border" id="spinner"></div> -->
+
+
+    <!-- css style  -->
+
+    <!-- <div class="spinner-border" id="spinner" style="width: 1rem; height: 1rem;"></div>
+
+    <div class="spinner-border" id="spinner" style="width: 3rem; height: 3rem;"></div> -->
+
+
+
+
+
+        <!-- spinner with button 
+        en disarida button var
+        spinner div ile degil span ile
+        -->
+
+    <button class="btn btn-primary w-25 disabled">
+        <span class="spinner-border spinner-border-sm" id="spinner" aria-hidden="true"></span>
+        <br>
+        Loading...
+    </button>
+
+    <br>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="spinner-border" role="status">
+        clarusway
+        <span class="visually-hidden">Loading</span>
+    </div> -->
+
+    
+
+    <!-- <div class="spinner-border text-warning">
+        <span class="visually-hidden">Loading</span>
+    </div> -->
+
+    
+
+
+   
+
+
+    <!-- <div class="spinner-grow text-danger mx-auto d-block">
+        <span class="visually-hidden">Loading</span>
+    </div> -->
+
+
+    <!-- <div class="d-flex align-items-center">
+        <div class="spinner-border mx-auto"></div>
+    </div>
+    -->
+
+    <!-- <div class="d-flex align-items-center">
+        <div class="spinner-border mx-auto spinner-border-sm" style="width: 3rem; height: 3rem;"></div>
+    </div> -->
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

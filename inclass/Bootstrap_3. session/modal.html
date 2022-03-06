@@ -1,4 +1,4 @@
-C8132-Onur  < 1 minute ago
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,33 +13,50 @@ C8132-Onur  < 1 minute ago
     />
     <title>Bootstrap</title>
     <style>
-      body {
-        padding: 70px;
-      }
+      
     </style>
   </head>
   <body>
-    <h1>Hello, Clarusway!</h1>
-    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalim">
-        Üyelik Koşulları
-    </button>
-    <div class="modal" id="modalim">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4>Üyelik Koşulları</h4>
-                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime porro minus reiciendis iste aliquam velit autem at blanditiis nisi ut.
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary">Accept</button>
-                    <button class="btn btn-secondary">Refuse</button>
-                </div>
+    
+
+      <!-- Modallar kullaniciyi sayfa disina kacirmamak icin etkin olarak kullanilir. 
+      Icerigi görünmeyen bir seyi bir butona yada baska birseye tiklandiginda acilir yapar
+      -->
+
+
+      <!-- Modal larda default olarak 2 tane hr gelir
+      Burada ilk bölüm header ikinci body 3. ise footer dir. -->
+
+
+      <!-- ******************  Attention: 
+      data-bs-target yazarken ayni href yazar gibi basina # koyuyoruz -->
+
+      <!-- dismiss gözden kaybolmak demektir. data bs dismiss de neyin gözden kaybolmasini istiyorsak onu yaziyoruz. biz modal in gözden kaybolmasini istiyoruz -->
+
+        <div class="d-flex justify-content-center"> 
+          <button class="btn btn-info d-block mt-5" data-bs-toggle="modal" data-bs-target="#modalDiv">Üyelik Kosullari</button>
+
+          <div class="modal w-50 mx-auto" id="modalDiv">
+            <div class="modal-dialog mx-auto">
+              <div class="modal-content mx-auto">
+                  <div class="modal-header">
+                    <h4 >Üyelik Kosullari</h4>
+                    <button class="btn btn-close" data-bs-dismiss = "modal"></button>
+                  </div>
+
+                  <div class="modal-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi unde numquam architecto ducimus officia optio dolores magnam iusto sit nulla! </p>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss = "modal">Accept</button>
+                    <button class="btn btn-secondary" data-bs-dismiss = "modal">Refuse</button>
+                  </div>
+                  
+              </div>
             </div>
+          </div>
         </div>
-    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"

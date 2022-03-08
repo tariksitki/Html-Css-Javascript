@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+
+        //Kod akışının sırayla işlemediği, işlemlerin birbirini beklemediği programlama = asenkron programlama
+
+
+        // 3 adet async proggraming yöntemi vardir:
+        
+        // 1: async callbacks
+        // 2: promises
+        // 3: async/await : bu promises in makyajlanmis halidir. altinda promises yapisi kulllanir ve daha anlasilir takip edilebilir bir yapi sagliyor
+        // bunun icinde yine promises in bazi methodlari kullanilabiliyor
+
+
+
+        // js dosyamizi html dosyamiza baglama:
+
+        // defer yada async kullanmadan script baglantisini head icinde yaparsak:
+        // html kodlari parsing e baslanir. sonra js kodlarina gelindiginde html kodlari durdurulur. js kodlari bitene kadar parsing edilir. js kodlari bitince tekrar html ye baslanir. js kodlari okundugu esnada ihtiyac olan bir html elementi okunmamis olursa undefined alinir
+
+
+
+        /// script kismini body nin sonuna yazmak:
+        // tüm html kodlaro okunur sonra js kodlarina gecilir. dom la ilgili hicbir sikinti olmaz
+
+
+
+        // head kisminda async anahtar kelimesi ile script baglama:
+        // html okunmaya baslanir. js e denk gelindiginde, js fetch edilme esnasinda html okunmaya devam edilir. js fetch bittikten sonra js execute kismina gecilir ve bu bölüm bitene kadar html calismasi durdurulur. js execute bittikten sonra html nin geri kalan kismi tamamlanir .
+
+
+        /// head kisminda defer ile baglama:
+        // html calismasi esnasinda js parsing islemi de yapilir. js execute ise html bittikten sonra en son yapilir.
+        // bunun js i body nin sonuna yazmaya göre avntaji, fetch icin ekstra zaman harcanmamis olur ve html ile ayni anda yürütülür.
+        /// defer kelime anlami ertelemek
+
+
+        // asyncron prog en güzel sosyal medyada görülüyor. mesela netflix youtube gibi ortamlarda, async kullanilmasa tüm video indirilip daha sonra sergilenmesi gerekir. ama async vasitasi ile birkac dakikalik kisim indirildikten sonra sergilenmeye baslaniyor ve ayni zamanda indirme islemi devam ediyor. 
+
+
+        // mesela amazon da ürünler indirilirken bize bir spinner gösteerilir arka planda indirme devam eder. 
+
+
+        // pc lerde birden cok cekirdek var. her bir cekirdek bir islemci demektir. ve aslinda her bir islemci ayni anda bir islem yapabilir.
+        // ama bunun önüne gecebilmek icin zaman bölümü yapilir. 
+
+        // multitasking:
+
+
+        // multiproccessing:
+
+
+        // multithreated: 
+        // js single threaded dir. ayni anda sadece tek islem yapabilir. Biz async prog lari web browser vesilesi ile yapabiliriz. browser lar multithreaded ve multiproccessed dir.
+
+
+        // mesela youtube videosu calarken biz google arama yapabiliyoruz.
+        // browser daki her bir sekme bir runtime environment dir. browser her bir sekme icin ayri bir thread olusturur ve herbiri icin ayri zaman tahsisi yapar. bunlar ayri ayri olarak calistirilir. sadece bizim js engine single olarak calisir.
+
+        // aslinda tüm islemler ayni anda yapilmaz. herbirine browser kücük kücük zamanlar tahsis ettigi icin biz bunlari ayni anda oluyormus gibi zannederiz.
+
+        /// JS engine aynı anda tek işlem yapabiliyor.
+        // Async işlemleri Browser kendi bünyesindeki WEB API ile yapıyor. JS engine ile yapmıyor / yapamıyor.
+
+        // her bir web sayfasi icin ayri bir js engine tahsis edilir.
+
+
+
+
+
+
+                /// async Callback:
+
+        // callback func: iki kisi ayni anda bir pc yi kullanamiyor. bu nedenle mantik olarak isin bitince beni ara 
+
+        /// async callback yapisinda elimizde iki method var:
+        // 1: settimeout
+        // 2: setinterval
+
+
+        // alert sayfanin calismasini durduran bir func dir. iste böyle durumlar icin biz async yapiya ihtiyac duyuyoruz.
+
+
+        // iki farkli callback vardir:
+
+        // 1: senkron: senkronda sahip oldugumuz methodlar: 
+        // array.map(), forEach(), array.find(), array.filter(), array.reduce()
+
+        // 2: asenkron: bunun icin de en iyi örnek addeventlistener in 2. parametresidir.
+
+
+
+
+                //// Settimeout:
+
+        /// Settimeout func da eger süre olarak 0 yazsak bile, buradaki kodumuzun calismasini en sona atmis oluruz. mesela blok sayfasinda yazi okuyoruz. 1 dk gectikten sonra abone olur musunuz diye soruyor.
+
+        //  disarida tanimladigimiz bir func i bunun icine callback olarak yazarken, yanina () koymuyoruz.
+
+        // function hello() {
+        //     console.log("Hello");
+        // }
+
+        // let intervalId = setTimeout(hello, 2000);
+
+        // console.log("First message");
+        // console.log("Id: " + intervalId);
+
+
+
+
+
+
+        ////////////////////
+
+
+        // bir degiskene atadigimizda bir id no return eder. eger func icine return dersek sadece id no döndürür. console.log dersek hem id verir hem de output u yazdirir.
+
+        // let id = setTimeout(() => {
+        //     console.log("My Output");
+        // }, 3000);
+
+        // console.log(id);
+
+        // bu id clear da kullanilir. clear yazdigimizda sadece id döndürülür output dönmez.
+        // clearTimeout(id);
+
+
+
+
+        // let id2 = setTimeout(() => {
+        //     console.log("My Output");
+        // }, 3000);
+
+        // console.log(id2);
+
+        /// burada browser bize farkli bir id no verdi.
+
+
+
+
+
+
+
+
+
+        //////////////////////////////////
+
+        // bizim slowtask adinda bir isimiz olsun ama bu kod calisirken diger kodlarimiz beklemesin. ama asagidaki kod da beklemek zorundayiz.
+
+        // const slowTask = () => {
+        //     let i = 0;
+        //     let result = {firstname : "John", lastName : "Doe"};
+        //     do {
+        //         i++;
+        //     } while (i < 2000000000);
+        //     return result;
+        // };
+
+
+        // console.log("1");
+        // console.log("2");
+        // let res = slowTask;
+        // console.log(res());
+
+        // console.log("3");
+        // console.log("4");
+
+
+
+
+
+
+        ////////////////////
+        // simdi bu görevi browser a devredecegiz. sen bu islemi yap benim islerim bitince arada ne zaman firsat bulursan bunu yazdir diyecegiz. yani bizim diger kodlarimiz beklemeyecek
+        // burada settime icine 0 saniye yazmamiza ragmen bu islem Web API tarafindan arka plana atiliyor. diger sirali islemler devam ediyor
+
+        /// burada 0 degilde mesela 2000 verseydik, bu durumda browser a , sen ilk firsatini bulduktan sonra ilk 2 saniye sonra baslat demek olur.
+
+
+
+        //         const slowTask = () => {
+        //     let i = 0;
+        //     let result = {firstname : "John", lastName : "Doe"};
+        //     do {
+        //         i++;
+        //     } while (i < 2 );
+        //     return result;
+        // };
+
+
+        // console.log("1");
+        // console.log("2");
+
+        // setTimeout(() => {
+        //     let res = slowTask;
+        //     console.log(res());
+        // }, 0)
+
+        // console.log("3");
+        // console.log("4");
+
+        // eger burada 3 ve 4 ün de settime dan sonra gelmesini istersek, bu kodlari da settime icine atariz.
+
+
+
+
+    
+
+
+    //// eger sirali kodumuzu bekletmek istiyorsak:
+
+    // function wait(ms) {
+    //     const start = new Date().getTime();
+    //     let end = start;
+
+    //     while(end < start + ms) {
+    //         end = new Date().getTime();
+    //     }
+    // }
+
+    // console.log("1");
+    // wait(2000);
+    // console.log("2");
+    // console.log("3");
+    // console.log("4");
+
+
+
+
+
+
+
+    ///////////  time:
+
+    // console.time("time start");
+    // console.timeLog("Time");
+    // console.log("Hello");
+    // wait(1500);
+
+    // console.timeLog("Time");
+    // console.log("World");
+    // console.timeEnd("TimeEnd");
+
+
+
+    // console.time();
+    // slowTask();
+    // console.timeEnd();
+
+
+
+
+
+
+
+
+
+    ///////////////////////////
+
+
+    // console.time("time elapsed");
+    // console.timeLog("Time elapsed");
+
+    // setTimeout(() => {
+    //     console.warn("this message after 2 seconds");
+    //     console.timeEnd("Time elapsed");
+    // }, 2000);
+
+
+    // console.warn console.log da warning li mesaj yazar
+
+
+
+
+
+
+    ////////////////////////////
+
+
+
+    // console.time("settime example");
+    // console.timeLog("settime example");
+
+    // setTimeout(() => {
+    //     console.error("This is first message");//error message
+    //     console.timeEnd("settime example");
+    // }, 4000);
+    // setTimeout(() => {
+    //     console.warn("This is second message");
+    //     console.timeLog("settime example");
+    // }, 3000);
+    // setTimeout(() => {
+    //     console.warn("This is third message");
+    //     console.timeLog("settime example");
+    // }, 1000);
+
+
+
+
+
+
+
+
+    // hepsinin zamanini 0 yaparsak:
+
+
+    // console.time("settime example");
+    // console.timeLog("settime example");
+
+    // setTimeout(() => {
+    //     console.error("This is first message");//error message
+    //     console.timeLog("settime example");
+    // }, 0);
+    // setTimeout(() => {
+    //     console.warn("This is second message");
+    //     console.timeLog("settime example");
+    // }, 0);
+    // setTimeout(() => {
+    //     console.warn("This is third message");
+    //     console.timeLog("settime example");
+    // }, 0);
+
+
+    // Note: Burada settime larin sirasi degisse de saniyeler belli oldugu icin  sonuc degismez
+
+
+
+
+
+
+
+
+
+    //// Birden cok islemimiz oldugunda ve ikinci islem birinci islem bittikten 1 saniye sonra 3. islem de 2. islem bittikten 1 saniye sonra baslasin istersek bu durumda settimeout da her birine 1000 2000 3000 verirsek istedigimiz sekilde calismaz. cünkü mesela 1. islemin bitmesi 5 saniye sürebilir. bu durumda 2. islem 2000 de baslayacak yani 2. islem bitmeden calismis olacak.
+
+
+
+
+
+    console.time("settime example");
+    console.timeLog("settime example");
+
+    setTimeout(() => {
+        console.error("This is first message");//error message
+        console.timeLog("settime example");
+    }, 0);
+    setTimeout(() => {
+        console.warn("This is second message");
+        console.timeLog("settime example");
+    }, 0);
+    setTimeout(() => {
+        console.warn("This is third message");
+        console.timeLog("settime example");
+    }, 0);
+
+
+
+
+
+
+    ///////////////////////////////
+
+    /// nested set time out:
+
+    /// Callback Hell:
+
+
+     // func lari sirali olarak cagiracak isek yani birisi digerine bagli ise nested olur ve buna callback hell denir.
+
+
+    //  setTimeout(() => {
+    //      console.log("John: Hi");
+    //      setTimeout(() => {
+    //          console.log("Sarah: Hello");
+    //          setTimeout(() => {
+    //              console.warn("John: How are you");
+    //              setTimeout(() => {
+    //                  console.log("Sarah: Fine and you?");
+    //              }, 1000)
+    //          }, 1000)
+    //      }, 1000)
+    //  }, 1000);
+
+     // bu yapida bir sonraki kod calismasi icin bir öncekinin tamamlanmasi gerekir. Bu nedenle bir siralama vardir.
+
+     // Bu yapi bizim kodumuzun okunurlugunu zorlastirir. async icin cok uygun bir yapi degildir. bu nedenle promis yapisi bunun bir alternatifidir.
+     // bu yapida arrow func kullanildigi icin this konusu da sikintilidir.
+
+
+
+
+
+
+
+     /////////////  Set interval:
+
+
+     /// program to display time every seconds:
+     // Bu sürekli cikti veren ve stack deki kaynagi tüketen bir recursiv koddur.
+     /// Bunun yerine interval kullanilir.
+
+    //  function showTime() {
+    //      let dateTime = new Date();
+    //      let time = dateTime.toLocaleTimeString();
+    //      console.log(time);
+    //      setTimeout(showTime, 1000);
+    //  }
+
+    //  showTime();
+
+
+
+
+
+
+    //// 2 saniye de bir hello:
+
+    // setInterval(() => {
+    //     console.log("Hello");
+    // }, 2000)
+
+
+    /// settimeout da her seferinde bir ID verir.
+
+    
+
+
+
+    /////////////////////////
+    // yine her saniye de saat yazdirma
+
+    // setInterval(() => {
+    //     let dateTime = new Date();
+    //     let time = dateTime.toLocaleTimeString();
+    //     console.log(time);
+    // }, 1000)
+
+
+
+
+
+
+
+
+
+    /// fonksiyonu disarida yazma:
+
+    // function showTime() {
+    //     let dateTime = new Date();
+    //     let time = dateTime.toLocaleTimeString();
+    //     console.log(time);
+    // }
+
+
+    // let display = setInterval(showTime, 1000);
+
+    /// burada displayi tekrar cagirmamiza gerek yoktur. 
+
+
+
+
+
+
+
+    //// clear Interval:
+
+    // let counter = 0;
+    // let interval = setInterval(function() {
+    //     counter += 1;
+    //     if (counter == 5) {
+    //         clearInterval(interval);
+    //     }
+    //     let dateTime = new Date();
+    //     let time = dateTime.toLocaleTimeString();
+    //     console.log(time);
+    // }, 1000);
+
+
+
+
+
+
+    //// setinterval kullanim alanlari:
+    // bankacilik uygulamasi zaman kisitlamasi
+    // belirli bir sürede sayi tahmin oyunu
+    // kredi karti alisveris 3 dk icinde sifre girme
+
+
+
+
+
+    /// 10 dan geriye sayma:
+
+
+    // let counter = 10;
+
+    // let interval = setInterval(() => {
+        
+    //     if (counter == 0) {
+    //         console.log("Time over");
+    //         clearInterval(interval);
+    //         return;
+    //     }
+    //     console.log(`Remaining Time is ${counter}`);
+    //     counter -= 1;
+    // }, 1000);
+
+    // burada else ile yapmadigimiz icin kod if e girse de girmese de sonradan gelen kod calisir. ama else kullanirsak if e girerse else girmez.
+
+
+
+    //   let counter = 10;
+
+    // let interval = setInterval(() => {
+        
+    //     if (counter == 0) {
+    //         console.log("Time over");
+    //         clearInterval(interval);
+    //     }   else {
+    //         console.log(`Remaining Time is ${counter}`);
+    //         counter -= 1;
+    //     }
+    // }, 1000);
+
+    // console.log(interval); 
+    // intervali yazdirdigimizda bize her seferinde bir id return eder. bu settimeout icin de gecerlidir.
+
+
+
+
+    //// Setinterval bize bir interval id return eder. bunu kullanarak clear yapabiliriz.
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     Promise için aklınızda kalması gereken en önemli konulardan biri:
+// "Promise is a placeholder for future value"
+// Yani promise ile bir işlem yaptırıp bir sonuç almak istiyoruz. Ancak bu sonuç hemen oluşmuyor. O sonuç bize sonra gelecek. Geldiği zaman o veriyi nasıl kullanacağız.
+
+
+
+
+
+
+
+// Web API ile ilgili kisa bir örnek vereyim. Mesela Binance Borsasini bilenler sürekli kriptolarin izlendigi ekranlar vardir. Bu ekranlar aslinda Binance ait degildir. TradingView diye bir baska sisteme aittir. Yani Binance web API sayesinde bu verileri TradingView platformundan alir. Eger veriler dogru gelirse (then) ile, eger hata olursa (catch) ile cevap verilir. (edited) 
+
+
+
+// @Barry M. hocam webAPI da yapılan işlemler de bir kodun yürütülmesi mi. Serverden data çekme işlemi yaparken callstackta olduğu gibi ancak daha uzun süren kodlar burada mı yürütülüyor. Yoksa kod yürütme işlemi sadece callstack te gerçekleşen bir durum mudur.
+
+// js engine single thread yani bir zamanda bir iş yapabilir. fakat browser multi thread
+
+// veri çekme işini web api kullanarak browser a yaptırıyoruz
+
+// browserdaki başka bir js engine mı bu işlemi yapıyor hocam. Yani bu işlemler sırasında birden fazla js engine mı kullanmış oluyoruz
+
+// js engine bir tane ama bize js koduyla anlaşabildiğimiz bir arayüz verilmiş. onun adı WEB Api
+
+
+// https://github.com/clarusway/clarusway-full-stack-10-21/tree/main/javascript/Projects/007-Movie-Seat-App
+        
+        
+
+
+        
+        
+
+
+
+const arr = [...new Set([3, 1, 2, 3, 4])];
+console.log(arr.length, arr[2]);
+
+
+
+    
+
+
+
+
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Efficiently load JavaScript with defer and async
+
+        // https://frontend1022tr.slack.com/archives/C02SRMHJED7/p1646473497820659?thread_ts=1646473401.808899&cid=C02SRMHJED7
+
+
+        //https://www.youtube.com/watch?v=cCOL7MC4Pl0
+
+    </script>
+</body>
+</html>

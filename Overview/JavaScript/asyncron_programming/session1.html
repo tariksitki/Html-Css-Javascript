@@ -543,52 +543,26 @@
     //// Setinterval bize bir interval id return eder. bunu kullanarak clear yapabiliriz.
 
 
-    
 
 
 
+    //// Interval de callback disari yazma:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    let counter = 5;
+    function tick() {
+        if (counter == 0) {
+            // clearInterval(interval);
+            // exit;
+        } else {
+            console.log("Tick Tick");
+            counter--;
+        }
+    }
+    interval = setInterval(tick, 1000);
 
 //     Promise için aklınızda kalması gereken en önemli konulardan biri:
 // "Promise is a placeholder for future value"
 // Yani promise ile bir işlem yaptırıp bir sonuç almak istiyoruz. Ancak bu sonuç hemen oluşmuyor. O sonuç bize sonra gelecek. Geldiği zaman o veriyi nasıl kullanacağız.
-
-
-
 
 
 
@@ -600,7 +574,6 @@
 // @Barry M. hocam webAPI da yapılan işlemler de bir kodun yürütülmesi mi. Serverden data çekme işlemi yaparken callstackta olduğu gibi ancak daha uzun süren kodlar burada mı yürütülüyor. Yoksa kod yürütme işlemi sadece callstack te gerçekleşen bir durum mudur.
 
 // js engine single thread yani bir zamanda bir iş yapabilir. fakat browser multi thread
-
 // veri çekme işini web api kullanarak browser a yaptırıyoruz
 
 // browserdaki başka bir js engine mı bu işlemi yapıyor hocam. Yani bu işlemler sırasında birden fazla js engine mı kullanmış oluyoruz
@@ -622,38 +595,47 @@ const arr = [...new Set([3, 1, 2, 3, 4])];
 console.log(arr.length, arr[2]);
 
 
-
-    
-
-
-
-
-
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         // Efficiently load JavaScript with defer and async
 
         // https://frontend1022tr.slack.com/archives/C02SRMHJED7/p1646473497820659?thread_ts=1646473401.808899&cid=C02SRMHJED7
 
 
         //https://www.youtube.com/watch?v=cCOL7MC4Pl0
+
+
+
+            // bu kod sonsuz bir döngü olusturur.
+        // function callback() {
+        //     hello();
+        //     requestAnimationFrame(callback);
+        // }
+
+        // function hello() {
+        //     console.log("Hello");
+        // }
+
+        // callback()
+
+
+        //// bu func i request ile degil de settimeout ile yaparsak daha hizli calisir. Cünkü browserlar genel olarak ekrani saniye de 60 defa yeniler. ama settimeout ekranin yenilenmesinden daha hizli yenileme yapar. 
+
+
+        // eskiden bu durumun önüne gecebilmek icin su islem yapilirdir.
+        // settimeout(animFrame, 1000 / 60);
+        // yani bos yere yapilan güncellemeler bu sekilde engellenirdi.
+
+
+
+        /// eger promise kullanarak bir button a iki tane event ekledi isek, bu durumda dikkatli olmamiz gerekir. Cünkü buttona biz tikladigimizda farkli calisir. button.click() diyerek js e tiklattigimiz da farkli calisir.
+
+
+
+
+
+
+
+
+
 
     </script>
 </body>

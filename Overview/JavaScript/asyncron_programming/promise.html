@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+            /// promise:
+
+     // promise bir objecttir
+     // kendi icinde callback olarak 2 func ister. 
+     // birincisi resolve ikincisi ise rejecttir. eger islem basarili oldu ise resolvu cagirir. ve bunun icerisine de göndermek istedigi veriyi verir.  
+     // reject ve resolve de birer func dir    
+    //  belirli bir eventin gerceklesip gerceklesmedigini takip eden bir objecttir.
+    // Meydana gelen eventten sonra ne olacagini tanimlar
+    // Bizim bekledigimiz gelecekteki bir olaynin conceptini uygular
+    // Promise object, bir asenkron operationun muhtemel gerceklesmesini yada hata vermesini bize sunar. ve tabi ki onun sonuc valus sunu.
+
+
+    //// Promise gercek hayattan örnek:
+    // arkadasimiza borc verdik. Bir ay sonra ödeyecegini söyledi. 
+    // 1 ay boyunca bizim isimiz pending askida
+    // arkadas borcunu zamani gelince öderse bu fullfilled olur
+    /// eger arkadas ödemez ise bu rejected olur.
+    // borc ödense de ödenmese de bu isin sonucu settled dir yani tamamlandi.
+    /// sonuc olarak cözüldü ise resolved, cözülmedi ise rejected.
+
+
+
+
+
+
+
+    //////////////////////////////////
+
+    //// Callstack   Microtask
+
+    // Biz herhangi bir kod yazdigimizda bu callstack e gider ve burada siralama olarak en sona eklenir. 
+    /// eger bu kod da setinterval yada settimeout varsa bunlar Web Api ye gönderilir.
+    // Eger bunlar da Callback se, Web Api nin bize sagladigi özellik olarak Callback Queue ya yada Macrotask Queue ya gönderilir.
+    // Promise ler ve async await ler ise Microtask Queue ya gönderilir.
+
+    /// Callstack de islemler hep pop methodu gibi calisir. yani en son eklenen sona eklenir ve hep en bastan is alinir.
+
+    /// event loop, sürekli callstack den is alir ve bunlari gerekli yerlerine gönderir. yani callstack i bosaltmaya calisir. restoranlarin self servis tabak yapisi gibi.
+
+    /// Event loop, callstack bosalttiktan sonra ilk olarak Microtask Queue ya gecer. Ve burada kac tane görev varsa hepsini bitirene kadar icra eder ve bu esnada burada kalir. Tabi bu arada ekranin tazelenmesi gibi islemleri de icra eder. Yani öncelikle promise islemlerini yapar. Bu nedenle bizim promise yada async await leri tercih etmemiz gerekir hizdan dolayi
+
+    // Microtask da bulundugu esnada islemleri birer birer alir ve callstack e atar. atilan islemler de orada icra edilir.
+
+    // microtask bittikten sonra, callbac queue ya gecilir. ve buradaki islemler teker teker callstack e atilir. tabi bu arada, microtask a promise gelirse promise yine önceliklidir.
+
+    // Event loop sürekli calisir ve islemleri bu sekilde düzene koyar.
+    // event loop bizim single threaded yapimizi coklu yapiya cevirmek icin olusturulmus bir mekanizmadir. yani tek bir js engine olmasina ragmen birden cok islem nasil yapilabilir sorusunun cevabidir. Yani burada event loop bir orkestra sefi gibi calisir. Görev dagilimini ve öncelikleri o düzenler.
+
+    /// Islem öncelik sirasi:
+    /// 1: callstack
+    //  2: Microtask
+    //  3: callback   
+
+
+    /// callback Queue nun 3 adi vardir:
+    // Job queue,  macrotask queue yada Callback queue
+
+    // 1 ile 2 arasinda ekran tazeleme önceligi vardir. bu islem de arada kendine bir yer bulur
+
+    /// Web Api; settime islemlerini, Dom manipulation islemlerini ve fetch islemlerini bizim adimiza yapar.
+
+
+
+
+    ////////  Request response model veya Client server Mimarisi:
+
+    // async yapiyi kullanacagimiz yegane yer, client ile server arasindaki http protokolü ile iletisimdir.
+
+    // sürekli bir talep ve cevap sistemi vardir.
+
+    /// Bu mimarinin haricinde bir mimari daha vardir o da soket mimarisidir. mesela Whatsapp,  biz sürekli yeni gelen mesajlari aliriz. cünkü biz sürekli olarak whatsapp e bagliyizdir. ama gmail de bu böyle degildir. biz maillerimize bakariz ama o esnada yeni mail geldiginde bunu göremeyiz. talep ettikce görürüz
+
+    /// Promise lar; bize remote web server lar ile asenkron bir yolla iletisime gecme imkani verir. Ajax call lar ile biz web server lardan dinamic olarak data talep edebiliriz.
+
+    /// Ajax = asynchronous Javascript and Xml:
+
+    /// Api:  Software in baska bir kismi tarafindan kullanilabilen bir software parcasidir. ve applicationlarin birbiri ile iletisime gecebilmesine izin verir.
+
+    // XML; html yapisina benzer acilis ve kapanis tagleri vardir. ancak popularitesini kaybetmistir
+
+    
+
+
+
+
+    ///////// Promise safhalari:
+
+    // 1: Pending
+    // 2: Settled
+            // a: fullfilled
+            // b: rejected
+
+    // 
+    </script>
+</body>
+</html>

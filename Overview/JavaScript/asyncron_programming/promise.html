@@ -103,6 +103,338 @@
             // b: rejected
 
     // 
+
+
+
+
+
+    ////  Kahoot:
+
+    /// Kod siralamasi:
+    // 1: fetch
+    // 2: then
+    // 3: catch
+
+
+
+        /// burada ilk func reject return ettigi icin, catch den önceki tüm then ler calismaz
+
+        function job() {
+            return new Promise(function (resolve, reject) {
+                reject();
+            })
+        }
+
+        // let promise = job();
+
+        // promise.then(function() {
+        //     console.log("Success 1");
+        // }) .then(function() {
+        //     console.log("Success 2");
+        // }) .then(function() {
+        //     console.log("Success 3");
+        // }) .catch(function() {
+        //     console.log("Error1");
+        // }) .then(function() {
+        //     console.log("Success 4");
+        // })
+
+
+
+
+
+
+        //////////////////////////////
+
+
+        function wait(ms) {
+            const start = new Date().getTime();
+            let end = start;
+            while (end < start + ms) {
+                end = new Date().getTime();
+            }
+        };
+
+
+
+
+
+
+        /// Promise icerisine bir executor yani icraci bir func alir. Bu icraci func in da kendi icinde resolve ve reject olarak 2 tane parametreleri vardir. ayni zamanda bunlar da func dir.
+        // resolve ve reject isimleri degistirilebilir
+
+
+        const promise = new Promise((resolve, reject) => {
+            // request = req
+            // response = res
+            // bu isimleri cok kullanacagimiz icin resolve u kisaltmiyoruz
+
+            const data = "Some result";
+            resolve(data);
+            reject(new Error("Some error occured"))
+
+            // Burada sadece bir tanesi cagrilir. hem resolve hem de reject cagirilmaz.
+
+            // ve error mesajini da normal yazmiyoruz. error nesnesi ile cagiriyoruz ki daha anlasilir olsun diye.
+
+        })
+
+
+
+
+
+
+
+
+
+
+
+        // const promise2 = new Promise((resolve, reject) => {
+        //     wait(2000);
+        //     const userData = {
+        //         firstName : "Barry",
+        //         lastName : "Mitchell"
+        //     };
+        //     let successful = Math.floor(Math.random() * 5);
+        //     if (successful) {
+        //         resolve(userData);
+        //     }
+        //     reject(new Error("Some error occured"));
+
+        // })
+
+        // console.log(promise2);
+
+
+        // burada else kullanmadik, cünkü resolve ve reject birbirini tersler. biri calisinca digeri calismaz.
+
+
+        /// burada resolve icerisine biz, islem basarili oldugunda disari göndermek istedigimiz veriyi koyariz.  yani resolve func icerisine de console a birsey yazdirabiliirz ama bizim promise den muradimiz, islem sonucunda database den cektigimiz veriyi disari göndermektir.
+
+        
+        /// Note: Math.random da kac ile carparsak o kadar ihtimal olacaktir. Mesela 2 ile carparsak %50 ihtimal olur. yani ya 0 ya da 1
+        // ama 5 ile carparsak ihtimaller 0 1 2 3 ve 4 dür.
+        // yani 0 gelme ihtimali %20 ye düsmüs olur.
+
+        // console.log(Math.floor(Math.random() * 5));
+        // console.log(Math.floor(Math.random() * 2));
+        // burada floor dedigimiz icin 5 olmaz sayimiz 0 ve 4 arasinda cikar.
+
+
+
+
+
+
+
+
+
+        //// promise sonucunu console da yazdirmak güzel birsey degil cünkü bir zamani var.
+
+        // Bu nedenle then ile bunu kullaniriz
+        // then ve catch de kendi icinde bir promise yapisidir.
+
+
+        // const promise3 = new Promise(function(resolve, reject) {
+        //     wait(2000);
+        //     let userData = {
+        //         firstName : "Barry",
+        //         lastName : "Mitchell"
+        //     };
+        //     let successful = Math.floor(Math.random() * 2);
+
+        //     successful ? resolve(userData) : reject(new Error("Something want wrong!!!"));
+        // });
+
+        // promise3.then(
+        //     (result) => {
+        //         console.log(result);
+        //     },
+        //     (error) => {
+        //         console.log(error);
+        //     }
+        // );
+
+        /// then de kendi icinde promise dir demistik. Bu nedenle  then icerisine parameter olarak yazdigimiz  ilk func resolve dur ikincisi rejecttir.
+
+
+
+
+
+
+
+        /// Promise i kullanma yöntemlerinden birincisini yukarida gördük. Simdi Ikinci yönteme bakacagiz:
+
+        // promise3
+        // .then(
+        //     (result) => {console.log(result);}
+        // )   
+        // .catch(
+        //     (a) => {
+        //         console.log(a);
+        //     }
+        // )
+
+
+
+            // func declaration:
+
+        // promise3
+        // .then(function(result) {
+        //     console.log(result);
+        // })
+        // .catch(function(error) {
+        //     console.log(error);
+        // });
+
+
+        // then ve catch icerisine func alirlar. Bu func icerisine argument olarak yukaridaki promise den gelen seyi veririz. bu nedenle argument ismi olarak istedigimizi verebiliriz.
+
+        // promise in gönderdigi seyi yukarida promise tanimlama esnasinda belirliyoruz. gönderilen seyi alma islemini ise asagida then ve catch ile yakaliyoruz.
+
+        // Note: eger yukarida if yapisi kullanmasaydik ve üste resolve alta da rejeect yazsaydik bu durumda hic reject dönmeyecekti.
+
+        /// hatayi new error objecti ile verdigimizde; console da hatayi takip etme olanagi verir.
+
+
+
+
+
+
+
+
+
+
+
+
+        ////////  Promise chain (then icerisinde return kullanarak veriyi bir sonraki then de kullanma):
+
+        // promise3
+        // .then((result) => {
+        //     console.log(result);
+        //     return "Hi";
+        // })
+        // .then((r) => {
+        //     console.log(r); // burada r "Hi"  dir
+        // })
+        // .catch((error) => {
+        //     console.log(error);
+        // })
+
+
+
+        /// Birden cok then kullanim maksadi: database den bir veri cekiyoruz. Bunun veri tipi json degil diyelim. Bu veriyi ilk then ile aliyorz sonra ikinci then de isliyoruz.
+
+
+
+
+
+        //// Note:  promise e ait olan ve ayni zamanda birer callback func olan resolve ve rejecti biz promise in icinde bir yerde kullanmamiz gerekir.
+        // peki biz bunlarin icerisine parametreleri nereden gönderiyoruz. iste then icerisine yazdiklarimiz resolve un karsiligi,  catch icine yazdiklarimiz ise rejectin karsiligidir.
+        
+        
+
+        // promise, dogmamis bir bebege elbise bicmek gibidir. yani talep ettigimiz bir islemin sonucu gelirse, bunun sonucunu kullaniciya verecegimizi vaat ediyoruz. ama tabi ki bu islemin sonucu gelene kadar da sayfamizi kilitlemiyoruz sayfamiz calismaya devam ediyor.
+
+
+        
+        
+        
+        
+        
+        
+        ///  cay demleme:
+
+        // safhalarin birbirini beklemesi gerekir. cünkü bir safha bitmeden digeri baslayamaz. Bu nedenle promise yapisi kullaniyoruz. 
+        // mesela suyun kaynamasini beklerken bu isi ocaga devrediyoruz ve basinda beklemiyoruz. yani web api ye devretme gibi.
+
+
+        
+
+        function cayDemle() {
+            suyuKaynat()
+            .then((durum1) => {
+                console.log(durum1);
+                return cayEkle();
+            })
+            .then((durum2) => {
+                console.log(durum2);
+                bekle(1500);
+                return afiyet();
+            })
+            .then((durum3) => {
+                console.log(durum3);
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+        };
+
+        function suyuKaynat() {
+            return new Promise((resolve, reject) => {
+                const nasip = Math.floor(Math.random() * 5);
+                if (nasip) {
+                    bekle(2000);
+                    resolve("Su Kaynadi")
+                }
+                reject(new Error("Kettle Arizali"));
+            })
+        }
+        function cayEkle() {
+            return new Promise((resolve, reject) => {
+                const cayNasibi = Math.floor(Math.random() * 5);
+                if (cayNasibi) {
+                    bekle(500);
+                    resolve("Cay Eklendi");
+                }
+                reject("Cay Kalmamis");
+            })
+        }
+
+        function bekle(ms) {
+            const start = new Date().getTime();
+            let end = start;
+            while (end < start + ms) {
+                end = new Date().getTime();
+            }
+        }
+        function afiyet() {
+            return ("Afiyet Olsun");
+        };
+
+        cayDemle();
+
+
+
+        //////////////////////////////////////
+
+        
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>

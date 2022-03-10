@@ -369,37 +369,37 @@
         //     })
         // };
 
-        // function suyuKaynat() {
-        //     return new Promise((resolve, reject) => {
-        //         const nasip = Math.floor(Math.random() * 5);
-        //         if (nasip) {
-        //             bekle(2000);
-        //             resolve("Su Kaynadi")
-        //         }
-        //         reject(new Error("Kettle Arizali"));
-        //     })
-        // }
-        // function cayEkle() {
-        //     return new Promise((resolve, reject) => {
-        //         const cayNasibi = Math.floor(Math.random() * 5);
-        //         if (cayNasibi) {
-        //             bekle(500);
-        //             resolve("Cay Eklendi");
-        //         }
-        //         reject("Cay Kalmamis");
-        //     })
-        // }
+        function suyuKaynat() {
+            return new Promise((resolve, reject) => {
+                const nasip = Math.floor(Math.random() * 5);
+                if (nasip) {
+                    bekle(2000);
+                    resolve("Su Kaynadi")
+                }
+                reject(new Error("Kettle Arizali"));
+            })
+        }
+        function cayEkle() {
+            return new Promise((resolve, reject) => {
+                const cayNasibi = Math.floor(Math.random() * 5);
+                if (cayNasibi) {
+                    bekle(500);
+                    resolve("Cay Eklendi");
+                }
+                reject("Cay Kalmamis");
+            })
+        }
 
-        // function bekle(ms) {
-        //     const start = new Date().getTime();
-        //     let end = start;
-        //     while (end < start + ms) {
-        //         end = new Date().getTime();
-        //     }
-        // }
-        // function afiyet() {
-        //     return ("Afiyet Olsun");
-        // };
+        function bekle(ms) {
+            const start = new Date().getTime();
+            let end = start;
+            while (end < start + ms) {
+                end = new Date().getTime();
+            }
+        }
+        function afiyet() {
+            return ("Afiyet Olsun");
+        };
 
         // cayDemle();
 
@@ -447,7 +447,7 @@
             resolve("Promise is resolved")
         })
 
-        console.log(prom);
+        // console.log(prom);
 
 
         /// promise de reject ve resolve lari kullaniiriz async de ise return.
@@ -461,7 +461,7 @@
             return "Promise is resolved";
         }
 
-        console.log(func1());
+        // console.log(func1());
 
 
             // async2:
@@ -471,19 +471,163 @@
             return "func2 is resolved";
         } 
 
-        console.log(func2());
+        // console.log(func2());
 
 
 
                 //// saglamasi:
                 // hepsi promise return eder
 
-        console.log(prom instanceof Promise);
-        console.log(func1() instanceof Promise);
-        console.log(func2() instanceof Promise);
+        // console.log(prom instanceof Promise);
+        // console.log(func1() instanceof Promise);
+        // console.log(func2() instanceof Promise);
 
 
         
+        /// async in arka planinda promise calisir.
+
+
+
+
+
+
+
+
+        /// async icinde error:
+
+
+        // async function func3() {
+        //     wait();
+
+        //     throw new Error("Something went wrong!!");
+        // };
+
+        // console.log(func3());
+
+        // burada throw ile aslinda rejecti cagirdik.
+
+        // buradaki kod ile error verdirdigimiz icin sayfa calismayi durdurur asagidaki calismaz.
+
+
+
+
+
+        /// async error2:
+        /// async icinde promise kullanimi ile:
+
+
+        // async function func4() {
+        //     wait();
+        //     return Promise.reject(new Error("Error"));
+        // }
+
+        // console.log(func4());
+
+
+
+
+
+            /// async icinde promise ile 
+
+        // async function func4() {
+        //     wait();
+        //     return Promise.resolve("Successful");
+        // }
+
+        // console.log(func4());
+
+
+
+
+
+
+
+
+
+
+
+        ////////// caydemle with async:
+
+
+        const caydemle2 = async () => {
+            try {
+                const durum1 = await suyuKaynat();
+                console.log(durum1);
+                const durum2 = await cayEkle();
+                console.log(durum2);
+                await bekle(1000);
+                const durum3 = await afiyet();
+                console.log(durum3);
+
+            } catch (error) {
+                // console.log(error);
+                    // yöntem1: hatayi oldugu gibi verme
+                // throw error;
+
+                    // yöntem2: hata mesajini kendimiz yazma
+                throw new Error("Something went wrong")
+            }
+        }
+
+       
+
+        caydemle2();
+
+
+        /// mesela suyukaynat func indan önceki await i silersek bu durumda output olarak suyu kaynat dönmez. komple promise in kendisi return edilir.
+
+
+
+
+        /// promise de programimizin düzgün bir sekilde islemesi icin her bir islemin sonucunun gelmesini then ile bekletmistik.
+
+        // burada ise await ile her bir func in sonucun gelmesini bekletiyoruz ve sonrasinda degiskene assgin et diyoruz.
+        // hata olusursa yine catch de yakaliyoruz
+
+        // bu yöntemde kodun okunabilirligi daha güzeldir.
+
+
+        // Bu yöntemde func larimizi promise haline getiren sey funclardan önce kullandigimiz "async" kelimesidir.
+        /// yani normal bir func olmaktan cikiyor
+
+        // bu yöntemde:
+
+        // return,  resolve un karsiligi
+        // throw error da reject in karsiligidir.
+
+
+        /// async de hatalari handle etmenin 2 yöntemi var. 
+        // Birincisi try catch 
+        // ikincisi ise normal await ler ile kodumuzu yazmak ve sonrasinda throw ile hatayi yakalamak
+
+
+
+        // try catch kullanma sebebimiz, kodumuzda riskli yerler var, eger bir hata alirsak kodumuz kirilmasin calismaya devam etsin. 
+
+
+
+
+
+
+
+
+        /// get veri alma
+        // post veri kaydetme
+        // put güncelleme
+        // delete silme
+
+        // rest in en büyük özelligi ne kadar veri istersek o kadar ayni cevabi aliriz sinir yoktur.
+
+
+
+
+
+
+
+
+
+
+
 
 
 

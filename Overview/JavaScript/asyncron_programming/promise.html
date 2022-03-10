@@ -621,6 +621,122 @@
 
 
 
+            /// Promise Methods:
+
+
+    // 1: Promise.all(iterable):
+    // wait for all promises to be resolved, or for any to be rejected.
+    // Promise nesnesi all metodu birden fazla promise sonucunu tek then ve catch bloğuna yönlendirmemizi sağlar.
+    // elimizde birden cok promise yapisi var. her birini bir array icine koyup all methoduna veriyoruz. all methodu array icindeki tüm promise islemlerinin bitmesini bekliyor. ve bir tane bile error döndüren promise varsa catch bloğu çalıştırılır.output error olur. 
+    // eger tümü resolve ise sonuc tüm promise lerin ciktisinin bir array icine konulmus halidir.
+
+
+    let req1 = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      resolve('First Success!');
+    //   reject('First Error!');
+    }, 2000);
+  });
+
+  let req2 = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+    //   reject('Second!');
+        resolve("Second");
+    }, 1000);
+  });
+
+  let req3 = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      reject('Third Error!');
+        // resolve("Third");
+    }, 3000);
+  });
+
+    Promise.all([req1, req2, req3])
+    .then(function(results) {
+        console.log(results);
+
+    }) .catch((error) => {
+        console.log(error);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ///////////  Promise.allSettled(iterable):
+
+    // wait until all promises have settled (each may resolve or reject)
+
+    Promise.allSettled([req1, req2, req3])
+    .then((results) => {
+        console.log(results);
+    })
+
+
+
+    // all ile allSettled farki:
+
+    // all da eger bir tane birle error varsa sadece error döndürülür. logic operatörlerden and gibi calisir.
+
+    // allsettled da ise kac tane hata kac tane resolve dönerse dönsün, hepsinin sonucu return edilir.
+    // ve output bir array dir ve bu array icinde her bir promise in sonucu bir objecttir. 
+    // object ici ise söyledir.
+    // status ve    value key leri ve bunlarin karsiligi value lari vardir.
+    // basarisiz ise status ve reason vardir.
+
+
+
+
+
+
+
+    //////////////  Promise.any(iterable):
+
+    // any de or gibi calisir ve ilk basariyi yakalar. diger sonuclarin ne oldugunun önemi yoktur sadece ilk basari return edilir.
+
+    // tüm sonuclarin bitmesini dogal olarak beklemez
+
+    Promise.any([req1, req2, req3])
+    .then(function(result) {
+        console.log(result);
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+    ////// Promise.race:
+
+    // Promise race metodu işlemlerden hangisi daha önce işini bitiriyorsa ilk olarak işini bitiren promise sonucunu gerçekleştirir.
+
+     // tüm sonuclarin bitmesini beklemez.
+
+
+    Promise.race([req1, req2, req3])
+    .then((result) => {
+        console.log(result);
+    });
+
+
+    // tüm sonuclarin bitmesini all ve allsettled bekler. any ve race ise beklemez. all, any nin tersi olarak calisir ama tüm sonuclarin bitmesini bekler. 
+
+
 
 
 

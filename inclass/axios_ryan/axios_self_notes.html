@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+// "Get :   sunucudan veri almanızı sağlar
+// Post:   bir sunucudaki mevcut bir dosyaya veya kaynağa veri eklemenizi sağlar
+//  create in karsiligidir
+// Put:    bir sunucudaki mevcut bir dosyayı veya kaynağı değiştirmenizi sağlar
+//  update in karsiligidir
+// Delete: sunucudan veri silmenizi sağlar
+// Patch:  Kısmi güncelleme için"
+// bu da update dir
+
+
+
+
+
+
+// facebook’a kayit olunca sizi direkt profil sayfaniza yönlendiriyor mesela, 
+// o kayit sayfasinda kalmiyorsunuz
+
+
+
+        ////  axios,  fetch in alternatifidir.
+
+
+        /// Api ye ihtiyac duymadan,  programimizi direkt backend e baglayip ver cekebiliriz.
+
+        // Bir web uygulamamiz var, bir mobil app imiz var ve bir de yönetici admin panelimiz var
+        // senkron calismasini istedigimiz bu tarz programlarda, hepsini birbirine koordine hale getirip tek bir noktadan database e baglanmayi tercih ediyoruz. Bu nedenle api kullaniyoruz.
+        // hepsini bir framework altina toplamak ve data tutarliligi
+        // 
+
+        // normalde tek bir program yaptigimizda, ve hava durumu gibi verileri baska yerlerden almadan sadece database den veri cekmek istiyorsak, bu durumda apiye ihtiyac yok
+
+        // mesela whatsapp, bir sürü uygulamasi var. mobil masaüstü browserdan acilan.
+        // iste bu tarz uygulamalarda, hepsinin tek bir kanal üzerinden database e gitmesini istiyoruz.
+
+        // Mobil uygulamalarda api cok daha fazla kullaniliyor.
+
+        // Api yapisi:
+        // bir backend dili kullanilir. PHP, Nodejs, Java gibi.
+        // arka tarfta da bir veri havuzu var. o havuzdan bizim istedigimiz sekilde verileri tasiyor
+
+        
+        
+        //  Soap Api  //     Rest Api (dünya üzerinde yaklasik %80):
+        
+        // Soap:  xml tabanli
+
+        // rest ile arasinda 3 ana fark vardir:
+        // birincisi hiz
+        // ikincisi soap da daha kati kurallar vardir
+        // ücüncüsü: soap da json desteklenmez
+        
+        
+        
+        // Rest: hem xml hem de json destekler. json datalar xml e göre daha hizli tasinabiliyor veri alisverisi yapilabiliyor.
+
+
+
+        /// get sql de select e karsilik gelir. bit get gönderiyoruz ama dtabase de karsiligi select sorgusu
+
+        
+
+
+
+        ///////// Api den veri cekmek icin 2 yöntemimiz vardir:
+
+        /// 1: Fetch:
+            // vanilla script in bir methodudur (yani js in kendi native func i dir)
+            // browser tarafindan direkt olarak okunabilir
+            // manuel olarak data tipi json a cevrilmek zorundadir
+            // daha cok ayrintili
+            // calismasi daha zordur
+
+
+
+        //// 2: Axios:
+            // library de bir paket tir. yani 3. partidir.
+            // direkt browser okuyamaz. has to be complied
+            // automatically transform data to json()
+            // daha az ayrintili
+            // daha hizli calisir fetch e göre
+            // calismasi daha kolaydir
+            // api den veriyi zaten json olarak getirir. bu nedenle fetch de oldugu gibi 
+            // data.json() dememize gerek yok. gönderirken de json olarak gönderir.
+            // ya npm ile indirecegiz yada cdn ile linki alacagiz.
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

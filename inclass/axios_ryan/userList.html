@@ -34,11 +34,33 @@
             width: 100%;
             z-index: 9999999;
         }
+
+        .btn-div {
+            height: 3rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid black;
+        }
+
+        .button {
+            background-color: rgb(52, 100, 224);
+            border: none;
+            border-radius: 5px;
+            height: 70%;
+            color: white;
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
     <div class="pageHeader" style="margin-bottom: 0px;">USER LIST</div>
+
+    <div class="btn-div">
+        <button class="button">Change Page(First or Second)</button>
+    </div>
 
     <div class="container" id="MainDiv">
         <table id="example" class="display" style="width:100%">

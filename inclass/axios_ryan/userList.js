@@ -48,20 +48,35 @@
 
 const tbody = document.getElementById("tbodyUserList");
 const loading = document.getElementById("loading");
+const button = document.querySelector(".button");
+
+let responseData = ""; // buton ile ulasmak icin disarida tanimladik
 
 // window.onload = function() {
 
 // }
 
 window.onload = () => {
+    // showLoading();
     // func isminde get yazmamiz önemli:
     getApiUserList();
-    setInterval(getApiUserList, 5000);
+    setInterval(getApiUserList, 10000);
     // burada bir sikinti var. sayfa her yenilendiginde spinner dönmeye basliyor. ve bu 3 saniye sürüyor. spinner gittikten sonra 2 saniye sonra yine sayfa yenileniyor ve spinner yine cikiyor. bu nedenle spinner 2 saniye dönüyor gibi görünüyor.
 
+        // burada aralarda + degil de , koyarsak calismiyor
+        // burada diger sayfada sifreledigimiz token i tekrar sifreden cözüyoruz ve sayfalar arasi kullaniciya gezinme imkani vererek sunum yapiyourz
+
+    // alert("Your Token is: " + DecryptStringAES(localStorage.getItem("apiKey")));
+
+    // alert("Your Token is: " + DecryptStringAES(localStorage.getItem("baseUrl")));
 }
 
-const getApiUserList = async () => {
+button.addEventListener("click", () => {
+    responseData.data.page == 1 ? getApiUserList(2) : getApiUserList(1);
+    // console.log(responseData.data.page);
+});
+
+const getApiUserList = async (pageNumber) => {
     // showLoading();
 
     // axios:
@@ -75,14 +90,19 @@ const getApiUserList = async () => {
         // const responseData = await axios("https://reqres.in/api/users?page=1");
 
             /// 2. Method: hocanin tavsiyesi
-        const responseData = await axios({
-            url : "https://reqres.in/api/users?page=1",
+
+            responseData = await axios({
+            url : `https://reqres.in/api/users?page=${pageNumber}`,
             method : "get"
-            // data : xxxxxxx
+            // data : apiKey
+            // gercek hayatta, kullanici log in olacak. ancak log in oldugunda token alabilecek. aldigi bu token ile userlist i görebilecek ve ancak token aldiginda localstorage da bir token ve id olacak. bu nedenle eger user log in olmadi ise local da bir token olmayacak ve dolayisi ile userlist i göremeyecek
+
             // get methodunda data kullanmaya gerek yok. post da kullanilir.
             // burada süslü parantez objecti temsil eder. aslinda axios ile object gönderiyoruz.
             // Note: fetch methodu ile de post yapilabilir ve fetch ile de bu sekilde yazilabilir.
         })
+        
+        
         
         // 2. method: bu da calisir.
     // const responseData = await axios.get("https://reqres.in/api/users?page=1");
@@ -136,13 +156,8 @@ const getApiUserList = async () => {
         // database de errorlogs table a göndeririz.
         // postErrorLog("userList", "getApiUserList", error)
         // proje yaparken bunlari hepsini detayli düsünmemiz lazim. ger bunu yapmaz isek hata bulmamiz günlerimizi alir.
-
-    
     removeLoading();
-}
-
-    
-    
+} 
 }
 
 

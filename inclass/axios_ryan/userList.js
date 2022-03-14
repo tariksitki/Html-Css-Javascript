@@ -57,7 +57,7 @@ let responseData = ""; // buton ile ulasmak icin disarida tanimladik
 // }
 
 window.onload = () => {
-    // showLoading();
+    showLoading();
     // func isminde get yazmamiz önemli:
     getApiUserList();
     setInterval(getApiUserList, 10000);
@@ -77,7 +77,7 @@ button.addEventListener("click", () => {
 });
 
 const getApiUserList = async (pageNumber) => {
-    // showLoading();
+    showLoading();
 
     // axios:
     // axios da .json() yazma yok

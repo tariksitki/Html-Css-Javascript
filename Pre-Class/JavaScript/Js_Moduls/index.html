@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Tarayıcıda, Her bir <script type="module"> için de bağımsız üst seviye kapsam bulunmaktadır: yani bir script te tanimlanan baska scriptte kullanilamaz -->
+
+    <script type="module">
+        // The variable is only visible in this module script
+        let user = "John";
+      </script>
+      
+      <script type="module">
+        console.log(user); // Error: user is not defined
+      </script>
+
+
+
+
+<!-- Modül programları daima defer niteliği ile aynı etkiyi yaratarak hem harici hem de satır içi programlar için ertelenir.
+yani normal bir script tagi icinde yazma ile module ile yazma farklidir. simdi bakalim -->
+
+    <script>
+        // let button = document.getElementById("button");
+        console.log(typeof button);
+    </script>
+
+    <script type="module">
+        // let button = document.getElementById("button");
+        console.log(typeof button);
+    </script>
+
+    <button id="button"></button>
+
+    <!-- module olanlar ertelenir. yani html tamamen okunana kadar bekler daha sonra okunur. normal script ler ise beklemeden hemen okunur ve asagisindaki button i göremez. 
+    
+    Lütfen dikkat edin: ikinci program aslında ilkinden önce çalışır! Dolayısıyla önce undefined sonra object görürüz.
+
+    Modülleri kullanırken, HTML belgesinin JavaScript uygulamasının hazır olmasından önce görünebileceğinin farkında olmalıyız. Bazı fonksiyonlar henüz çalışmayabilir. When using modules, we should be aware that HTML-document can show up before the JavaScript application is ready. Some functionality may not work yet. Kullanıcıları bu durumdan haberdar etmek için sayfaya bir “yüklenme göstergesi” (loading indicators) koyabiliriz.
+
+
+    Async satır içi programlarda çalışır
+Async niteliği <script async type="module"> hem satır içi hem de harici programlarda kullanılabilir. Async programlar diğer programlardan veya HTML belgesinden bağımsız olarak, içe aktarılan modüller işlenir işlenmez çalışmaya başlar.
+
+Örneğin, aşağıdaki programın async niteliği vardır, dolayısıyla başka bir şeyi beklemesi gerekmez.
+
+İçe aktarma işlemini gerçekleştirir (./analytics.js dosyasına ulaşır) ve hazır olduğunda (HTML belgesinin yüklenmesi bitmemiş veya başka bir program askıda bekliyor olsa bile) çalışır.
+
+Bu işlevsellik için iyidir. Böylelikle sayaçlar, reklamlar veya belge düzeyinde olay dinleyicilerinden bağımsız olarak programımız çalışabilir.
+
+
+Uyumluluk, “nomodule”
+Eski tarayıcılar type="module" niteliğini desteklemez. Bilinmeyen tipteki programlar göz ardı edilir. Bu tarayıcılar için nomodule niteliği ile tedbir alınabilir:
+
+
+Yalın modüllere izin verilmez
+Tarayıcıda, programlarda (HTML’de değil) importa göreli ya da mutlak URL eşlik etmelidir. Bu şekilde bir yola sahip olmayan ve yalın modül olarak isimlendirilen bu programın kullanımı hata verir.
+
+import {sayHi} from 'sayHi'; // Hata, "yalın" modül
+// './sayHi.js' şeklinde olmalıdır
+
+
+Özetlersek, esas kavramlar:
+
+Modül bir dosyadır. import/export ifadelerinin çalışabilmesi için, tarayıcıların, pek çok farklılığa işaret eden <script type="module"> etiketini kullanması gerekir:
+varsayılan olarak ertelenir.
+Async satır içi programlarda çalışır.
+Harici programlar CORS üstbilgisine ihtiyaç duyar.
+Mükerrer harici program dosyaları görmezden gelinir.
+Modüllerin kendi yerel üst seviye kapsamları vardır ve işlevselliği import/export yoluyla değiştirir.
+Modüller daima use strict kullanır.
+Modül kodu yalnızca bir kez çalıştırılır. Dışa aktarımlar bir kez yaratılır ve içe aktarılan yerlerle paylaşılır.
+Dolayısıyla, genellikle, modülleri kullandığımızda, her modül sağladığı işlevselliği dışa aktarır. Daha sonra bu işlevselliği ihtiyaç duyulan yerde import ile içe aktarırız. Tarayıcı bu program dosyalarını otomatik bir şekilde yükler ve değerlendirir.
+
+Üretim aşamasında performans ve diğer nedenlerden ötürü modülleri bir araya getirmek için sıklıkla Webpack gibi sarmalama aracı kullanılır.
+-->
+    <script type="module" src="app.js"></script>
+    <script type="module" src="user.js"></script>
+    <script type="module" src="user2.js"></script>
+</body>
+</html>
